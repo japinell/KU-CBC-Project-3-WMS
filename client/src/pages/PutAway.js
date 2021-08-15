@@ -17,7 +17,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
 
-const SavedBooks = () => {
+const PutAway = () => {
   // Retrieve the list of books of the current user
   const { loading, data } = useQuery(GET_ME);
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
@@ -54,7 +54,7 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Viewing saved books!</h1>
+          <h1>Viewing PutAway Tasks</h1>
         </Container>
       </Jumbotron>
       <Container>
@@ -63,7 +63,7 @@ const SavedBooks = () => {
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? "book" : "books"
               }:`
-            : "You have no saved books!"}
+            : "You have no tasks!"}
         </h2>
         <CardColumns>
           {userData.savedBooks.map((book) => {
@@ -96,4 +96,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedBooks;
+export default PutAway;
