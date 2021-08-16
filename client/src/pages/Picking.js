@@ -57,7 +57,7 @@ const Picking = () => {
           <h1>Viewing Picking Tasks</h1>
         </Container>
       </Jumbotron>
-      <Container>
+      <Container className="main">
         <h2>
           {userData.savedBooks.length
             ? `Viewing ${userData.savedBooks.length} saved ${
