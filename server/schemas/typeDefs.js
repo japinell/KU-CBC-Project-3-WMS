@@ -26,7 +26,7 @@ const typeDefs = gql `
     categoryId: Category!
     primaryUoM: String
     UPC: String
-    restorePoint: Integer
+    restorePoint: Int
     user: String!
     datetime: Date!
   }
@@ -50,7 +50,7 @@ const typeDefs = gql `
     item: String!
     uomFrom: String!
     uomTo: String!
-    factor: Integer!
+    factor: Int!
     user: String!
     datetime: Date!
   }
@@ -60,7 +60,7 @@ const typeDefs = gql `
     item: Item!
     locationId: Location!
     lot: String!
-    quantity: Integer!
+    quantity: Int!
     uomId: UOM!
     operationId: Operation!
     description: String
@@ -78,9 +78,14 @@ const typeDefs = gql `
   type User {
     _id: ID!
     username: String!
+    name: String!
     email: String!
-    bookCount: Int
-    savedBooks: [Book]
+    supervisorId: User!
+    isSupervisor: Boolean!
+    roleCount: Int
+    taskCount: Int
+    roles: [Role]
+    tasks: [Task]
   }
 
   type Book {
