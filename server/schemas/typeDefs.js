@@ -55,6 +55,19 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type Kardex {
+    kardexId: ID!
+    item: Item!
+    locationId: Location!
+    lot: String!
+    quantity: Integer!
+    uomId: UOM!
+    operationId: Operation!
+    description: String
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
