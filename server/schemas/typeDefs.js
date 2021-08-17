@@ -110,6 +110,15 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type AddressBook {
+    addressId: ID!
+    number: Int!
+    name: String!
+    type: String!
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
