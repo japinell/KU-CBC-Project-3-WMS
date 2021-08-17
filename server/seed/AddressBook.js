@@ -1,5 +1,5 @@
 //
-//  Populate database with default data
+//  Populate database with sample data
 //
 const mongoose = require("mongoose");
 const { AddressBook } = require('../models/AddressBook');
