@@ -1,7 +1,7 @@
 //
 //  Export models required throughout the application
 //
-const Address = require('./AddressBook');
+const AddressBook = require('./AddressBook');
 const Category = require('./Category');
 const Conversion = require('./Conversion');
 const Item = require('./Item');
