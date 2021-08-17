@@ -1,27 +1,19 @@
 //
-//  Location definition
+//  Role definition
 //
 const {
     Schema
 } = require('mongoose');
 
 //  
-const locationSchema = new Schema({
-    area: {
+const roleSchema = new Schema({
+    role: {
         type: String,
         required: true,
     },
-    row: {
+    description: {
         type: String,
-    },
-    bay: {
-        type: String,
-    },
-    level: {
-        type: String,
-    },
-    bin: {
-        type: String,
+        required: true,
     },
     allowPutaway: {
         type: Boolean,
@@ -45,4 +37,4 @@ const locationSchema = new Schema({
     },   
 });
 
-module.exports = locationSchema;
+module.exports = roleSchema;

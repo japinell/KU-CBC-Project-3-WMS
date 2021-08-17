@@ -70,7 +70,19 @@ const typeDefs = gql `
 
   type Operation {
     operationId: ID!
+    operation: String!
     description: String!
+    user: String!
+    datetime: Date!
+  }
+
+  type Role {
+    roleId: ID!
+    role: String!
+    description: String!
+    allowPutaway: Boolean!
+    allowPicking: Boolean!
+    allowReplenish: Boolean!
     user: String!
     datetime: Date!
   }
