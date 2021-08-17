@@ -6,32 +6,32 @@ const {
 } = require('mongoose');
 
 //  
-const locationSchema = new Schema({
-    area: {
+const itemSchema = new Schema({
+    item: {
         type: String,
         required: true,
     },
-    row: {
+    description: {
+        type: String,
+        required: true,
+    },
+    categoryId: {
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+        required: true
+    },
+    primaryUoM: {
+        type: String,
+        default: "EA"
+    },
+    UPC: {
         type: String,
     },
-    bay: {
-        type: String,
+    restorePoint: {
+        type: Integer,
+        min: 0,
+        default: 0
     },
-    level: {
-        type: String,
-    },
-    bin: {
-        type: String,
-    },
-    allowPutaway: {
-        type: Boolean,
-    },    
-    allowPicking: {
-        type: Boolean,
-    },    
-    allowReplenish: {
-        type: Boolean,
-    }, 
     user: {
         type: String,
         required: true,
@@ -42,4 +42,4 @@ const locationSchema = new Schema({
     },   
 });
 
-module.exports = locationSchema;
+module.exports = itemSchema;

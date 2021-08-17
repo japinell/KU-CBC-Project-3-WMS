@@ -20,6 +20,17 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type Item {
+    itemId: ID!
+    description: String!
+    categoryId: Category!
+    primaryUoM: String
+    UPC: String
+    restorePoint: Integer
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
