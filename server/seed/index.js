@@ -9,6 +9,7 @@ const seedItem = require('./Item');
 const seedLocation = require('./Location');
 const seedOperation = require('./Operation');
 const seedRole = require('./Role');
+const seedUoM = require('./UoM');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -38,6 +39,9 @@ const seedAll = async () => {
 
   await seedRole();
   console.log('\n----- Role Seeded -----\n');
+
+  await seedUoM();
+  console.log('\n----- UoM Seeded -----\n');
 
   process.exit(0);
 };
