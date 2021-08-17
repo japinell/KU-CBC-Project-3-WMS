@@ -19,6 +19,8 @@ const addressBookSchema = new Schema({
         type: String,
         required: true,
     },
+    address: [String],
+    phone: [String],
     user: {
         type: String,
         required: true,
