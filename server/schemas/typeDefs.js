@@ -119,6 +119,16 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type Inventory {
+    itemId: ID!
+    location: String!
+    lot: String
+    primary: Boolean!
+    quantity: Int!
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
