@@ -38,6 +38,13 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type UoM {
+    uomId: ID!
+    description: String!
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
