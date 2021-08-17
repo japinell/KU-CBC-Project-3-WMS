@@ -4,6 +4,7 @@
 const seedAddressBook = require('./AddressBook');
 const seedCategory = require('./Category');
 const seedConversion = require('./Conversion');
+const seedItem = require('./Item');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -18,6 +19,9 @@ const seedAll = async () => {
 
   await seedConversion();
   console.log('\n----- Conversion Seeded -----\n');
+
+  await seedItem();
+  console.log('\n----- Item Seeded -----\n');
 
   process.exit(0);
 };

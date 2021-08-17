@@ -15,10 +15,14 @@ const itemSchema = new Schema({
         type: String,
         required: true,
     },
+    upc: {
+        type: String,
+        required: false, // Not required due to no data
+    },
     categoryId: {
         type: Schema.Types.ObjectId,
         ref: "Category",
-        required: true
+        required: false // Not required due to no data
     },
     primaryUoM: {
         type: String,
