@@ -2,16 +2,7 @@
 //  Functions to call the search API and execute the mutations to save data to the MongoDb database
 //
 import React, { useState, useEffect } from "react";
-import {
-  Jumbotron,
-  Container,
-  Col,
-  Form,
-  Button,
-  Card,
-  CardColumns,
-  Nav,
-} from "react-bootstrap";
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns, Nav } from "react-bootstrap";
 
 import Auth from "../utils/auth";
 import { searchGoogleBooks } from "../utils/API";
@@ -21,7 +12,10 @@ import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
 import { Link } from "react-router-dom";
 
-const Profile = () => {
+const Profile = ({ getProfileById, match }) => {
+  useEffect(() => {
+    getProfileById(match.params.id);
+  }, [getProfileById, match.params.id]);
   return (
     <>
       <Container>
