@@ -43,7 +43,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+function App(props) {
   return (
     <ApolloProvider client={client}>
       <Router>
