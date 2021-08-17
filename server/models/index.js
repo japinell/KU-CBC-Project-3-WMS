@@ -1,6 +1,7 @@
 //
 //  Export models required throughout the application
 //
+const Address = require('./AddressBook');
 const Category = require('./Category');
 const Conversion = require('./Conversion');
 const Item = require('./Item');
@@ -14,4 +15,4 @@ const Task = require('./Task');
 const UoM = require('./UoM');
 const User = require('./User');
 
-module.exports = { Category, Conversion, Item, Kardex, Location, Operation, OrderDetail, OrderHeader, Role, Task, UoM, User};
+module.exports = { AddressBook, Category, Conversion, Item, Kardex, Location, Operation, OrderDetail, OrderHeader, Role, Task, UoM, User};
