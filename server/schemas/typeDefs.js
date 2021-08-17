@@ -1,9 +1,25 @@
 //
 //  Type Defs - Define the types of data included in the schemas
 //
-const { gql } = require("apollo-server-express");
+const {
+  gql
+} = require("apollo-server-express");
 
-const typeDefs = gql`
+const typeDefs = gql `
+  type Location {
+    locationId: ID!
+    area: String!
+    row: String
+    bay: String
+    level: String
+    bin: String
+    allowPutaway: Boolean
+    allowPicking: Boolean
+    allowReplenish: Boolean
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
