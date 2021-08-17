@@ -76,13 +76,23 @@ const typeDefs = gql `
     datetime: Date!
   }
 
-  type Role {
-    roleId: ID!
-    role: String!
+  type Task {
+    taskId: ID!
+    user: String!
+    status: String!
+    operationId: Operation!
+    user: String!
+    datetime: Date!
+  }
+
+  type OrderHeader {
+    orderId: ID!
+    orderType: String!
+    orderNumber: Int!
+    customerId: AddressBook!
+    vendorId: AddressBook!
     description: String!
-    allowPutaway: Boolean!
-    allowPicking: Boolean!
-    allowReplenish: Boolean!
+    status: String!    
     user: String!
     datetime: Date!
   }
@@ -98,6 +108,19 @@ const typeDefs = gql `
     taskCount: Int
     roles: [Role]
     tasks: [Task]
+    user: String!
+    datetime: Date!
+  }
+
+  type Role {
+    roleId: ID!
+    role: String!
+    description: String!
+    allowPutaway: Boolean!
+    allowPicking: Boolean!
+    allowReplenish: Boolean!
+    user: String!
+    datetime: Date!
   }
 
   type Book {

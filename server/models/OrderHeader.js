@@ -1,0 +1,45 @@
+//
+//  Order header definition
+//
+const {
+    Schema
+} = require('mongoose');
+
+//  
+const orderHeaderSchema = new Schema({
+    orderType: {
+        type: String,
+        required: true,
+    },
+    orderNumber: {
+        type: Integer,
+        required: true,
+    },
+    customerId: {
+        type: Schema.Types.ObjectId,
+        ref: "Customer",
+        required: true
+    },
+    vendorId: {
+        type: Schema.Types.ObjectId,
+        ref: "Customer",
+        required: true
+    },
+    description: {
+        type: String,
+    },
+    status: {
+        type: String,
+        required: true,
+    },
+    user: {
+        type: String,
+        required: true,
+    },   
+    datetime: {
+        type: Date,
+        required: true,
+    },   
+});
+
+module.exports = orderHeaderSchema;
