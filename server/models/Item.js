@@ -1,5 +1,5 @@
 //
-//  Location definition
+//  Item definition
 //
 const {
     Schema
