@@ -7,6 +7,7 @@ const seedConversion = require('./Conversion');
 const seedInventory = require('./Inventory');
 const seedItem = require('./Item');
 const seedLocation = require('./Location');
+const seedOperation = require('./Operation');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -30,6 +31,9 @@ const seedAll = async () => {
 
   await seedLocation();
   console.log('\n----- Location Seeded -----\n');
+
+  await seedOperation();
+  console.log('\n----- Operation Seeded -----\n');
 
   process.exit(0);
 };
