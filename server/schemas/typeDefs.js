@@ -97,6 +97,19 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type OrderDetail {
+    orderId: ID!
+    orderType: String!
+    orderNumber: Int!
+    itemId: Item!
+    description: String!
+    status: String!    
+    quantity: Integer!    
+    uom: UoM!
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
