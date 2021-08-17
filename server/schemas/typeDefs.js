@@ -45,6 +45,16 @@ const typeDefs = gql `
     datetime: Date!
   }
 
+  type Conversion {
+    conversionId: ID!
+    item: String!
+    uomFrom: String!
+    uomTo: String!
+    factor: Integer!
+    user: String!
+    datetime: Date!
+  }
+
   type User {
     _id: ID!
     username: String!
