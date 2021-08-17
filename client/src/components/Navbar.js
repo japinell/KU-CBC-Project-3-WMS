@@ -28,15 +28,13 @@ const AppNavbar = () => {
               {/* if user is logged in show tasks and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/profile">
+                  <Nav.Link as={Link} to={`/profile/${_id}`}>
                     Profile
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>
-                  Login/Sign Up
-                </Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
