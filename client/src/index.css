@@ -1,5 +1,5 @@
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 h1,
@@ -8,10 +8,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: "Rubik Mono One", sans-serif;
 }
 
 .small {
   font-weight: 300;
   font-style: italic;
+}
+
+.navigationBar {
+  background-color: grey;
+  height: 200px;
+  width: 100vw;
+}
+
+.logo {
+  height: 200px;
+  width: 500px;
+}
+.main {
+  height: 500px;
+  width: 100vw;
 }

@@ -22,7 +22,7 @@ import { SAVE_BOOK } from "../utils/mutations";
 const Home = () => {
   return (
     <>
-      <Container>
+      <Container className="main">
         <h2>Warehouse Management System</h2>
       </Container>
     </>

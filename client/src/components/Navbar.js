@@ -4,6 +4,8 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 
+import logo from "../images/miniWMS.png";
+
 import Auth from "../utils/auth";
 
 const AppNavbar = () => {
@@ -12,10 +14,10 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className="navigationBar" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            Mini-WMS
+            <img src={logo} className="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
