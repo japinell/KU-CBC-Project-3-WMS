@@ -64,38 +64,48 @@ export default function SignIn() {
     setOpen(false);
   };
 
+  const modal = (
+    <div className={classes.modal}>
+      <SignUp></SignUp>
+    </div>
+  );
+
+  const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [open, setOpen] = useState(false);
-
-  //   const modal = (
-  //     <div className={classes.modal}>
-  //       <SignUp></SignUp>
-  //     </div>
-  //   );
-
-  const [formState, setFormState] = useState({ identifier: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: {
-          identifier: formState.identifier.toLowerCase(),
-          password: formState.password,
-        },
-      });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
+    // Check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Authenticate the user by means of the login mutation
+    try {
+      const { data } = await login({
+        variables: userFormData,
+      });
+
+      //  Retrieve the token and authenticate the user with it
+      const { token } = await data.login;
+      Auth.login(token);
+    } catch (err) {
+      console.log(`Error: ${err}`);
+    }
+
+    setUserFormData({
+      username: "",
+      email: "",
+      password: "",
     });
   };
 
@@ -120,7 +130,7 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
-            onChange={handleChange}
+            onChange={handleInputChange}
           />
           <TextField
             variant="outlined"
@@ -132,7 +142,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-            onChange={handleChange}
+            onChange={handleInputChange}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
