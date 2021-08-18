@@ -12,10 +12,7 @@ import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
 import { Link } from "react-router-dom";
 
-const Profile = ({ getProfileById, match }) => {
-  useEffect(() => {
-    getProfileById(match.params.id);
-  }, [getProfileById, match.params.id]);
+const Profile = () => {
   return (
     <>
       <Container>
