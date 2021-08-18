@@ -41,6 +41,12 @@ const theme = createTheme({
       dark: "#00a0b2",
       contrastText: "#000",
     },
+    trio: {
+      light: "#fce4ec",
+      main: "#84ffff",
+      dark: "#bdbdbd",
+      contrastText: "#000",
+    },
   },
 });
 
@@ -73,20 +79,16 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <ThemeProvider theme={theme}>
-          <>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/receiving" component={Receiving} />
-              <Route exact path="/putaway" component={PutAway} />
-              <Route exact path="/picking" component={Picking} />
-              <Route exact path="/dispatch" component={Dispatch} />
-              <Route
-                render={() => <h1 className="display-2">Wrong page!</h1>}
-              />
-            </Switch>
-          </>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/receiving" component={Receiving} />
+            <Route exact path="/putaway" component={PutAway} />
+            <Route exact path="/picking" component={Picking} />
+            <Route exact path="/dispatch" component={Dispatch} />
+            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          </Switch>
           <Footer />
         </ThemeProvider>
       </Router>

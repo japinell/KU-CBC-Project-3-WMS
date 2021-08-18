@@ -16,9 +16,10 @@ import {
 
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
 import { GiBookAura } from "react-icons/gi";
-import { FiBookOpen } from "react-icons/fi";
-import { RiMoneyPoundCircleLine } from "react-icons/ri";
-import { BsFillPersonPlusFill, BsFillBrightnessHighFill } from "react-icons/bs";
+import { MdHome } from "react-icons/md";
+import { FaWarehouse } from "react-icons/fa";
+import { RiProductHuntLine } from "react-icons/ri";
+import { FiTruck } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
 import { ImHappy } from "react-icons/im";
 
@@ -93,7 +94,7 @@ const Navbar = () => {
               component={Link}
               to="/"
               disableRipple
-              icon={<FiBookOpen className={classes.icons} />}
+              icon={<MdHome className={classes.icons} />}
               label="Home"
             />
             <Tab
@@ -107,14 +108,14 @@ const Navbar = () => {
               component={Link}
               to="/picking"
               disableRipple
-              icon={<RiMoneyPoundCircleLine className={classes.icons} />}
+              icon={<FaWarehouse className={classes.icons} />}
               label="Picking"
             />
             <Tab
               component={Link}
               to="/receiving"
               disableRipple
-              icon={<BsFillPersonPlusFill className={classes.icons} />}
+              icon={<RiProductHuntLine className={classes.icons} />}
               label="Receiving"
             />
 
@@ -130,11 +131,13 @@ const Navbar = () => {
               component={Link}
               to="/dispatch"
               disableRipple
-              icon={<BsFillBrightnessHighFill className={classes.icons} />}
+              icon={<FiTruck className={classes.icons} />}
               label="Dispatch"
             />
           </Tabs>
           <Button
+            component={Link}
+            to="/profile"
             aria-controls="menu"
             onMouseOver={handleOpenMenu}
             className={classes.acount}
