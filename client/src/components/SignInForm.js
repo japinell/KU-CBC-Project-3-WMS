@@ -159,14 +159,19 @@ export default function LoginForm() {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item xl>
-              <Link href="#" variant="body2">
+          <Grid item xs>
+            <Grid container color="secondary">
+              <Link color="secondary" href="#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item>
-              <Link href="#" variant="body2" onClick={handleOpen}>
+            <Grid item xl>
+              <Link
+                color="secondary"
+                href="#"
+                variant="body2"
+                onClick={handleOpen}
+              >
                 {"Don't have an account? Sign Up"}
               </Link>
               <Modal
