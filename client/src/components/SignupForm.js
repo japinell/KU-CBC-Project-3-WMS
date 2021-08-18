@@ -80,11 +80,11 @@ export default function SignUpForm() {
       const data = await addUser({
         variables: { ...userFormData },
       });
-
-      //  Retrieve the token and authenticate the user with it
-      Auth.login(data.addUser.token);
+      console.log(data);
+      const { token } = data;
+      Auth.login(token);
     } catch (err) {
-      console.error(err);
+      console.error("ERROR on SignUpForm:", err);
     }
   };
 

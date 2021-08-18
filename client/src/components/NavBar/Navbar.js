@@ -78,6 +78,93 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const renderLogin = () => {
+    if (Auth.loggedIn()) {
+      return (
+        <>
+          <DrawerComponent />
+          <Tabs
+            onChange={handleClickTab}
+            className={classes.tabsContainer}
+            indicatorColor="secondary"
+            value={value}
+          >
+            <Tab
+              component={Link}
+              to="/"
+              disableRipple
+              icon={<FiBookOpen className={classes.icons} />}
+              label="Home"
+            />
+            <Tab
+              component={Link}
+              to="/profile"
+              disableRipple
+              icon={<VscAccount className={classes.icons} />}
+              label="Profile"
+            />
+            <Tab
+              component={Link}
+              to="/picking"
+              disableRipple
+              icon={<RiMoneyPoundCircleLine className={classes.icons} />}
+              label="Picking"
+            />
+            <Tab
+              component={Link}
+              to="/receiving"
+              disableRipple
+              icon={<BsFillPersonPlusFill className={classes.icons} />}
+              label="Receiving"
+            />
+
+            <Tab
+              component={Link}
+              to="/putaway"
+              disableRipple
+              icon={<ImHappy className={classes.icons} />}
+              label="PutAway"
+            />
+
+            <Tab
+              component={Link}
+              to="/dispatch"
+              disableRipple
+              icon={<BsFillBrightnessHighFill className={classes.icons} />}
+              label="Dispatch"
+            />
+          </Tabs>
+          <Button
+            aria-controls="menu"
+            onMouseOver={handleOpenMenu}
+            className={classes.acount}
+            disableElevation
+            disableRipple
+            variant="contained"
+            color="secondary"
+          >
+            Profile
+          </Button>
+          <Button
+            className={classes.acount}
+            disableElevation
+            disableRipple
+            variant="contained"
+            color="secondary"
+          >
+            Logout
+          </Button>
+        </>
+      );
+    } else {
+      return (
+        <AppBar>
+          <LoginForm />
+        </AppBar>
+      );
+    }
+  };
+
   return (
     <>
       <AppBar elevation={0} color="primary">
@@ -85,84 +172,9 @@ const Navbar = () => {
           <Typography>
             <GiBookAura className={classes.iconLogo} />
           </Typography>
-          {Auth.loggedIn() ? (
-            <>
-              <DrawerComponent />
-            </>
-          ) : (
-            <>
-              <Tabs
-                onChange={handleClickTab}
-                className={classes.tabsContainer}
-                indicatorColor="secondary"
-                value={value}
-              >
-                <Tab
-                  component={Link}
-                  to="/"
-                  disableRipple
-                  icon={<FiBookOpen className={classes.icons} />}
-                  label="Home"
-                />
-                <Tab
-                  component={Link}
-                  to="/profile"
-                  disableRipple
-                  icon={<VscAccount className={classes.icons} />}
-                  label="Profile"
-                />
-                <Tab
-                  component={Link}
-                  to="/picking"
-                  disableRipple
-                  icon={<RiMoneyPoundCircleLine className={classes.icons} />}
-                  label="Picking"
-                />
-                <Tab
-                  component={Link}
-                  to="/receiving"
-                  disableRipple
-                  icon={<BsFillPersonPlusFill className={classes.icons} />}
-                  label="Receiving"
-                />
-
-                <Tab
-                  component={Link}
-                  to="/putaway"
-                  disableRipple
-                  icon={<ImHappy className={classes.icons} />}
-                  label="PutAway"
-                />
-
-                <Tab
-                  component={Link}
-                  to="/dispatch"
-                  disableRipple
-                  icon={<BsFillBrightnessHighFill className={classes.icons} />}
-                  label="Dispatch"
-                />
-              </Tabs>
-              <Button
-                aria-controls="menu"
-                onMouseOver={handleOpenMenu}
-                className={classes.acount}
-                disableElevation
-                disableRipple
-                variant="contained"
-                color="secondary"
-              >
-                Profile
-              </Button>
-            </>
-          )}
-          ) : (
-          <AppBar>
-            <LoginForm />
-          </AppBar>
-          )
+          {renderLogin()}
         </Toolbar>
       </AppBar>
-      {/* Menu */}
       <Menu
         style={{ marginTop: "50px" }}
         id="menu"
