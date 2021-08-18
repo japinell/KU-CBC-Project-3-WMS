@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
+  formBackground: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.trio.dark,
+  },
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
@@ -66,7 +70,7 @@ export default function LoginForm() {
   };
 
   const modal = (
-    <div className={classes.modal}>
+    <div>
       <SignUpForm></SignUpForm>
     </div>
   );
@@ -117,7 +121,7 @@ export default function LoginForm() {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
-            variant="outlined"
+            variant="filled"
             margin="normal"
             required
             fullWidth
@@ -129,7 +133,7 @@ export default function LoginForm() {
             onChange={handleInputChange}
           />
           <TextField
-            variant="outlined"
+            variant="filled"
             margin="normal"
             required
             fullWidth
@@ -141,7 +145,7 @@ export default function LoginForm() {
             onChange={handleInputChange}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            control={<Checkbox value="remember" color="secondary" />}
             label="Remember me"
           />
           <Button
@@ -149,7 +153,7 @@ export default function LoginForm() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
             className={classes.submit}
           >
             Sign In

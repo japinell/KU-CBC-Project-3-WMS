@@ -42,11 +42,12 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.trio.dark,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
+    backgroundColor: theme.palette.trio.dark,
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -95,7 +96,7 @@ export default function SignUpForm() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography color="secondary" component="h1" variant="h5">
           Sign up
         </Typography>
         <form onSubmit={handleFormSubmit} className={classes.form} noValidate>
@@ -104,7 +105,7 @@ export default function SignUpForm() {
               <TextField
                 autoComplete="fname"
                 name="firstName"
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="firstName"
@@ -115,7 +116,7 @@ export default function SignUpForm() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="lastName"
@@ -127,7 +128,7 @@ export default function SignUpForm() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="email"
@@ -139,7 +140,7 @@ export default function SignUpForm() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 name="password"
