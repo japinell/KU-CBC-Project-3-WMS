@@ -1,11 +1,9 @@
 //
 //  Type Defs - Define the types of data included in the schemas
 //
-const {
-  gql
-} = require("apollo-server-express");
+const { gql } = require("apollo-server-express");
 
-const typeDefs = gql `
+const typeDefs = gql`
   type Location {
     locationId: ID!
     area: String!
@@ -16,8 +14,6 @@ const typeDefs = gql `
     allowPutaway: Boolean
     allowPicking: Boolean
     allowReplenish: Boolean
-    user: String!
-    datetime: Date!
   }
 
   type Item {
@@ -27,22 +23,16 @@ const typeDefs = gql `
     primaryUoM: String
     UPC: String
     restorePoint: Int
-    user: String!
-    datetime: Date!
   }
 
   type Category {
     categoryId: ID!
     description: String!
-    user: String!
-    datetime: Date!
   }
 
   type UoM {
     uomId: ID!
     description: String!
-    user: String!
-    datetime: Date!
   }
 
   type Conversion {
@@ -51,8 +41,6 @@ const typeDefs = gql `
     uomFrom: String!
     uomTo: String!
     factor: Int!
-    user: String!
-    datetime: Date!
   }
 
   type Kardex {
@@ -61,19 +49,15 @@ const typeDefs = gql `
     locationId: Location!
     lot: String!
     quantity: Int!
-    uomId: UOM!
+    uomId: UoM!
     operationId: Operation!
     description: String
-    user: String!
-    datetime: Date!
   }
 
   type Operation {
     operationId: ID!
     operation: String!
     description: String!
-    user: String!
-    datetime: Date!
   }
 
   type Task {
@@ -81,8 +65,6 @@ const typeDefs = gql `
     user: String!
     status: String!
     operationId: Operation!
-    user: String!
-    datetime: Date!
   }
 
   type OrderHeader {
@@ -92,9 +74,7 @@ const typeDefs = gql `
     customerId: AddressBook!
     vendorId: AddressBook!
     description: String!
-    status: String!    
-    user: String!
-    datetime: Date!
+    status: String!
   }
 
   type OrderDetail {
@@ -103,20 +83,17 @@ const typeDefs = gql `
     orderNumber: Int!
     itemId: Item!
     description: String!
-    status: String!    
-    quantity: Integer!    
+    status: String!
+    quantity: Int!
     uom: UoM!
-    user: String!
-    datetime: Date!
   }
 
   type AddressBook {
-    addressId: ID!
-    number: Int!
+    id: ID!
     name: String!
     type: String!
-    user: String!
-    datetime: Date!
+    address: [String]
+    phone: [String]
   }
 
   type Inventory {
@@ -125,23 +102,14 @@ const typeDefs = gql `
     lot: String
     primary: Boolean!
     quantity: Int!
-    user: String!
-    datetime: Date!
   }
 
   type User {
     _id: ID!
     username: String!
-    name: String!
     email: String!
-    supervisorId: User!
-    isSupervisor: Boolean!
-    roleCount: Int
-    taskCount: Int
-    roles: [Role]
-    tasks: [Task]
-    user: String!
-    datetime: Date!
+    bookCount: Int
+    savedBooks: [Book]
   }
 
   type Role {
@@ -151,8 +119,6 @@ const typeDefs = gql `
     allowPutaway: Boolean!
     allowPicking: Boolean!
     allowReplenish: Boolean!
-    user: String!
-    datetime: Date!
   }
 
   type Book {
