@@ -17,10 +17,15 @@ import Receiving from "./pages/Receiving";
 import PutAway from "./pages/PutAway";
 import Picking from "./pages/Picking";
 import Dispatch from "./pages/Dispatch";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer";
 
-import { createTheme, ThemeProvider, Button } from "@material-ui/core";
+import {
+  createTheme,
+  ThemeProvider,
+  Button,
+  CssBaseline,
+} from "@material-ui/core";
 
 const theme = createTheme({
   palette: {
@@ -67,19 +72,23 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/receiving" component={Receiving} />
-            <Route exact path="/putaway" component={PutAway} />
-            <Route exact path="/picking" component={Picking} />
-            <Route exact path="/dispatch" component={Dispatch} />
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-          </Switch>
-        </>
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <>
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/receiving" component={Receiving} />
+              <Route exact path="/putaway" component={PutAway} />
+              <Route exact path="/picking" component={Picking} />
+              <Route exact path="/dispatch" component={Dispatch} />
+              <Route
+                render={() => <h1 className="display-2">Wrong page!</h1>}
+              />
+            </Switch>
+          </>
+          <Footer />
+        </ThemeProvider>
       </Router>
     </ApolloProvider>
   );
