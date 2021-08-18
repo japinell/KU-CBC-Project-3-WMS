@@ -75,16 +75,21 @@ const Admin = () => {
       </AppBar>
       <main>
         <div>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
+          <Grid container spacing={2} justifyContent="center">
           <Typography varient="h3" align="right" color="textPrimary" gutterBottom>
             { User }
             </Typography>
               <FormControl>
                 <form className={classes.root} noValidate autoComplete="off">
-                  <Input placeholder="Select Employee" inputProps={{ 'aria-label': 'description' }} />
-                    <Input defaultValue="Select Action" inputProps={{ 'aria-label': 'description' }} />
+                  <Typography varient="h3" align="center" color="textPrimary" gutterBottom>
+                    Assign New Task
+                    </Typography>
+                    <Input placeholder="Select Employee" inputProps={{ 'aria-label': 'description' }} />
+                      <Input defaultValue="Select Action" inputProps={{ 'aria-label': 'description' }} />
                     </form>
                  </FormControl>
+                </Grid>
                </Container>
              </div>
            </main>
