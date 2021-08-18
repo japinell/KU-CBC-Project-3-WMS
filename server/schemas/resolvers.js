@@ -1,16 +1,16 @@
 //
 //  Resolvers - Define the functions to populate the data from the schemas
 //
-const { User, Book } = require("../models");
+const User = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 //
 const resolvers = {
   Query: {
     // Return the currently logged in user including their saved books
-    me: async (parent, args, context) => {
+    user: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("savedBooks");
+        return User.findOne({ _id: context.user._id }).populate("profile");
       }
       throw new AuthenticationError(
         "You need to log in to perform this query!"

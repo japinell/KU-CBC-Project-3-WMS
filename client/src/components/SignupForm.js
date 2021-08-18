@@ -74,32 +74,18 @@ export default function SignUpForm() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // Check if the form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    console.log(userFormData);
 
-    // Add the user from the database by means of the removeBook mutation
     try {
       const data = await addUser({
         variables: { ...userFormData },
       });
 
       //  Retrieve the token and authenticate the user with it
-      const { token } = data;
-      Auth.login(token);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
     }
-
-    setUserFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    });
   };
 
   return (
@@ -180,13 +166,6 @@ export default function SignUpForm() {
           >
             Sign Up
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
       <Box mt={5}>
