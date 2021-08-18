@@ -1,10 +1,8 @@
-//
-//  User definition
-//
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-//const bookSchema = require('./Book');
+// import schema from Book.js
+const bookSchema = require("./Book");
 
 const userSchema = new Schema(
   {
@@ -13,33 +11,22 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    name: {
-      type: String,
-      required: true,
-    }, 
-    password: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
+      match: [/.+@.+\..+/, "Must use a valid email address"],
     },
-    supervisorId: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true
-    },  
+    password: {
+      type: String,
+      required: true,
+    },
     isSupervisor: {
       type: Boolean,
-      default: false
-    },  
-    // 
-    roles: [Role],
-    tasks: [Task],
-    //
+      default: false,
+    },
+    // set savedBooks to be an array of data that adheres to the bookSchema
+    savedBooks: [bookSchema],
   },
   // set this to use virtual below
   {
@@ -49,7 +36,7 @@ const userSchema = new Schema(
   }
 );
 
-// Hash user password
+// hash user password
 userSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
@@ -59,19 +46,14 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// Custom method to compare and validate password for logging in
+// custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// When querying a user, it will also get another field called `roleCount` with the number of assigned roles
-userSchema.virtual("taskCount").get(function () {
-  return this.roles.length;
-});
-
-// When querying a user, it will also get another field called `taskCount` with the number of assigned tasks
-userSchema.virtual("taskCount").get(function () {
-  return this.tasks.length;
+// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+userSchema.virtual("bookCount").get(function () {
+  return this.savedBooks.length;
 });
 
 const User = model("User", userSchema);
