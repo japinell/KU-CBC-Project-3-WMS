@@ -10,7 +10,7 @@ const resolvers = {
     // Return the currently logged in user including their saved books
     user: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("profile");
+        return User.findOne({ _id: context.user._id }).populate("/");
       }
       throw new AuthenticationError(
         "You need to log in to perform this query!"
@@ -38,8 +38,8 @@ const resolvers = {
     },
 
     //  Add a user to the database - Return the user and the authentication token
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
+    addUser: async (parent, { email, password }) => {
+      const user = await User.create({ email, password });
       const token = signToken(user);
       return { token, user };
     },

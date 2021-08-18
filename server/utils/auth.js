@@ -33,9 +33,10 @@ module.exports = {
     return req;
   },
 
-  //  Generate the actual token using the username, email, and user id as payload
-  signToken: function ({ username, email, _id }) {
-    const payload = { username, email, _id };
+  //  Generate the actual token
+  signToken: function ({ email, firstName, lastName, _id }) {
+    const payload = { email, firstName, lastName, _id };
+    console.log(payload);
     const token = jwt.sign({ data: payload }, secret, {
       expiresIn: expiration,
     });
