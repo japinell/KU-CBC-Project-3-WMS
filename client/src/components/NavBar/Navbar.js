@@ -146,6 +146,7 @@ const Navbar = () => {
             Profile
           </Button>
           <Button
+            onClick={Auth.logout}
             className={classes.acount}
             disableElevation
             disableRipple

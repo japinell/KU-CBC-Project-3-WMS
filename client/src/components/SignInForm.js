@@ -83,24 +83,19 @@ export default function LoginForm() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // Check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
+    console.log(userFormData);
     // Authenticate the user by means of the login mutation
     try {
       const { data } = await login({
         variables: userFormData,
       });
+      console.log(data);
 
       //  Retrieve the token and authenticate the user with it
       const { token } = await data.login;
       Auth.login(token);
     } catch (err) {
-      console.log(`Error: ${err}`);
+      console.log(`SignInForm Error: ${err}`);
     }
 
     setUserFormData({

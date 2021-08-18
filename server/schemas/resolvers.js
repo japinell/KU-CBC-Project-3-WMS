@@ -22,8 +22,7 @@ const resolvers = {
   Mutation: {
     // Return an authentication token after validating the user credentials
     login: async (parent, { email, password }) => {
-      const bodyEmail = email;
-      const user = await User.findOne({ bodyEmail });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError("Invalid email address");
