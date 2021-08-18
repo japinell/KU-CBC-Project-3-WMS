@@ -20,8 +20,12 @@ import { FiBookOpen } from "react-icons/fi";
 import { RiMoneyPoundCircleLine } from "react-icons/ri";
 import { BsFillPersonPlusFill, BsFillBrightnessHighFill } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
-
 import { ImHappy } from "react-icons/im";
+
+import Auth from "../../utils/auth";
+
+import LoginForm from "../SignInForm";
+import SignUpForm from "../SignUpForm";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -81,7 +85,7 @@ const Navbar = () => {
           <Typography>
             <GiBookAura className={classes.iconLogo} />
           </Typography>
-          {isMatch ? (
+          {Auth.loggedIn() ? (
             <>
               <DrawerComponent />
             </>
@@ -151,6 +155,11 @@ const Navbar = () => {
               </Button>
             </>
           )}
+          ) : (
+          <AppBar>
+            <LoginForm />
+          </AppBar>
+          )
         </Toolbar>
       </AppBar>
       {/* Menu */}

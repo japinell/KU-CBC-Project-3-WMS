@@ -12,8 +12,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { Modal } from "@material-ui/core";
 import { useState } from "react";
-import SignUp from "../components/SignUp";
+import SignUpForm from "../components/SignUpForm";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { LOGIN_USER } from "../utils/mutations";
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function LoginForm() {
   const classes = useStyles();
   const handleOpen = () => {
     setOpen(true);
@@ -66,7 +67,7 @@ export default function SignIn() {
 
   const modal = (
     <div className={classes.modal}>
-      <SignUp></SignUp>
+      <SignUpForm></SignUpForm>
     </div>
   );
 
@@ -159,7 +160,7 @@ export default function SignIn() {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
+            <Grid item xl>
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
