@@ -18,6 +18,7 @@ import PutAway from "./pages/PutAway";
 import Picking from "./pages/Picking";
 import Dispatch from "./pages/Dispatch";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // Construct the main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -59,6 +60,7 @@ function App() {
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
         </>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
