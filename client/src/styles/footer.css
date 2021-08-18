@@ -10,12 +10,11 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
-  height: 400px;
   display: flex;
+  height: 700px;
 }
 .all {
   display: flex;

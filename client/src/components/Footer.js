@@ -4,7 +4,6 @@ import "../styles/footer.css";
 export default function Footer() {
   return (
     <section className="footer">
-      <h2 id="contactheader">Contact Us!</h2>
       <div className="all">
         <a
           href="https://www.twitch.tv/bergannation/about"
@@ -41,7 +40,6 @@ export default function Footer() {
           <div className="text">Resume</div>
         </a>
       </div>
-      <h3>© MINI-WMS 2021</h3>
     </section>
   );
 }

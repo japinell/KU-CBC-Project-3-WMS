@@ -18,6 +18,7 @@ import SignUpForm from "../components/SignUpForm";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { LOGIN_USER } from "../utils/mutations";
+import logo from "../images/miniWMS.png";
 
 function Copyright() {
   return (
@@ -113,6 +114,7 @@ export default function LoginForm() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
+        <img src={logo} alt="logo" />
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
