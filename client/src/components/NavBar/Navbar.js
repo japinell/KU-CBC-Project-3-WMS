@@ -98,7 +98,7 @@ const Navbar = () => {
             />
             <Tab
               component={Link}
-              to="/profile"
+              to="/admin"
               disableRipple
               icon={<VscAccount className={classes.icons} />}
               label="Profile"

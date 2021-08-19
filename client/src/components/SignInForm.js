@@ -14,7 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Modal } from "@material-ui/core";
 import { useState } from "react";
-import SignUpForm from "../components/SignUpForm";
+import SignUpForm from "./SignUpForm";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { LOGIN_USER } from "../utils/mutations";
