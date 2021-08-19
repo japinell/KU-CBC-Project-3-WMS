@@ -92,7 +92,12 @@ export default function Album() {
                   <Typography className={classes.pos} color="textSecondary" variant="body2" component="p">
                     Assign New Task
                     </Typography>
+                    <Input placeholder="Select Employee" inputProps={{ 'aria-label': 'description' }} />
+                      <Input defaultValue="Select Action" inputProps={{ 'aria-label': 'description' }} />
                     </form>
+                    <Button variant="contained" color="primary">
+                    Apply
+                  </Button>
                  </FormControl>
                 </Grid>
                 </CardContent>
