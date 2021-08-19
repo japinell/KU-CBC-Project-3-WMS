@@ -1,7 +1,8 @@
 //
 //  Operation definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const operationSchema = new Schema({
@@ -13,6 +14,13 @@ const operationSchema = new Schema({
     type: String,
     required: true,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = operationSchema;
+const Operation = mongoose.model("Operation", operationSchema);
+
+module.exports = Operation;

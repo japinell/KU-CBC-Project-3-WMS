@@ -1,7 +1,8 @@
 //
 //  Item definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const itemSchema = new Schema({
@@ -34,6 +35,13 @@ const itemSchema = new Schema({
     min: 0,
     default: 0,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = itemSchema;
+const Item = mongoose.model("Item", itemSchema);
+
+module.exports = Item;

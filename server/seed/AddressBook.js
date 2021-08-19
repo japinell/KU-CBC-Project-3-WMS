@@ -1,12 +1,11 @@
 //
 //  Populate database with sample data
 //
-const mongoose = require("mongoose");
-const { AddressBook } = require("../models/AddressBook");
+const { AddressBook } = require("../models");
 
 const addressBookData = [
   {
-    number: 10000,
+    id: 10000,
     name: "Customer 10000",
     type: "C",
     address: {
@@ -15,17 +14,12 @@ const addressBookData = [
       state: "KS",
       postalCode: "66045",
     },
-    phone: [
-      {
-        type: "work",
-        number: "785 864-2700",
-      },
-    ],
+    phone: "785 864-2700",
     user: "admin",
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    number: 10001,
+    id: 10001,
     name: "Customer 10001",
     type: "C",
     address: {
@@ -34,21 +28,12 @@ const addressBookData = [
       state: "NY",
       postalCode: "10021",
     },
-    phone: [
-      {
-        type: "work",
-        number: "212 555-1234",
-      },
-      {
-        type: "fax",
-        number: "646 555-4567",
-      },
-    ],
+    phone: "212 555-1234",
     user: "admin",
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    number: 10003,
+    id: 10003,
     name: "Vendor 10003",
     type: "V",
     address: {
@@ -57,21 +42,12 @@ const addressBookData = [
       state: "NY",
       postalCode: "10021",
     },
-    phone: [
-      {
-        type: "work",
-        number: "212 555-1234",
-      },
-      {
-        type: "fax",
-        number: "646 555-4567",
-      },
-    ],
+    phone: "212 555-1234",
     user: "admin",
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    number: 10004,
+    id: 10004,
     name: "Employee 10004",
     type: "E",
     address: {
@@ -80,20 +56,15 @@ const addressBookData = [
       state: "KS",
       postalCode: "66045",
     },
-    phone: [
-      {
-        type: "work",
-        number: "785 864-2700",
-      },
-    ],
+    phone: "785 864-2700",
     user: "admin",
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
 ];
 
-const seedAddressBook = () => {
+const seedAddressBook = async () => {
   await AddressBook.deleteMany({});
-  await AddressBook.bulkCreate(addressBookData);
+  await AddressBook.insertMany(addressBookData);
 };
 
 module.exports = seedAddressBook;
