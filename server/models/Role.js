@@ -1,7 +1,8 @@
 //
 //  Role definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const roleSchema = new Schema({
@@ -25,6 +26,13 @@ const roleSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = roleSchema;
+const Role = mongoose.model("Role", roleSchema);
+
+module.exports = Role;

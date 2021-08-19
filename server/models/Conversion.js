@@ -1,7 +1,8 @@
 //
 //  Unit of measure conversion definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const conversionSchema = new Schema({
@@ -21,6 +22,13 @@ const conversionSchema = new Schema({
     type: Number,
     required: true,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = conversionSchema;
+const Conversion = mongoose.model("Conversion", conversionSchema);
+
+module.exports = Conversion;

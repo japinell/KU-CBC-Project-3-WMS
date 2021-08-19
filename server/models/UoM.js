@@ -1,7 +1,8 @@
 //
 //  Unit of measure definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const uomSchema = new Schema({
@@ -13,6 +14,13 @@ const uomSchema = new Schema({
     type: String,
     required: true,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = uomSchema;
+const UoM = mongoose.model("UoM", uomSchema);
+
+module.exports = UoM;
