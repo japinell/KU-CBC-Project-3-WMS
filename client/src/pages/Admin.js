@@ -85,7 +85,7 @@ export default function Album() {
         <CardContent>
           <Grid container spacing={2} justifyContent="center">
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            {firstName}
+            {User.firstName}
             </Typography>
               <FormControl>
                 <form className={classes.root} noValidate autoComplete="off">
