@@ -49,60 +49,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [];
 
 export default function Album() {
   const classes = useStyles();
 
 
 const Admin = () => {
-  if (User !== isSupervisor) {
-    throw new console.error(e);
-  } else {
     return (
       <React.Fragment>
         <CssBaseline />
-          <AppBar position="relative">
+        <AppBar position="relative">
             <Toolbar>
               <BusinessCenterIcon className={classes.icon} />
                 <Typography variant="h6" color="inherit" noWrap>
               Mini-WMS
             </Typography>
             <Typeography variant="h6" align="right" color="inhert" noWrap>
-              Profile
+              Admin Portal
             </Typeography>
         </Toolbar>
       </AppBar>
       <main>
         <div>
-        <Container maxWidth="md">
+        <Container>
+        <Card className={classes.root} variant="outlined">
+        <CardContent>
           <Grid container spacing={2} justifyContent="center">
-          <Typography varient="h3" align="right" color="textPrimary" gutterBottom>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
             { User }
             </Typography>
               <FormControl>
                 <form className={classes.root} noValidate autoComplete="off">
-                  <Typography varient="h3" align="center" color="textPrimary" gutterBottom>
+                  <Typography className={classes.pos} color="textSecondary" variant="body2" component="p">
                     Assign New Task
                     </Typography>
-                    <Input placeholder="Select Employee" inputProps={{ 'aria-label': 'description' }} />
-                      <Input defaultValue="Select Action" inputProps={{ 'aria-label': 'description' }} />
                     </form>
                  </FormControl>
                 </Grid>
-               </Container>
+                </CardContent>
+               </Card>
+              </Container>
              </div>
            </main>
         </React.Fragment>
       );
     }
+    export default Admin;
   };
-  export default Admin;
-};
-try { // statements to try
-  isSupervisor = (admin); // function could throw exception
-}
-catch (e) {
-  isSupervisor = false;
-  logMyErrors(e);
-}
