@@ -2,17 +2,13 @@
 //  Main React application
 //
 import React from "react";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 import Receiving from "./pages/Receiving";
 import PutAway from "./pages/PutAway";
 import Picking from "./pages/Picking";
