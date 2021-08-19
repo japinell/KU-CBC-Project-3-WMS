@@ -51,11 +51,19 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [];
 
+function renderComponent() {
+  for (const [i, firstName] of firstName.entries()) {
+    cards.push(<li>{firstName}</li>)
+    
+    return (
+      <div>
+        {cards}
+      </div>
+    )
 export default function Album() {
   const classes = useStyles();
-
-
-const Admin = () => {
+  
+  const Admin = () => {
     return (
       <React.Fragment>
         <CssBaseline />
@@ -77,7 +85,7 @@ const Admin = () => {
         <CardContent>
           <Grid container spacing={2} justifyContent="center">
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            { User }
+            {firstName}
             </Typography>
               <FormControl>
                 <form className={classes.root} noValidate autoComplete="off">
@@ -96,4 +104,6 @@ const Admin = () => {
       );
     }
     export default Admin;
-  };
+  }
+}
+};
