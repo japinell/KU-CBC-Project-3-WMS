@@ -2,7 +2,12 @@
 //  Main React application
 //
 import React from "react";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -79,7 +84,7 @@ function App() {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/admin" component={Admin} />
               <Route exact path="/receiving" component={Receiving} />
               <Route exact path="/putaway" component={PutAway} />
               <Route exact path="/picking" component={Picking} />
