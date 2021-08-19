@@ -8,10 +8,9 @@ import {
   CardColumns,
   Card,
   Button,
-} from "react-bootstrap";
+} from "@material-ui/core";
 
 import Auth from "../utils/auth";
-import { removeBookId } from "../utils/localStorage";
 
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
