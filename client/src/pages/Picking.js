@@ -55,14 +55,30 @@ const Picking = () => {
   };
   return (
     <Container className={classes.container} maxWidth="lg">
-      <h1>Viewing Picking Tasks</h1>
+      <h1>Viewing Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid container alignItems="center" justify="center" direction="column">
           <Grid item>
             <TextField
               id="name-input"
               name="name"
-              label="Name"
+              label="Customer Name"
+              type="text"
+              value={formValues.name}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="name-input"
+              name="name"
+              label="Customer Address"
+              type="text"
+              value={formValues.name}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="name-input"
+              name="name"
+              label="Bin Location"
               type="text"
               value={formValues.name}
               onChange={handleInputChange}
