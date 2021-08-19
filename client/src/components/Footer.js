@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
+import { AppBar, Toolbar, Box } from "@material-ui/core";
 
 function Copyright() {
   return (
@@ -21,38 +22,24 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    width: "100%",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   footer: {
+//     width: "100%",
+//   },
+// }));
 
 export default function Footer() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <Container>
-      <section className="footer">
-        <div className="all">
-          <a href="#" target="_blank" className="lefter">
-            <div className="text">Link Here</div>
-          </a>
-          <a href="#" target="_blank" className="left">
-            <div className="text">Link Here</div>
-          </a>
-          <a href="#" target="_blank" className="center">
-            <div className="explainer">
-              <span>Hover Me</span>
-            </div>
-            <div className="text">GitHub</div>
-          </a>
-          <a href="#" target="_blank" className="right">
-            <div className="text">Link Here</div>
-          </a>
-          <a href="" target="_blank" className="righter">
-            <div className="text">Link Here</div>
-          </a>
-        </div>
-      </section>
-    </Container>
+    <AppBar position="static" color="secondary">
+      <Container maxWidth="md">
+        <Toolbar>
+          <Typography variant="body1" color="inherit"></Typography>
+        </Toolbar>
+        <Box mt={3}>
+          <Copyright />
+        </Box>
+      </Container>
+    </AppBar>
   );
 }
