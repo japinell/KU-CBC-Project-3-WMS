@@ -83,7 +83,6 @@ const Navbar = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <DrawerComponent />
           <Tabs
             onChange={handleClickTab}
             className={classes.tabsContainer}
@@ -177,6 +176,7 @@ const Navbar = () => {
             <GiBookAura className={classes.iconLogo} />
           </Typography>
           {renderLogin()}
+          <DrawerComponent />
         </Toolbar>
       </AppBar>
       <Menu
