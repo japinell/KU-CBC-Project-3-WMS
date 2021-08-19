@@ -2,13 +2,7 @@
 //  Function to retrieve to remove previously saved books from the user account
 //
 import React from "react";
-import {
-  Jumbotron,
-  Container,
-  CardColumns,
-  Card,
-  Button,
-} from "react-bootstrap";
+import { Jumbotron, Container, CardColumns, Card, Button } from "@material-ui/core";
 
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
@@ -70,11 +64,7 @@ const Dispatch = () => {
             return (
               <Card key={book.bookId} border="dark">
                 {book.image ? (
-                  <Card.Img
-                    src={book.image}
-                    alt={`The cover for ${book.title}`}
-                    variant="top"
-                  />
+                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant="top" />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

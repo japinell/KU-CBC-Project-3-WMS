@@ -97,6 +97,7 @@ const Admin = () => {
       );
     }
   };
+  export default Admin;
 };
 try { // statements to try
   isSupervisor = (admin); // function could throw exception
@@ -105,4 +106,3 @@ catch (e) {
   isSupervisor = false;
   logMyErrors(e);
 }
-export default Admin;
