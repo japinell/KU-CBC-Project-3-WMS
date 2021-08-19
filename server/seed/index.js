@@ -11,6 +11,7 @@ const seedOperation = require("./Operation");
 const seedOrderHeader = require("./OrderHeader");
 const seedOrderDetail = require("./OrderDetail");
 const seedRole = require("./Role");
+const seedTask = require("./Task");
 const seedUoM = require("./UoM");
 const sequelize = require("../config/connection");
 
@@ -47,6 +48,9 @@ const seedAll = async () => {
 
   await seedRole();
   console.log("\n----- Role Seeded -----\n");
+
+  await seedTask();
+  console.log("\n----- Task Seeded -----\n");
 
   await seedUoM();
   console.log("\n----- UoM Seeded -----\n");
