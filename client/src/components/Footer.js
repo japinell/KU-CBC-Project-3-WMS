@@ -10,13 +10,13 @@ import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { FaWarehouse } from "react-icons/fa";
-import { RiProductHuntLine } from "react-icons/ri";
-import { FiTruck } from "react-icons/fi";
+import { MdHome } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
-
-import SvgIcon from "@material-ui/core/SvgIcon";
-import PersonIcon from "@material-ui/icons/Person";
+import { BiTask } from "react-icons/bi";
+import { BiSpreadsheet } from "react-icons/bi";
+import { GiCardboardBox } from "react-icons/gi";
+import { BiBody } from "react-icons/bi";
+import { FiTruck } from "react-icons/fi";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,40 +28,10 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(16),
     },
   },
+  icons: {
+    fontSize: "1.4rem",
+  },
 }));
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link
-        color="inherit"
-        href="https://github.com/japinell/KU-CBC-Project-3-WMS"
-      >
-        Mini-WMS
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-function HomeIcon(props) {
-  return (
-    <Link href="/home">
-      <SvgIcon {...props} color="primary" to="/home">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-      </SvgIcon>
-    </Link>
-  );
-}
-function ProfileIcon(props) {
-  return (
-    <Link href="/home">
-      <PersonIcon {...props} color="primary" to="/profile"></PersonIcon>
-    </Link>
-  );
-}
 
 // const useStyles = makeStyles((theme) => ({
 //   footer: {
@@ -71,6 +41,109 @@ function ProfileIcon(props) {
 
 export default function Footer() {
   const classes = useStyles();
+  function Copyright() {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {"Copyright © "}
+        <Link
+          color="inherit"
+          href="https://github.com/japinell/KU-CBC-Project-3-WMS"
+        >
+          Mini-WMS
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    );
+  }
+
+  function HomeIcon(props) {
+    return (
+      <Link href="/home">
+        <MdHome
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/home"
+        ></MdHome>
+      </Link>
+    );
+  }
+  function ProfileIcon(props) {
+    return (
+      <Link href="/home">
+        <VscAccount
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/home"
+        >
+          {" "}
+        </VscAccount>
+      </Link>
+    );
+  }
+  function TasksIcon(props) {
+    return (
+      <Link href="/home">
+        <BiTask {...props} className={classes.icons} color="primary" to="/home">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </BiTask>
+      </Link>
+    );
+  }
+  function PickingIcon(props) {
+    return (
+      <Link href="/home">
+        <BiSpreadsheet
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/home"
+        >
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </BiSpreadsheet>
+      </Link>
+    );
+  }
+  function ReceivingIcon(props) {
+    return (
+      <Link href="/home">
+        <GiCardboardBox
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/home"
+        >
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </GiCardboardBox>
+      </Link>
+    );
+  }
+  function PutawayIcon(props) {
+    return (
+      <Link href="/home">
+        <BiBody {...props} className={classes.icons} color="primary" to="/home">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </BiBody>
+      </Link>
+    );
+  }
+  function DispatchIcon(props) {
+    return (
+      <Link href="/home">
+        <FiTruck
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/home"
+        >
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </FiTruck>
+      </Link>
+    );
+  }
+
   return (
     <AppBar position="static" color="secondary">
       <Container maxWidth="md">
@@ -84,8 +157,12 @@ export default function Footer() {
                 alignItems="center"
               >
                 <HomeIcon />
-                <HomeIcon />
-                <HomeIcon />
+                <ProfileIcon />
+                <TasksIcon />
+                <PickingIcon />
+                <ReceivingIcon />
+                <PutawayIcon />
+                <DispatchIcon />
               </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>
