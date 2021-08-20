@@ -22,6 +22,7 @@ import { GiCardboardBox } from "react-icons/gi";
 import { FiTruck } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
 import { BiBody } from "react-icons/bi";
+import { BiTask } from "react-icons/bi";
 
 import Auth from "../../utils/auth";
 
@@ -101,6 +102,13 @@ const Navbar = () => {
               disableRipple
               icon={<VscAccount className={classes.icons} />}
               label="Profile"
+            />
+            <Tab
+              component={Link}
+              to="/tasks"
+              disableRipple
+              icon={<BiTask className={classes.icons} />}
+              label="Tasks"
             />
             <Tab
               component={Link}
