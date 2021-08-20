@@ -15,6 +15,7 @@ import Link from "@material-ui/core/Link";
 import { useMutation, useQuery } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
+
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(6),
@@ -50,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const { userData } = require("../models/User.js");
+
+
 const [formValues, setFormValues] = useState(defaultValues);
 
   const handleInputChange = (e) => {
@@ -59,12 +63,12 @@ const [formValues, setFormValues] = useState(defaultValues);
       [name]: value,
     });
   };
-  const handleSliderChange = (name) => (e, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+  // const handleSliderChange = (name) => (e, value) => {
+  //   setFormValues({
+  //     ...formValues,
+  //     [name]: value,
+  //   });
+  // };
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
@@ -72,13 +76,15 @@ const [formValues, setFormValues] = useState(defaultValues);
 
 const cards = [];
 
-const renderComponent = () => {
-  for (const [i, firstName] of firstName.entries()) {
-    cards.push(<li>{firstName}</li>);
+const renderCards = () => {
+  for (const [cards, userData] of userData.entries()) {
+    cards.push(<li>{userData}</li>);
 
     return <div>{cards}</div>;
   }
 };
+
+renderCards();
 
 const Admin = () => {
   const classes = useStyles();
@@ -102,21 +108,22 @@ const Admin = () => {
                         color="textSecondary"
                         variant="body2"
                         component="p"
-                      >
+                        >
                         Assign New Task
                       </Typography>
                       <Input
+                        
                         className={classes.CardContent}
                         placeholder="Apply A User"
                         inputProps={{ "aria-label": "description" }}
                         onChange={handleInputChange}
-                      />
+                        />
                       <Input
                         className={classes.CardContent}
                         defaultValue="Select Action"
                         inputProps={{ "aria-label": "description" }}
                         onChange={handleInputChange}
-                      />
+                        />
                     </form>
                     <Button className={classes.heroButtons} variant="contained" color="primary" type="submit">
                       Submit
