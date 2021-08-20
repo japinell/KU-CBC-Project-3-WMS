@@ -71,12 +71,12 @@ export default function Footer() {
   }
   function ProfileIcon(props) {
     return (
-      <Link href="/home">
+      <Link href="/admin">
         <VscAccount
           {...props}
           className={classes.icons}
           color="primary"
-          to="/home"
+          to="/admin"
         >
           {" "}
         </VscAccount>
@@ -85,8 +85,13 @@ export default function Footer() {
   }
   function TasksIcon(props) {
     return (
-      <Link href="/home">
-        <BiTask {...props} className={classes.icons} color="primary" to="/home">
+      <Link href="/tasks">
+        <BiTask
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/tasks"
+        >
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </BiTask>
       </Link>
@@ -94,12 +99,12 @@ export default function Footer() {
   }
   function PickingIcon(props) {
     return (
-      <Link href="/home">
+      <Link href="/picking">
         <BiSpreadsheet
           {...props}
           className={classes.icons}
           color="primary"
-          to="/home"
+          to="/picking"
         >
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </BiSpreadsheet>
@@ -108,12 +113,12 @@ export default function Footer() {
   }
   function ReceivingIcon(props) {
     return (
-      <Link href="/home">
+      <Link href="/receiving">
         <GiCardboardBox
           {...props}
           className={classes.icons}
           color="primary"
-          to="/home"
+          to="/receiving"
         >
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </GiCardboardBox>
@@ -122,8 +127,13 @@ export default function Footer() {
   }
   function PutawayIcon(props) {
     return (
-      <Link href="/home">
-        <BiBody {...props} className={classes.icons} color="primary" to="/home">
+      <Link href="/putaway">
+        <BiBody
+          {...props}
+          className={classes.icons}
+          color="primary"
+          to="/putaway"
+        >
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </BiBody>
       </Link>
@@ -131,12 +141,12 @@ export default function Footer() {
   }
   function DispatchIcon(props) {
     return (
-      <Link href="/home">
+      <Link href="/dispatch">
         <FiTruck
           {...props}
           className={classes.icons}
           color="primary"
-          to="/home"
+          to="/dispatch"
         >
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         </FiTruck>
@@ -171,10 +181,12 @@ export default function Footer() {
                 className={classes.title}
                 color="primary"
               >
-                Text only
+                About
               </Typography>
               <ListItem color="primary">
-                <ListItemText primary="this is a list item" />
+                <ListItemText primary="GitHub" />
+                <ListItemText primary="Purchase" />
+                <ListItemText primary="Developers" />
                 <ListItemText />
               </ListItem>
             </Grid>
