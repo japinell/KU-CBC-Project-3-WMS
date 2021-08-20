@@ -16,6 +16,7 @@ import { FiTruck } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
 
 import SvgIcon from "@material-ui/core/SvgIcon";
+import PersonIcon from "@material-ui/icons/Person";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +52,13 @@ function HomeIcon(props) {
       <SvgIcon {...props} color="primary" to="/home">
         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
       </SvgIcon>
+    </Link>
+  );
+}
+function ProfileIcon(props) {
+  return (
+    <Link href="/home">
+      <PersonIcon {...props} color="primary" to="/profile"></PersonIcon>
     </Link>
   );
 }
