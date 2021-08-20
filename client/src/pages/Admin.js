@@ -63,17 +63,6 @@ const Admin = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <BusinessCenterIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Mini-WMS
-          </Typography>
-          <Typography variant="h6" align="right" color="inherit" noWrap>
-            Admin Portal
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         <div>
           <Container>
@@ -82,10 +71,10 @@ const Admin = () => {
                 <Grid container spacing={2} justifyContent="center">
                   <Typography
                     className={classes.title}
-                    color="textSecondary"
+                    color="textPrimary"
                     gutterBottom
                   >
-                    User
+                    Admin Portal
                   </Typography>
                   <FormControl>
                     <form
