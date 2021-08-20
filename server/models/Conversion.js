@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 //
 const conversionSchema = new Schema({
-  item: {
+  sku: {
     type: String,
     required: true,
   },

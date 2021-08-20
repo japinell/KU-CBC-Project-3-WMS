@@ -17,7 +17,7 @@ import { LOGIN_USER } from "../utils/mutations";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: theme.spacing(6),
+    padding: theme.spacing(9),
   },
   icon: {
     marginRight: theme.spacing(2),
@@ -87,7 +87,7 @@ renderCards();
 const Admin = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <Grid className={classes.container} maxWidth="lg">
       <CssBaseline />
       <main>
         <div>
@@ -145,7 +145,7 @@ const Admin = () => {
           </Container>
         </div>
       </main>
-    </React.Fragment>
+    </Grid>
   );
 };
 export default Admin;

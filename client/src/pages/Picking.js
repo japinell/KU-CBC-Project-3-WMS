@@ -59,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     textAlign: theme.left,
-    margin: theme.spacing(1),
     minWidth: 120,
   },
   selectEmpty: {
@@ -95,12 +94,7 @@ const Picking = () => {
     <Container className={classes.container} maxWidth="lg">
       <h1>Picking</h1>
       <form onSubmit={handleSubmit}>
-        <Grid
-          container
-          alignItems="center"
-          justifyContent="center"
-          direction="column"
-        >
+        <Grid>
           <Grid>
             <TextField
               id="orderType"

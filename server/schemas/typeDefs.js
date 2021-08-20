@@ -43,7 +43,7 @@ const typeDefs = gql`
   }
 
   type Item {
-    id: ID!
+    _id: ID!
     item: String!
     description: String!
     upc: String!
@@ -117,7 +117,7 @@ const typeDefs = gql`
     user: String!
     operation: Int!
     priority: Int!
-    items: [OrderDetail]
+    items: [OrderItem]
     note: String
   }
 

@@ -5,7 +5,7 @@ const { AddressBook } = require("../models");
 
 const addressBookData = [
   {
-    id: 10000,
+    code: 10000,
     name: "Customer 10000",
     type: "C",
     address: {
@@ -19,7 +19,7 @@ const addressBookData = [
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    id: 10001,
+    code: 10001,
     name: "Customer 10001",
     type: "C",
     address: {
@@ -33,7 +33,7 @@ const addressBookData = [
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    id: 10003,
+    code: 10003,
     name: "Vendor 10003",
     type: "V",
     address: {
@@ -47,7 +47,7 @@ const addressBookData = [
     datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
-    id: 10004,
+    code: 10004,
     name: "Employee 10004",
     type: "E",
     address: {
