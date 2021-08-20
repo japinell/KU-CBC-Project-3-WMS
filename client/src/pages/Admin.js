@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Input } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import { useMutation, useQuery } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: theme.spacing(6),
+  },
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -48,6 +50,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const [formValues, setFormValues] = useState(defaultValues);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+  const handleSliderChange = (name) => (e, value) => {
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValues);
+  };
+
 const cards = [];
 
 const renderComponent = () => {
@@ -65,23 +87,16 @@ const Admin = () => {
       <CssBaseline />
       <main>
         <div>
-          <Container>
+          <Container className={classes.container} maxWidth="lg">
             <Card className={classes.root} variant="outlined">
               <CardContent>
-                <Grid container spacing={2} justifyContent="center">
-                  <Typography
-                    className={classes.title}
-                    color="textPrimary"
-                    gutterBottom
-                  >
+                <Grid container spacing={6} justifyContent="center">
+                  <Typography className={classes.title} color="textPrimary" gutterBottom>
                     Admin Portal
                   </Typography>
                   <FormControl>
-                    <form
-                      className={classes.root}
-                      noValidate
-                      autoComplete="off"
-                    >
+                    <form className={classes.root} noValidate autoComplete="off"
+                    onSubmit={handleSubmit}>
                       <Typography
                         className={classes.pos}
                         color="textSecondary"
@@ -91,16 +106,20 @@ const Admin = () => {
                         Assign New Task
                       </Typography>
                       <Input
-                        placeholder="Select Employee"
+                        className={classes.CardContent}
+                        placeholder="Apply A User"
                         inputProps={{ "aria-label": "description" }}
+                        onChange={handleInputChange}
                       />
                       <Input
+                        className={classes.CardContent}
                         defaultValue="Select Action"
                         inputProps={{ "aria-label": "description" }}
+                        onChange={handleInputChange}
                       />
                     </form>
-                    <Button variant="contained" color="primary">
-                      Apply
+                    <Button className={classes.heroButtons} variant="contained" color="primary" type="submit">
+                      Submit
                     </Button>
                   </FormControl>
                 </Grid>
