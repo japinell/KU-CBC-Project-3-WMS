@@ -17,6 +17,9 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: theme.spacing(9),
+  },
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -61,7 +64,7 @@ const renderComponent = () => {
 const Admin = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <Grid className={classes.container} maxWidth="lg">
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
@@ -120,7 +123,7 @@ const Admin = () => {
           </Container>
         </div>
       </main>
-    </React.Fragment>
+    </Grid>
   );
 };
 export default Admin;

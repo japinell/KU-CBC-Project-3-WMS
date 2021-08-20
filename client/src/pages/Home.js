@@ -14,17 +14,33 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import SignUpForm from "../components/SignUpForm";
 import { LOGIN_USER } from "../utils/mutations";
+import { Player, ControlBar } from "video-react";
+import video from "../images/wms.mp4";
+import "../styles/footer.css";
 
 import Auth from "../utils/auth";
 
 import { useMutation, useQuery } from "@apollo/client";
 
+const useStyles = makeStyles((theme) => ({
+  videoContainer: {
+    paddingTop: "0%",
+  },
+}));
+
 const Home = () => {
+  const classes = useStyles();
   return (
     <>
-      <Container className="main">
-        <h2>Warehouse Management System</h2>
-      </Container>
+      <h2>Warehouse Management System</h2>
+      <Grid>
+        <Player
+          fluid={false}
+          className="player-wrapper"
+          autoPlay
+          src={video}
+        ></Player>
+      </Grid>
     </>
   );
 };
