@@ -5,7 +5,7 @@ const Inventory = require("../models/Inventory");
 
 const inventoryData = [
   {
-    item: "703250",
+    sku: "703250",
     description: '"PLATE RS10CY 3 COMP 500/10"""',
     location: "CS.EA.1",
     lot: "51",
@@ -14,7 +14,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617950",
+    sku: "617950",
     description: "PIGS FEET 12CT JAR",
     location: "JR.EA.12",
     lot: "617950",
@@ -23,7 +23,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614910",
+    sku: "614910",
     description: "OREO COOKIE SLUG PAK",
     location: "EA.EA.1",
     lot: "4474902",
@@ -32,7 +32,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616265",
+    sku: "616265",
     description: "COMBOS CARAMEL CREME PRETZEL 6.3OZ",
     location: "BAG.EA.1",
     lot: "414978087",
@@ -41,7 +41,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501080",
+    sku: "501080",
     description: "BIC PEN BLACK MSP 12CT",
     location: "PAK.EA.12",
     lot: "800000912",
@@ -50,7 +50,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608175",
+    sku: "608175",
     description: "DENTYNE ICE WINTER CHILL 9CT",
     location: "BX.EA.9",
     lot: "1254600546",
@@ -59,7 +59,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608515",
+    sku: "608515",
     description: "TRIDENT WHITE SPARKL MINT 9CT",
     location: "BX.EA.9",
     lot: "1254667623",
@@ -68,7 +68,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400686",
+    sku: "400686",
     description: "UNCLE RAYS SALT & PEPR 3OZ $1.19 EA",
     location: "BAG.EA.1",
     lot: "1415606175",
@@ -77,7 +77,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400684",
+    sku: "400684",
     description: "UNCLE RAYS JALAPENO 3OZ $1.19 EA",
     location: "BAG.EA.1",
     lot: "1415606176",
@@ -86,7 +86,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608966",
+    sku: "608966",
     description: "EXTRA SWEET ORANGE 10CT",
     location: "BX.EA.10",
     lot: "2200001388",
@@ -95,7 +95,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608844",
+    sku: "608844",
     description: "JUICY FRUIT STARBURST CHERRY 10CT",
     location: "BX.EA.10",
     lot: "2200001748",
@@ -104,7 +104,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608845",
+    sku: "608845",
     description: "JUICY FRUIT STARBURST STRAWBRY 10CT",
     location: "BX.EA.10",
     lot: "2200001749",
@@ -113,7 +113,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606385",
+    sku: "606385",
     description: "SKITTLES ORCHARDS KING SIZE 24CT",
     location: "EA.EA.24",
     lot: "2200013456",
@@ -122,7 +122,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605054",
+    sku: "605054",
     description: "SKITTLES ORCHARDS 24CT",
     location: "BOX.EA.24",
     lot: "2200013574",
@@ -131,7 +131,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604716",
+    sku: "604716",
     description: "KIT KAT WHITE MINIS KING SIZE 12CT",
     location: "BX.EA.12",
     lot: "3400013859",
@@ -140,7 +140,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603725",
+    sku: "603725",
     description: "REESES CRUNCHY PB CUP KNG SIZE 16CT",
     location: "BX.EA.16",
     lot: "3400043035",
@@ -149,7 +149,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603525",
+    sku: "603525",
     description: "REESES CRUNCHY PB CUP 24CT",
     location: "BX.EA.24",
     lot: "3400044475",
@@ -158,7 +158,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611970",
+    sku: "611970",
     description: "TWIZZLER BLACK LICORICE PEG BAG 7OZ",
     location: "BAG.EA.1",
     lot: "3400054400",
@@ -167,7 +167,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606365",
+    sku: "606365",
     description: "SNICKERS EXTREME NUT KING SZ 24CT",
     location: "BOX.EA.24",
     lot: "4000049453",
@@ -176,7 +176,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603935",
+    sku: "603935",
     description: "M&M CRISPY 24CT",
     location: "BX.EA.24",
     lot: "4000049479",
@@ -185,7 +185,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606197",
+    sku: "606197",
     description: "M&M CRISPY KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "4000049482",
@@ -194,7 +194,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616266",
+    sku: "616266",
     description: "COMBOS VANILLA FROST PRETZEL 6.3OZ",
     location: "BAG.EA.1",
     lot: "4141978085",
@@ -203,7 +203,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613280",
+    sku: "613280",
     description: "BLUE DIAM S.H.JALAPENO ALMD 12 TB",
     location: "BX.EA.12",
     lot: "4157005275",
@@ -212,7 +212,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613281",
+    sku: "613281",
     description: "BLUE DIAM HABANERO BBQ ALMD 12 TB",
     location: "BX.EA.12",
     lot: "4157005513",
@@ -221,7 +221,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613282",
+    sku: "613282",
     description: "BLUE DIAM LIGHTLY SALTD ALMD 12 TB",
     location: "BX.EA.12",
     lot: "4157011026",
@@ -230,7 +230,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605075",
+    sku: "605075",
     description: "SOUR PATCH KIDS ASSORTD 24CT",
     location: "BOX.EA.24",
     lot: "7046209850",
@@ -239,7 +239,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605076",
+    sku: "605076",
     description: "SOUR PATCH KIDS WATERMELON 24CT",
     location: "BOX.EA.24",
     lot: "7046209852",
@@ -248,7 +248,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611632",
+    sku: "611632",
     description: "SOUR PATCH KIDS CANDY 3.5OZ THTR BX",
     location: "BOX.EA.1",
     lot: "7046262496",
@@ -257,7 +257,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609875",
+    sku: "609875",
     description: "MENTOS PURE FRSH GUM MINT 10CT",
     location: "EA.EA.10",
     lot: "7339001393",
@@ -266,7 +266,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402660",
+    sku: "402660",
     description: "NUTS REDSKIN 5# BOX",
     location: "BOX.EA.1",
     lot: "7723210600",
@@ -275,7 +275,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609940",
+    sku: "609940",
     description: "TIC TAC FRESHMINT BIG PK 12CT TRAY",
     location: "BX.EA.12",
     lot: "9800057610",
@@ -284,7 +284,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609930",
+    sku: "609930",
     description: "TIC TAC ORANGE BIG PACK 12CT TRAY",
     location: "BX.EA.12",
     lot: "9800057634",
@@ -293,7 +293,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611350",
+    sku: "611350",
     description: "MILK DUDS THEA BOX 5OZ",
     location: "BOX.EA.1",
     lot: "10700021523",
@@ -302,7 +302,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611630",
+    sku: "611630",
     description: "WHOPPERS BOX 5OZ",
     location: "BOX.EA.1",
     lot: "10700024401",
@@ -311,7 +311,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610680",
+    sku: "610680",
     description: "GOOD & PLENTY THEATER BOX 6OZ",
     location: "BOX.EA.1",
     lot: "10700088137",
@@ -320,7 +320,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600190",
+    sku: "600190",
     description: "JOLLY RANCHER APPLETWST CHNGMKR 160",
     location: "BX.EA.160",
     lot: "10700100047",
@@ -329,7 +329,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600230",
+    sku: "600230",
     description: "JOLLY RANCHER WATERMELON CHANGEMAKE",
     location: "BX.EA.160",
     lot: "10700100870",
@@ -338,7 +338,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610990",
+    sku: "610990",
     description: "JOLLY RANCHER FRUIT N' SOUR PEG 7OZ",
     location: "BAG.EA.1",
     lot: "10700102000",
@@ -347,7 +347,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603271",
+    sku: "603271",
     description: "JOLLY RANCHER CRNCH N CHW ASST 18CT",
     location: "BX.EA.18",
     lot: "10700132703",
@@ -356,7 +356,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610986",
+    sku: "610986",
     description: "JOLLY RANCHER CRNCH N CHW ASST PEG",
     location: "EA.EA.1",
     lot: "10700132727",
@@ -365,7 +365,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601680",
+    sku: "601680",
     description: "JOLLY RANCHER LOLLIPOPS 50/15",
     location: "BX.EA.50",
     lot: "10700158505",
@@ -374,7 +374,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601614",
+    sku: "601614",
     description: "JOLLY RANCHR ASORTED HARD CNDY 12CT",
     location: "BX.EA.12",
     lot: "10700517111",
@@ -383,7 +383,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601615",
+    sku: "601615",
     description: "JOLLY RANCHR WATRMLN HARD CNDY 12CT",
     location: "BX.EA.12",
     lot: "10700517135",
@@ -392,7 +392,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610985",
+    sku: "610985",
     description: "JOLLY RANCHER AWESME REDS 6.5OZ PEG",
     location: "BAG.EA.1",
     lot: "10700517227",
@@ -401,7 +401,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611040",
+    sku: "611040",
     description: "JOLLY RANCHER FRUIT CHEWS PEG 6.5OZ",
     location: "BAG.EA.1",
     lot: "10700519303",
@@ -410,7 +410,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603840",
+    sku: "603840",
     description: "JOLLY RANCHER FRUIT CHEWS 12CT",
     location: "BX.EA.12",
     lot: "10700519511",
@@ -419,7 +419,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603847",
+    sku: "603847",
     description: "JOLLY RANCHER TROPICL FRT CHWS 12CT",
     location: "BX.EA.12",
     lot: "10700519542",
@@ -428,7 +428,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611050",
+    sku: "611050",
     description: "JOLLY RANCHER SCREAMING SOUR 6.5OZ",
     location: "BAG.EA.1",
     lot: "10700529357",
@@ -437,7 +437,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604596",
+    sku: "604596",
     description: "JOLLY RANCHR BITES KS 3.4OZ 10CT",
     location: "BX.EA.10",
     lot: "10700529596",
@@ -446,7 +446,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603810",
+    sku: "603810",
     description: "JOLLY RANCHER SCREAMIN SOURS 24CT",
     location: "BX.EA.24",
     lot: "10700529602",
@@ -455,7 +455,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611070",
+    sku: "611070",
     description: "WHOPPERS 7OZ PEG BAG",
     location: "BAG.EA.1",
     lot: "10700702026",
@@ -464,7 +464,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610980",
+    sku: "610980",
     description: "JOLLY RANCHER ORIGINAL ASSORTED 7OZ",
     location: "BAG.EA.1",
     lot: "10700702309",
@@ -473,7 +473,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611010",
+    sku: "611010",
     description: "JOLLY RANCHER CINNAMON FIRE PEG 7OZ",
     location: "BAG.EA.1",
     lot: "10700702323",
@@ -482,7 +482,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611430",
+    sku: "611430",
     description: "JOLLY RANCHER GUMMI THEATER BOX 4OZ",
     location: "BOX.EA.1",
     lot: "10700708608",
@@ -491,7 +491,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605610",
+    sku: "605610",
     description: "ZERO 24CT",
     location: "BX.EA.24",
     lot: "10700904140",
@@ -500,7 +500,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605590",
+    sku: "605590",
     description: "WHOPPERS 24CT",
     location: "BX.EA.24",
     lot: "10700923851",
@@ -509,7 +509,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601600",
+    sku: "601600",
     description: "JOLLY RANCHER APPLE STIX 36CT",
     location: "BX.EA.36",
     lot: "10700953049",
@@ -518,7 +518,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601610",
+    sku: "601610",
     description: "JOLLY RANCHER CHERRY STIX 36CT",
     location: "BX.EA.36",
     lot: "10700953063",
@@ -527,7 +527,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604320",
+    sku: "604320",
     description: "MILK DUDS 24CT",
     location: "BX.EA.24",
     lot: "10700958211",
@@ -536,7 +536,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603240",
+    sku: "603240",
     description: "HEATH 18CT",
     location: "BX.EA.18",
     lot: "10700961228",
@@ -545,7 +545,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604650",
+    sku: "604650",
     description: "PAY DAY 24CT",
     location: "BX.EA.24",
     lot: "10700963239",
@@ -554,7 +554,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605780",
+    sku: "605780",
     description: "PAY DAY KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "10700963277",
@@ -563,7 +563,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602210",
+    sku: "602210",
     description: "CANDY NECKLACE JAR 36CT",
     location: "BX.EA.36",
     lot: "11206003368",
@@ -572,7 +572,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601980",
+    sku: "601980",
     description: "SLAP STIX 36CT",
     location: "EA.EA.36",
     lot: "11211004534",
@@ -581,7 +581,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604392",
+    sku: "604392",
     description: "SKY BAR 36CT",
     location: "BX.EA.24",
     lot: "11215510543",
@@ -590,7 +590,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602080",
+    sku: "602080",
     description: "NECCO CANDY BUTTON 24CT BOX",
     location: "BX.EA.24",
     lot: "11215512288",
@@ -599,7 +599,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604390",
+    sku: "604390",
     description: "NECCO WAFER ROLLS 24CT",
     location: "BX.EA.24",
     lot: "11215512516",
@@ -608,7 +608,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604400",
+    sku: "604400",
     description: "NECCO CHOCOLATE WAFERS 24CT",
     location: "EA.EA.24",
     lot: "11215512974",
@@ -617,7 +617,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609620",
+    sku: "609620",
     description: "CERTS PEPPERMINT 24CT",
     location: "BX.EA.24",
     lot: "12546005074",
@@ -626,7 +626,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609630",
+    sku: "609630",
     description: "CERTS SPEARMINT 24CT",
     location: "EA.EA.24",
     lot: "12546005081",
@@ -635,7 +635,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609640",
+    sku: "609640",
     description: "CERTS WINTERGREEN 24CT",
     location: "BX.EA.24",
     lot: "12546005104",
@@ -644,7 +644,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609660",
+    sku: "609660",
     description: "CERTS FRESH FRUIT MIX 24CT",
     location: "EA.EA.24",
     lot: "12546005111",
@@ -653,7 +653,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609590",
+    sku: "609590",
     description: "CERTS CINNAMON 24CT",
     location: "BX.EA.24",
     lot: "12546005128",
@@ -662,7 +662,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608386",
+    sku: "608386",
     description: "STRIDE SOUR PATCH GUM REDBERRY 12CT",
     location: "BX.EA.12",
     lot: "12546005227",
@@ -671,7 +671,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608556",
+    sku: "608556",
     description: "TRIDENT BLACK RASPBERRY 12CT VAL PK",
     location: "BX.EA.12",
     lot: "12546006347",
@@ -680,7 +680,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608555",
+    sku: "608555",
     description: "TRIDENT PINEAPPLE TWIST 12CT VAL PK",
     location: "BX.EA.12",
     lot: "12546006385",
@@ -689,7 +689,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608384",
+    sku: "608384",
     description: "STRIDE SOUR PATCH GUM WATERMLN 12CT",
     location: "BX.EA.12",
     lot: "12546007146",
@@ -698,7 +698,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607550",
+    sku: "607550",
     description: "BUBBLICIOUS WATERMELON WAVE 18CT",
     location: "BX.EA.18",
     lot: "12546010030",
@@ -707,7 +707,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607480",
+    sku: "607480",
     description: "BUBBLICIOUS TROPICAL 18CT",
     location: "BX.EA.18",
     lot: "12546010115",
@@ -716,7 +716,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607470",
+    sku: "607470",
     description: "BUBBLICIOUS GONZO GRAPE 18CT",
     location: "BX.EA.18",
     lot: "12546010160",
@@ -725,7 +725,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607460",
+    sku: "607460",
     description: "BUBBLICIOUS BLUE BLOWOUT 18CT",
     location: "BX.EA.18",
     lot: "12546010252",
@@ -734,7 +734,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607450",
+    sku: "607450",
     description: "BUBBLICIOUS BUBBLE GUM 18CT",
     location: "BX.EA.18",
     lot: "12546010269",
@@ -743,7 +743,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607530",
+    sku: "607530",
     description: "BUBBLICIOUS TWISTED TORNADO 18CT",
     location: "BX.EA.18",
     lot: "12546010290",
@@ -752,7 +752,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607520",
+    sku: "607520",
     description: "BUBBLICIOUS STRAWBERRY 18CT",
     location: "BX.EA.18",
     lot: "12546010313",
@@ -761,7 +761,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607510",
+    sku: "607510",
     description: "BUBBLICIOUS SAVAGE SOUR APPLE 18CT",
     location: "BX.EA.18",
     lot: "12546010320",
@@ -770,7 +770,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607500",
+    sku: "607500",
     description: "BUBBLICIOUS CARNIVAL COTTON CANDY",
     location: "BX.EA.18",
     lot: "12546015028",
@@ -779,7 +779,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607570",
+    sku: "607570",
     description: "BUBBLICIOUS BURST THUNDRN STRM 12CT",
     location: "BX.EA.12",
     lot: "12546015103",
@@ -788,7 +788,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608431",
+    sku: "608431",
     description: "STRIDE ID BERRY MELON 9CT",
     location: "BX.EA.9",
     lot: "12546017015",
@@ -797,7 +797,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608432",
+    sku: "608432",
     description: "STRIDE ID SPEARMINT 9CT",
     location: "BX.EA.9",
     lot: "12546017039",
@@ -806,7 +806,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607610",
+    sku: "607610",
     description: "CHICLETS FRUIT FLAVOR GUM 20CT",
     location: "BX.EA.20",
     lot: "12546025034",
@@ -815,7 +815,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608170",
+    sku: "608170",
     description: "DENTYNE ICE ARCTIC CHILL 9CT",
     location: "BX.EA.9",
     lot: "12546032001",
@@ -824,7 +824,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608140",
+    sku: "608140",
     description: "DENTYNE FIRE SPICY CINNAMON 9CT",
     location: "BX.EA.9",
     lot: "12546032056",
@@ -833,7 +833,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608093",
+    sku: "608093",
     description: "DENTYNE PURE HERBAL MINT 10CT BOX",
     location: "BX.EA.10",
     lot: "12546032353",
@@ -842,7 +842,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608094",
+    sku: "608094",
     description: "DENTYNE PURE MINT MELON 10CT BOX",
     location: "BX.EA.10",
     lot: "12546032360",
@@ -851,7 +851,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608390",
+    sku: "608390",
     description: "STRIDE SPEARMINT 12CT",
     location: "BX.EA.12",
     lot: "12546068031",
@@ -860,7 +860,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608500",
+    sku: "608500",
     description: "STRIDE SWEET PEPPERMINT 12CT",
     location: "BX.EA.12",
     lot: "12546068123",
@@ -869,7 +869,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608564",
+    sku: "608564",
     description: "TRIDENT STRAWBERRY TWIST 12CT",
     location: "BX.EA.12",
     lot: "12546074353",
@@ -878,7 +878,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608640",
+    sku: "608640",
     description: "TRIDENT ORIGINAL 12CT VAL PAK",
     location: "BX.EA.12",
     lot: "12546075060",
@@ -887,7 +887,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608660",
+    sku: "608660",
     description: "TRIDENT SPEARMINT 12CT VAL PK",
     location: "BX.EA.12",
     lot: "12546075077",
@@ -896,7 +896,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607811",
+    sku: "607811",
     description: "TRIDENT CINNAMON VAL PAK 12CT",
     location: "BX.EA.12",
     lot: "12546075091",
@@ -905,7 +905,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608560",
+    sku: "608560",
     description: "TRIDENT BUBBLE GUM 12CT VAL PAK",
     location: "BX.EA.12",
     lot: "12546075107",
@@ -914,7 +914,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608530",
+    sku: "608530",
     description: "TRIDENT WHITE PEPPERMINT 9CT",
     location: "BX.EA.9",
     lot: "12546075589",
@@ -923,7 +923,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608520",
+    sku: "608520",
     description: "TRIDENT WHITE SPEARMINT 9CT",
     location: "BX.EA.9",
     lot: "12546075619",
@@ -932,7 +932,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608670",
+    sku: "608670",
     description: "TRIDENT TROPICAL TWIST 12CT",
     location: "BX.EA.12",
     lot: "12546075671",
@@ -941,7 +941,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608610",
+    sku: "608610",
     description: "TRIDENT WATERMELON TWIST 12CT VALPK",
     location: "BX.EA.12",
     lot: "12546075732",
@@ -950,7 +950,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607801",
+    sku: "607801",
     description: "TRIDENT SWEET MINTY TWIST 12CT 18PC",
     location: "BX.EA.12",
     lot: "12546075831",
@@ -959,7 +959,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608150",
+    sku: "608150",
     description: "DENTYNE ICE PEPPERMINT 9CT",
     location: "BX.EA.9",
     lot: "12546097024",
@@ -968,7 +968,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608160",
+    sku: "608160",
     description: "DENTYNE ICE SPEARMINT 9CT",
     location: "BX.EA.9",
     lot: "12546097031",
@@ -977,7 +977,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608100",
+    sku: "608100",
     description: "DENTYNE ICE SHIVER MINT 9CT",
     location: "BX.EA.9",
     lot: "12546097086",
@@ -986,7 +986,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402310",
+    sku: "402310",
     description: "DAILY CHEF KETCHUP JUG 114OZ EACH",
     location: "EA.EA.1",
     lot: "13000514910",
@@ -995,7 +995,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402311",
+    sku: "402311",
     description: "HEINZ MUSTARD JUG 104OZ EACH",
     location: "EA.EA.1",
     lot: "13000652209",
@@ -1004,7 +1004,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "401025",
+    sku: "401025",
     description: "POPCORN SALT DIAMOND CRYSTAL",
     location: "EA.EA.1",
     lot: "13600019013",
@@ -1013,7 +1013,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605330",
+    sku: "605330",
     description: "SUGAR DADDY MILK CARAMEL POP 24CT",
     location: "BX.EA.24",
     lot: "14200332106",
@@ -1022,7 +1022,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605320",
+    sku: "605320",
     description: "SUGAR BABIES 24CT",
     location: "BX.EA.24",
     lot: "14200333103",
@@ -1031,7 +1031,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601420",
+    sku: "601420",
     description: "CHARMS SWEET POPS 48CT",
     location: "BX.EA.48",
     lot: "14200337064",
@@ -1040,7 +1040,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601430",
+    sku: "601430",
     description: "CHARMS SWEET N SOUR POPS 48/10",
     location: "BX.EA.48",
     lot: "14200337088",
@@ -1049,7 +1049,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601400",
+    sku: "601400",
     description: "CHARMS FLUFFY STUFF COTTON CNDY POP",
     location: "BX.EA.48",
     lot: "14200337828",
@@ -1058,7 +1058,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602400",
+    sku: "602400",
     description: "BLOW POPS SUPER ASSORTED 36CT",
     location: "BX.EA.36",
     lot: "14200338566",
@@ -1067,7 +1067,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601260",
+    sku: "601260",
     description: "BLOW POPS CHERRY 48CT",
     location: "BX.EA.48",
     lot: "14200338610",
@@ -1076,7 +1076,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601240",
+    sku: "601240",
     description: "BLOW POPS ASSORTED 100CT",
     location: "BX.EA.100",
     lot: "14200338696",
@@ -1085,7 +1085,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601320",
+    sku: "601320",
     description: "BLOW POPS BLUE RAZZ BERRY 48/15",
     location: "BX.EA.48",
     lot: "14200338870",
@@ -1094,7 +1094,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611560",
+    sku: "611560",
     description: "SUGAR BABIES THEATER BOX 6OZ",
     location: "EA.EA.1",
     lot: "14200535453",
@@ -1103,7 +1103,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616630",
+    sku: "616630",
     description: "CHEX MIX CHEDDAR EACH 3.75OZ",
     location: "BAG.EA.1",
     lot: "16000126060",
@@ -1112,7 +1112,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616752",
+    sku: "616752",
     description: "CHEX MIX BLD PARTY BLND EACH 3.75OZ",
     location: "BAG.EA.1",
     lot: "16000126077",
@@ -1121,7 +1121,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616730",
+    sku: "616730",
     description: "CHEX MIX HOT'N SPICY EACH 3.75OZ",
     location: "BAG.EA.1",
     lot: "16000126091",
@@ -1130,7 +1130,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603060",
+    sku: "603060",
     description: "NATURE VLY STRWBRY YOGURT CHWY GRAN",
     location: "BX.EA.16",
     lot: "16000131583",
@@ -1139,7 +1139,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614681",
+    sku: "614681",
     description: "CHEERIOS CEREAL CUP 6CT 1.3OZ",
     location: "6CT.EA.6",
     lot: "16000138964",
@@ -1148,7 +1148,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614683",
+    sku: "614683",
     description: "CINNAMON TOAST CRNCH CEREAL CUP 6CT",
     location: "6CT.EA.6",
     lot: "16000141544",
@@ -1157,7 +1157,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614682",
+    sku: "614682",
     description: "CHEERIOS HONEY NUT CEREAL CUP 6CT",
     location: "6CT.EA.6",
     lot: "16000141551",
@@ -1166,7 +1166,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603171",
+    sku: "603171",
     description: "FIBER ONE OATS & CHOC BAR 16CT",
     location: "BX.EA.16",
     lot: "16000146525",
@@ -1175,7 +1175,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603120",
+    sku: "603120",
     description: "NATURE VLY TRAIL MX FRUIT/NUT BARS",
     location: "BX.EA.16",
     lot: "16000151208",
@@ -1184,7 +1184,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300900",
+    sku: "300900",
     description: "BOWL APPETIT THREE CHEESE ROTINI",
     location: "BWL.EA.1",
     lot: "16000154803",
@@ -1193,7 +1193,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300890",
+    sku: "300890",
     description: "BOWL APPETIT PASTA ALFREDO",
     location: "BWL.EA.1",
     lot: "16000154902",
@@ -1202,7 +1202,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300880",
+    sku: "300880",
     description: "BOWL APPETIT HERB CHICKEN VEGETABLE",
     location: "BWL.EA.1",
     lot: "16000155800",
@@ -1211,7 +1211,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616740",
+    sku: "616740",
     description: "CHEX MIX TRADITIONAL EACH 3.75OZ",
     location: "BAG.EA.1",
     lot: "16000160101",
@@ -1220,7 +1220,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616770",
+    sku: "616770",
     description: "GARDETTO - ORIGINAL RECIPE 1.75 OZ",
     location: "BAG.EA.1",
     lot: "16000166097",
@@ -1229,7 +1229,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616760",
+    sku: "616760",
     description: "GARDETTO ORIGINAL RECIPE 5.5 OZ EA",
     location: "BAG.EA.1",
     lot: "16000166196",
@@ -1238,7 +1238,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616430",
+    sku: "616430",
     description: "GARDETTO SPECIAL ITALIAN RECIPE 5OZ",
     location: "BAG.EA.1",
     lot: "16000166998",
@@ -1247,7 +1247,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616420",
+    sku: "616420",
     description: "GARDETTO ITALIAN CHEESE BLEND 5.5OZ",
     location: "BAG.EA.1",
     lot: "16000167490",
@@ -1256,7 +1256,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616540",
+    sku: "616540",
     description: "CHEX MIX CHCOLT TRTLE MX EACH 4.5OZ",
     location: "BAG.EA.1",
     lot: "16000167940",
@@ -1265,7 +1265,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616550",
+    sku: "616550",
     description: "CHEX MIX CHOCLTE PNT BTTR 4.5OZ EA",
     location: "BAG.EA.1",
     lot: "16000168923",
@@ -1274,7 +1274,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606470",
+    sku: "606470",
     description: "CEREAL BAR HONEY NUT CHEERIOS 12CT",
     location: "BX.EA.12",
     lot: "16000185814",
@@ -1283,7 +1283,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606460",
+    sku: "606460",
     description: "CEREAL BAR CINNAMON TOAST CRUNCH",
     location: "BX.EA.12",
     lot: "16000185821",
@@ -1292,7 +1292,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616663",
+    sku: "616663",
     description: "BUGLES CHEDDAR/CARAMEL MIX EACH",
     location: "BAG.EA.1",
     lot: "16000277489",
@@ -1301,7 +1301,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616583",
+    sku: "616583",
     description: "BUGLES CHOCLTE PNUT BTTR 3.25OZ EA",
     location: "BAG.EA.1",
     lot: "16000292055",
@@ -1310,7 +1310,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603126",
+    sku: "603126",
     description: "FIBER ONE BROWNIE CHOC FUDGE 12CT",
     location: "BX.EA.12",
     lot: "16000323124",
@@ -1319,7 +1319,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603129",
+    sku: "603129",
     description: "NATURE VLY RECHRG CHRY/DKCHOC 15CT",
     location: "BX.EA.15",
     lot: "16000323148",
@@ -1328,7 +1328,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603128",
+    sku: "603128",
     description: "NATURE VLY RECHRG CRN/ALMND 15CT",
     location: "BX.EA.15",
     lot: "16000323155",
@@ -1337,7 +1337,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603110",
+    sku: "603110",
     description: "NATURE VLY OAT/HONEY CRNCHY GRANOLA",
     location: "BX.EA.18",
     lot: "16000335301",
@@ -1346,7 +1346,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603170",
+    sku: "603170",
     description: "NATURE VLY PEANUT BTTR CRNCHY GRANO",
     location: "BX.EA.18",
     lot: "16000335509",
@@ -1355,7 +1355,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616660",
+    sku: "616660",
     description: "BUGLES ORIGINAL 3OZ BAG EACH",
     location: "BAG.EA.1",
     lot: "16000368309",
@@ -1364,7 +1364,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603140",
+    sku: "603140",
     description: "NATURE VLY SWT/SLTY GRANOLA PEANUT",
     location: "BX.EA.16",
     lot: "16000420670",
@@ -1373,7 +1373,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603150",
+    sku: "603150",
     description: "NATURE VLY SWT/SLTY GRANOLA ALMOND",
     location: "BX.EA.16",
     lot: "16000420687",
@@ -1382,7 +1382,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616637",
+    sku: "616637",
     description: "GOLDEN GRAHM CHOC/MARSH. BAR 2.1OZ",
     location: "BX.EA.12",
     lot: "16000423367",
@@ -1391,7 +1391,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616667",
+    sku: "616667",
     description: "BUGLES HOT BUFFALO 3OZ BAG EACH",
     location: "BAG.EA.1",
     lot: "16000434370",
@@ -1400,7 +1400,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606463",
+    sku: "606463",
     description: "CEREAL BAR LUCKY CHARMS 12CT",
     location: "BX.EA.12",
     lot: "16000435698",
@@ -1409,7 +1409,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616450",
+    sku: "616450",
     description: "GARDETTO ROASTED GARLIC RYE 4.75OZ",
     location: "BAG.EA.1",
     lot: "16000502789",
@@ -1418,7 +1418,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616580",
+    sku: "616580",
     description: "BUGLES SWEET & SALTY CRML 3.5OZ EA",
     location: "BAG.EA.1",
     lot: "16000504257",
@@ -1427,7 +1427,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616761",
+    sku: "616761",
     description: "GARDETTO CHIPOLTE CHEDDAR 5.5OZ BAG",
     location: "BAG.EA.1",
     lot: "16000505384",
@@ -1436,7 +1436,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616541",
+    sku: "616541",
     description: "CHEX MIX JALAPENO CHDR EACH 3.75OZ",
     location: "BAG.EA.1",
     lot: "16000505827",
@@ -1445,7 +1445,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616636",
+    sku: "616636",
     description: "CHEX CHIPS WASABI 1.5OZ EA",
     location: "BAG.EA.1",
     lot: "16000506190",
@@ -1454,7 +1454,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616635",
+    sku: "616635",
     description: "CHEX CHIPS CARAMLIZD ONION 1.5OZ EA",
     location: "BAG.EA.1",
     lot: "16000506282",
@@ -1463,7 +1463,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616638",
+    sku: "616638",
     description: "CHEX CHIPS CHEDDAR/JALAPNO 1.5OZ EA",
     location: "BAG.EA.1",
     lot: "16000506299",
@@ -1472,7 +1472,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616547",
+    sku: "616547",
     description: "CHEX MIX MUDDY BUDDIES EACH 4.5OZ",
     location: "BAG.EA.1",
     lot: "16000507326",
@@ -1481,7 +1481,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616634",
+    sku: "616634",
     description: "CHEX CHIPS CINNAMON SUGAR 1.5OZ",
     location: "BAG.EA.1",
     lot: "16000510692",
@@ -1490,7 +1490,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616330",
+    sku: "616330",
     description: "BUGLES NACHO CHEESE 3OZ EACH",
     location: "BAG.EA.1",
     lot: "16000513792",
@@ -1499,7 +1499,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616750",
+    sku: "616750",
     description: "CHEX MIX SWT & SLTY TRAIL MX EACH",
     location: "BAG.EA.1",
     lot: "16000523098",
@@ -1508,7 +1508,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402260",
+    sku: "402260",
     description: "ROSES LIME 1 LITER EACH",
     location: "BTL.EA.1",
     lot: "16600000736",
@@ -1517,7 +1517,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402270",
+    sku: "402270",
     description: "ROSES GRENADINE 1 LITER EACH",
     location: "BTL.EA.1",
     lot: "16600000767",
@@ -1526,7 +1526,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618290",
+    sku: "618290",
     description: "JACK LINK ALL AMERICAN 12/16 1.2OZ",
     location: "BX.EA.16",
     lot: "17082001399",
@@ -1535,7 +1535,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618293",
+    sku: "618293",
     description: "JACK LINK JALPENO BF/CHS COMBO 16CT",
     location: "BX.EA.16",
     lot: "17082001405",
@@ -1544,7 +1544,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618411",
+    sku: "618411",
     description: "JACK LINK SWT/HOT BFSTK 12/12 1 OZ",
     location: "BX.EA.12",
     lot: "17082002136",
@@ -1553,7 +1553,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618370",
+    sku: "618370",
     description: "JACK LINK TERIYAKI BFSTK 12/12 10Z",
     location: "BX.EA.12",
     lot: "17082002747",
@@ -1562,7 +1562,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618310",
+    sku: "618310",
     description: "JACK LINK BLK PPR BFSTK 12/12 1OZ",
     location: "BX.EA.12",
     lot: "17082003232",
@@ -1571,7 +1571,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618320",
+    sku: "618320",
     description: "JACK LINK KC MASTERPC BFSTK 1 OZ",
     location: "BX.EA.12",
     lot: "17082003836",
@@ -1580,7 +1580,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618375",
+    sku: "618375",
     description: "JACK LINK ORIGINAL BF STK 1 OZ 12CT",
     location: "BX.EA.12",
     lot: "17082004024",
@@ -1589,7 +1589,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618373",
+    sku: "618373",
     description: "JACK LINK JRKY CHW ORIGNL CAN 12CT",
     location: "BX.EA.12",
     lot: "17082005458",
@@ -1598,7 +1598,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618372",
+    sku: "618372",
     description: "JACK LINK JRKY CHW TERYKI CAN 12CT",
     location: "BX.EA.12",
     lot: "17082005489",
@@ -1607,7 +1607,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618270",
+    sku: "618270",
     description: "JACK LINK JUMBO ORIGINAL BFSTK 2OZ.",
     location: "BX.EA.12",
     lot: "17082006035",
@@ -1616,7 +1616,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618280",
+    sku: "618280",
     description: "JACK LINK JUMBO BLK PPR BFSTK 2 OZ",
     location: "BX.EA.12",
     lot: "17082006233",
@@ -1625,7 +1625,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618250",
+    sku: "618250",
     description: "JACK LINK JUMBO TERIYAKI BFSTK 2OZ",
     location: "BX.EA.12",
     lot: "17082006738",
@@ -1634,7 +1634,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618288",
+    sku: "618288",
     description: "JACK LINK ORIG. BEEF JERKY 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082007872",
@@ -1643,7 +1643,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617992",
+    sku: "617992",
     description: "JACK LINK SWEET/HOT 3.25OZ BAG",
     location: "BAG.EA.1",
     lot: "17082007889",
@@ -1652,7 +1652,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617991",
+    sku: "617991",
     description: "JACK LINK PEPPERED BAG 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082007896",
@@ -1661,7 +1661,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617993",
+    sku: "617993",
     description: "JACK LINK TERIYAKI BAG 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082007957",
@@ -1670,7 +1670,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400765",
+    sku: "400765",
     description: "JACK LINK ORIG NUGGETS 3.25OZ BAG",
     location: "BAG.EA.1",
     lot: "17082112071",
@@ -1679,7 +1679,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617996",
+    sku: "617996",
     description: "JACK LINK BUFF CHICKEN NUGG 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082112170",
@@ -1688,7 +1688,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400773",
+    sku: "400773",
     description: "JACK LINK TERIYAKI NUGGTS 3.25OZ BG",
     location: "BAG.EA.1",
     lot: "17082112774",
@@ -1697,7 +1697,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400750",
+    sku: "400750",
     description: "JACK LINK JALAPENO BAG EACH 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082470171",
@@ -1706,7 +1706,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400740",
+    sku: "400740",
     description: "JACK LINK PRM RIB TNDR CUT 3OZ BAG",
     location: "BAG.EA.1",
     lot: "17082470478",
@@ -1715,7 +1715,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618324",
+    sku: "618324",
     description: "JACK LINK BBQ BEEF JERKY 3.25OZ BAG",
     location: "BAG.EA.1",
     lot: "17082474568",
@@ -1724,7 +1724,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618482",
+    sku: "618482",
     description: "JACK LINK ORG BF JRKY 1.5OZ EACH",
     location: "STK.EA.1",
     lot: "17082480408",
@@ -1733,7 +1733,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618483",
+    sku: "618483",
     description: "JACK LINK PPRD BF JRKY 1.5Z EACH",
     location: "BG.BG.1",
     lot: "17082480415",
@@ -1742,7 +1742,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618486",
+    sku: "618486",
     description: "JACK LINK TERI BF JRKY 1.5OZ EACH",
     location: "STK.EA.1",
     lot: "17082480422",
@@ -1751,7 +1751,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618485",
+    sku: "618485",
     description: "JACK LINK SWT HT BF JRKY 1.5OZ EACH",
     location: "PAK.EA.1",
     lot: "17082485434",
@@ -1760,7 +1760,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618484",
+    sku: "618484",
     description: "JACK LINK SMKD BF JRKY 1.5Z EACH",
     location: "BAG.EA.1",
     lot: "17082485465",
@@ -1769,7 +1769,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400760",
+    sku: "400760",
     description: "JACK LINK ORIG SMOKEHOUSE 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082700100",
@@ -1778,7 +1778,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618489",
+    sku: "618489",
     description: "JACK LINK CARNE JLP JRKY 1.5OZ EACH",
     location: "STK.EA.1",
     lot: "17082840446",
@@ -1787,7 +1787,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618488",
+    sku: "618488",
     description: "JACK LINK HICKORY SMKD 1.5OZ EACH",
     location: "STK.EA.1",
     lot: "17082845465",
@@ -1796,7 +1796,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617997",
+    sku: "617997",
     description: "JACK LINK TURKEY JERKY 3.25OZ BAG",
     location: "BG.EA.1",
     lot: "17082873293",
@@ -1805,7 +1805,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617995",
+    sku: "617995",
     description: "JACK LINK BURRITO BAG 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082874603",
@@ -1814,7 +1814,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617994",
+    sku: "617994",
     description: "JACK LINK SRIRACHA BAG 3.25OZ",
     location: "BAG.EA.1",
     lot: "17082874627",
@@ -1823,7 +1823,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618334",
+    sku: "618334",
     description: "JACK LINK SMALL BATCHED ORIG 2.5OZ",
     location: "EA.EA.1",
     lot: "17082874689",
@@ -1832,7 +1832,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618336",
+    sku: "618336",
     description: "JACK LINK SMALL BATCHD PEPPRD 2.5OZ",
     location: "EA.EA.1",
     lot: "17082874702",
@@ -1841,7 +1841,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618002",
+    sku: "618002",
     description: "JACK LINK LIL CHUB 24CT",
     location: "BX.EA.24",
     lot: "17082881137",
@@ -1850,7 +1850,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400770",
+    sku: "400770",
     description: "JACK LINK ORIG BEEF STICK 1.5OZ 24C",
     location: "BX.EA.24",
     lot: "17082881601",
@@ -1859,7 +1859,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400777",
+    sku: "400777",
     description: "JACK LINK STRICKLER BEEF STICK 36CT",
     location: "BX.EA.36",
     lot: "17082891044",
@@ -1868,7 +1868,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400779",
+    sku: "400779",
     description: "JACK LINK ORG BF STK 1.02OZ $0.99",
     location: "BX.EA.24",
     lot: "17082891747",
@@ -1877,7 +1877,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400775",
+    sku: "400775",
     description: "JACK LINK ORG BF STK .92OZ 72CT",
     location: "BX.EA.72",
     lot: "17082891778",
@@ -1886,7 +1886,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400778",
+    sku: "400778",
     description: "JACK LINK MILD SASQCH 2.2OZ 24CT BX",
     location: "BX.EA.24",
     lot: "17082895806",
@@ -1895,7 +1895,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400776",
+    sku: "400776",
     description: "JACK LINK ORIG. SASQUATCH 24CT BOX",
     location: "BX.EA.24",
     lot: "17082895813",
@@ -1904,7 +1904,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614736",
+    sku: "614736",
     description: "PILLSBURY MINI SFT SNICKERDLD 6/3OZ",
     location: "BX.EA.6",
     lot: "18000322732",
@@ -1913,7 +1913,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614735",
+    sku: "614735",
     description: "PILLSBURY MINI SFT CHOC CHIP 6/3OZ",
     location: "BX.EA.6",
     lot: "18000322749",
@@ -1922,7 +1922,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503010",
+    sku: "503010",
     description: "SEAFOAM MOTOR TREATMENT 16OZ EACH",
     location: "EA.EA.1",
     lot: "18812000019",
@@ -1931,7 +1931,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609800",
+    sku: "609800",
     description: "LIFESAVERS PEP O MINT 20CT",
     location: "BX.EA.20",
     lot: "19000080653",
@@ -1940,7 +1940,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609810",
+    sku: "609810",
     description: "LIFESAVERS SPEAR O MINT 20CT",
     location: "BX.EA.20",
     lot: "19000080677",
@@ -1949,7 +1949,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609770",
+    sku: "609770",
     description: "LIFESAVERS BUTTER RUM 20CT",
     location: "BX.EA.20",
     lot: "19000080691",
@@ -1958,7 +1958,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609830",
+    sku: "609830",
     description: "LIFESAVERS WILD CHERRY 20CT",
     location: "BX.EA.20",
     lot: "19000080714",
@@ -1967,7 +1967,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611310",
+    sku: "611310",
     description: "LIFESAVERS GUMMIES 5 FLAVOR PEG BAG",
     location: "BAG.EA.1",
     lot: "19000083422",
@@ -1976,7 +1976,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611320",
+    sku: "611320",
     description: "GUMMI SAVERS WILD BERRY 7OZ",
     location: "EA.EA.1",
     lot: "19000083449",
@@ -1985,7 +1985,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610540",
+    sku: "610540",
     description: "LIFESAVERS 5 FLAVOR 6OZ BAG",
     location: "BAG.EA.1",
     lot: "19000085013",
@@ -1994,7 +1994,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610550",
+    sku: "610550",
     description: "LIFESAVERS PEP O MINT 6OZ BAG",
     location: "BAG.EA.1",
     lot: "19000085037",
@@ -2003,7 +2003,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610570",
+    sku: "610570",
     description: "LIFESAVERS WINTOGREEN 6OZ",
     location: "BAG.EA.1",
     lot: "19000085044",
@@ -2012,7 +2012,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610530",
+    sku: "610530",
     description: "LIFESAVERS BUTTER RUM 6OZ BAG",
     location: "BAG.EA.1",
     lot: "19000085051",
@@ -2021,7 +2021,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610560",
+    sku: "610560",
     description: "LIFESAVERS WILD CHERRY 6OZ",
     location: "BAG.EA.1",
     lot: "19000085082",
@@ -2030,7 +2030,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611241",
+    sku: "611241",
     description: "LIFESAVERS GUMMIES SOURS PEG BAG",
     location: "BAG.EA.1",
     lot: "19000170498",
@@ -2039,7 +2039,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612950",
+    sku: "612950",
     description: "TROLLI CLASSIC BEARS",
     location: "BAG.EA.1",
     lot: "20709002409",
@@ -2048,7 +2048,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612970",
+    sku: "612970",
     description: "TROLLI PEACHIE-OS PEG BAG EACH",
     location: "BAG.EA.1",
     lot: "20709002539",
@@ -2057,7 +2057,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612910",
+    sku: "612910",
     description: "TROLLI APPLE-OS PEG BAG EACH",
     location: "BAG.EA.1",
     lot: "20709002621",
@@ -2066,7 +2066,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613010",
+    sku: "613010",
     description: "TROLLI SQUIGGLES 012040",
     location: "BAG.EA.1",
     lot: "20709012040",
@@ -2075,7 +2075,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612990",
+    sku: "612990",
     description: "TROLLI TROPIC-OS PEG BAG EACH",
     location: "BAG.EA.1",
     lot: "20709012064",
@@ -2084,7 +2084,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612943",
+    sku: "612943",
     description: "TROLLI SOUR BRITE EGGS PEG BAG",
     location: "BAG.EA.1",
     lot: "20709012088",
@@ -2093,7 +2093,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612930",
+    sku: "612930",
     description: "TROLLI SOUR BRITE CRAWLERS PEG BAG",
     location: "BAG.EA.1",
     lot: "20709012309",
@@ -2102,7 +2102,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613000",
+    sku: "613000",
     description: "TROLLI SOUR BRITE OCTOPUS PEG BAG",
     location: "BAG.EA.1",
     lot: "20709012316",
@@ -2111,7 +2111,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612980",
+    sku: "612980",
     description: "TROLLI STRAWBERRY PUFFS PEG BAG EA",
     location: "BAG.EA.1",
     lot: "20709012569",
@@ -2120,7 +2120,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612976",
+    sku: "612976",
     description: "TROLLI GUMMI SODA POPPERS PEG BG EA",
     location: "BAG.EA.1",
     lot: "20709110432",
@@ -2129,7 +2129,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612977",
+    sku: "612977",
     description: "TROLLI GUMMI BIG BOLD BEARS PEG BAG",
     location: "BAG.EA.1",
     lot: "20709110449",
@@ -2138,7 +2138,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612920",
+    sku: "612920",
     description: "TROLLI CHERRY BOMBERS",
     location: "BAG.EA.1",
     lot: "20709708028",
@@ -2147,7 +2147,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "620130",
+    sku: "620130",
     description: "KRAFT EASY MAC ORIGINAL MICROWAVE",
     location: "BWL.EA.1",
     lot: "21000016419",
@@ -2156,7 +2156,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300459",
+    sku: "300459",
     description: '"PASQUALE\'S PIZZA SSG/BACON 12"" EACH"',
     location: "EA.EA.1",
     lot: "21821129107",
@@ -2165,7 +2165,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300457",
+    sku: "300457",
     description: '"PASQUALE\'S PIZZA HAMBURGER 12"" EACH"',
     location: "EA.EA.1",
     lot: "21821130127",
@@ -2174,7 +2174,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300455",
+    sku: "300455",
     description: '"PASQUALE\'S PIZZA SAUSAGE 12"" EACH"',
     location: "EA.EA.1",
     lot: "21821131230",
@@ -2183,7 +2183,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300456",
+    sku: "300456",
     description: '"PASQUALE\'S PIZZA PEPPERONI 12"" EACH"',
     location: "EA.EA.1",
     lot: "21821132343",
@@ -2192,7 +2192,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300458",
+    sku: "300458",
     description: '"PASQUALE\'S PIZZA DELUXE 12"" EACH"',
     location: "EA.EA.1",
     lot: "21821133456",
@@ -2201,7 +2201,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611244",
+    sku: "611244",
     description: "LIFESAVERS GUMMIES PARADISE MX 7OZ",
     location: "BAG.EA.1",
     lot: "22000016003",
@@ -2210,7 +2210,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608753",
+    sku: "608753",
     description: "ORBIT CITRUS REMIX 12CT",
     location: "BX.EA.12",
     lot: "22000017462",
@@ -2219,7 +2219,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607701",
+    sku: "607701",
     description: "HUBBA BUBBA MAX STRWBRY/WTRMLN 18CT",
     location: "BX.EA.18",
     lot: "22000100641",
@@ -2228,7 +2228,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609530",
+    sku: "609530",
     description: "ECLIPSE MINT SPEARMINT 9CT",
     location: "BX.EA.8",
     lot: "22000101143",
@@ -2237,7 +2237,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607720",
+    sku: "607720",
     description: "HUBBA BUBBA MAX OUTRAGEOUS ORIGINAL",
     location: "BX.EA.18",
     lot: "22000102645",
@@ -2246,7 +2246,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609790",
+    sku: "609790",
     description: "LIFESAVERS 5 FLAVOR 20CT",
     location: "BX.EA.20",
     lot: "22000104281",
@@ -2255,7 +2255,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609840",
+    sku: "609840",
     description: "LIFESAVERS WINTOGREEN 20CT",
     location: "BX.EA.20",
     lot: "22000104311",
@@ -2264,7 +2264,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608782",
+    sku: "608782",
     description: "WRIGLEYS 5 COBALT 10CT",
     location: "BX.EA.10",
     lot: "22000105066",
@@ -2273,7 +2273,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608781",
+    sku: "608781",
     description: "WRIGLEYS 5 RAIN 10CT",
     location: "BX.EA.10",
     lot: "22000105080",
@@ -2282,7 +2282,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606381",
+    sku: "606381",
     description: "SKITTLES WILDBERRY KING SIZE 24CT",
     location: "EA.EA.24",
     lot: "22000105219",
@@ -2291,7 +2291,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608925",
+    sku: "608925",
     description: "EXTRA MIXED BERRY GUM 10CT",
     location: "BX.EA.10",
     lot: "22000106308",
@@ -2300,7 +2300,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605053",
+    sku: "605053",
     description: "SKITTLES DESSERTS 24CT",
     location: "BOX.EA.24",
     lot: "22000106445",
@@ -2309,7 +2309,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608880",
+    sku: "608880",
     description: "WRIGLEYS SPEARMINT SLIM PK 10CT",
     location: "BX.EA.10",
     lot: "22000106964",
@@ -2318,7 +2318,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608790",
+    sku: "608790",
     description: "WRIGLEYS DOUBLEMINT SLIM PK 10CT",
     location: "BX.EA.10",
     lot: "22000106971",
@@ -2327,7 +2327,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608840",
+    sku: "608840",
     description: "WRIGLEYS JUICY FRUIT SLM PK 10CT",
     location: "BX.EA.10",
     lot: "22000106988",
@@ -2336,7 +2336,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608720",
+    sku: "608720",
     description: "WRIGLEYS BIG RED SLIM PK 10CT",
     location: "BX.EA.10",
     lot: "22000106995",
@@ -2345,7 +2345,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608890",
+    sku: "608890",
     description: "WRIGLEYS WINTERFRESH SLIM PK 10CT",
     location: "BX.EA.10",
     lot: "22000107008",
@@ -2354,7 +2354,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608785",
+    sku: "608785",
     description: "*D/C WRIGLEYS 5 ELIXIR 10CT",
     location: "BX.EA.10",
     lot: "22000107350",
@@ -2363,7 +2363,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608789",
+    sku: "608789",
     description: "WRIGLEY 5 PHOTON PINAPPLE BLND 10CT",
     location: "BX.EA.10",
     lot: "22000108357",
@@ -2372,7 +2372,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609432",
+    sku: "609432",
     description: "ALTOIDS SMALLS PEPPERMINT 9CT",
     location: "BX.EA.9",
     lot: "22000109040",
@@ -2381,7 +2381,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609433",
+    sku: "609433",
     description: "ALTOIDS SMALLS WINTERGREEN 9CT",
     location: "BX.EA.9",
     lot: "22000109057",
@@ -2390,7 +2390,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605225",
+    sku: "605225",
     description: "STARBURST FRUITY SLUSHIES 24CT",
     location: "BX.EA.24",
     lot: "22000113474",
@@ -2399,7 +2399,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609060",
+    sku: "609060",
     description: "ORBIT SWEETMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114839",
@@ -2408,7 +2408,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608680",
+    sku: "608680",
     description: "ORBIT SPEARMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114846",
@@ -2417,7 +2417,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608740",
+    sku: "608740",
     description: "ORBIT CINNAMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114853",
@@ -2426,7 +2426,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608700",
+    sku: "608700",
     description: "ORBIT PEPPERMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114860",
@@ -2435,7 +2435,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608710",
+    sku: "608710",
     description: "ORBIT WINTERMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114884",
@@ -2444,7 +2444,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608730",
+    sku: "608730",
     description: "ORBIT BUBBLEMINT 12CT",
     location: "BX.EA.12",
     lot: "22000114891",
@@ -2453,7 +2453,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607930",
+    sku: "607930",
     description: "WRIGLEYS SPEARMINT 40CT",
     location: "BX.EA.40",
     lot: "22000115713",
@@ -2462,7 +2462,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607910",
+    sku: "607910",
     description: "WRIGLEYS DOUBLEMINT 40",
     location: "BX.EA.40",
     lot: "22000115720",
@@ -2471,7 +2471,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607920",
+    sku: "607920",
     description: "WRIGLEYS JUICY FRUIT 40",
     location: "BX.EA.40",
     lot: "22000115737",
@@ -2480,7 +2480,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607900",
+    sku: "607900",
     description: "WRIGLEYS BIG RED 40",
     location: "BX.EA.40",
     lot: "22000115751",
@@ -2489,7 +2489,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607940",
+    sku: "607940",
     description: "WRIGLEYS WINTERFRESH 40CT",
     location: "BX.EA.40",
     lot: "22000115782",
@@ -2498,7 +2498,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608793",
+    sku: "608793",
     description: "WRIGLEYS 5 PRISM 10CT",
     location: "BX.EA.10",
     lot: "22000116031",
@@ -2507,7 +2507,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608756",
+    sku: "608756",
     description: "ORBIT STRAWBERRY REMIX 12CT",
     location: "BX.EA.12",
     lot: "22000116185",
@@ -2516,7 +2516,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605172",
+    sku: "605172",
     description: "STARBURST GUMMI BURSTS DUOS 24CT",
     location: "BX.EA.24",
     lot: "22000116635",
@@ -2525,7 +2525,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608786",
+    sku: "608786",
     description: "WRIGLEYS 5 REACT MINT 10CT",
     location: "BX.EA.10",
     lot: "22000117038",
@@ -2534,7 +2534,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609140",
+    sku: "609140",
     description: "ECLIPSE MINT PEPPERMINT 8CT",
     location: "BX.EA.8",
     lot: "22000117403",
@@ -2543,7 +2543,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609050",
+    sku: "609050",
     description: "ECLIPSE MINTS WINTERFROST 8CT",
     location: "BX.EA.8",
     lot: "22000117410",
@@ -2552,7 +2552,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609071",
+    sku: "609071",
     description: "ECLIPSE PEPPERMINT 8CT",
     location: "BX.EA.8",
     lot: "22000119445",
@@ -2561,7 +2561,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609000",
+    sku: "609000",
     description: "ECLIPSE WINTERFROST 8CT",
     location: "BX.EA.8",
     lot: "22000119452",
@@ -2570,7 +2570,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609070",
+    sku: "609070",
     description: "ECLIPSE POLAR ICE 8CT",
     location: "BX.EA.8",
     lot: "22000119612",
@@ -2579,7 +2579,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608990",
+    sku: "608990",
     description: "ECLIPSE SPEARMINT 8CT",
     location: "BX.EA.8",
     lot: "22000119650",
@@ -2588,7 +2588,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607026",
+    sku: "607026",
     description: "BUBBLE TAPE MYSTERY FLAVOR 12CT",
     location: "BX.EA.12",
     lot: "22000120199",
@@ -2597,7 +2597,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607704",
+    sku: "607704",
     description: "HUBBA BUBBA MAX MYSTERY 18CT",
     location: "BX.EA.18",
     lot: "22000120243",
@@ -2606,7 +2606,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608939",
+    sku: "608939",
     description: "EXTRA SMOOTH MINT GUM 10CT",
     location: "BX.EA.10",
     lot: "22000121523",
@@ -2615,7 +2615,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608797",
+    sku: "608797",
     description: "WRIGLEY 5 RPM FRUIT 10CT",
     location: "BX.EA.10",
     lot: "22000121905",
@@ -2624,7 +2624,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611322",
+    sku: "611322",
     description: "LIFESAVERS GUMIS 5 FLVR KNG SZ 15CT",
     location: "BX.EA.15",
     lot: "22000121998",
@@ -2633,7 +2633,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608788",
+    sku: "608788",
     description: "WRIGLEY 5 ASCENT WINTRMINT 10CT",
     location: "BX.EA.10",
     lot: "22000123930",
@@ -2642,7 +2642,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609410",
+    sku: "609410",
     description: "ALTOIDS PEPPERMINT TINS 12CT",
     location: "BX.EA.12",
     lot: "22000158925",
@@ -2651,7 +2651,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609420",
+    sku: "609420",
     description: "ALTOIDS WINTERGREEN MNTS 12CT",
     location: "BX.EA.12",
     lot: "22000158932",
@@ -2660,7 +2660,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608970",
+    sku: "608970",
     description: "EXTRA WINTERFRESH 10CT",
     location: "BX.EA.10",
     lot: "22000159465",
@@ -2669,7 +2669,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608980",
+    sku: "608980",
     description: "EXTRA CLASSIC BUBBLE 10CT",
     location: "BX.EA.10",
     lot: "22000159489",
@@ -2678,7 +2678,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608964",
+    sku: "608964",
     description: "EXTRA SENSATN SWT WATERMELON 10CT",
     location: "BX.EA.10",
     lot: "22000159519",
@@ -2687,7 +2687,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608920",
+    sku: "608920",
     description: "EXTRA PEPPERMINT 10CT",
     location: "BX.EA.10",
     lot: "22000159526",
@@ -2696,7 +2696,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608930",
+    sku: "608930",
     description: "EXTRA POLAR ICE 10CT",
     location: "BX.EA.10",
     lot: "22000159533",
@@ -2705,7 +2705,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "608940",
+    sku: "608940",
     description: "EXTRA SPEARMINT SLIM PK 10CT",
     location: "BX.EA.10",
     lot: "22000159540",
@@ -2714,7 +2714,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611280",
+    sku: "611280",
     description: "LIFESAVERS GUMMIES 5 FLAVOR THEATER",
     location: "BOX.EA.1",
     lot: "22000209747",
@@ -2723,7 +2723,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611787",
+    sku: "611787",
     description: "STARBURST GUMMIBRST DUOS PEG BAG",
     location: "BAG.EA.1",
     lot: "22000234350",
@@ -2732,7 +2732,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611316",
+    sku: "611316",
     description: "LIFESAVERS GUMMIES COLLISIONS PG BG",
     location: "BAG.EA.1",
     lot: "22000238358",
@@ -2741,7 +2741,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606870",
+    sku: "606870",
     description: "BIG LEAGUE CHEW SWINGIN SOUR APPLE",
     location: "BX.EA.12",
     lot: "22110152813",
@@ -2750,7 +2750,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606840",
+    sku: "606840",
     description: "BIG LEAGUE CHEW ORIGINAL 12CT",
     location: "BX.EA.12",
     lot: "22110153209",
@@ -2759,7 +2759,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606880",
+    sku: "606880",
     description: "BIG LEAGUE CHEW GRAPE 12CT",
     location: "BX.EA.12",
     lot: "22110153216",
@@ -2768,7 +2768,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606910",
+    sku: "606910",
     description: "BIG LEAGUE CHEW WATERMELON 12CT",
     location: "BX.EA.12",
     lot: "22110153230",
@@ -2777,7 +2777,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607020",
+    sku: "607020",
     description: "BUBBLE TAPE AWESOME ORIGINAL 24CT",
     location: "BX.EA.24",
     lot: "22110279800",
@@ -2786,7 +2786,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501770",
+    sku: "501770",
     description: "TROJAN MAGNUM EACH",
     location: "PAK.EA.1",
     lot: "22600642036",
@@ -2795,7 +2795,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501800",
+    sku: "501800",
     description: "TROJAN ULTRA THIN LUBRICATED EACH",
     location: "PAK.EA.1",
     lot: "22600926207",
@@ -2804,7 +2804,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501730",
+    sku: "501730",
     description: "TROJAN LUBRICATED EACH",
     location: "PAK.EA.1",
     lot: "22600930508",
@@ -2813,7 +2813,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501740",
+    sku: "501740",
     description: "TROJAN SPERMICIDAL EACH",
     location: "PAK.EA.1",
     lot: "22600931505",
@@ -2822,7 +2822,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501750",
+    sku: "501750",
     description: "TROJAN RIBBED EACH",
     location: "PAK.EA.1",
     lot: "22600940507",
@@ -2831,7 +2831,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501790",
+    sku: "501790",
     description: "TROJAN HER PLEASURE CONDOM EACH",
     location: "PAK.EA.1",
     lot: "22600973201",
@@ -2840,7 +2840,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614280",
+    sku: "614280",
     description: "CHEEZ IT SNACK SIZE 8CT",
     location: "BOX.EA.8",
     lot: "24100122332",
@@ -2849,7 +2849,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614290",
+    sku: "614290",
     description: "CHEEZ IT WHITE CHEDDAR 8CT",
     location: "BOX.EA.8",
     lot: "24100126538",
@@ -2858,7 +2858,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614270",
+    sku: "614270",
     description: "CHEEZ IT HOT & SPICY 8CT",
     location: "BOX.EA.8",
     lot: "24100127955",
@@ -2867,7 +2867,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614940",
+    sku: "614940",
     description: "CHEEZ IT ORIGINAL BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "24100191338",
@@ -2876,7 +2876,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614950",
+    sku: "614950",
     description: "CHEEZ IT CHEDDAR JACK BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "24100203611",
@@ -2885,7 +2885,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615240",
+    sku: "615240",
     description: "CHEEZ IT SLUG PACK",
     location: "BOX.EA.1",
     lot: "24100226426",
@@ -2894,7 +2894,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614945",
+    sku: "614945",
     description: "CHEEZ IT WHITE CHEDDAR BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "24100315338",
@@ -2903,7 +2903,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614271",
+    sku: "614271",
     description: "CHEEZ IT HOT & SPICY 3OZ BAG EACH",
     location: "BAG.EA.1",
     lot: "24100372768",
@@ -2912,7 +2912,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614951",
+    sku: "614951",
     description: "CHEEZ IT SNACK MIX 4.50OZ BAG EACH",
     location: "EA.EA.1",
     lot: "24100455447",
@@ -2921,7 +2921,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "302771",
+    sku: "302771",
     description: "FOLGERS CLASSIC ROAST 11.3OZ BAG",
     location: "EA.EA.1",
     lot: "25500002279",
@@ -2930,7 +2930,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "302750",
+    sku: "302750",
     description: "FOLGERS COFFEE AUTO 48OZ EACH",
     location: "EA.EA.1",
     lot: "25500005188",
@@ -2939,7 +2939,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618750",
+    sku: "618750",
     description: "SLIM JIM BEEF & CHEESE STICKS 18CT",
     location: "BX.EA.18",
     lot: "26200112053",
@@ -2948,7 +2948,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618660",
+    sku: "618660",
     description: "SLIM JIM GIANT ORIGINAL 24CT",
     location: "BX.EA.24",
     lot: "26200117058",
@@ -2957,7 +2957,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618710",
+    sku: "618710",
     description: "SLIM JIM GIANT TABASCO 24CT",
     location: "BX.EA.24",
     lot: "26200117355",
@@ -2966,7 +2966,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618740",
+    sku: "618740",
     description: "SLIM JIM GIANT NACHO 24CT",
     location: "BX.EA.24",
     lot: "26200117454",
@@ -2975,7 +2975,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618730",
+    sku: "618730",
     description: "SLIM JIM GIANT MILD 24CT",
     location: "BX.EA.24",
     lot: "26200117553",
@@ -2984,7 +2984,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618674",
+    sku: "618674",
     description: "SLIM JIM MONSTER HNY BBQ STICK 18CT",
     location: "BX.EA.18",
     lot: "26200140414",
@@ -2993,7 +2993,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618661",
+    sku: "618661",
     description: "SLIM JIM MONSTER TABASCO STICK 18CT",
     location: "BX.EA.18",
     lot: "26200140513",
@@ -3002,7 +3002,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618755",
+    sku: "618755",
     description: "SLIM JIM MONSTER ORIG 18CT 1.94OZ",
     location: "BX.EA.18",
     lot: "26200140612",
@@ -3011,7 +3011,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618659",
+    sku: "618659",
     description: "SLIM JIM GIANT PEPPER 24CT",
     location: "BX.EA.24",
     lot: "26200230610",
@@ -3020,7 +3020,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618658",
+    sku: "618658",
     description: "SLIM JIM GIANT BBQ (BARBEQUE) 24CT",
     location: "BX.EA.24",
     lot: "26200230634",
@@ -3029,7 +3029,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618657",
+    sku: "618657",
     description: "SLIM JIM GIANT SWEET N HOT 24CT",
     location: "BX.EA.24",
     lot: "26200230658",
@@ -3038,7 +3038,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618670",
+    sku: "618670",
     description: "FIRE CRACKER GIANT RED HOT - 15CT",
     location: "BX.EA.15",
     lot: "26200322056",
@@ -3047,7 +3047,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618680",
+    sku: "618680",
     description: "TIJUANA MAMA SAUSAGE 12CT",
     location: "BX.EA.12",
     lot: "26200391953",
@@ -3056,7 +3056,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613185",
+    sku: "613185",
     description: "DAVIDS JUMBO BLACK PEPPER 6OZ EACH",
     location: "BAG.EA.1",
     lot: "26200423883",
@@ -3065,7 +3065,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613190",
+    sku: "613190",
     description: "DAVIDS SUNFLOWER SDS ORIG 5.25OZ EA",
     location: "BAG.EA.1",
     lot: "26200461700",
@@ -3074,7 +3074,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613953",
+    sku: "613953",
     description: "DAVIDS PUMPKIN SEED 5OZ EACH",
     location: "BAG.EA.1",
     lot: "26200463787",
@@ -3083,7 +3083,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613170",
+    sku: "613170",
     description: "DAVIDS JALPENO/SALSA SEED 5.25OZ EA",
     location: "BAG.EA.1",
     lot: "26200464701",
@@ -3092,7 +3092,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613200",
+    sku: "613200",
     description: "DAVIDS BBQ SUNFLOWER SDS 5.25OZ EA",
     location: "BAG.EA.1",
     lot: "26200465708",
@@ -3101,7 +3101,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613180",
+    sku: "613180",
     description: "DAVIDS RANCH SUNFLWR SD 5.25OZ EACH",
     location: "BAG.EA.1",
     lot: "26200467702",
@@ -3110,7 +3110,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613201",
+    sku: "613201",
     description: "DAVIDS CHILI LIME SNFLWR SDS 5.25Z",
     location: "BAG.EA.1",
     lot: "26200467911",
@@ -3119,7 +3119,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617085",
+    sku: "617085",
     description: "ANDY CAPP CHEDDAR UNPRICED 3OZ EACH",
     location: "BAG.EA.1",
     lot: "26200471587",
@@ -3128,7 +3128,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617091",
+    sku: "617091",
     description: "ANDY CAPP CHEDDAR FRY 3.5OZ BAG EA",
     location: "BAG.EA.1",
     lot: "26200494609",
@@ -3137,7 +3137,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617092",
+    sku: "617092",
     description: "ANDY CAPP HOT FRY NP 3.5OZ BAG EACH",
     location: "BOX.EA.1",
     lot: "26200495804",
@@ -3146,7 +3146,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618605",
+    sku: "618605",
     description: "SLIM JIM PREPRICED 2/$1 100CT",
     location: "BX.EA.100",
     lot: "26200615097",
@@ -3155,7 +3155,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618615",
+    sku: "618615",
     description: "SLIM JIM BLACK PEPPER 3.15OZ BAG",
     location: "EA.EA.1",
     lot: "26200762319",
@@ -3164,7 +3164,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618617",
+    sku: "618617",
     description: "SLIM JIM MESQUITE STK 3.15OZ BAG",
     location: "EA.EA.1",
     lot: "26200762340",
@@ -3173,7 +3173,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602630",
+    sku: "602630",
     description: "BUTTERFINGER 36CT",
     location: "BX.EA.36",
     lot: "28000012731",
@@ -3182,7 +3182,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602520",
+    sku: "602520",
     description: "BABY RUTH 24CT",
     location: "BX.EA.24",
     lot: "28000015992",
@@ -3191,7 +3191,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604900",
+    sku: "604900",
     description: "RAISINETS 36CT",
     location: "BX.EA.36",
     lot: "28000080075",
@@ -3200,7 +3200,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611120",
+    sku: "611120",
     description: "RAISINETS THEATER BOX 3.5OZ",
     location: "BOX.EA.1",
     lot: "28000080402",
@@ -3209,7 +3209,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602550",
+    sku: "602550",
     description: "BIT O HONEY BAR 24CT",
     location: "BX.EA.24",
     lot: "28000087012",
@@ -3218,7 +3218,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604670",
+    sku: "604670",
     description: "OH HENRY 36CT",
     location: "BX.EA.36",
     lot: "28000089092",
@@ -3227,7 +3227,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600620",
+    sku: "600620",
     description: "LAFFY TAFFY STRAWBERRY JAR 145CT",
     location: "JR.EA.145",
     lot: "28000119492",
@@ -3236,7 +3236,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611121",
+    sku: "611121",
     description: "BUTTERFINGER BITES THEATER BOX 3.5Z",
     location: "BOX.EA.1",
     lot: "28000130008",
@@ -3245,7 +3245,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604450",
+    sku: "604450",
     description: "NESTLE CRUNCH 36CT",
     location: "BX.EA.36",
     lot: "28000131791",
@@ -3254,7 +3254,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602320",
+    sku: "602320",
     description: "LAFFY TAFFY ROPE STRAWBERRY 24CT",
     location: "BX.EA.24",
     lot: "28000158873",
@@ -3263,7 +3263,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611891",
+    sku: "611891",
     description: "LAFFY TAFFY PEG BAG 6OZ EACH",
     location: "BAG.EA.1",
     lot: "28000194802",
@@ -3272,7 +3272,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604490",
+    sku: "604490",
     description: "100 GRAND 36CT",
     location: "BX.EA.36",
     lot: "28000206376",
@@ -3281,7 +3281,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606300",
+    sku: "606300",
     description: "100 GRAND KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "28000206611",
@@ -3290,7 +3290,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602310",
+    sku: "602310",
     description: "LAFFY TAFFY ROPE GRAPE 24/25",
     location: "BX.EA.24",
     lot: "28000362263",
@@ -3299,7 +3299,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602330",
+    sku: "602330",
     description: "LAFFY TAFFY ROPE SOUR APPLE 24CT",
     location: "BX.EA.24",
     lot: "28000442262",
@@ -3308,7 +3308,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602350",
+    sku: "602350",
     description: "LAFFY TAFFY ROPE MYSTERY SWIRL 24CT",
     location: "BX.EA.24",
     lot: "28000662264",
@@ -3317,7 +3317,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602280",
+    sku: "602280",
     description: "LAFFY TAFFY ROPE BLUE RASPBER 24/25",
     location: "BX.EA.24",
     lot: "28000666774",
@@ -3326,7 +3326,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602340",
+    sku: "602340",
     description: "LAFFY TAFFY ROPE BANANA 24CT",
     location: "BX.EA.24",
     lot: "28000752262",
@@ -3335,7 +3335,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606260",
+    sku: "606260",
     description: "NESTLE CRUNCH KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "28000779214",
@@ -3344,7 +3344,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605640",
+    sku: "605640",
     description: "BUTTERFINGER KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "28000890810",
@@ -3353,7 +3353,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605630",
+    sku: "605630",
     description: "BABY RUTH KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "28000891015",
@@ -3362,7 +3362,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602300",
+    sku: "602300",
     description: "LAFFY TAFFY ROPE CHERRY 24CT",
     location: "BX.EA.24",
     lot: "28000922269",
@@ -3371,7 +3371,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600580",
+    sku: "600580",
     description: "LAFFY TAFFY CHERRY JAR 145CT",
     location: "JR.EA.165",
     lot: "28000928056",
@@ -3380,7 +3380,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600560",
+    sku: "600560",
     description: "LAFFY TAFFY BANANA JAR 145CT",
     location: "JR.EA.165",
     lot: "28000931056",
@@ -3389,7 +3389,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600600",
+    sku: "600600",
     description: "LAFFY TAFFY GRAPE JAR 145CT",
     location: "JR.EA.165",
     lot: "28000932053",
@@ -3398,7 +3398,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600520",
+    sku: "600520",
     description: "LAFFY TAFFY SOUR APPLE JAR 145CT",
     location: "JR.EA.165",
     lot: "28000933050",
@@ -3407,7 +3407,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600640",
+    sku: "600640",
     description: "LAFFY TAFFY WATERMELON JAR 145CT",
     location: "JR.EA.165",
     lot: "28000934057",
@@ -3416,7 +3416,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600530",
+    sku: "600530",
     description: "LAFFY TAFFY BLUE RASP JAR 145CT",
     location: "JR.EA.165",
     lot: "28000936051",
@@ -3425,7 +3425,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400650",
+    sku: "400650",
     description: "FRITO LAY SOUR CREAM ONION LSS",
     location: "BAG.EA.1",
     lot: "28400111973",
@@ -3434,7 +3434,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400610",
+    sku: "400610",
     description: "FRITO LAY CHEETOS CRUNCHY LSS",
     location: "BAG.EA.1",
     lot: "28400443661",
@@ -3443,7 +3443,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400622",
+    sku: "400622",
     description: "FRITO LAY MUNCHIES CHEESE FI LSS",
     location: "BAG.EA.1",
     lot: "28400443876",
@@ -3452,7 +3452,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400670",
+    sku: "400670",
     description: "FRITO LAY PRETZELS CLASSIC LSS",
     location: "BAG.EA.1",
     lot: "28400443913",
@@ -3461,7 +3461,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616850",
+    sku: "616850",
     description: "FRITO LAY CRACKER JACKS LSS",
     location: "BAG.EA.1",
     lot: "28400455015",
@@ -3470,7 +3470,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613630",
+    sku: "613630",
     description: "PLANTERS HONEY ROASTD PEANUTS EACH",
     location: "BAG.EA.1",
     lot: "29000012575",
@@ -3479,7 +3479,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613950",
+    sku: "613950",
     description: "PLANTERS BIG BAG SALTD PEANUTS EACH",
     location: "BAG.EA.1",
     lot: "29000012585",
@@ -3488,7 +3488,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613921",
+    sku: "613921",
     description: "PLANTERS CHIPOLTE PEANUT 6OZ EACH",
     location: "BAG.EA.1",
     lot: "29000012636",
@@ -3497,7 +3497,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613960",
+    sku: "613960",
     description: "PLANTER SUNFLOWER KERNEL 10CT/.99PP",
     location: "EA.EA.10",
     lot: "29000012738",
@@ -3506,7 +3506,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613801",
+    sku: "613801",
     description: "PLANTERS PISTACHIOS 12CT BOX",
     location: "BX.EA.12",
     lot: "29000012752",
@@ -3515,7 +3515,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613825",
+    sku: "613825",
     description: "PLANTERS NUTRITION HONEY NUT 12CT",
     location: "BX.EA.12",
     lot: "29000019164",
@@ -3524,7 +3524,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613826",
+    sku: "613826",
     description: "PLANTERS NUTRITION CHOCL NUT 12CT",
     location: "BX.EA.12",
     lot: "29000019188",
@@ -3533,7 +3533,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613861",
+    sku: "613861",
     description: "PLANTERS SMOKED ALMOND TUBE 18CT BX",
     location: "BX.EA.18",
     lot: "29000072374",
@@ -3542,7 +3542,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613860",
+    sku: "613860",
     description: "PLANTERS HONEY RSTD CASHEW 18CT",
     location: "BX.EA.18",
     lot: "29000073593",
@@ -3551,7 +3551,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613970",
+    sku: "613970",
     description: "PLANTERS BIG BG SALTED CASHEWS EACH",
     location: "BAG.EA.1",
     lot: "29000074368",
@@ -3560,7 +3560,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613620",
+    sku: "613620",
     description: "PLANTERS HONEY ROASTED CASHEW BG EA",
     location: "BAG.EA.1",
     lot: "29000074498",
@@ -3569,7 +3569,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613810",
+    sku: "613810",
     description: "PLANTERS TUBE HONEY RST PLNTRS 2/1$",
     location: "BX.EA.18",
     lot: "29000075665",
@@ -3578,7 +3578,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613820",
+    sku: "613820",
     description: "PLANTERS HEAT PEANUTS 2/$1 18CT",
     location: "BX.EA.18",
     lot: "29000075672",
@@ -3587,7 +3587,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613850",
+    sku: "613850",
     description: "PLANTERS SALTD CASHEW $.99 BAG 18CT",
     location: "BX.EA.18",
     lot: "29000075689",
@@ -3596,7 +3596,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613800",
+    sku: "613800",
     description: "PLANTERS SALTED PEANUTS 2/$1 18CT",
     location: "BOX.EA.18",
     lot: "29000075696",
@@ -3605,7 +3605,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613880",
+    sku: "613880",
     description: "PLANTERS TRAIL MIX $.99 BAG 18CT",
     location: "BX.EA.18",
     lot: "29000077058",
@@ -3614,7 +3614,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613631",
+    sku: "613631",
     description: "PLANTERS TRAIL MIX NT/CHOC EACH 6OZ",
     location: "BAG.EA.1",
     lot: "29000078625",
@@ -3623,7 +3623,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603051",
+    sku: "603051",
     description: "QUAKER CEREAL BAR APL CRISP OATMEAL",
     location: "BX.EA.8",
     lot: "30000069004",
@@ -3632,7 +3632,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614580",
+    sku: "614580",
     description: "FROSTED ANIMAL CRACKERS 8CT",
     location: "BX.EA.8",
     lot: "30100113447",
@@ -3641,7 +3641,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614523",
+    sku: "614523",
     description: "KEEBLER VANILLA SGR WAFER COOKIE 12",
     location: "BX.EA.12",
     lot: "30100125884",
@@ -3650,7 +3650,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614522",
+    sku: "614522",
     description: "KEEBLER STRWBRY SGR WAFER COOKIE 12",
     location: "BX.EA.12",
     lot: "30100126027",
@@ -3659,7 +3659,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614970",
+    sku: "614970",
     description: "CHIPS DELUXE RAINBOW BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "30100191445",
@@ -3668,7 +3668,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614730",
+    sku: "614730",
     description: "SOFT BATCH SINGLE SERVE 2.2OZ 12CT",
     location: "BX.EA.12",
     lot: "30100199359",
@@ -3677,7 +3677,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614770",
+    sku: "614770",
     description: "CHEESE & CHEDDAR SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "30100211471",
@@ -3686,7 +3686,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614766",
+    sku: "614766",
     description: "KEEBLER TOAST/P-BUTTER JELLY 12CT",
     location: "BX.EA.12",
     lot: "30100211501",
@@ -3695,7 +3695,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614760",
+    sku: "614760",
     description: "CLUB & CHEDDAR SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "30100211631",
@@ -3704,7 +3704,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614750",
+    sku: "614750",
     description: "CHEESE & PEANUT BUTTER SINGLE 12CT",
     location: "BX.EA.12",
     lot: "30100211655",
@@ -3713,7 +3713,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614765",
+    sku: "614765",
     description: "KEEBLER TOAST & PNUT BUTTER 12CT",
     location: "BX.EA.12",
     lot: "30100211679",
@@ -3722,7 +3722,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614520",
+    sku: "614520",
     description: "FUDGE STRIPE MINI 8CT",
     location: "BX.EA.8",
     lot: "30100217718",
@@ -3731,7 +3731,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614763",
+    sku: "614763",
     description: "CLUB & PEPPERJACK SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "30100511588",
@@ -3740,7 +3740,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600160",
+    sku: "600160",
     description: "DUM DUM POPS 120CT",
     location: "BX.EA.120",
     lot: "30800000665",
@@ -3749,7 +3749,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600760",
+    sku: "600760",
     description: "SAF T POPS 100CT",
     location: "BX.EA.100",
     lot: "30800000771",
@@ -3758,7 +3758,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606320",
+    sku: "606320",
     description: "MOUNDS KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000052103",
@@ -3767,7 +3767,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606310",
+    sku: "606310",
     description: "ALMOND JOY KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000052202",
@@ -3776,7 +3776,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605720",
+    sku: "605720",
     description: "CARAMELLO KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000052400",
@@ -3785,7 +3785,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601070",
+    sku: "601070",
     description: "YORK PEPPERMINT PATTY CHANGE 175CT",
     location: "BX.EA.175",
     lot: "34000066421",
@@ -3794,7 +3794,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618036",
+    sku: "618036",
     description: "LANCASTER VAN & CARML SFT PEG 4OZ",
     location: "BAG.EA.1",
     lot: "34000103546",
@@ -3803,7 +3803,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618037",
+    sku: "618037",
     description: "LANCASTER VAN & RASBRY SFT PEG 4OZ",
     location: "BAG.EA.1",
     lot: "34000103607",
@@ -3812,7 +3812,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603590",
+    sku: "603590",
     description: "NUTRAGEOUS 18CT 1.66OZ",
     location: "BX.EA.18",
     lot: "34000109005",
@@ -3821,7 +3821,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611550",
+    sku: "611550",
     description: "REESES PIECES THEATER BOX 4OZ",
     location: "BOX.EA.1",
     lot: "34000114709",
@@ -3830,7 +3830,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610860",
+    sku: "610860",
     description: "REESES PIECES PEG BAG 6OZ",
     location: "BAG.EA.1",
     lot: "34000116010",
@@ -3839,7 +3839,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605850",
+    sku: "605850",
     description: "REESES PIECES KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000116508",
@@ -3848,7 +3848,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603275",
+    sku: "603275",
     description: "HERSHEYS SPREAD CHOC/GRHM CRKR 10CT",
     location: "BX.EA.10",
     lot: "34000123896",
@@ -3857,7 +3857,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603455",
+    sku: "603455",
     description: "KIT KAT MINIS KING SIZE 2.2OZ 12CT",
     location: "BX.EA.12",
     lot: "34000138524",
@@ -3866,7 +3866,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603600",
+    sku: "603600",
     description: "REESES STICKS 20CT",
     location: "BX.EA.20",
     lot: "34000151202",
@@ -3875,7 +3875,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603610",
+    sku: "603610",
     description: "REESES FAST BREAK 2OZ 18CT",
     location: "BX.EA.18",
     lot: "34000152513",
@@ -3884,7 +3884,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602950",
+    sku: "602950",
     description: "FIFTH AVE 18CT",
     location: "BX.EA.18",
     lot: "34000155002",
@@ -3893,7 +3893,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605771",
+    sku: "605771",
     description: "HERSHEY COOKIE N CREME KING SZ 18CT",
     location: "BX.EA.18",
     lot: "34000196050",
@@ -3902,7 +3902,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605930",
+    sku: "605930",
     description: "REESES STICKS KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "34000202003",
@@ -3911,7 +3911,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605890",
+    sku: "605890",
     description: "REESES FAST BREAK KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000203505",
@@ -3920,7 +3920,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605900",
+    sku: "605900",
     description: "NUTRAGEOUS KING SIZE 18CT 3.1OZ",
     location: "BX.EA.18",
     lot: "34000209002",
@@ -3929,7 +3929,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610830",
+    sku: "610830",
     description: "HERSHEYS MINIATURES PEG BAG 5.3OZ",
     location: "BAG.EA.1",
     lot: "34000212108",
@@ -3938,7 +3938,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605830",
+    sku: "605830",
     description: "HERSHEYS MILK CHOCOLATE KING 18CT",
     location: "BX.EA.18",
     lot: "34000220007",
@@ -3947,7 +3947,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605760",
+    sku: "605760",
     description: "HERSHEYS ALMOND KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000221004",
@@ -3956,7 +3956,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605860",
+    sku: "605860",
     description: "MR GOODBAR KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000223008",
@@ -3965,7 +3965,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605800",
+    sku: "605800",
     description: "KIT KAT KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "34000226009",
@@ -3974,7 +3974,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605950",
+    sku: "605950",
     description: "WHATCHAMACALLIT KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000229000",
@@ -3983,7 +3983,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603445",
+    sku: "603445",
     description: "KIT KAT WHITE CHOCOLATE 24CT",
     location: "BX.EA.24",
     lot: "34000236107",
@@ -3992,7 +3992,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603451",
+    sku: "603451",
     description: "KIT KAT DARK CHOCOLATE 24CT BOX",
     location: "BX.EA.24",
     lot: "34000236435",
@@ -4001,7 +4001,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603270",
+    sku: "603270",
     description: "HERSHEYS COOKIES N CREAM 36CT",
     location: "EA.EA.36",
     lot: "34000239009",
@@ -4010,7 +4010,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603330",
+    sku: "603330",
     description: "HERSHEYS MILK CHOCOLATE 36CT",
     location: "BX.EA.36",
     lot: "34000240005",
@@ -4019,7 +4019,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603421",
+    sku: "603421",
     description: "HERSHEYS AIR DELIGHT MLK CHOC 24CT",
     location: "BX.EA.24",
     lot: "34000240753",
@@ -4028,7 +4028,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603280",
+    sku: "603280",
     description: "HERSHEYS ALMOND 36CT",
     location: "BX.EA.36",
     lot: "34000241002",
@@ -4037,7 +4037,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603285",
+    sku: "603285",
     description: "KRACKEL HERSHEYS 18CT",
     location: "BX.EA.18",
     lot: "34000242023",
@@ -4046,7 +4046,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603370",
+    sku: "603370",
     description: "MR GOODBAR 36CT",
     location: "BX.EA.36",
     lot: "34000243006",
@@ -4055,7 +4055,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603510",
+    sku: "603510",
     description: "ROLO 36CT",
     location: "BX.EA.36",
     lot: "34000244003",
@@ -4064,7 +4064,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603390",
+    sku: "603390",
     description: "HERSHEYS SPECIAL DARK BAR 36CT",
     location: "BX.EA.36",
     lot: "34000245000",
@@ -4073,7 +4073,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603450",
+    sku: "603450",
     description: "KIT KAT 36CT",
     location: "BX.EA.36",
     lot: "34000246007",
@@ -4082,7 +4082,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603290",
+    sku: "603290",
     description: "KIT KAT EXTRA KRISPY BIG KAT 36CT",
     location: "EA.EA.36",
     lot: "34000246519",
@@ -4091,7 +4091,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603690",
+    sku: "603690",
     description: "WHATCHAMACALLIT 36CT",
     location: "BX.EA.36",
     lot: "34000247004",
@@ -4100,7 +4100,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603620",
+    sku: "603620",
     description: "REESES PIECES 18CT",
     location: "BX.EA.18",
     lot: "34000248001",
@@ -4109,7 +4109,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605838",
+    sku: "605838",
     description: "HERSHEYS DROPS COOKIES&CRM KNG 18CT",
     location: "BX.EA.18",
     lot: "34000271177",
@@ -4118,7 +4118,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605770",
+    sku: "605770",
     description: "FIFTH AVENUE KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000288007",
@@ -4127,7 +4127,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603660",
+    sku: "603660",
     description: "SKOR BAR 18CT",
     location: "BX.EA.18",
     lot: "34000370146",
@@ -4136,7 +4136,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610910",
+    sku: "610910",
     description: "ROLO PEG BAG 5.3OZ",
     location: "BAG.EA.1",
     lot: "34000376008",
@@ -4145,7 +4145,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603630",
+    sku: "603630",
     description: "TAKE 5 24CT",
     location: "BX.EA.24",
     lot: "34000386000",
@@ -4154,7 +4154,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605790",
+    sku: "605790",
     description: "TAKE 5 KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000386116",
@@ -4163,7 +4163,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601040",
+    sku: "601040",
     description: "REESES PEANUT BUTTER CUP CHANGEMAKE",
     location: "BX.EA.105",
     lot: "34000426119",
@@ -4172,7 +4172,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600890",
+    sku: "600890",
     description: "HERSHEYS ASST MINIS CHANGEMKR 120CT",
     location: "BX.EA.120",
     lot: "34000426812",
@@ -4181,7 +4181,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603720",
+    sku: "603720",
     description: "REESES BIG CUP 16CT",
     location: "BX.EA.16",
     lot: "34000430017",
@@ -4190,7 +4190,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605772",
+    sku: "605772",
     description: "REESE BIG CUP KING 16CT 2 CUP/PKG.",
     location: "BX.EA.18",
     lot: "34000430963",
@@ -4199,7 +4199,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603540",
+    sku: "603540",
     description: "REESES PEANUT BUTTER CUP WHITE 24CT",
     location: "BX.EA.24",
     lot: "34000433001",
@@ -4208,7 +4208,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603580",
+    sku: "603580",
     description: "REESES PEANUT BUTTER CUP 36CT",
     location: "BX.EA.36",
     lot: "34000440009",
@@ -4217,7 +4217,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610850",
+    sku: "610850",
     description: "REESES PEANUT BUTTER CUP MINI 5.3OZ",
     location: "BAG.EA.1",
     lot: "34000446008",
@@ -4226,7 +4226,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605837",
+    sku: "605837",
     description: "REESES PNT BTTR CUP MINIS KING 16CT",
     location: "BX.EA.16",
     lot: "34000470211",
@@ -4235,7 +4235,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603511",
+    sku: "603511",
     description: "ROLO MINIS KING SZ 1/16 CT",
     location: "BX.EA.16",
     lot: "34000471027",
@@ -4244,7 +4244,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604715",
+    sku: "604715",
     description: "YORK MINIS KING SIZE 12CT",
     location: "BX.EA.12",
     lot: "34000471522",
@@ -4253,7 +4253,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605920",
+    sku: "605920",
     description: "REESES PEANUT BUTTER CUP KING 24CT",
     location: "BX.EA.24",
     lot: "34000480005",
@@ -4262,7 +4262,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605960",
+    sku: "605960",
     description: "REESES CRISPY CRUNCHY KG SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000490073",
@@ -4271,7 +4271,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603520",
+    sku: "603520",
     description: "REESES CRISPY CRUNCHY BAR 18CT",
     location: "BX.EA.18",
     lot: "34000490127",
@@ -4280,7 +4280,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605773",
+    sku: "605773",
     description: "REESE WHIPPS KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "34000490448",
@@ -4289,7 +4289,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605280",
+    sku: "605280",
     description: "TWIZZLER STRAWBERRY 2.5OZ 36CT",
     location: "BX.EA.36",
     lot: "34000530021",
@@ -4298,7 +4298,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604590",
+    sku: "604590",
     description: "TWIZZLER CHERRY NIBS 36CT",
     location: "BX.EA.36",
     lot: "34000530137",
@@ -4307,7 +4307,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605940",
+    sku: "605940",
     description: "TWIZZLER KING SIZE 15/5OZ BOX",
     location: "BX.EA.15",
     lot: "34000531035",
@@ -4316,7 +4316,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600790",
+    sku: "600790",
     description: "TWIZZLER STRAWBERRY TWISTS 180CT",
     location: "BX.EA.180",
     lot: "34000536023",
@@ -4325,7 +4325,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611590",
+    sku: "611590",
     description: "TWIZZLER CHERRY BITES THEATER BOX",
     location: "BOX.EA.1",
     lot: "34000541505",
@@ -4334,7 +4334,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611990",
+    sku: "611990",
     description: "TWIZZLER STRAWBERRY PEG BAG 7OZ",
     location: "BAG.EA.1",
     lot: "34000544025",
@@ -4343,7 +4343,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611960",
+    sku: "611960",
     description: "TWIZZLER NIBS LICORICE PEG BAG 6OZ",
     location: "BAG.EA.1",
     lot: "34000544100",
@@ -4352,7 +4352,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611950",
+    sku: "611950",
     description: "TWIZZLER NIBS CHERRY PEG BAG 6OZ",
     location: "BAG.EA.1",
     lot: "34000544131",
@@ -4361,7 +4361,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611980",
+    sku: "611980",
     description: "TWIZZLER PULL N PEEL CHERRY 6OZ",
     location: "BAG.EA.1",
     lot: "34000544438",
@@ -4370,7 +4370,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611995",
+    sku: "611995",
     description: "TWIZZLER STRAWBERRY TWISTS 16OZ BAG",
     location: "BG.EA.1",
     lot: "34000560028",
@@ -4379,7 +4379,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612010",
+    sku: "612010",
     description: "TWIZZLER PULL N PEEL CHERRY 14OZ",
     location: "BAG.EA.1",
     lot: "34000560438",
@@ -4388,7 +4388,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604595",
+    sku: "604595",
     description: "TWIZZLER STWBRY FILLD BTS 3.5Z 10CT",
     location: "BX.EA.10",
     lot: "34000561070",
@@ -4397,7 +4397,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607350",
+    sku: "607350",
     description: "BUBBLE YUM COTTON CANDY 18CT",
     location: "BX.EA.18",
     lot: "34000711116",
@@ -4406,7 +4406,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607370",
+    sku: "607370",
     description: "BUBBLE YUM ORIGINAL 18CT",
     location: "BX.EA.18",
     lot: "34000711147",
@@ -4415,7 +4415,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609480",
+    sku: "609480",
     description: "BREATHSAVER PEPPERMINT 24CT",
     location: "BX.EA.24",
     lot: "34000714032",
@@ -4424,7 +4424,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609560",
+    sku: "609560",
     description: "BREATHSAVER WINTERGREEN 24CT",
     location: "BX.EA.24",
     lot: "34000714124",
@@ -4433,7 +4433,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609540",
+    sku: "609540",
     description: "BREATHSAVER SPEARMINT 24CT",
     location: "BX.EA.24",
     lot: "34000714339",
@@ -4442,7 +4442,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609491",
+    sku: "609491",
     description: "BREATHSAVER CINNAMON MINT ROLL 24CT",
     location: "BX.EA.24",
     lot: "34000714414",
@@ -4451,7 +4451,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609270",
+    sku: "609270",
     description: "ICE BREAKERS COOL MINT TIN 8CT",
     location: "EA.EA.8",
     lot: "34000720606",
@@ -4460,7 +4460,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609290",
+    sku: "609290",
     description: "ICE BREAKERS WNTRGRN MINT S/F 8CT",
     location: "EA.EA.8",
     lot: "34000720620",
@@ -4469,7 +4469,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609280",
+    sku: "609280",
     description: "ICE BREAKERS SPEARMINT MINT TIN 8CT",
     location: "BX.EA.8",
     lot: "34000721238",
@@ -4478,7 +4478,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609297",
+    sku: "609297",
     description: "ICE BREAKERS FROST PEPERMNT TIN 6CT",
     location: "BX.EA.6",
     lot: "34000721382",
@@ -4487,7 +4487,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609298",
+    sku: "609298",
     description: "ICE BREAKERS FROST WNTRCOOL TIN 8CT",
     location: "BX.EA.8",
     lot: "34000721399",
@@ -4496,7 +4496,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609271",
+    sku: "609271",
     description: "ICE BREAKERS DUO MINTS STRAW 24/8CT",
     location: "EA.EA.8",
     lot: "34000723355",
@@ -4505,7 +4505,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609272",
+    sku: "609272",
     description: "ICE BREAKERS DUO MINTS RASPB 24/8CT",
     location: "EA.EA.8",
     lot: "34000723362",
@@ -4514,7 +4514,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609275",
+    sku: "609275",
     description: "ICE BREAKERS DUO MINT WATRMLN 8CT",
     location: "EA.EA.8",
     lot: "34000723898",
@@ -4523,7 +4523,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604700",
+    sku: "604700",
     description: "MOUNDS 36CT",
     location: "BX.EA.36",
     lot: "34000903108",
@@ -4532,7 +4532,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604680",
+    sku: "604680",
     description: "ALMOND JOY 36CT",
     location: "BX.EA.36",
     lot: "34000903207",
@@ -4541,7 +4541,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604720",
+    sku: "604720",
     description: "YORK PEPPERMINT PATTY 36CT",
     location: "BX.EA.36",
     lot: "34000903306",
@@ -4550,7 +4550,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602660",
+    sku: "602660",
     description: "CARAMELLO 36CT",
     location: "BX.EA.36",
     lot: "34000903405",
@@ -4559,7 +4559,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609773",
+    sku: "609773",
     description: "WELCH'S STRAWBRY FRUIT SNACK 5OZ BG",
     location: "BAG.EA.1",
     lot: "34856050961",
@@ -4568,7 +4568,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609774",
+    sku: "609774",
     description: "WELCH'S MIXED FRUIT SNACK 5OZ BAG",
     location: "BAG.EA.1",
     lot: "34856050985",
@@ -4577,7 +4577,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400901",
+    sku: "400901",
     description: "GEHLS JALAPENO CHEESE SAUCE 4/80OZ",
     location: "CS.EA.4",
     lot: "36144050205",
@@ -4586,7 +4586,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400890",
+    sku: "400890",
     description: "GEHLS NACHO CHIPS 30/3OZ W/TRAY CS",
     location: "CS.EA.30",
     lot: "36144055040",
@@ -4595,7 +4595,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506570",
+    sku: "506570",
     description: "DAWN ULTRA DISH DETERGENT 14OZ",
     location: "JUG.EA.1",
     lot: "37000000805",
@@ -4604,7 +4604,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506571",
+    sku: "506571",
     description: "DAWN ORIGINAL 10.3OZ BOTTLE EACH",
     location: "BTL.EA.1",
     lot: "37000001789",
@@ -4613,7 +4613,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617380",
+    sku: "617380",
     description: "PRINGLES CHEEZUMS 12/1.41OZ",
     location: "PK.EA.12",
     lot: "37000184928",
@@ -4622,7 +4622,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617370",
+    sku: "617370",
     description: "PRINGLES ORIGINAL 12/1.3OZ",
     location: "PK.EA.12",
     lot: "37000184942",
@@ -4631,7 +4631,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617340",
+    sku: "617340",
     description: "PRINGLES PIZZA 12/2.50 OZ",
     location: "PK.EA.12",
     lot: "37000185024",
@@ -4640,7 +4640,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617390",
+    sku: "617390",
     description: "PRINGLES SOUR CREAM&ONION 12/1.41OZ",
     location: "CSE.EA.12",
     lot: "37000185055",
@@ -4649,7 +4649,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617094",
+    sku: "617094",
     description: "PRINGLES CHEESE GRAB N GO 12CT 2.5Z",
     location: "BOX.EA.12",
     lot: "37000185185",
@@ -4658,7 +4658,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617095",
+    sku: "617095",
     description: "PRINGLES ORIGNL GRB N GO 12CT 2.3Z",
     location: "BOX.EA.12",
     lot: "37000185208",
@@ -4667,7 +4667,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617096",
+    sku: "617096",
     description: "PRINGLES SR CRM/ON GRAB/GO 12CT 2.5",
     location: "BOX.EA.12",
     lot: "37000185222",
@@ -4676,7 +4676,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503745",
+    sku: "503745",
     description: "ALWAYS ULTRA REGULAR THIN WING 10CT",
     location: "BX.EA.1",
     lot: "37000349662",
@@ -4685,7 +4685,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506501",
+    sku: "506501",
     description: "BOUNCE FABRIC SOFTNER SHEETS 25CT",
     location: "EA.EA.1",
     lot: "37000360001",
@@ -4694,7 +4694,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615210",
+    sku: "615210",
     description: "POP TART CHERRY 6CT",
     location: "BX.EA.6",
     lot: "38000003004",
@@ -4703,7 +4703,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614670",
+    sku: "614670",
     description: "FROOT LOOPS CEREAL CUPS 6CT",
     location: "BX.EA.6",
     lot: "38000012464",
@@ -4712,7 +4712,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614720",
+    sku: "614720",
     description: "SPECIAL K BAR STRAWBERRY 12CT",
     location: "BX.EA.12",
     lot: "38000012839",
@@ -4721,7 +4721,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614660",
+    sku: "614660",
     description: "CORN POPS CEREAL CUPS 6CT",
     location: "BX.EA.6",
     lot: "38000014673",
@@ -4730,7 +4730,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614680",
+    sku: "614680",
     description: "FROSTED FLAKE CEREAL CUP 6CT",
     location: "BX.EA.6",
     lot: "38000014680",
@@ -4739,7 +4739,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614650",
+    sku: "614650",
     description: "APPLE JACKS CEREAL CUPS 6CT",
     location: "BX.EA.6",
     lot: "38000014697",
@@ -4748,7 +4748,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615140",
+    sku: "615140",
     description: "POP TART CHOCOLATE CHIP 6CT",
     location: "BX.EA.6",
     lot: "38000097218",
@@ -4757,7 +4757,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606510",
+    sku: "606510",
     description: "RICE KRISPIE BIG BAR 12CT",
     location: "BX.EA.12",
     lot: "38000265501",
@@ -4766,7 +4766,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614713",
+    sku: "614713",
     description: "SPECIAL K PROTEIN STRWBRY BAR 8CT",
     location: "BX.EA.8",
     lot: "38000291869",
@@ -4775,7 +4775,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614630",
+    sku: "614630",
     description: "SPECIAL K MEAL BAR CHOC PB 8CT",
     location: "EA.EA.8",
     lot: "38000291906",
@@ -4784,7 +4784,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615170",
+    sku: "615170",
     description: "POP TART HOT FUDGE 6CT",
     location: "BX.EA.6",
     lot: "38000305702",
@@ -4793,7 +4793,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615190",
+    sku: "615190",
     description: "POP TART BLUEBERRY 6CT",
     location: "BX.EA.6",
     lot: "38000310300",
@@ -4802,7 +4802,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615200",
+    sku: "615200",
     description: "POP TART BROWN SUGAR 6CT",
     location: "BX.EA.6",
     lot: "38000311307",
@@ -4811,7 +4811,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615220",
+    sku: "615220",
     description: "POP TART STRAWBERRY 6CT",
     location: "BX.EA.6",
     lot: "38000317309",
@@ -4820,7 +4820,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614712",
+    sku: "614712",
     description: "SPECIAL K PROTEIN BAR CHOC/CHIP 8CT",
     location: "BX.EA.8",
     lot: "38000343872",
@@ -4829,7 +4829,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614780",
+    sku: "614780",
     description: "NUTRI GRAIN APPLE/CINNAMON 16CT",
     location: "BX.EA.16",
     lot: "38000356483",
@@ -4838,7 +4838,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614790",
+    sku: "614790",
     description: "NUTRI GRAIN BLUEBERRY 16CT",
     location: "BX.EA.16",
     lot: "38000357480",
@@ -4847,7 +4847,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614800",
+    sku: "614800",
     description: "NUTRI GRAIN RASPBERRY 16CT",
     location: "BX.EA.16",
     lot: "38000358487",
@@ -4856,7 +4856,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614810",
+    sku: "614810",
     description: "NUTRI GRAIN STRAWBERRY 16CT",
     location: "BX.EA.16",
     lot: "38000359484",
@@ -4865,7 +4865,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615160",
+    sku: "615160",
     description: "POP TART SMORES 6CT",
     location: "BX.EA.6",
     lot: "38000581700",
@@ -4874,7 +4874,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606530",
+    sku: "606530",
     description: "RICE KRISPIE TREATS 20CT",
     location: "BX.EA.20",
     lot: "38000765407",
@@ -4883,7 +4883,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606511",
+    sku: "606511",
     description: "RICE KRISPIE DOUBLE CHOC CHUNK 20CT",
     location: "BX.EA.20",
     lot: "38000768408",
@@ -4892,7 +4892,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618870",
+    sku: "618870",
     description: "VAN HOLTEN MILD PICKLE 12CT",
     location: "EA.EA.12",
     lot: "38200061217",
@@ -4901,7 +4901,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618900",
+    sku: "618900",
     description: "VAN HOLTEN HOT PICKLE 12CT",
     location: "EA.EA.12",
     lot: "38200061224",
@@ -4910,7 +4910,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618910",
+    sku: "618910",
     description: "VAN HOLTEN SOUR PICKLE 12CT",
     location: "BX.EA.12",
     lot: "38200061248",
@@ -4919,7 +4919,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618880",
+    sku: "618880",
     description: "VAN HOLTEN BIG PAPA PICKLE 12CT",
     location: "EA.EA.12",
     lot: "38200101210",
@@ -4928,7 +4928,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618860",
+    sku: "618860",
     description: "VAN HOLTEN HOT MAMA PICKLE 12CT",
     location: "BX.EA.12",
     lot: "38200101227",
@@ -4937,7 +4937,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201461",
+    sku: "201461",
     description: "DOLE PINEAPPLE JUICE 46OZ EACH",
     location: "CAN.EA.1",
     lot: "38900008182",
@@ -4946,7 +4946,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201500",
+    sku: "201500",
     description: "DOLE PINEAPPLE JUICE 6OZ CAN 24CT",
     location: "CSE.EA.24",
     lot: "38900009479",
@@ -4955,7 +4955,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604080",
+    sku: "604080",
     description: "MILKY WAY MIDNIGHT DARK 24CT",
     location: "BX.EA.24",
     lot: "40000011040",
@@ -4964,7 +4964,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604060",
+    sku: "604060",
     description: "SNICKERS ALMOND 24CT",
     location: "BOX.EA.24",
     lot: "40000011057",
@@ -4973,7 +4973,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605180",
+    sku: "605180",
     description: "STARBURST ORIGINAL 36CT",
     location: "BX.EA.36",
     lot: "40000011514",
@@ -4982,7 +4982,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605190",
+    sku: "605190",
     description: "STARBURST TROPICAL 36CT",
     location: "BX.EA.36",
     lot: "40000011569",
@@ -4991,7 +4991,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605050",
+    sku: "605050",
     description: "SKITTLES 36CT",
     location: "BOX.EA.36",
     lot: "40000011606",
@@ -5000,7 +5000,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605080",
+    sku: "605080",
     description: "SKITTLES WILD BERRY 36CT",
     location: "BX.EA.36",
     lot: "40000011620",
@@ -5009,7 +5009,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605070",
+    sku: "605070",
     description: "SKITTLES TROPICAL 36CT",
     location: "BX.EA.36",
     lot: "40000011637",
@@ -5018,7 +5018,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604020",
+    sku: "604020",
     description: "M&M PLAIN 48CT",
     location: "BOX.EA.48",
     lot: "40000012313",
@@ -5027,7 +5027,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603960",
+    sku: "603960",
     description: "M&M PEANUT 48CT",
     location: "BX.EA.48",
     lot: "40000012320",
@@ -5036,7 +5036,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603950",
+    sku: "603950",
     description: "M&M PEANUT BUTTER 24CT",
     location: "BOX.EA.24",
     lot: "40000012443",
@@ -5045,7 +5045,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605060",
+    sku: "605060",
     description: "SKITTLES SOUR 24CT",
     location: "BX.EA.24",
     lot: "40000012665",
@@ -5054,7 +5054,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611700",
+    sku: "611700",
     description: "SNICKERS MINI PEG PACK 4.4 OZ",
     location: "BAG.EA.1",
     lot: "40000015024",
@@ -5063,7 +5063,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611660",
+    sku: "611660",
     description: "M&M PLAIN PEG BAG 5OZ",
     location: "BAG.EA.1",
     lot: "40000017318",
@@ -5072,7 +5072,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611670",
+    sku: "611670",
     description: "M&M PEANUT PEG BAG 5OZ",
     location: "BAG.EA.1",
     lot: "40000017325",
@@ -5081,7 +5081,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611680",
+    sku: "611680",
     description: "M&M PEANUT BUTTER PEG BAG 5.1OZ",
     location: "BAG.EA.1",
     lot: "40000017448",
@@ -5090,7 +5090,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603945",
+    sku: "603945",
     description: "M&M MINI'S TUBE 1.08OZ 24CT",
     location: "BOX.EA.24",
     lot: "40000032373",
@@ -5099,7 +5099,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606240",
+    sku: "606240",
     description: "MILKY WAY KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000044017",
@@ -5108,7 +5108,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606230",
+    sku: "606230",
     description: "M&M PLAIN KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000044314",
@@ -5117,7 +5117,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606190",
+    sku: "606190",
     description: "M&M PEANUT KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "40000044321",
@@ -5126,7 +5126,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604030",
+    sku: "604030",
     description: "M&M MINIS POP N SHARE TUBES 24CT",
     location: "BOX.EA.24",
     lot: "40000044376",
@@ -5135,7 +5135,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606380",
+    sku: "606380",
     description: "SKITTLES ORIGINAL KING SIZE 24CT",
     location: "EA.EA.24",
     lot: "40000044604",
@@ -5144,7 +5144,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611781",
+    sku: "611781",
     description: "STARBURST TROPICAL 7.2OZ PEG BAG",
     location: "BAG.EA.1",
     lot: "40000140884",
@@ -5153,7 +5153,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611720",
+    sku: "611720",
     description: "SKITTLES PEG BAG 7OZ EACH",
     location: "BAG.EA.1",
     lot: "40000140921",
@@ -5162,7 +5162,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611730",
+    sku: "611730",
     description: "SKITTLES SOUR PEG 5.7OZ",
     location: "BAG.EA.1",
     lot: "40000140938",
@@ -5171,7 +5171,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611750",
+    sku: "611750",
     description: "STARBURST ORIGINAL PEG PACK 7.2OZ",
     location: "BAG.EA.1",
     lot: "40000141140",
@@ -5180,7 +5180,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611740",
+    sku: "611740",
     description: "SKITTLES WILDBERRY PEG 7OZ",
     location: "BAG.EA.1",
     lot: "40000141157",
@@ -5189,7 +5189,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606390",
+    sku: "606390",
     description: "STARBURST KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "40000144519",
@@ -5198,7 +5198,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605171",
+    sku: "605171",
     description: "STARBURST GUMMI BURST 24CT",
     location: "BX.EA.24",
     lot: "40000162599",
@@ -5207,7 +5207,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606250",
+    sku: "606250",
     description: "THREE MUSKATEER KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000246039",
@@ -5216,7 +5216,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611490",
+    sku: "611490",
     description: "M&M PEANUT 12.6OZ BAG",
     location: "BAG.EA.1",
     lot: "40000248873",
@@ -5225,7 +5225,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611500",
+    sku: "611500",
     description: "M&M PLAIN 12.6OZ BAG",
     location: "BAG.EA.1",
     lot: "40000249061",
@@ -5234,7 +5234,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611434",
+    sku: "611434",
     description: "M&M PLAIN THEATER BOX 3.4OZ EACH",
     location: "BOX.EA.1",
     lot: "40000294764",
@@ -5243,7 +5243,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611433",
+    sku: "611433",
     description: "M&M PEANUT THEATER BOX 3.4OZ EACH",
     location: "BOX.EA.1",
     lot: "40000294808",
@@ -5252,7 +5252,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606360",
+    sku: "606360",
     description: "SNICKERS ALMOND KING SIZE 2PC 24CT",
     location: "BOX.EA.24",
     lot: "40000322474",
@@ -5261,7 +5261,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606400",
+    sku: "606400",
     description: "SNICKERS KING SIZE 2 PIECE 24CT",
     location: "BX.EA.24",
     lot: "40000322528",
@@ -5270,7 +5270,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604218",
+    sku: "604218",
     description: "SNICKERS CHANGEMAKER FUN SIZE 90CT",
     location: "BX.EA.90",
     lot: "40000325741",
@@ -5279,7 +5279,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605220",
+    sku: "605220",
     description: "STARBURST FAVRED 24CT",
     location: "BX.EA.24",
     lot: "40000329701",
@@ -5288,7 +5288,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606430",
+    sku: "606430",
     description: "TWIX CARAMEL KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000353874",
@@ -5297,7 +5297,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604250",
+    sku: "604250",
     description: "TWIX PEANUT BUTTER 18CT",
     location: "BOX.EA.18",
     lot: "40000353881",
@@ -5306,7 +5306,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606420",
+    sku: "606420",
     description: "TWIX PEANUT BUTTER KING SIZE 18CT",
     location: "BOX.EA.18",
     lot: "40000353904",
@@ -5315,7 +5315,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604240",
+    sku: "604240",
     description: "TWIX CARAMEL 2OZ 36CT",
     location: "BX.EA.36",
     lot: "40000353911",
@@ -5324,7 +5324,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606196",
+    sku: "606196",
     description: "M&M PEANUT BUTTER KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000380603",
@@ -5333,7 +5333,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604076",
+    sku: "604076",
     description: "MILKY WAY SIMPLY CARAMEL 24CT BX",
     location: "BOX.EA.24",
     lot: "40000387138",
@@ -5342,7 +5342,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606245",
+    sku: "606245",
     description: "THREE MUSKETEERS BITE 12CT",
     location: "BOX.EA.12",
     lot: "40000422488",
@@ -5351,7 +5351,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603957",
+    sku: "603957",
     description: "SNICKERS PEANUT BUTTER SQ KS 24CT",
     location: "BOX.EA.18",
     lot: "40000441489",
@@ -5360,7 +5360,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606435",
+    sku: "606435",
     description: "TWIX CARAMEL BITES 12CT",
     location: "BOX.EA.12",
     lot: "40000484349",
@@ -5369,7 +5369,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604065",
+    sku: "604065",
     description: "SNICKERS ROCKIN NUT ROAD 24CT",
     location: "BOX.EA.24",
     lot: "40000485087",
@@ -5378,7 +5378,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604077",
+    sku: "604077",
     description: "MILKY WAY SIMPLY CARAMEL BITES 12CT",
     location: "BOX.EA.12",
     lot: "40000485858",
@@ -5387,7 +5387,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603944",
+    sku: "603944",
     description: "M&M MEGA 3X CHOCOLATE 24CT",
     location: "BX.EA.24",
     lot: "40000485926",
@@ -5396,7 +5396,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603946",
+    sku: "603946",
     description: "M&M BIRTHDAY CAKE 24CT",
     location: "BX.EA.24",
     lot: "40000486626",
@@ -5405,7 +5405,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603948",
+    sku: "603948",
     description: "M&M PRETZEL 24CT",
     location: "BOX.EA.24",
     lot: "40000502654",
@@ -5414,7 +5414,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604070",
+    sku: "604070",
     description: "MILKY WAY 2.05OZ 36CT",
     location: "BOX.EA.36",
     lot: "40000522065",
@@ -5423,7 +5423,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604130",
+    sku: "604130",
     description: "THREE MUSKETEERS 36CT",
     location: "BOX.EA.36",
     lot: "40000522089",
@@ -5432,7 +5432,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604200",
+    sku: "604200",
     description: "SNICKERS 48CT",
     location: "BX.EA.48",
     lot: "40000524311",
@@ -5441,7 +5441,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606232",
+    sku: "606232",
     description: "M&M PRETZEL KING SIZE 24CT",
     location: "BOX.EA.24",
     lot: "40000546511",
@@ -5450,7 +5450,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603953",
+    sku: "603953",
     description: "DOVE BAR 18CT",
     location: "BOX.EA.18",
     lot: "40000559849",
@@ -5459,7 +5459,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603954",
+    sku: "603954",
     description: "DOVE BAR DARK CHOCOLATE 18CT",
     location: "BOX.EA.18",
     lot: "40000559856",
@@ -5468,7 +5468,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606231",
+    sku: "606231",
     description: "M&M ALMOND KING SIZE 18CT",
     location: "BX.EA.18",
     lot: "40000574170",
@@ -5477,7 +5477,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604211",
+    sku: "604211",
     description: "SNICKERS PEANUT BUTTER SQUARED 18CT",
     location: "BOX.EA.18",
     lot: "40000594123",
@@ -5486,7 +5486,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602690",
+    sku: "602690",
     description: "RING POPS FRUIT FEST 24CT",
     location: "BOX.EA.24",
     lot: "41116006258",
@@ -5495,7 +5495,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604660",
+    sku: "604660",
     description: "PUSH POPS FRUIT FRENZY 24CT",
     location: "BX.EA.24",
     lot: "41116009037",
@@ -5504,7 +5504,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604661",
+    sku: "604661",
     description: "PUSH POPS JUMBO 24CT",
     location: "BX.EA.24",
     lot: "41116105272",
@@ -5513,7 +5513,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609341",
+    sku: "609341",
     description: "JUICY POP DROP 24CT",
     location: "BX.EA.24",
     lot: "41116105920",
@@ -5522,7 +5522,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600120",
+    sku: "600120",
     description: "CHICK O STICK CHANGEMAKER 48CT",
     location: "BX.EA.48",
     lot: "41168106289",
@@ -5531,7 +5531,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602440",
+    sku: "602440",
     description: "CHICK O STICK UNPRICED 24/25",
     location: "BX.EA.24",
     lot: "41168106319",
@@ -5540,7 +5540,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602770",
+    sku: "602770",
     description: "CHICK O STICK 24CT",
     location: "BX.EA.24",
     lot: "41168106401",
@@ -5549,7 +5549,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "709930",
+    sku: "709930",
     description: "CUP TP16D SOLO ULT CLR PET 16OZ 1M",
     location: "CS.EA.1000",
     lot: "41210400655",
@@ -5558,7 +5558,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506531",
+    sku: "506531",
     description: "PINESOL COMMERICAL CLEANER 144OZ EA",
     location: "BTL.EA.1",
     lot: "41294354186",
@@ -5567,7 +5567,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502020",
+    sku: "502020",
     description: "DURACELL AA 4PK 1500",
     location: "PAK.EA.1",
     lot: "41333009612",
@@ -5576,7 +5576,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502040",
+    sku: "502040",
     description: "DURACELL AAA 4 PK 2400",
     location: "PAK.EA.1",
     lot: "41333014616",
@@ -5585,7 +5585,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501990",
+    sku: "501990",
     description: "DURACELL D 2PK",
     location: "PAK.EA.1",
     lot: "41333085616",
@@ -5594,7 +5594,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502010",
+    sku: "502010",
     description: "DURACELL AA 2PK 1500",
     location: "PAK.EA.1",
     lot: "41333087610",
@@ -5603,7 +5603,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502240",
+    sku: "502240",
     description: "DURACELL BATTERY 9VOLT 1PK",
     location: "PAK.EA.1",
     lot: "41333088617",
@@ -5612,7 +5612,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502030",
+    sku: "502030",
     description: "DURACELL AAA 2PK 2400",
     location: "PAK.EA.1",
     lot: "41333151618",
@@ -5621,7 +5621,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604950",
+    sku: "604950",
     description: "SOUR PUNCH STRAWS BLUE RASPBRY 24CT",
     location: "BX.EA.24",
     lot: "41364380513",
@@ -5630,7 +5630,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605261",
+    sku: "605261",
     description: "SOUR PUNCH STRAWS APPLE 24CT",
     location: "BX.EA.24",
     lot: "41364380520",
@@ -5639,7 +5639,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604960",
+    sku: "604960",
     description: "SOUR PUNCH STRAWS STRAWBERRY 24CT",
     location: "BX.EA.24",
     lot: "41364380537",
@@ -5648,7 +5648,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605000",
+    sku: "605000",
     description: "SOUR PUNCH STRAWS CHERRY 24CT",
     location: "BX.EA.24",
     lot: "41364380582",
@@ -5657,7 +5657,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616300",
+    sku: "616300",
     description: "COMBOS PIZZERIA PRETZEL 7OZ",
     location: "BAG.EA.1",
     lot: "41419406875",
@@ -5666,7 +5666,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616260",
+    sku: "616260",
     description: "COMBOS CHEDDAR CHEESE PRETZEL 6.3OZ",
     location: "BAG.EA.1",
     lot: "41419420058",
@@ -5675,7 +5675,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616270",
+    sku: "616270",
     description: "COMBOS CHEDDAR CHSE CRACKER 6.3OZ",
     location: "BAG.EA.1",
     lot: "41419420072",
@@ -5684,7 +5684,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616290",
+    sku: "616290",
     description: "COMBOS PEPPERONI PZA CRACKER 6.3OZ",
     location: "BAG.EA.1",
     lot: "41419420089",
@@ -5693,7 +5693,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616280",
+    sku: "616280",
     description: "COMBOS 7 LAYER DIP 6.3OZ",
     location: "BAG.EA.1",
     lot: "41419420096",
@@ -5702,7 +5702,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602852",
+    sku: "602852",
     description: "COMBOS ZESTY SALSA TORTILLA 6.3OZ",
     location: "BAG.EA.1",
     lot: "41419420307",
@@ -5711,7 +5711,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616271",
+    sku: "616271",
     description: "COMBOS BUFFALO BLUE CHEESE 6.3OZ BG",
     location: "EA.EA.1",
     lot: "41419439272",
@@ -5720,7 +5720,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602820",
+    sku: "602820",
     description: "COMBOS CHEDDAR PRETZEL 18CT",
     location: "BOX.EA.18",
     lot: "41419715710",
@@ -5729,7 +5729,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602860",
+    sku: "602860",
     description: "COMBOS PEPPERONI PIZZA CRACKER 18CT",
     location: "BOX.EA.18",
     lot: "41419715734",
@@ -5738,7 +5738,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602840",
+    sku: "602840",
     description: "COMBOS PIZZERIA PRETZEL 18CT",
     location: "BOX.EA.18",
     lot: "41419715758",
@@ -5747,7 +5747,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600550",
+    sku: "600550",
     description: "LEMONHEAD JAR 150CT",
     location: "JR.EA.150",
     lot: "41420052354",
@@ -5756,7 +5756,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600410",
+    sku: "600410",
     description: "ATOMIC FIREBALL JAR 150 CT",
     location: "JR.EA.150",
     lot: "41420052750",
@@ -5765,7 +5765,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610160",
+    sku: "610160",
     description: "BOSTON BAKED BEANS PEG BAG 5.5OZ",
     location: "BAG.EA.1",
     lot: "41420125058",
@@ -5774,7 +5774,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610180",
+    sku: "610180",
     description: "LEMONHEAD PEG BAG 6OZ",
     location: "BAG.EA.1",
     lot: "41420126345",
@@ -5783,7 +5783,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602110",
+    sku: "602110",
     description: "LEMONHEAD PREPRICED 24/25",
     location: "BX.EA.24",
     lot: "41420243417",
@@ -5792,7 +5792,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602090",
+    sku: "602090",
     description: "BOSTON BAKED BEANS PREPRICED 24/25",
     location: "BX.EA.24",
     lot: "41420243448",
@@ -5801,7 +5801,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601140",
+    sku: "601140",
     description: "GRAPEHEADS 24/25 PREPRICED",
     location: "BAG.EA.24",
     lot: "41420243455",
@@ -5810,7 +5810,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602120",
+    sku: "602120",
     description: "CHERRYHEADS PREPRICED 24/25",
     location: "BX.EA.24",
     lot: "41420243462",
@@ -5819,7 +5819,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602113",
+    sku: "602113",
     description: "APPLEHEADS PREPRICED 24/25",
     location: "BOX.EA.24",
     lot: "41420243486",
@@ -5828,7 +5828,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602140",
+    sku: "602140",
     description: "RED HOTS PREPRICED 24/25",
     location: "BX.EA.24",
     lot: "41420243523",
@@ -5837,7 +5837,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602100",
+    sku: "602100",
     description: "JAW BUSTERS PREPRICED 24/25",
     location: "BX.EA.24",
     lot: "41420243530",
@@ -5846,7 +5846,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602111",
+    sku: "602111",
     description: "CHEWY LEMONHD FRUIT MIX 24/25 PRE$",
     location: "BX.EA.24",
     lot: "41420243707",
@@ -5855,7 +5855,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602116",
+    sku: "602116",
     description: "CHEWY TROPICAL LEMONHEAD 24/25 PPCD",
     location: "BOX.EA.24",
     lot: "41420243943",
@@ -5864,7 +5864,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602119",
+    sku: "602119",
     description: "CHEWY BERRY LEMONHEAD 24CT/25 PPCD",
     location: "BX.EA.24",
     lot: "41420243967",
@@ -5873,7 +5873,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610240",
+    sku: "610240",
     description: "BLACK FOREST GUMMY BEARS PEG BG 5OZ",
     location: "BAG.EA.1",
     lot: "41420744006",
@@ -5882,7 +5882,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610290",
+    sku: "610290",
     description: "BLACK FOREST GUMMY WORMS PEG BG 5OZ",
     location: "BAG.EA.1",
     lot: "41420744020",
@@ -5891,7 +5891,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610270",
+    sku: "610270",
     description: "BLACK FOREST GUMMY GLOW WORMS PEG",
     location: "BAG.EA.1",
     lot: "41420744037",
@@ -5900,7 +5900,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610250",
+    sku: "610250",
     description: "BLACK FOREST GUMMY CHERRIES PEG BAG",
     location: "BAG.EA.1",
     lot: "41420744112",
@@ -5909,7 +5909,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "610310",
+    sku: "610310",
     description: "BLACK FOREST CITRUS FRUIT SNACK PEG",
     location: "BAG.EA.1",
     lot: "41420746253",
@@ -5918,7 +5918,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613250",
+    sku: "613250",
     description: "BLUE DIAM S.H.ALMOND 1.5OZ 12TB",
     location: "BX.EA.12",
     lot: "41570051955",
@@ -5927,7 +5927,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613260",
+    sku: "613260",
     description: "BLUE DIAM ROASTED & SALTED 12 TB",
     location: "BX.EA.12",
     lot: "41570052006",
@@ -5936,7 +5936,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613272",
+    sku: "613272",
     description: "BLUE DIAM ALMND WHOLE NAT 12 TB",
     location: "BX.EA.12",
     lot: "41570052037",
@@ -5945,7 +5945,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613271",
+    sku: "613271",
     description: "BLUE DIAM LIME&CHILI 1.5OZ 12 TB",
     location: "BX.EA.12",
     lot: "41570052761",
@@ -5954,7 +5954,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613270",
+    sku: "613270",
     description: "BLUE DIAM ALMND WASABI & SOY 12 TB",
     location: "BX.EA.12",
     lot: "41570052778",
@@ -5963,7 +5963,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613240",
+    sku: "613240",
     description: "BLUE DIAM S.H.ALMONDS 2.00Z 12CT",
     location: "BX.EA.12",
     lot: "41570071489",
@@ -5972,7 +5972,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "708410",
+    sku: "708410",
     description: "CUP 8J8 FOAM 1000CT 8OZ STYRO",
     location: "CS.EA.1",
     lot: "41594200070",
@@ -5981,7 +5981,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "708561",
+    sku: "708561",
     description: "CUP 16J16 FOAM 1000CT 16OZ",
     location: "CS.EA.1",
     lot: "41594200100",
@@ -5990,7 +5990,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "708600",
+    sku: "708600",
     description: "CUP 20J16 FOAM 20OZ 500CT/CS",
     location: "CS.CS.1",
     lot: "41594200759",
@@ -5999,7 +5999,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "708580",
+    sku: "708580",
     description: "CUP 32TJ32 32OZ FOAM 500CT",
     location: "CS.BX.1",
     lot: "41594200773",
@@ -6008,7 +6008,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "708470",
+    sku: "708470",
     description: "CUP 12J12 FOAM 1000CT 12OZ",
     location: "CS1.EA.1",
     lot: "41594542958",
@@ -6017,7 +6017,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600800",
+    sku: "600800",
     description: "SUPER BUBBLE TUB 300CT",
     location: "TUB.EA.300",
     lot: "41623004457",
@@ -6026,7 +6026,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400871",
+    sku: "400871",
     description: "BAY VALLEY WHOLE KOSHER DILL PICKLE",
     location: "EA.EA.25",
     lot: "41820058475",
@@ -6035,7 +6035,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617850",
+    sku: "617850",
     description: "IPSI HOT PICKLE 20CT JAR",
     location: "JR.EA.20",
     lot: "41820058475",
@@ -6044,7 +6044,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400870",
+    sku: "400870",
     description: "BAY VALLEY SLICED JALAPENOS 1 GL",
     location: "EA.EA.1",
     lot: "41820070033",
@@ -6053,7 +6053,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506371",
+    sku: "506371",
     description: "CHARMIN TOILET TISSUE ULTRA 4RL",
     location: "PAK.RL.1",
     lot: "42000962018",
@@ -6062,7 +6062,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400430",
+    sku: "400430",
     description: "HOT POCKET BEEF & CHEDDAR 8OZ EACH",
     location: "BOX.EA.1",
     lot: "43695097013",
@@ -6071,7 +6071,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400431",
+    sku: "400431",
     description: "HOT POCKET HAM & CHEESE 8OZ EACH",
     location: "BOX.EA.1",
     lot: "43695097020",
@@ -6080,7 +6080,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400432",
+    sku: "400432",
     description: "HOT POCKET PEPPERONI PIZZA 8OZ EACH",
     location: "BOX.EA.1",
     lot: "43695097037",
@@ -6089,7 +6089,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615060",
+    sku: "615060",
     description: "TEDDY GRAHAMS CINNAMON BIG BAG EACH",
     location: "EA.EA.1",
     lot: "44000000615",
@@ -6098,7 +6098,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615050",
+    sku: "615050",
     description: "NUTTER BUTTER BITES BIG BAG EACH",
     location: "EA.EA.1",
     lot: "44000003067",
@@ -6107,7 +6107,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615080",
+    sku: "615080",
     description: "RITZ BITS CHEESE BIG BAGS 3 OZ EACH",
     location: "BAG.EA.1",
     lot: "44000006778",
@@ -6116,7 +6116,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615090",
+    sku: "615090",
     description: "RITZ BITS PEANUT BTTER BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "44000006785",
@@ -6125,7 +6125,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615040",
+    sku: "615040",
     description: "CHIPS AHOY MINI BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "44000006792",
@@ -6134,7 +6134,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615030",
+    sku: "615030",
     description: "OREO MINI BIG BAGS 3 OZ EACH",
     location: "BAG.EA.1",
     lot: "44000006805",
@@ -6143,7 +6143,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614880",
+    sku: "614880",
     description: "FIG NEWTON SLUG PAK",
     location: "BOX.EA.1",
     lot: "44000007508",
@@ -6152,7 +6152,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614830",
+    sku: "614830",
     description: "CHIPS AHOY SLUG PAK",
     location: "BOX.EA.1",
     lot: "44000007529",
@@ -6161,7 +6161,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614450",
+    sku: "614450",
     description: "RITZ BITS PEANUT BUTTER 12CT",
     location: "BX.EA.12",
     lot: "44000020354",
@@ -6170,7 +6170,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "615130",
+    sku: "615130",
     description: "WHEAT THINS SLUG PAK",
     location: "EA.EA.1",
     lot: "44000046880",
@@ -6179,7 +6179,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614900",
+    sku: "614900",
     description: "NUTTER BUTTER SLUG PAK",
     location: "EA.EA.1",
     lot: "44000049157",
@@ -6188,7 +6188,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614410",
+    sku: "614410",
     description: "OREO SINGLE SERVE 12 CT",
     location: "BX.EA.12",
     lot: "44000088422",
@@ -6197,7 +6197,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614320",
+    sku: "614320",
     description: "CHIPS AHOY SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "44000088439",
@@ -6206,7 +6206,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614350",
+    sku: "614350",
     description: "FIG NEWTON 2OZ 12CT",
     location: "BX.EA.12",
     lot: "44000088446",
@@ -6215,7 +6215,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614380",
+    sku: "614380",
     description: "NUTTER BUTTER SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "44000088453",
@@ -6224,7 +6224,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614924",
+    sku: "614924",
     description: "DUNK'EMS AM.CHEESE & CRACKER 15CT",
     location: "BX.EA.15",
     lot: "44000811570",
@@ -6233,7 +6233,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614401",
+    sku: "614401",
     description: "OREO GOLDEN SANDWICH 12 COUNT",
     location: "BX.EA.12",
     lot: "44000817077",
@@ -6242,7 +6242,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614330",
+    sku: "614330",
     description: "SNACKWELLS SINGLE SERVE 12CT",
     location: "BX.EA.12",
     lot: "44000881764",
@@ -6251,7 +6251,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614440",
+    sku: "614440",
     description: "RITZ CRACKER W/PNUT BUTTER 8CT BOX",
     location: "BOX.EA.8",
     lot: "44000882105",
@@ -6260,7 +6260,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614430",
+    sku: "614430",
     description: "RITZ CRACKER W/ CHEESE 8CT BOX",
     location: "BX.EA.8",
     lot: "44000882112",
@@ -6269,7 +6269,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617780",
+    sku: "617780",
     description: "VICS LITE FULL SALT 9OZ",
     location: "BAG.EA.1",
     lot: "46555000171",
@@ -6278,7 +6278,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617790",
+    sku: "617790",
     description: "VICS LITE HALF SALT 9OZ",
     location: "BAG.EA.1",
     lot: "46555000188",
@@ -6287,7 +6287,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617671",
+    sku: "617671",
     description: "VICS LITE FULL SALT WHITE 4.5OZ",
     location: "BAG.EA.1",
     lot: "46555000195",
@@ -6296,7 +6296,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617670",
+    sku: "617670",
     description: "VICS LITE HALF SALT 4.5OZ",
     location: "BAG.EA.1",
     lot: "46555000201",
@@ -6305,7 +6305,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617730",
+    sku: "617730",
     description: "VICS WHITE CHEDDAR CHEESE 4OZ",
     location: "BAG.EA.1",
     lot: "46555000232",
@@ -6314,7 +6314,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617720",
+    sku: "617720",
     description: "VICS YELLOW CHEESE 4OZ",
     location: "BAG.EA.1",
     lot: "46555000256",
@@ -6323,7 +6323,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617710",
+    sku: "617710",
     description: "VICS ORIGINAL CARAMEL POPCORN 7OZ",
     location: "BAG.EA.1",
     lot: "46555000270",
@@ -6332,7 +6332,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617640",
+    sku: "617640",
     description: "VICS POPCORN WHITE FULL SALT 6OZ",
     location: "BAG.EA.1",
     lot: "46555000294",
@@ -6341,7 +6341,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617650",
+    sku: "617650",
     description: "VICS WHITE HALF SALT POPCORN 6OZ",
     location: "BAG.EA.1",
     lot: "46555000300",
@@ -6350,7 +6350,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617680",
+    sku: "617680",
     description: "VICS WHITE FULL SALT 11.5OZ",
     location: "BAG.EA.1",
     lot: "46555000324",
@@ -6359,7 +6359,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617700",
+    sku: "617700",
     description: "VICS WHITE HALF SALT 11.5OZ",
     location: "BAG.EA.1",
     lot: "46555000331",
@@ -6368,7 +6368,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617630",
+    sku: "617630",
     description: "VICS WHITE CHEDDAR POPCORN 1.25OZ",
     location: "BAG.EA.1",
     lot: "46555000607",
@@ -6377,7 +6377,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617600",
+    sku: "617600",
     description: "VICS WHITE POPCORN FULL SALT 1OZ",
     location: "BAG.EA.1",
     lot: "46555000621",
@@ -6386,7 +6386,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617610",
+    sku: "617610",
     description: "VICS CARAMEL POPCORN 2.25OZ BAG",
     location: "BAG.EA.1",
     lot: "46555000638",
@@ -6395,7 +6395,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617690",
+    sku: "617690",
     description: "VICS LITE WHITE CHEDDAR 3.5OZ",
     location: "BAG.EA.1",
     lot: "46555001055",
@@ -6404,7 +6404,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617750",
+    sku: "617750",
     description: "VICS LITE YELLOW CHEESE 4OZ",
     location: "BAG.EA.1",
     lot: "46555001062",
@@ -6413,7 +6413,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617590",
+    sku: "617590",
     description: "VICS LITE WHITE PCORN 1/2 SALT 1OZ",
     location: "BAG.EA.1",
     lot: "46555191381",
@@ -6422,7 +6422,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201721",
+    sku: "201721",
     description: "TROPICANA APPLE JUICE 32OZ EACH",
     location: "EA.EA.1",
     lot: "48500000496",
@@ -6431,7 +6431,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201561",
+    sku: "201561",
     description: "TROPICANA CRANBERRY JUICE 32OZ EACH",
     location: "BTL.EA.1",
     lot: "48500006723",
@@ -6440,7 +6440,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "301950",
+    sku: "301950",
     description: "COFFEE MATE ORIGINAL CREAMER 6OZ",
     location: "EA.EA.1",
     lot: "50000300624",
@@ -6449,7 +6449,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "200600",
+    sku: "200600",
     description: "CAMPBELLS TOMATO JUICE 46OZ CAN EA",
     location: "EA.EA.1",
     lot: "51000003669",
@@ -6458,7 +6458,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "300186",
+    sku: "300186",
     description: "CAMPBELLS CHKN NDL SOUP BOWL 15.4OZ",
     location: "BWL.EA.1",
     lot: "51000134599",
@@ -6467,7 +6467,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "200840",
+    sku: "200840",
     description: "GATORADE LEMON LIME 24/20OZ",
     location: "CS.EA.24",
     lot: "52000207835",
@@ -6476,7 +6476,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "200850",
+    sku: "200850",
     description: "GATORADE ORANGE 24/20OZ",
     location: "CS.EA.24",
     lot: "52000207842",
@@ -6485,7 +6485,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "200860",
+    sku: "200860",
     description: "GATORADE FRUIT PUNCH 24/20OZ",
     location: "CS.EA.24",
     lot: "52000207859",
@@ -6494,7 +6494,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "200990",
+    sku: "200990",
     description: "GATORADE COOL BLUE 24/20OZ",
     location: "CS.EA.24",
     lot: "52000207880",
@@ -6503,7 +6503,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400710",
+    sku: "400710",
     description: "FRITO LAY FRITOS CHILI CHEESE LSS",
     location: "BAG.EA.1",
     lot: "54019012339",
@@ -6512,7 +6512,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400660",
+    sku: "400660",
     description: "FRITO LAY FRITOS REGULAR LSS",
     location: "BAG.EA.1",
     lot: "54020012838",
@@ -6521,7 +6521,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400630",
+    sku: "400630",
     description: "FRITO LAY BBQ CHIPS LSS",
     location: "BAG.EA.1",
     lot: "54022012713",
@@ -6530,7 +6530,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400680",
+    sku: "400680",
     description: "FRITO LAY REG LAYS LSS",
     location: "BAG.EA.1",
     lot: "54023012712",
@@ -6539,7 +6539,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400600",
+    sku: "400600",
     description: "FRITO LAY DORITO COOL RANCH LSS",
     location: "BAG.EA.1",
     lot: "54034012452",
@@ -6548,7 +6548,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400690",
+    sku: "400690",
     description: "FRITO LAY DORITO NACHO CHEESE LSS",
     location: "BAG.EA.1",
     lot: "54035012852",
@@ -6557,7 +6557,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400640",
+    sku: "400640",
     description: "FRITO LAY FUNYUNS LSS",
     location: "BAG.EA.1",
     lot: "54212012833",
@@ -6566,7 +6566,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400880",
+    sku: "400880",
     description: "GEHLS JALAPENO CHEESE 4/140OZ CASE",
     location: "BOX.EA.4",
     lot: "56144051004",
@@ -6575,7 +6575,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601190",
+    sku: "601190",
     description: "EL BUBBLE BUBBLE GUM CIGAR",
     location: "BX.EA.36",
     lot: "59642003719",
@@ -6584,7 +6584,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607030",
+    sku: "607030",
     description: "CIGAR BUBBLEGUM ITS A BOY 36CT",
     location: "BX.EA.36",
     lot: "59642003757",
@@ -6593,7 +6593,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "607040",
+    sku: "607040",
     description: "CIGAR BUBBLEGUM ITS A GIRL 36CT",
     location: "BX.EA.36",
     lot: "59642003764",
@@ -6602,7 +6602,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600430",
+    sku: "600430",
     description: "HOMERUN BASEBALL GUM BALLS 240CT",
     location: "JR.EA.240",
     lot: "59642005805",
@@ -6611,7 +6611,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600570",
+    sku: "600570",
     description: "CRY BABY EXTRA SOUR BUBBLE GUM 240C",
     location: "JR.EA.240",
     lot: "59642006352",
@@ -6620,7 +6620,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601192",
+    sku: "601192",
     description: "RAZZLES ORIGINAL POUCH 24CT",
     location: "BX.EA.24",
     lot: "59642008240",
@@ -6629,7 +6629,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601193",
+    sku: "601193",
     description: "RAZZLES TROPICAL POUCH 24CT",
     location: "BX.EA.24",
     lot: "59642108292",
@@ -6638,7 +6638,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601191",
+    sku: "601191",
     description: "CRY BABY EXTRA SOUR BGUM TUBE 24CT",
     location: "BX.EA.24",
     lot: "59642194004",
@@ -6647,7 +6647,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601198",
+    sku: "601198",
     description: "WACK-O-WAX LIPS 24CT",
     location: "BX.EA.24",
     lot: "59642642246",
@@ -6656,7 +6656,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "400688",
+    sku: "400688",
     description: "UNCLE RAYS HOT CHIP 3OZ $1.19 EA",
     location: "BAG.EA.1",
     lot: "61456000502",
@@ -6665,7 +6665,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "301627",
+    sku: "301627",
     description: "CHEF BOYARDE BEEFRONI 14OZ MICRO EA",
     location: "EA.EA.1",
     lot: "64144863556",
@@ -6674,7 +6674,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "301626",
+    sku: "301626",
     description: "CHEF BOYARDE MINI BF RAV MICRO 14OZ",
     location: "EA.EA.1",
     lot: "64144863594",
@@ -6683,7 +6683,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "704900",
+    sku: "704900",
     description: "DEVERE AZURE AERO BLUE FOAM SOAP EA",
     location: "BOX.EA.1",
     lot: "69124059220",
@@ -6692,7 +6692,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501070",
+    sku: "501070",
     description: "BIC PEN BLUE MSP 12CT",
     location: "PAK.EA.12",
     lot: "70330001060",
@@ -6701,7 +6701,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611629",
+    sku: "611629",
     description: "SOUR PATCH KIDS LINEUPS 6.35OZ PEG",
     location: "BAG.EA.1",
     lot: "70462000542",
@@ -6710,7 +6710,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611634",
+    sku: "611634",
     description: "SWEDISH RED FISH 5OZ PEG BAG",
     location: "BAG.EA.1",
     lot: "70462062083",
@@ -6719,7 +6719,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611633",
+    sku: "611633",
     description: "SOUR PATCH KIDS CANDY 5OZ PEG BAG",
     location: "BAG.EA.1",
     lot: "70462062250",
@@ -6728,7 +6728,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613020",
+    sku: "613020",
     description: "BOBS SWEET STRIPE PEG BAG 5 OZ",
     location: "EA.EA.1",
     lot: "70538011847",
@@ -6737,7 +6737,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600480",
+    sku: "600480",
     description: "BOBS SWEET STRIPES 290CT",
     location: "JAR.EA.290",
     lot: "70538016422",
@@ -6746,7 +6746,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600490",
+    sku: "600490",
     description: "BOBS MINT BALL TUB (26OZ) 160CT",
     location: "TUB.EA.120",
     lot: "70538016576",
@@ -6755,7 +6755,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600470",
+    sku: "600470",
     description: "BOBS MINT LUMPS 120CT",
     location: "BX.EA.120",
     lot: "70538016903",
@@ -6764,7 +6764,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600500",
+    sku: "600500",
     description: "BOBS CHERRY LUMPS",
     location: "BX.EA.120",
     lot: "70538016910",
@@ -6773,7 +6773,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613025",
+    sku: "613025",
     description: "BOBS SWEET STRIPE LAYDOWN BAG 10OZ",
     location: "EA.EA.1",
     lot: "70538022096",
@@ -6782,7 +6782,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602570",
+    sku: "602570",
     description: "BIG HUNK 24CT",
     location: "BX.EA.24",
     lot: "70602759002",
@@ -6791,7 +6791,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503310",
+    sku: "503310",
     description: "ARMOR ALL PROTECTANT 10OZ EACH",
     location: "EA.EA.1",
     lot: "70612100405",
@@ -6800,7 +6800,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613070",
+    sku: "613070",
     description: "BEER NUTS PEANUT BAG EACH",
     location: "BAG.EA.1",
     lot: "70842000667",
@@ -6809,7 +6809,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613080",
+    sku: "613080",
     description: "BEER NUTS CASHEW BAGS EACH",
     location: "BAG.EA.1",
     lot: "70842000674",
@@ -6818,7 +6818,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602530",
+    sku: "602530",
     description: "BEER NUTS BAG 24CT BOX",
     location: "BX.EA.24",
     lot: "70842001060",
@@ -6827,7 +6827,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613030",
+    sku: "613030",
     description: "BEER NUTS BAR MIX BAGS 12CT BOX",
     location: "BX.EA.12",
     lot: "70842306196",
@@ -6836,7 +6836,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202470",
+    sku: "202470",
     description: "MONSTER ENERGY GREEN 16OZ",
     location: "CS.EA.24",
     lot: "70847811237",
@@ -6845,7 +6845,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202473",
+    sku: "202473",
     description: "MONSTER LOW CARB BLUE 16OZ 24PK",
     location: "CS.EA.24",
     lot: "70847811275",
@@ -6854,7 +6854,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603740",
+    sku: "603740",
     description: "HOT TAMALES CINNAMON 24CT",
     location: "BX.EA.24",
     lot: "70970410277",
@@ -6863,7 +6863,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604340",
+    sku: "604340",
     description: "MIKE AND IKE BERRY BLAST 24CT",
     location: "BX.EA.24",
     lot: "70970410291",
@@ -6872,7 +6872,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604330",
+    sku: "604330",
     description: "MIKE AND IKE ORIGINAL FRUITS 24CT",
     location: "BOX.EA.24",
     lot: "70970410321",
@@ -6881,7 +6881,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611190",
+    sku: "611190",
     description: "MIKE & IKE TROPICAL TYPHOON THEATER",
     location: "BOX.EA.1",
     lot: "70970467513",
@@ -6890,7 +6890,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611230",
+    sku: "611230",
     description: "HOT TAMALES 3 ALARM 5OZ BOX",
     location: "BOX.EA.1",
     lot: "70970467544",
@@ -6899,7 +6899,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611233",
+    sku: "611233",
     description: "HOT TAMALES 8.5OZ THEATER BOX",
     location: "BOX.EA.1",
     lot: "70970467865",
@@ -6908,7 +6908,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611360",
+    sku: "611360",
     description: "HOT TAMALES CINNAMON THEATRE 5OZ",
     location: "BOX.EA.1",
     lot: "70970471230",
@@ -6917,7 +6917,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611370",
+    sku: "611370",
     description: "MIKE & IKE ORIGINAL THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "70970471254",
@@ -6926,7 +6926,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611180",
+    sku: "611180",
     description: "MIKE & IKE BERRY BLAST THEATER BOX",
     location: "BOX.EA.1",
     lot: "70970471278",
@@ -6935,7 +6935,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611351",
+    sku: "611351",
     description: "MIKE & IKE RED RAGEOUS 5OZ THEA BOX",
     location: "BOX.EA.1",
     lot: "70970471285",
@@ -6944,7 +6944,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611340",
+    sku: "611340",
     description: "MIKE & IKE JOLLY JOES THEATER 5OZ",
     location: "BOX.EA.1",
     lot: "70970471308",
@@ -6953,7 +6953,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502927",
+    sku: "502927",
     description: "STP OIL TREATMENT 15OZ EACH",
     location: "EA.EA.1",
     lot: "71153651487",
@@ -6962,7 +6962,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613095",
+    sku: "613095",
     description: "CORN NUTS JALAPENO CHEDR EACH 4OZ",
     location: "BAG.EA.1",
     lot: "71159001231",
@@ -6971,7 +6971,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602900",
+    sku: "602900",
     description: "CORN NUTS RANCH 18CT 1.7OZ",
     location: "BX.EA.18",
     lot: "71159010196",
@@ -6980,7 +6980,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602870",
+    sku: "602870",
     description: "CORN NUTS ORIGINAL 18CT",
     location: "BX.EA.18",
     lot: "71159011339",
@@ -6989,7 +6989,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602890",
+    sku: "602890",
     description: "CORN NUTS BBQ 18 CT 1.7OZ",
     location: "EA.EA.18",
     lot: "71159011346",
@@ -6998,7 +6998,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613130",
+    sku: "613130",
     description: "CORN NUTS RANCH BAG EACH 4 OZ",
     location: "BAG.EA.1",
     lot: "71159073112",
@@ -7007,7 +7007,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613090",
+    sku: "613090",
     description: "CORN NUTS ORIGINAL EACH 4OZ",
     location: "BAG.EA.1",
     lot: "71159078196",
@@ -7016,7 +7016,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "613110",
+    sku: "613110",
     description: "CORN NUTS BBQ BAG EACH 4 OZ",
     location: "BAG.EA.1",
     lot: "71159078247",
@@ -7025,7 +7025,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502860",
+    sku: "502860",
     description: "MAG 1 DOT 3 BRAKE FLUID 12OZ EACH",
     location: "BTL.EA.1",
     lot: "71621001226",
@@ -7034,7 +7034,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502970",
+    sku: "502970",
     description: "MAG 1 FIC/CARB INJECTOR CLEANER EA",
     location: "BTL.EA.1",
     lot: "71621001424",
@@ -7043,7 +7043,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503270",
+    sku: "503270",
     description: "MAG 1 GAS TREATMENT 12OZ",
     location: "BTL.EA.1",
     lot: "71621001523",
@@ -7052,7 +7052,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502960",
+    sku: "502960",
     description: "MAG 1 OCTANE BOOST 12OZ",
     location: "BTL.EA.1",
     lot: "71621001578",
@@ -7061,7 +7061,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503280",
+    sku: "503280",
     description: "MAG 1 FILL N SEAL TIRE INFLATOR EA",
     location: "CAN.EA.1",
     lot: "71621004234",
@@ -7070,7 +7070,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503320",
+    sku: "503320",
     description: "MAG 1 STEERING FLUID 12OZ EACH",
     location: "BTL.EA.1",
     lot: "71621008133",
@@ -7079,7 +7079,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503300",
+    sku: "503300",
     description: "POLAR WINDSHIELD WASH SOLVENT 6/1GL",
     location: "CS.EA.6",
     lot: "71621100011",
@@ -7088,7 +7088,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502930",
+    sku: "502930",
     description: "POLAR STARTING FLUID 11OZ EACH",
     location: "CAN.EA.1",
     lot: "71621100820",
@@ -7097,7 +7097,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503160",
+    sku: "503160",
     description: "MAG 1 2 CYCLE OIL 8OZ EACH",
     location: "BTL.EA.1",
     lot: "71621601389",
@@ -7106,7 +7106,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600810",
+    sku: "600810",
     description: "TOOTSIE ROLL JAR 280CT",
     location: "JAR.EA.280",
     lot: "71720005507",
@@ -7115,7 +7115,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600361",
+    sku: "600361",
     description: "TOOTSIE FRUIT PUNCH FROOTIES 360/3",
     location: "BG.EA.360",
     lot: "71720078006",
@@ -7124,7 +7124,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600351",
+    sku: "600351",
     description: "TOOTSIE GRAPE FROOTIES 360CT",
     location: "BG.EA.360",
     lot: "71720078013",
@@ -7133,7 +7133,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600371",
+    sku: "600371",
     description: "TOOTSIE STRAWBERRY FROOTIES 360CT",
     location: "BG.EA.360",
     lot: "71720078020",
@@ -7142,7 +7142,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600341",
+    sku: "600341",
     description: "TOOTSIE ROLLS MIDGEES 360CT",
     location: "BG.EA.360",
     lot: "71720078068",
@@ -7151,7 +7151,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600331",
+    sku: "600331",
     description: "TOOTSIE GREEN APPLE FROOTIES 360CT",
     location: "BG.EA.360",
     lot: "71720078426",
@@ -7160,7 +7160,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600311",
+    sku: "600311",
     description: "TOOTSIE BL RASPBERRY FROOTIES 360CT",
     location: "BG.EA.360",
     lot: "71720078433",
@@ -7169,7 +7169,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600381",
+    sku: "600381",
     description: "TOOTSIE WATERMELON FROOTIES 360CT",
     location: "BG.EA.360",
     lot: "71720078488",
@@ -7178,7 +7178,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601390",
+    sku: "601390",
     description: "TOOTSIE CARAMEL APPLE POPS 48CT",
     location: "BX.EA.48",
     lot: "71720305010",
@@ -7187,7 +7187,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602030",
+    sku: "602030",
     description: "TOOTSIE POPS ASSORTED 100CT",
     location: "BX.EA.100",
     lot: "71720305089",
@@ -7196,7 +7196,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605510",
+    sku: "605510",
     description: "TOOTSIE ROLLS 2.25OZ 36CT BOX",
     location: "BX.EA.36",
     lot: "71720309315",
@@ -7205,7 +7205,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "603900",
+    sku: "603900",
     description: "JUNIOR MINTS 1.84OZ 24CT",
     location: "BX.EA.24",
     lot: "71720330159",
@@ -7214,7 +7214,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600980",
+    sku: "600980",
     description: "JUNIOR MINTS 72/20",
     location: "BX.EA.72",
     lot: "71720330203",
@@ -7223,7 +7223,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611456",
+    sku: "611456",
     description: "CHARLESTON CHEW CHOCOLATE 24CT",
     location: "BX.EA.24",
     lot: "71720331101",
@@ -7232,7 +7232,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611457",
+    sku: "611457",
     description: "CHARLESTON CHEW STRAWBERRY 24CT",
     location: "CS.EA.24",
     lot: "71720331200",
@@ -7241,7 +7241,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611458",
+    sku: "611458",
     description: "CHARLESTON CHEW VANILLA 24CT",
     location: "BX.EA.24",
     lot: "71720331309",
@@ -7250,7 +7250,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604290",
+    sku: "604290",
     description: "DOTS TROPICAL 2.25OZ BX - 24 COUNT",
     location: "BX.EA.24",
     lot: "71720349502",
@@ -7259,7 +7259,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604280",
+    sku: "604280",
     description: "DOTS 2.25OZ BOX 24CT",
     location: "BX.EA.24",
     lot: "71720349724",
@@ -7268,7 +7268,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602040",
+    sku: "602040",
     description: "TOOTSIE ROLL JAR 96CT",
     location: "JR.EA.96",
     lot: "71720369203",
@@ -7277,7 +7277,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611410",
+    sku: "611410",
     description: "JUNIOR MINTS THEATER BOX 4 OZ",
     location: "EA.EA.1",
     lot: "71720530900",
@@ -7286,7 +7286,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611400",
+    sku: "611400",
     description: "DOTS BOX 7.5OZ",
     location: "EA.EA.1",
     lot: "71720850008",
@@ -7295,7 +7295,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611450",
+    sku: "611450",
     description: "DOTS TROPICAL BOX 7.5 OZ",
     location: "EA.EA.1",
     lot: "71720850015",
@@ -7304,7 +7304,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "203000",
+    sku: "203000",
     description: "SIOUX CITY CREAM SODA 12OZ",
     location: "BOX.EA.24",
     lot: "72063099185",
@@ -7313,7 +7313,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619735",
+    sku: "619735",
     description: "FRESHLEY BUDDY BARS 3PK 8CT BOX",
     location: "BX.EA.8",
     lot: "72250001120",
@@ -7322,7 +7322,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619732",
+    sku: "619732",
     description: "FRESHLEY BANANA PUDDING CAKE 6CT BX",
     location: "BX.EA.6",
     lot: "72250003452",
@@ -7331,7 +7331,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619752",
+    sku: "619752",
     description: "FRESHLEY PWDR SUGAR DONUTS 10OZ BAG",
     location: "EA.EA.1",
     lot: "72250010276",
@@ -7340,7 +7340,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619727",
+    sku: "619727",
     description: "FRESHLEY BLUE CHSE DANISH 6CT BX",
     location: "BX.EA.6",
     lot: "72250031004",
@@ -7349,7 +7349,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619800",
+    sku: "619800",
     description: "FRESHLEY POWDER GEM DONUT 12CT BOX",
     location: "BX.EA.12",
     lot: "72250077262",
@@ -7358,7 +7358,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619790",
+    sku: "619790",
     description: "FRESHLEY CRUNCH GEM DONUT 12CT BOX",
     location: "BX.EA.12",
     lot: "72250077279",
@@ -7367,7 +7367,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619750",
+    sku: "619750",
     description: "FRESHLEY CHOCOLATE GEM DONUTS 12CT",
     location: "BX.EA.12",
     lot: "72250077286",
@@ -7376,7 +7376,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619770",
+    sku: "619770",
     description: "FRESHLEY CINNAMON GEM DONUTS 12CT",
     location: "BX.EA.12",
     lot: "72250077699",
@@ -7385,7 +7385,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619740",
+    sku: "619740",
     description: "FRESHLEY HONEY BUN 6CT BOX",
     location: "EA.EA.6",
     lot: "72250087230",
@@ -7394,7 +7394,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619730",
+    sku: "619730",
     description: "FRESHLEY TEXAS CINNAMON ROLL 8CT BX",
     location: "BX.EA.8",
     lot: "72250087292",
@@ -7403,7 +7403,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619711",
+    sku: "619711",
     description: "FRESHLEY BEAR CLAW 6CT BOX",
     location: "BX.EA.6",
     lot: "72250087315",
@@ -7412,7 +7412,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619760",
+    sku: "619760",
     description: "FRESHLEY CARROT CAKE BAR 8CT BOX",
     location: "BX.EA.8",
     lot: "72250087544",
@@ -7421,7 +7421,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619734",
+    sku: "619734",
     description: "FRESHLEY CHERRY PIES 8CT BOX",
     location: "BX.EA.8",
     lot: "72250088152",
@@ -7430,7 +7430,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619733",
+    sku: "619733",
     description: "FRESHLEY APPLE PIES 4.5OZ 8CT BOX",
     location: "BX.EA.8",
     lot: "72250088176",
@@ -7439,7 +7439,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619720",
+    sku: "619720",
     description: "FRESHLEY CHERRY CHEESE 6CT BOX",
     location: "BX.EA.6",
     lot: "72250088244",
@@ -7448,7 +7448,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619710",
+    sku: "619710",
     description: "FRESHLEY BLUEBERRY CHEESE 6CT BOX",
     location: "BX.EA.6",
     lot: "72250088268",
@@ -7457,7 +7457,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619751",
+    sku: "619751",
     description: "FRESHLEY CHOCOLATE DONUTS 10OZ BAG",
     location: "EA.EA.1",
     lot: "72250903141",
@@ -7466,7 +7466,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619755",
+    sku: "619755",
     description: "FRESHLEY SWISS ROLL 12CT BX",
     location: "BX.EA.12",
     lot: "72250913201",
@@ -7475,7 +7475,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604270",
+    sku: "604270",
     description: "MAMBA FRUIT CHEWS 24CT",
     location: "BX.EA.24",
     lot: "72799035112",
@@ -7484,7 +7484,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604271",
+    sku: "604271",
     description: "MAMBA SOUR 24CT",
     location: "BX.EA.24",
     lot: "72799111687",
@@ -7493,7 +7493,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201640",
+    sku: "201640",
     description: "WATER CHIPPEWA REG 24/16.9OZ",
     location: "CS.EA.24",
     lot: "72891008571",
@@ -7502,7 +7502,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "302520",
+    sku: "302520",
     description: "TAMPAX REGULAR 10S 10CT BOX",
     location: "BOX.EA.1",
     lot: "73010214095",
@@ -7511,7 +7511,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "302530",
+    sku: "302530",
     description: "TAMPAX SUPER 10S BOX",
     location: "BOX.EA.1",
     lot: "73010314092",
@@ -7520,7 +7520,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "506260",
+    sku: "506260",
     description: "TAMPAX SUPER PLUS 10S BOX",
     location: "BOX.EA.1",
     lot: "73010414099",
@@ -7529,7 +7529,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618200",
+    sku: "618200",
     description: "OLD WISCONSIN BULK BEEF STICKS",
     location: "BG.EA.14",
     lot: "73170182555",
@@ -7538,7 +7538,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202698",
+    sku: "202698",
     description: "ARIZONA TEA RASPBERRY 24CT CASE",
     location: "CS.EA.24",
     lot: "73360710438",
@@ -7547,7 +7547,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202699",
+    sku: "202699",
     description: "ARIZONA TEA KIWI/STRWBRRY 24CT CASE",
     location: "CS.EA.24",
     lot: "73360710483",
@@ -7556,7 +7556,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202693",
+    sku: "202693",
     description: "ARIZONA TEA MANGO 24CT CASE",
     location: "CS.EA.24",
     lot: "73360710964",
@@ -7565,7 +7565,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601160",
+    sku: "601160",
     description: "AIRHEADS WHITE MYSTERY 36CT",
     location: "BX.EA.36",
     lot: "73390001124",
@@ -7574,7 +7574,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601080",
+    sku: "601080",
     description: "AIRHEADS BLUE RASPBERRY 36CT",
     location: "BX.EA.36",
     lot: "73390001131",
@@ -7583,7 +7583,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601090",
+    sku: "601090",
     description: "AIRHEADS CHERRY 36CT",
     location: "BX.EA.36",
     lot: "73390001155",
@@ -7592,7 +7592,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601091",
+    sku: "601091",
     description: "AIRHEADS ORANGE 36CT",
     location: "BX.EA.36",
     lot: "73390001162",
@@ -7601,7 +7601,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601130",
+    sku: "601130",
     description: "AIRHEADS WATERMELON 36CT",
     location: "BX.EA.36",
     lot: "73390001179",
@@ -7610,7 +7610,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601120",
+    sku: "601120",
     description: "AIRHEADS STRAWBERRY 36CT",
     location: "BX.EA.36",
     lot: "73390001193",
@@ -7619,7 +7619,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601060",
+    sku: "601060",
     description: "AIRHEADS GREEN APPLE 36CT",
     location: "BX.EA.36",
     lot: "73390001216",
@@ -7628,7 +7628,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609876",
+    sku: "609876",
     description: "MENTOS PURE FRSH GUM SPEARMNT 10CT",
     location: "EA.EA.10",
     lot: "73390001387",
@@ -7637,7 +7637,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609880",
+    sku: "609880",
     description: "MENTOS MINT 15CT",
     location: "EA.EA.15",
     lot: "73390005764",
@@ -7646,7 +7646,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609870",
+    sku: "609870",
     description: "MENTOS MIXED FRUIT 15CT",
     location: "EA.EA.15",
     lot: "73390005771",
@@ -7655,7 +7655,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609850",
+    sku: "609850",
     description: "MENTOS CINNAMON 15CT ROLL",
     location: "EA.EA.15",
     lot: "73390005788",
@@ -7664,7 +7664,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609890",
+    sku: "609890",
     description: "MENTOS STRAWBERRY 15CT",
     location: "BX.EA.15",
     lot: "73390005795",
@@ -7673,7 +7673,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "609881",
+    sku: "609881",
     description: "MENTOS RAINBOW 15CT",
     location: "BX.EA.15",
     lot: "73390005948",
@@ -7682,7 +7682,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601092",
+    sku: "601092",
     description: "AIRHEADS PINK LEMONADE 36CT",
     location: "BX.EA.36",
     lot: "73390006990",
@@ -7691,7 +7691,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602500",
+    sku: "602500",
     description: "AIRHEAD XTREME RAINBOW BELT 18CT",
     location: "BX.EA.18",
     lot: "73390008376",
@@ -7700,7 +7700,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602504",
+    sku: "602504",
     description: "AIRHEAD XTREME LEMONADE BELT 18CT",
     location: "BX.EA.18",
     lot: "73390008680",
@@ -7709,7 +7709,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602506",
+    sku: "602506",
     description: "AIRHEAD XTREME BLUE RASPBERRY 18CT",
     location: "BX.EA.18",
     lot: "73390008697",
@@ -7718,7 +7718,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602507",
+    sku: "602507",
     description: "AIRHEAD XTREME WATERMELON BELT 18CT",
     location: "BX.EA.18",
     lot: "73390008727",
@@ -7727,7 +7727,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602511",
+    sku: "602511",
     description: "AIRHEADS BIG BR STRWBRY/WTRMLN 24CT",
     location: "BX.EA.24",
     lot: "73390008802",
@@ -7736,7 +7736,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602508",
+    sku: "602508",
     description: "AIRHEADS BIG BAR BLUE RAZ/CHRY 24CT",
     location: "BX.EA.24",
     lot: "73390008819",
@@ -7745,7 +7745,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602501",
+    sku: "602501",
     description: "AIRHEADS CHECKSTAND ASSORTED 18CT",
     location: "BX.EA.18",
     lot: "73390024314",
@@ -7754,7 +7754,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "502910",
+    sku: "502910",
     description: "HEET 12OZ EACH",
     location: "BTL.EA.1",
     lot: "73905282017",
@@ -7763,7 +7763,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618170",
+    sku: "618170",
     description: "FAT FREDDIE BEEF - 36CT",
     location: "BX.EA.36",
     lot: "75392363088",
@@ -7772,7 +7772,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "618190",
+    sku: "618190",
     description: "FAT FREDDIE  PEPPERONI - 36CT",
     location: "BX.EA.36",
     lot: "75392363095",
@@ -7781,7 +7781,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612328",
+    sku: "612328",
     description: "SATH RED TWISTS 2/$1.50 10101",
     location: "BOX.EA.12",
     lot: "75602101011",
@@ -7790,7 +7790,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612540",
+    sku: "612540",
     description: "SATH ORANGE SLICE 2/$1.50 10102",
     location: "CS.EA.12",
     lot: "75602101028",
@@ -7799,7 +7799,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612240",
+    sku: "612240",
     description: "SATH CHERRY SLICES 2/$1.50 01032",
     location: "CS.EA.12",
     lot: "75602101035",
@@ -7808,7 +7808,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612210",
+    sku: "612210",
     description: "SATH CANDY NECKLACE 2/$1.50 10113",
     location: "CS.EA.12",
     lot: "75602101134",
@@ -7817,7 +7817,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612530",
+    sku: "612530",
     description: "SATH PEPPERMNT PUFFS 2/$1.50 10117",
     location: "CS.EA.12",
     lot: "75602101172",
@@ -7826,7 +7826,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612710",
+    sku: "612710",
     description: "SATH SPICE DROPS 2/$1.50 10120",
     location: "CS.EA.12",
     lot: "75602101202",
@@ -7835,7 +7835,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612250",
+    sku: "612250",
     description: "SATH CINNAMN BEARS 2/$1.50 01223",
     location: "CS.EA.12",
     lot: "75602101226",
@@ -7844,7 +7844,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612316",
+    sku: "612316",
     description: "SATH GUMMI BEARS 2/$1.50 10123",
     location: "BOX.EA.12",
     lot: "75602101233",
@@ -7853,7 +7853,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612192",
+    sku: "612192",
     description: "SATH GUMMI WORMS 2/$1.50 10125",
     location: "CS.EA.12",
     lot: "75602101257",
@@ -7862,7 +7862,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612332",
+    sku: "612332",
     description: "SATH SR NEON NT CRWLR 2/$1.50 10127",
     location: "CS.EA.12",
     lot: "75602101271",
@@ -7871,7 +7871,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612331",
+    sku: "612331",
     description: "SATH SR GUMI BEARS 2/$1.50",
     location: "BOX.EA.12",
     lot: "75602101301",
@@ -7880,7 +7880,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612315",
+    sku: "612315",
     description: "SATH GMI PEACH RNG 2/$1.50 10131",
     location: "BOX.EA.12",
     lot: "75602101318",
@@ -7889,7 +7889,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612370",
+    sku: "612370",
     description: "SATH GMI APPLE RING 2/$1.50 10032",
     location: "CS.EA.12",
     lot: "75602101325",
@@ -7898,7 +7898,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612314",
+    sku: "612314",
     description: "SATH GMMI MELN RNG 2/$1.50 10135",
     location: "BOX.EA.12",
     lot: "75602101356",
@@ -7907,7 +7907,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612150",
+    sku: "612150",
     description: "SATH GMI BLUE SHARK 2/$1.50 01377",
     location: "CS.EA.12",
     lot: "75602101370",
@@ -7916,7 +7916,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612330",
+    sku: "612330",
     description: "SATH SMARTIES 2/$1.50 10140",
     location: "BOX.EA.12",
     lot: "75602101400",
@@ -7925,7 +7925,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612294",
+    sku: "612294",
     description: "SATH DUM DUM POPS 2/$1.50 01421",
     location: "BOX.EA.12",
     lot: "75602101424",
@@ -7934,7 +7934,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612510",
+    sku: "612510",
     description: "SATH LEMON DROPS 2/$1.50 10145",
     location: "CS.EA.12",
     lot: "75602101455",
@@ -7943,7 +7943,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612270",
+    sku: "612270",
     description: "SATH CINNAMON DISC 2/$1.50 01469",
     location: "BOX.EA.12",
     lot: "75602101462",
@@ -7952,7 +7952,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612303",
+    sku: "612303",
     description: "SATH BUTTRSTCH DSC 2/$1.50 10147",
     location: "CS.EA.12",
     lot: "75602101479",
@@ -7961,7 +7961,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612334",
+    sku: "612334",
     description: "SATH STRLIGHT MNTS 2/$1.50 10149",
     location: "CS.EA.12",
     lot: "75602101493",
@@ -7970,7 +7970,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612306",
+    sku: "612306",
     description: "SATH CARAMELS 2/$1.50 10151",
     location: "CS.EA.12",
     lot: "75602101516",
@@ -7979,7 +7979,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612200",
+    sku: "612200",
     description: "SATH CANDY CORN 2/$1.50 10155",
     location: "CS.EA.12",
     lot: "75602101554",
@@ -7988,7 +7988,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612180",
+    sku: "612180",
     description: "SATH BURNT PEANUTS 2/$1.50 10156",
     location: "CS.EA.12",
     lot: "75602101561",
@@ -7997,7 +7997,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "612308",
+    sku: "612308",
     description: "SATH CHERRY SOURS 2/$1.50 10159",
     location: "BOX.EA.12",
     lot: "75602101592",
@@ -8006,7 +8006,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503403",
+    sku: "503403",
     description: '"LIL TREE AIR FRSHNR ""ROYL PINE"" EA"',
     location: "PAK.EA.1",
     lot: "76171101013",
@@ -8015,7 +8015,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503404",
+    sku: "503404",
     description: '"LIL TREE AIR FRESHNR ""VANILLA"" EACH"',
     location: "PAK.EA.1",
     lot: "76171101051",
@@ -8024,7 +8024,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503408",
+    sku: "503408",
     description: '"LIL TREE AIR FRESHNR ""BLACK ICE"" EA"',
     location: "PAK.EA.1",
     lot: "76171101556",
@@ -8033,7 +8033,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503402",
+    sku: "503402",
     description: '"LIL TREE AIR FRESHNR ""NEW CAR"" EACH"',
     location: "PAK.EA.1",
     lot: "76171101891",
@@ -8042,7 +8042,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503409",
+    sku: "503409",
     description: '"LIL TREE AIR FRESHNR ""CHERRY"" EACH"',
     location: "PAK.EA.1",
     lot: "76171103116",
@@ -8051,7 +8051,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503406",
+    sku: "503406",
     description: '"LIL TREE AIR FRESHNR ""STRAWBRY"" EA"',
     location: "PAK.EA.1",
     lot: "76171103123",
@@ -8060,7 +8060,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614960",
+    sku: "614960",
     description: "FAMOUS AMOS .99 BIG BAG EACH",
     location: "BAG.EA.1",
     lot: "76677191365",
@@ -8069,7 +8069,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "614200",
+    sku: "614200",
     description: "FAMOUS AMOS CHOCOLATE CHIP 8CT",
     location: "BX.EA.8",
     lot: "76677980679",
@@ -8078,7 +8078,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605520",
+    sku: "605520",
     description: "TWIN BING 36CT",
     location: "BX.EA.36",
     lot: "77232801002",
@@ -8087,7 +8087,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605660",
+    sku: "605660",
     description: "TWIN BING KING SIZE 24CT",
     location: "BX.EA.24",
     lot: "77232801101",
@@ -8096,7 +8096,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604945",
+    sku: "604945",
     description: "BUN MAPLE BAR 24CT",
     location: "BX.EA.24",
     lot: "77250129506",
@@ -8105,7 +8105,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604930",
+    sku: "604930",
     description: "SALTED NUT ROLL 24CT",
     location: "BX.EA.24",
     lot: "77290128271",
@@ -8114,7 +8114,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604946",
+    sku: "604946",
     description: "BUN VANILLA BAR 24CT",
     location: "BX.EA.24",
     lot: "77290129513",
@@ -8123,7 +8123,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604947",
+    sku: "604947",
     description: "BUN CARAMEL BAR 24CT",
     location: "BX.EA.24",
     lot: "77290129520",
@@ -8132,7 +8132,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619110",
+    sku: "619110",
     description: "SALTED NUT ROLL PP 2/$1 24CT BOX",
     location: "BX.EA.24",
     lot: "77290618277",
@@ -8141,7 +8141,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611855",
+    sku: "611855",
     description: "BIT O HONEY 190CT JAR",
     location: "JR.EA.190",
     lot: "77290771002",
@@ -8150,7 +8150,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606330",
+    sku: "606330",
     description: "SALTED NUT ROLL KING SIZE 18CT",
     location: "EA.EA.18",
     lot: "77290819506",
@@ -8159,7 +8159,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601010",
+    sku: "601010",
     description: "PEARSON MINT PATTIES TUB 240CT",
     location: "JR.EA.240",
     lot: "77290902765",
@@ -8168,7 +8168,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "619135",
+    sku: "619135",
     description: "SALTED NUT ROLL BITE SIZE BOX 60CT",
     location: "BX.EA.60",
     lot: "77290903663",
@@ -8177,7 +8177,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202630",
+    sku: "202630",
     description: "DR PEPPER 24/12 OZ",
     location: "CS.PK.24",
     lot: "78000082166",
@@ -8186,7 +8186,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "202640",
+    sku: "202640",
     description: "DR PEPPER DIET 24/12 OZ",
     location: "CS.PK.24",
     lot: "78000083163",
@@ -8195,7 +8195,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616480",
+    sku: "616480",
     description: "CRACKLINS LOOSE PLAIN 1.75 OZ BAG",
     location: "BAG.EA.1",
     lot: "78116002010",
@@ -8204,7 +8204,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616490",
+    sku: "616490",
     description: "CRACKLINS LOOSE HOT 1.75 OZ BAG",
     location: "BAG.EA.1",
     lot: "78116002027",
@@ -8213,7 +8213,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "616470",
+    sku: "616470",
     description: "CRACKLINS LOOSE BBQ 2.125 OZ BAG",
     location: "BAG.EA.1",
     lot: "78116002034",
@@ -8222,7 +8222,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501460",
+    sku: "501460",
     description: "GONESH #6 (ANCIENT TIMES)",
     location: "BX.EA.10",
     lot: "78612201061",
@@ -8231,7 +8231,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501470",
+    sku: "501470",
     description: "GONESH #8 (SPRING MIST)",
     location: "BX.EA.10",
     lot: "78612201085",
@@ -8240,7 +8240,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501430",
+    sku: "501430",
     description: "GONESH JASMINE INCENSE",
     location: "BX.EA.10",
     lot: "78612208015",
@@ -8249,7 +8249,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501450",
+    sku: "501450",
     description: "GONESH STRAWBERRY INCENSE",
     location: "BX.EA.10",
     lot: "78612208039",
@@ -8258,7 +8258,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "501420",
+    sku: "501420",
     description: "GONESH CHERRY INCENSE",
     location: "BX.EA.10",
     lot: "78612208206",
@@ -8267,7 +8267,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "402140",
+    sku: "402140",
     description: "OIL LIQUID FRY CLEAR 35#",
     location: "CS.EA.1",
     lot: "78684371167",
@@ -8276,7 +8276,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503350",
+    sku: "503350",
     description: '"SQUEEGEE 8X21 WS2024A 20"" EACH"',
     location: "SQG.EA.1",
     lot: "79062123538",
@@ -8285,7 +8285,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617870",
+    sku: "617870",
     description: "PICKLED EGGS 24CT 1/2 GAL",
     location: "JR.EA.24",
     lot: "79112520058",
@@ -8294,7 +8294,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "617910",
+    sku: "617910",
     description: "TURKEY GIZZARD 32CT 1/2GL",
     location: "JR.EA.32",
     lot: "79112523332",
@@ -8303,7 +8303,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601360",
+    sku: "601360",
     description: "BOTTLE CAPS ROLL 24CT",
     location: "BX.EA.24",
     lot: "79200020248",
@@ -8312,7 +8312,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602011",
+    sku: "602011",
     description: "FUN DIP 48CT",
     location: "BX.EA.48",
     lot: "79200110505",
@@ -8321,7 +8321,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611161",
+    sku: "611161",
     description: "BOTTLE CAPS THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "79200113056",
@@ -8330,7 +8330,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604511",
+    sku: "604511",
     description: "NERDS GIANT CHEWY 24CT",
     location: "BX.EA.24",
     lot: "79200122256",
@@ -8339,7 +8339,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602760",
+    sku: "602760",
     description: "SWEETARTS GIANT CHEWY 36CT",
     location: "BX.EA.36",
     lot: "79200131234",
@@ -8348,7 +8348,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605360",
+    sku: "605360",
     description: "SWEETARTS ROLL 36CT",
     location: "BX.EA.36",
     lot: "79200136468",
@@ -8357,7 +8357,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611890",
+    sku: "611890",
     description: "SPREE CHEWY PEG BAG 7OZ",
     location: "BAG.EA.1",
     lot: "79200139254",
@@ -8366,7 +8366,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605140",
+    sku: "605140",
     description: "SPREE ROLL 36CT",
     location: "EA.EA.36",
     lot: "79200150266",
@@ -8375,7 +8375,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611162",
+    sku: "611162",
     description: "SWEETTART THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "79200158866",
@@ -8384,7 +8384,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605430",
+    sku: "605430",
     description: "TANGY LAFFY TAFFY GRAPE 24CT",
     location: "EA.EA.24",
     lot: "79200160302",
@@ -8393,7 +8393,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605460",
+    sku: "605460",
     description: "TANGY LAFFY TAFFY WATERMELON 24CT",
     location: "BX.EA.24",
     lot: "79200160319",
@@ -8402,7 +8402,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604510",
+    sku: "604510",
     description: "NERDS ROPE 24CT",
     location: "BX.EA.24",
     lot: "79200173234",
@@ -8411,7 +8411,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605130",
+    sku: "605130",
     description: "SPREE CHEWY POUCH 24CT",
     location: "BX.EA.24",
     lot: "79200182137",
@@ -8420,7 +8420,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604500",
+    sku: "604500",
     description: "NERDS ROPE VERY BERRY 24CT",
     location: "EA.EA.24",
     lot: "79200186647",
@@ -8429,7 +8429,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604570",
+    sku: "604570",
     description: "NERDS GRAPE/STRAWBERRY 36CT",
     location: "EA.EA.36",
     lot: "79200240004",
@@ -8438,7 +8438,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604540",
+    sku: "604540",
     description: "NERDS DOUBLE DIP 36CT",
     location: "EA.EA.36",
     lot: "79200392208",
@@ -8447,7 +8447,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604970",
+    sku: "604970",
     description: "SHOCKERS SWEETARTS 24CT",
     location: "EA.EA.24",
     lot: "79200524456",
@@ -8456,7 +8456,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611150",
+    sku: "611150",
     description: "NERDS THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "79200587789",
@@ -8465,7 +8465,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605448",
+    sku: "605448",
     description: "TANGY LAFFY TAFFY CHERRY BAR 24CT",
     location: "BX.EA.24",
     lot: "79200600129",
@@ -8474,7 +8474,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605131",
+    sku: "605131",
     description: "SPREE CHEWY MIXED BERRY POUCH 24CT",
     location: "BX.EA.24",
     lot: "79200714444",
@@ -8483,7 +8483,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604560",
+    sku: "604560",
     description: "NERDS SOUR LEMON/APPLE 24CT",
     location: "BX.EA.24",
     lot: "79200739805",
@@ -8492,7 +8492,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "602750",
+    sku: "602750",
     description: "SWEETARTS MINI CHEWY 24CT",
     location: "BX.EA.24",
     lot: "79200887582",
@@ -8501,7 +8501,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611140",
+    sku: "611140",
     description: "GOBSTOPPER THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "79200955571",
@@ -8510,7 +8510,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605449",
+    sku: "605449",
     description: "TANGY LAFFY TAFFY STRWBRY BAR 24CT",
     location: "BX.EA.24",
     lot: "79200965143",
@@ -8519,7 +8519,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "605447",
+    sku: "605447",
     description: "TANGY LAFFY TAFFY BANANA BAR 24CT",
     location: "BX.EA.24",
     lot: "79200978617",
@@ -8528,7 +8528,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "611160",
+    sku: "611160",
     description: "RUNTS THEATER BOX 5OZ",
     location: "BOX.EA.1",
     lot: "79200989873",
@@ -8537,7 +8537,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "504980",
+    sku: "504980",
     description: "WD-40 SPRAY 8OZ SMART STRAW EACH",
     location: "EA.EA.1",
     lot: "79567110057",
@@ -8546,7 +8546,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "707430",
+    sku: "707430",
     description: "BAG #2 BROWN 81006 500CT",
     location: "BX.EA.1",
     lot: "79594800051",
@@ -8555,7 +8555,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "707550",
+    sku: "707550",
     description: "BAG #20 SHORTY HEAVY #80066 2/250CT",
     location: "BX.EA.500",
     lot: "79594800662",
@@ -8564,7 +8564,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "707630",
+    sku: "707630",
     description: "BAG #1/6 BARREL #80079 500CT GRCYSZ",
     location: "BX.EA.1",
     lot: "79594800792",
@@ -8573,7 +8573,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "707470",
+    sku: "707470",
     description: "BAG 8# BROWN 80957 500CT",
     location: "BX.EA.1",
     lot: "79594809573",
@@ -8582,7 +8582,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "503020",
+    sku: "503020",
     description: "FUNNEL OIL 1 PNT FLOTL 05015MI 12CT",
     location: "SLV.SLV.12",
     lot: "81773901003",
@@ -8591,7 +8591,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "201015",
+    sku: "201015",
     description: "NAKED JUICE BLUE MACHINE 8/15.2OZ",
     location: "CS.EA.8",
     lot: "82592727152",
@@ -8600,7 +8600,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604990",
+    sku: "604990",
     description: "SIXLETS 24CT",
     location: "BX.EA.24",
     lot: "89669035653",
@@ -8609,7 +8609,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601950",
+    sku: "601950",
     description: "SIXLETS 48/15",
     location: "BX.EA.48",
     lot: "89669035844",
@@ -8618,7 +8618,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "401015",
+    sku: "401015",
     description: "POPCORN SALT FLAVACOL BUTTERY 35OZ",
     location: "EA.EA.1",
     lot: "90939020453",
@@ -8627,7 +8627,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604948",
+    sku: "604948",
     description: "VALOMILK 24CT",
     location: "BX.EA.24",
     lot: "93591000245",
@@ -8636,7 +8636,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601753",
+    sku: "601753",
     description: "NOW & LATER GRAPE CHANGEMAKER 24CT",
     location: "BX.EA.24",
     lot: "93922035106",
@@ -8645,7 +8645,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601752",
+    sku: "601752",
     description: "NOW & LATER CHERRY CHANGEMAKER 24CT",
     location: "BX.EA.24",
     lot: "93922035113",
@@ -8654,7 +8654,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601757",
+    sku: "601757",
     description: "NOW & LATER WTRMELON CHGMKR 24CT",
     location: "BX.EA.24",
     lot: "93922035120",
@@ -8663,7 +8663,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601751",
+    sku: "601751",
     description: "NOW & LATER STRWBRY CHNGEMAKER 24CT",
     location: "BX.EA.24",
     lot: "93922035144",
@@ -8672,7 +8672,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601756",
+    sku: "601756",
     description: "NOW & LATER BANANA CHANGEMAKER 24CT",
     location: "BX.EA.24",
     lot: "93922035236",
@@ -8681,7 +8681,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "601754",
+    sku: "601754",
     description: "NOW & LATER PINEAPPL CHNGEMKER 24CT",
     location: "BX.EA.24",
     lot: "93922035267",
@@ -8690,7 +8690,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "600720",
+    sku: "600720",
     description: "NOW & LATER ASSTD JAR 192CT",
     location: "JR.EA.192",
     lot: "93922559404",
@@ -8699,7 +8699,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "604620",
+    sku: "604620",
     description: "NOW & LATER ORIGINAL BAR 24CT",
     location: "BX.EA.24",
     lot: "93922800599",
@@ -8708,7 +8708,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "302531",
+    sku: "302531",
     description: "HUGGIES DIAPER KIT 2 MEDIUM",
     location: "PAK.EA.1",
     lot: "94187167083",
@@ -8717,7 +8717,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606570",
+    sku: "606570",
     description: "POWERBAR PEANUT BUTTER 12CT",
     location: "BX.EA.12",
     lot: "97421050806",
@@ -8726,7 +8726,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606632",
+    sku: "606632",
     description: "POWERBAR TRPLE THRT CHC/CRML FUSION",
     location: "BX.EA.15",
     lot: "97421090505",
@@ -8735,7 +8735,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606600",
+    sku: "606600",
     description: "POWERBAR PB CHOC CHIP HARVEST 15CT",
     location: "BX.EA.15",
     lot: "97421470604",
@@ -8744,7 +8744,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606628",
+    sku: "606628",
     description: "POWERBAR PROTEIN PLS VAN/YOGURT 12C",
     location: "BX.EA.12",
     lot: "97421490107",
@@ -8753,7 +8753,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606630",
+    sku: "606630",
     description: "POWERBAR PROTEIN PLS CHOC/PNTBR 15C",
     location: "BX.EA.15",
     lot: "97421490305",
@@ -8762,7 +8762,7 @@ const inventoryData = [
     user: "admin",
   },
   {
-    item: "606625",
+    sku: "606625",
     description: "POWERBAR PROTEIN PLS COOKE/CRM 15CT",
     location: "BX.EA.15",
     lot: "97421490503",

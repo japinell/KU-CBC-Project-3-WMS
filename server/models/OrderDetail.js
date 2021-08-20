@@ -14,9 +14,9 @@ const orderDetailSchema = new Schema({
     type: Number,
     required: true,
   },
-  item: [
+  items: [
     {
-      item: { type: String },
+      item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number, min: 0.0 },
       uom: { type: String },
       status: { type: String, default: "U" },

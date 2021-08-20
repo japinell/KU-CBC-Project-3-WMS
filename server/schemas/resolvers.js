@@ -20,7 +20,7 @@ const resolvers = {
     // Returns all the tasks
     tasks: async (parent, args, context) => {
       // if (context.user) {
-      const task = await Task.find({}).populate("items");
+      const task = await Task.find({});
       return task;
       // }
       // throw new AuthenticationError(

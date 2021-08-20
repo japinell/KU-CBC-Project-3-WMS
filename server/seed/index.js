@@ -19,6 +19,7 @@ const seedAll = async () => {
   // await sequelize.sync({ force: true });
   // console.log("\n----- Database Synced -----\n");
 
+  /*
   await seedAddressBook();
   console.log("\n----- Address Book Seeded -----\n");
 
@@ -39,13 +40,13 @@ const seedAll = async () => {
 
   await seedOperation();
   console.log("\n----- Operation Seeded -----\n");
-
+  */
   await seedOrderHeader();
   console.log("\n----- Order Header Seeded -----\n");
 
   await seedOrderDetail();
   console.log("\n----- Order Detail Seeded -----\n");
-
+  /*
   await seedRole();
   console.log("\n----- Role Seeded -----\n");
 
@@ -54,6 +55,7 @@ const seedAll = async () => {
 
   await seedUoM();
   console.log("\n----- UoM Seeded -----\n");
+  */
 
   process.exit(0);
 };
