@@ -26,7 +26,6 @@ import { ImHappy } from "react-icons/im";
 import Auth from "../../utils/auth";
 
 import LoginForm from "../SignInForm";
-import SignUpForm from "../SignUpForm";
 
 const useStyles = makeStyles((theme) => ({
   logo: {

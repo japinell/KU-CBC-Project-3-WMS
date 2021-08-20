@@ -1,8 +1,7 @@
 //
 //  Populate database with default data
 //
-const mongoose = require("mongoose");
-const { Category } = require("../models/Category");
+const { Category } = require("../models");
 
 const categoryData = [
   {
@@ -37,9 +36,9 @@ const categoryData = [
   },
 ];
 
-const seedCategory = () => {
+const seedCategory = async () => {
   await Category.deleteMany({});
-  await Category.bulkCreate(categoryData);
+  await Category.insertMany(categoryData);
 };
 
 module.exports = seedCategory;

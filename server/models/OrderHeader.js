@@ -1,7 +1,8 @@
 //
 //  Order header definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const orderHeaderSchema = new Schema({
@@ -13,14 +14,14 @@ const orderHeaderSchema = new Schema({
     type: Number,
     required: true,
   },
-  customerId: {
-    type: Schema.Types.ObjectId,
-    ref: "Customer",
+  customer: {
+    type: Number,
+    // ref: "AddressBook",
     required: true,
   },
-  vendorId: {
-    type: Schema.Types.ObjectId,
-    ref: "Customer",
+  vendor: {
+    type: Number,
+    // ref: "AddressBook",
     required: true,
   },
   description: {
@@ -30,6 +31,13 @@ const orderHeaderSchema = new Schema({
     type: String,
     required: true,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = orderHeaderSchema;
+const OrderHeader = mongoose.model("OrderHeader", orderHeaderSchema);
+
+module.exports = OrderHeader;

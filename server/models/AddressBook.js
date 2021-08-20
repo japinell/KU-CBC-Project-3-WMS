@@ -1,8 +1,8 @@
 //
 //  Address Book definition
 //
-const { Schema } = require("mongoose");
-
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 //
 const addressBookSchema = new Schema({
   id: {
@@ -17,8 +17,20 @@ const addressBookSchema = new Schema({
     type: String,
     required: true,
   },
-  address: [String],
-  phone: [String],
+  address: {
+    street: String,
+    city: String,
+    state: String,
+    postalCode: String,
+  },
+  phone: String,
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = addressBookSchema;
+const AddressBook = mongoose.model("AddressBook", addressBookSchema);
+
+module.exports = AddressBook;

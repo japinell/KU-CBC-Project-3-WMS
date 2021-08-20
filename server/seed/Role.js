@@ -1,44 +1,44 @@
 //
 //  Populate database with default data
 //
-const mongoose = require("mongoose");
-const { Role } = require("../models/Role");
+const { Role } = require("../models");
 
-const roleData = [{
-        operation: 10000,
-        description: "Receiving",
-        user: "admin",
-        datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
-    },
-    {
-        operation: 10001,
-        description: "Putaway",
-        user: "admin",
-        datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
-    },
-    {
-        operation: 10002,
-        description: "Picking",
-        user: "admin",
-        datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
-    },
-    {
-        operation: 10003,
-        description: "Replenishment",
-        user: "admin",
-        datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
-    },
-    {
-        operation: 10004,
-        description: "Others...",
-        user: "admin",
-        datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
-    }
+const roleData = [
+  {
+    role: 10000,
+    description: "Receiving",
+    user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
+  },
+  {
+    role: 10001,
+    description: "Putaway",
+    user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
+  },
+  {
+    role: 10002,
+    description: "Picking",
+    user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
+  },
+  {
+    role: 10003,
+    description: "Replenishment",
+    user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
+  },
+  {
+    role: 10004,
+    description: "Others...",
+    user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
+  },
 ];
 
-const seedOperation = () => {
-  await Operation.deleteMany({});  
-  await Operation.bulkCreate(operationData);
-} 
+const seedRole = async () => {
+  await Role.deleteMany({});
+  await Role.insertMany(roleData);
+};
 
-module.exports = seedOperation;
+module.exports = seedRole;

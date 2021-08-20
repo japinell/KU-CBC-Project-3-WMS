@@ -1,13 +1,14 @@
 //
 //  Location definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const locationSchema = new Schema({
   area: {
     type: String,
-    required: true,
+    // required: true,
   },
   row: {
     type: String,
@@ -33,6 +34,13 @@ const locationSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = locationSchema;
+const Location = mongoose.model("Location", locationSchema);
+
+module.exports = Location;

@@ -1,7 +1,8 @@
 //
 //  Kardex definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const kardexSchema = new Schema({
@@ -36,6 +37,13 @@ const kardexSchema = new Schema({
   description: {
     type: String,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = kardexSchema;
+const Kardex = mongoose.model("Kardex", kardexSchema);
+
+module.exports = Kardex;

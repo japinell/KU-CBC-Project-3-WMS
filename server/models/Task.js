@@ -1,23 +1,49 @@
 //
 //  Task definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const taskSchema = new Schema({
+  orderType: {
+    type: String,
+  },
+  orderNumber: {
+    type: Number,
+  },
   user: {
     type: String,
     required: true,
   },
-  status: {
-    type: String,
+  operation: {
+    type: Number,
     required: true,
   },
-  operationId: {
-    type: Schema.Types.ObjectId,
-    ref: "Operation",
+  priority: {
+    type: Number,
     required: true,
+  },
+  item: [
+    {
+      id: { type: Number },
+      quantity: { type: Number },
+      uom: { type: String },
+      status: {
+        type: String,
+      },
+    },
+  ],
+  notes: {
+    type: String,
+  },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
   },
 });
 
-module.exports = taskSchema;
+const Task = mongoose.model("Task", taskSchema);
+
+module.exports = Task;
