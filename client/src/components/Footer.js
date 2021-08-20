@@ -10,6 +10,10 @@ import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import { FaWarehouse } from "react-icons/fa";
+import { RiProductHuntLine } from "react-icons/ri";
+import { FiTruck } from "react-icons/fi";
+import { VscAccount } from "react-icons/vsc";
 
 import SvgIcon from "@material-ui/core/SvgIcon";
 
@@ -62,25 +66,37 @@ export default function Footer() {
   return (
     <AppBar position="static" color="secondary">
       <Container maxWidth="md">
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" className={classes.title} color="primary">
-              Text only
-            </Typography>
-            <HomeIcon />
-            <ListItem></ListItem>
+        <Box mt={2}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <Grid
+                container
+                direction="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                <HomeIcon />
+                <HomeIcon />
+                <HomeIcon />
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography
+                variant="h6"
+                className={classes.title}
+                color="primary"
+              >
+                Text only
+              </Typography>
+              <ListItem color="primary">
+                <ListItemText primary="this is a list item" />
+                <ListItemText />
+              </ListItem>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" className={classes.title} color="primary">
-              Text only
-            </Typography>
-            <ListItem color="primary">
-              <ListItemText primary="this is a list item" />
-              <ListItemText />
-            </ListItem>
-          </Grid>
-        </Grid>
-        <Box mt={3}>
+        </Box>
+
+        <Box m={2}>
           <Copyright />
         </Box>
       </Container>
