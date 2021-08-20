@@ -1,7 +1,8 @@
 //
 //  Category definition
 //
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 //
 const categorySchema = new Schema({
@@ -13,6 +14,13 @@ const categorySchema = new Schema({
     type: String,
     required: true,
   },
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = categorySchema;
+const Category = mongoose.model("Category", categorySchema);
+
+module.exports = Category;

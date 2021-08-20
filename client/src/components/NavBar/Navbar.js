@@ -26,7 +26,6 @@ import { BiBody } from "react-icons/bi";
 import Auth from "../../utils/auth";
 
 import LoginForm from "../SignInForm";
-import SignUpForm from "../SignUpForm";
 
 const useStyles = makeStyles((theme) => ({
   logo: {

@@ -20,3 +20,23 @@ export const GET_ME = gql`
     }
   }
 `;
+
+export const GET_TASKS = gql`
+  query getAllTasks {
+    tasks {
+      id
+      orderType
+      orderNumber
+      user
+      operation
+      priority
+      item {
+        id
+        quantity
+        uom
+        status
+      }
+      note
+    }
+  }
+`;

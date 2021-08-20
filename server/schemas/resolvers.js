@@ -1,7 +1,7 @@
 //
 //  Resolvers - Define the functions to populate the data from the schemas
 //
-const User = require("../models/User");
+const { User, Task } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 //
@@ -16,6 +16,16 @@ const resolvers = {
       throw new AuthenticationError(
         "You need to log in to perform this query!"
       );
+    },
+    // Returns all the tasks
+    tasks: async (parent, args, context) => {
+      // if (context.user) {
+      const task = await Task.find({}).populate("items");
+      return task;
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
     },
   },
 
