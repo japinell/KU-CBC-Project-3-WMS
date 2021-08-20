@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 650,
   },
   container: {
-    padding: theme.spacing(6),
+    padding: theme.spacing(9),
   },
 }));
 
