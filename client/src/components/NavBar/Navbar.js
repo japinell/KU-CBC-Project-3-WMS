@@ -134,19 +134,6 @@ const Navbar = () => {
             />
           </Tabs>
           <Button
-            component={Link}
-            to="/profile"
-            aria-controls="menu"
-            onMouseOver={handleOpenMenu}
-            className={classes.account}
-            disableElevation
-            disableRipple
-            variant="contained"
-            color="secondary"
-          >
-            Profile
-          </Button>
-          <Button
             onClick={Auth.logout}
             className={classes.account}
             disableElevation
@@ -178,19 +165,6 @@ const Navbar = () => {
           <DrawerComponent />
         </Toolbar>
       </AppBar>
-      <Menu
-        style={{ marginTop: "50px" }}
-        id="menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleCloseMenu}
-      >
-        <MenuItem onClick={handleCloseMenu}>My Account</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Examination Results</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Promotions</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Pending Fees</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Final Project</MenuItem>
-      </Menu>
     </>
   );
 };

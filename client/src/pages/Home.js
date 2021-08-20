@@ -38,6 +38,7 @@ const Home = () => {
           className="player-wrapper"
           autoPlay
           src={video}
+          playsInline
         ></Player>
       </Grid>
     </>
