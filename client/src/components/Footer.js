@@ -62,22 +62,24 @@ export default function Footer() {
   return (
     <AppBar position="static" color="secondary">
       <Container maxWidth="md">
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <Typography variant="h6" className={classes.title} color="primary">
               Text only
             </Typography>
-            <div className={classes.demo}>
-              <ListItem color="textSecondary">
-                this is a list item
-                <ListItemText />
-              </ListItem>
-            </div>
+            <HomeIcon />
+            <ListItem></ListItem>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h6" className={classes.title} color="primary">
+              Text only
+            </Typography>
+            <ListItem color="primary">
+              <ListItemText primary="this is a list item" />
+              <ListItemText />
+            </ListItem>
           </Grid>
         </Grid>
-        <Box mt={3}>
-          <HomeIcon />
-        </Box>
         <Box mt={3}>
           <Copyright />
         </Box>
