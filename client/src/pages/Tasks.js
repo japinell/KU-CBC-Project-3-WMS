@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 650,
   },
+  tableSpacing: {
+    spacing: theme.spacing(1),
+  },
   container: {
     padding: theme.spacing(9),
   },
@@ -85,27 +88,27 @@ export default function Tasks({ defaultValues }) {
   return (
     <TableContainer component={Paper} className={classes.container}>
       <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
+        <TableHead className={classes.tableSpacing}>
+          <TableRow className={classes.tableSpacing}>
             <TableCell>Order Type</TableCell>
-            <TableCell align="right">Order Number</TableCell>
-            <TableCell align="right">Customer Name</TableCell>
-            <TableCell align="right">Customer #</TableCell>
-            <TableCell align="right">Customer Notes</TableCell>
-            <TableCell align="right">User</TableCell>
+            <TableCell>Order Number</TableCell>
+            <TableCell>Customer Name</TableCell>
+            <TableCell>Customer #</TableCell>
+            <TableCell>Customer Notes</TableCell>
+            <TableCell>User</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
+            <TableRow className={classes.tableSpacing} key={row.name}>
               <TableCell component="th" scope="row">
                 {row.orderType}
               </TableCell>
-              <TableCell align="right">{row.orderName}</TableCell>
-              <TableCell align="right">{row.customerName}</TableCell>
-              <TableCell align="right">{row.customerNumber}</TableCell>
-              <TableCell align="right">{row.customerNotes}</TableCell>
-              <TableCell align="right">{row.user}</TableCell>
+              <TableCell>{row.orderName}</TableCell>
+              <TableCell>{row.customerName}</TableCell>
+              <TableCell>{row.customerNumber}</TableCell>
+              <TableCell>{row.customerNotes}</TableCell>
+              <TableCell>{row.user}</TableCell>
             </TableRow>
           ))}
         </TableBody>

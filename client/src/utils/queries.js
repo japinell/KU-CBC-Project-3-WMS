@@ -59,7 +59,7 @@ export const GET_ORDER_BY_NUMBER = gql`
 
 export const GET_ORDERS = gql`
   query getOrders {
-    orders {
+    getOrders {
       id
       orderType
       orderNumber
@@ -129,7 +129,7 @@ export const GET_TASK = gql`
 
 export const GET_TASKS = gql`
   query getTasks {
-    tasks {
+    getTasks {
       id
       orderType
       orderNumber

@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Auth from "../utils/auth";
 import Tasks from "./Tasks";
-import { GET_TASK } from "../utils/queries";
+import { GET_TASKS } from "../utils/queries";
 import { useMutation, useQuery } from "@apollo/client";
 
 const TaskData = () => {
-  const { loading, data } = useQuery(GET_TASK, {
-    variables: {
-      orderType: "SO",
-      orderNumber: 123459,
-    },
-  });
+  const { loading, data } = useQuery(GET_TASKS, {});
 
   if (loading) {
     return <h1>Loading Task Data...</h1>;
@@ -19,7 +14,7 @@ const TaskData = () => {
   console.log("Data loaded!");
   console.log(data);
 
-  const queryTaskData = data?.getTaskByNumber[0] ?? [];
+  const queryTaskData = data?.getTasks[0] ?? [];
 
   const {
     orderType,
