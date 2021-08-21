@@ -14,7 +14,6 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
-import { GET_TASK } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
@@ -34,25 +33,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Picking = () => {
+const Picking = ({ defaultValues }) => {
+  console.log("Default values =>", defaultValues);
   const classes = useStyles();
-
   const [formValues, setFormValues] = useState(defaultValues);
-  // const [formValues, setFormValues] = useState({});
-  const { loading, data } = useQuery(GET_TASK, {
-    variables: {
-      orderType: "SO",
-      orderNumber: 123459,
-    },
-  });
-  const taskData = data?.getTaskByNumber[0] ?? [];
-
-  // If data isn't here yet, wait for it
-  if (loading) {
-    return <h2>LOADING TASKS...</h2>;
-  }
 
   const handleInputChange = (e) => {
+    const { name, value, dataItem } = e.target;
+    console.log(e.target);
+    if (name === "itemNumber") {
+      // setFormValues({
+      //   ...formValues,
+      //   quantity:  formValues.taskDetails.filter((item) => {
+      //     item.
+      //   }),
+      //   uom: value,
+      // });
+      let i = 0;
+    } else {
+      setFormValues({
+        ...formValues,
+        [name]: value,
+      });
+    }
+  };
+
+  const handleItemChange = (e) => {
     const { name, value } = e.target;
     setFormValues({
       ...formValues,
@@ -72,34 +78,13 @@ const Picking = () => {
     console.log(formValues);
   };
 
-  // console.log(taskData);
-  const { orderType, orderNumber, user, operation, priority, customer, items } =
-    taskData;
-
-  const defaultValues = {
-    orderType,
-    orderNumber,
-    customerNumber: customer.code,
-    customerName: customer.name,
-    user,
-    operation,
-    priority,
-    items: { ...items },
-    notes: "Hurry up! Premium customer.",
-  };
-  console.log(defaultValues);
-  setFormValues(defaultValues);
-  // setFormValues({
-  //   orderType,
-  //   orderNumber,
-  //   customerNumber: customer.code,
-  //   customerName: customer.name,
-  //   user,
-  //   operation,
-  //   priority,
-  //   items: { ...items },
-  //   notes: "Hurry up! Premium customer.",
-  // });
+  // useEffect(() => {
+  //   setFormValues(defaultValues);
+  //   console.log("formValues => ");
+  //   console.log(formValues);
+  //   console.log("formValues.items => ");
+  //   console.log(formValues.taskDetails);
+  // }, []);
 
   return (
     <Container className={classes.container} maxWidth="lg">
@@ -143,19 +128,36 @@ const Picking = () => {
         </Grid>
         <Grid item>
           <FormControl className={classes.formControl}>
-            <InputLabel id="demo-simple-select-label">Item Number</InputLabel>
+            <InputLabel id="itemNumberLabel">Item Number</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              defaultValue={defaultValues.item[0].id}
-              value={formValues.itemNumber}
+              id="itemNumber"
+              name="itemNumber"
+              label="Item Number"
+              defaultValue={
+                defaultValues.taskDetails
+                  ? defaultValues?.taskDetails[0].sku
+                  : "none"
+              }
+              value={
+                formValues?.taskDetails?.length > 0
+                  ? formValues.taskDetails[0].item.sku
+                  : "none"
+              }
               onChange={handleInputChange}
             >
-              {defaultValues.item.map((item) => {
+              {/* <MenuItem key="none" value="none">
+                "None"
+              </MenuItem> */}
+              {console.log("Inside the Select => ", defaultValues.taskDetails)}
+              {defaultValues?.taskDetails?.map(({ item, uom, quantity }) => {
                 return (
-                  <MenuItem key={item.id} value={item.id}>
-                    {item.description}
-                  </MenuItem>
+                  <div
+                    key={item.sku}
+                    value={item.sku}
+                    dataItem={(uom, quantity)}
+                  >
+                    <MenuItem>{item.description}</MenuItem>
+                  </div>
                 );
               })}
             </Select>
