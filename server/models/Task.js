@@ -12,6 +12,11 @@ const taskSchema = new Schema({
   orderNumber: {
     type: Number,
   },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: "AddressBook",
+    required: true,
+  },
   user: {
     type: String,
     required: true,
@@ -24,9 +29,9 @@ const taskSchema = new Schema({
     type: Number,
     required: true,
   },
-  item: [
+  items: [
     {
-      id: { type: Number },
+      item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number },
       uom: { type: String },
       status: {
@@ -36,11 +41,6 @@ const taskSchema = new Schema({
   ],
   notes: {
     type: String,
-  },
-  user: String,
-  datetime: {
-    type: Date,
-    default: Date.now(),
   },
 });
 

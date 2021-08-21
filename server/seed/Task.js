@@ -1,74 +1,91 @@
 //
 //  Populate database with default data
 //
-const { Task } = require("../models");
+const { AddressBook, Item, Task } = require("../models");
 
 const taskData = [
   {
-    id: 1,
     orderType: "SO",
     orderNumber: 123459,
+    customer: 10001,
     user: "user1",
     operation: 10000,
     priority: 1,
-    item: [
+    items: [
       {
-        id: "600190",
+        sku: "600190",
         quantity: 100,
         uom: "BX",
         status: "U",
       },
       {
-        id: "600230",
+        sku: "600230",
         quantity: 100,
         uom: "BX",
         status: "U",
       },
       {
-        id: "610990",
+        sku: "610990",
         quantity: 100,
         uom: "BAG",
         status: "U",
       },
     ],
-    note: "Hurry up! Premium customer.",
+    notes: "Hurry up! Premium customer.",
     user: "admin",
   },
   {
-    id: 2,
     orderType: "SO",
     orderNumber: 123460,
+    customer: 10001,
     user: "user1",
     operation: 10000,
     priority: 2,
-    item: [
+    items: [
       {
-        item: "703250",
+        sku: "703250",
         quantity: 100,
         uom: "CS",
         status: "U",
       },
       {
-        item: "617950",
+        sku: "617950",
         quantity: 100,
         uom: "JR",
         status: "U",
       },
       {
-        item: "614910",
+        sku: "614910",
         quantity: 100,
         uom: "EA",
         status: "U",
       },
     ],
-    note: "Take your time...",
+    notes: "Take your time...",
     user: "admin",
   },
 ];
 
 const seedTask = async () => {
   await Task.deleteMany({});
-  await Task.insertMany(taskData);
+
+  for (let i = 0, l = taskData.length; i < l; i++) {
+    const { customer, items, ...task } = taskData[i];
+    const custId = await AddressBook.findOne({ code: customer });
+
+    const itemIds = await Promise.all(
+      items.map(({ sku }) => Item.findOne({ sku }))
+    );
+
+    await Task.create({
+      ...task,
+      customer: custId._id,
+      items: items.map(({ ...i }, idx) => ({
+        ...i,
+        item: itemIds[idx]._id,
+      })),
+    });
+  }
 };
 
 module.exports = seedTask;

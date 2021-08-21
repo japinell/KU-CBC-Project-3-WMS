@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 //
 const itemSchema = new Schema({
-  item: {
+  sku: {
     type: String,
     required: true,
   },
@@ -18,7 +18,7 @@ const itemSchema = new Schema({
     type: String,
     required: false, // Not required due to no data
   },
-  categoryId: {
+  category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
     required: false, // Not required due to no data
@@ -27,13 +27,11 @@ const itemSchema = new Schema({
     type: String,
     default: "EA",
   },
-  UPC: {
-    type: String,
-  },
   restorePoint: {
     type: Number,
     min: 0,
     default: 0,
+    required: false, // Not required due to no data
   },
   user: String,
   datetime: {

@@ -1,17 +1,29 @@
 //
-//  Order header definition
+//  Order definition
 //
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 //
-const orderDetailSchema = new Schema({
+const orderSchema = new Schema({
   orderType: {
     type: String,
     required: true,
   },
   orderNumber: {
     type: Number,
+    required: true,
+  },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: "AddressBook",
+    required: true,
+  },
+  description: {
+    type: String,
+  },
+  status: {
+    type: String,
     required: true,
   },
   items: [
@@ -22,9 +34,6 @@ const orderDetailSchema = new Schema({
       status: { type: String, default: "U" },
     },
   ],
-  description: {
-    type: String,
-  },
   user: String,
   datetime: {
     type: Date,
@@ -32,6 +41,6 @@ const orderDetailSchema = new Schema({
   },
 });
 
-const OrderDetail = mongoose.model("OrderDetail", orderDetailSchema);
+const Order = mongoose.model("Order", orderSchema);
 
-module.exports = OrderDetail;
+module.exports = Order;

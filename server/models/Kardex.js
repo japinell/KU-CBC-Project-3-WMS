@@ -6,12 +6,12 @@ const { Schema } = mongoose;
 
 //
 const kardexSchema = new Schema({
-  item: {
+  sku: {
     type: Schema.Types.ObjectId,
     ref: "Item",
     required: true,
   },
-  locationId: {
+  location: {
     type: Schema.Types.ObjectId,
     ref: "Location",
     required: true,
@@ -24,12 +24,12 @@ const kardexSchema = new Schema({
     type: Number,
     default: 0,
   },
-  uomId: {
+  uom: {
     type: Schema.Types.ObjectId,
     ref: "UoM",
     required: true,
   },
-  operationId: {
+  operation: {
     type: Schema.Types.ObjectId,
     ref: "Operation",
     required: true,

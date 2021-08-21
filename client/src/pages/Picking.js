@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,44 +14,11 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
+import { GET_TASK } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
 import { useMutation, useQuery } from "@apollo/client";
-
-const defaultValues = {
-  orderType: "SO",
-  orderNumber: 123459,
-  customerNumber: 10001,
-  customerName: "Customer X",
-  user: "user1",
-  operation: 10000,
-  priority: 1,
-  item: [
-    {
-      id: "600190",
-      description: "Item X",
-      quantity: 100,
-      uom: "BX",
-      status: "U",
-    },
-    {
-      id: "600230",
-      description: "Item Y",
-      quantity: 100,
-      uom: "BX",
-      status: "U",
-    },
-    {
-      id: "610990",
-      description: "Item Z",
-      quantity: 100,
-      uom: "BAG",
-      status: "U",
-    },
-  ],
-  note: "Hurry up! Premium customer.",
-};
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -70,6 +37,19 @@ const Picking = () => {
   const classes = useStyles();
 
   const [formValues, setFormValues] = useState(defaultValues);
+  // const [formValues, setFormValues] = useState({});
+  const { loading, data } = useQuery(GET_TASK, {
+    variables: {
+      orderType: "SO",
+      orderNumber: 123459,
+    },
+  });
+  const taskData = data?.getTaskByNumber[0] ?? [];
+
+  // If data isn't here yet, wait for it
+  if (loading) {
+    return <h2>LOADING TASKS...</h2>;
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +58,7 @@ const Picking = () => {
       [name]: value,
     });
   };
+
   const handleSliderChange = (name) => (e, value) => {
     setFormValues({
       ...formValues,
@@ -89,6 +70,35 @@ const Picking = () => {
     event.preventDefault();
     console.log(formValues);
   };
+
+  // console.log(taskData);
+  const { orderType, orderNumber, user, operation, priority, customer, items } =
+    taskData;
+
+  const defaultValues = {
+    orderType,
+    orderNumber,
+    customerNumber: customer.code,
+    customerName: customer.name,
+    user,
+    operation,
+    priority,
+    items: { ...items },
+    notes: "Hurry up! Premium customer.",
+  };
+  console.log(defaultValues);
+  setFormValues(defaultValues);
+  // setFormValues({
+  //   orderType,
+  //   orderNumber,
+  //   customerNumber: customer.code,
+  //   customerName: customer.name,
+  //   user,
+  //   operation,
+  //   priority,
+  //   items: { ...items },
+  //   notes: "Hurry up! Premium customer.",
+  // });
 
   return (
     <Container className={classes.container} maxWidth="lg">
@@ -203,12 +213,74 @@ const Picking = () => {
               type="number"
               value={formValues.quantity}
               onChange={handleInputChange}
-            />
+            >
+              {defaultValues.item.map((item) => {
+                return (
+                  <MenuItem key={item.id} value={item.id}>
+                    {item.description}
+                  </MenuItem>
+                );
+              })}
+            </TextField>
           </Grid>
-          <Button variant="contained" color="primary" type="submit">
-            Submit
-          </Button>
         </Grid>
+        <Grid>
+          <TextField
+            id="fromLocation"
+            name="fromLocation"
+            label="From Location"
+            type="text"
+            value={formValues.fromLocation}
+            onChange={handleInputChange}
+          />
+          <TextField
+            id="toLocation"
+            name="toLocation"
+            label="To Location"
+            type="text"
+            value={formValues.toLocation}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Grid>
+          <TextField
+            id="lotNumber"
+            name="lotNumber"
+            label="Lot"
+            type="text"
+            value={formValues.lotNumber}
+            onChange={handleInputChange}
+          />
+          <TextField
+            id="expirationDate"
+            name="expirationDate"
+            label="Expiration Date"
+            type="text"
+            value={formValues.expirationDate}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Grid>
+          <TextField
+            id="UoM"
+            name="UoM"
+            label="UoM"
+            type="text"
+            value={formValues.UoM}
+            onChange={handleInputChange}
+          />
+          <TextField
+            id="quantity"
+            name="quantity"
+            label="Quantity"
+            type="number"
+            value={formValues.quantity}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Button variant="contained" color="primary" type="submit">
+          Submit
+        </Button>
       </form>
     </Container>
   );

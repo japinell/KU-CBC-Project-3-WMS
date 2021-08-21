@@ -8,6 +8,7 @@ const seedInventory = require("./Inventory");
 const seedItem = require("./Item");
 const seedLocation = require("./Location");
 const seedOperation = require("./Operation");
+const seedOrder = require("./Order");
 const seedOrderHeader = require("./OrderHeader");
 const seedOrderDetail = require("./OrderDetail");
 const seedRole = require("./Role");
@@ -39,6 +40,9 @@ const seedAll = async () => {
 
   await seedOperation();
   console.log("\n----- Operation Seeded -----\n");
+
+  await seedOrder();
+  console.log("\n----- Order Seeded -----\n");
 
   await seedOrderHeader();
   console.log("\n----- Order Header Seeded -----\n");
