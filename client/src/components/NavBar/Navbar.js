@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.1rem",
     },
   },
-  acount: {
+  account: {
     marginLeft: "auto",
     "&:hover": {
       background: "purple",

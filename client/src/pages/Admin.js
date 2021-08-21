@@ -14,9 +14,10 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import { useMutation, useQuery } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+
 const Admin = () => {
   return (
-    <Grid>
+    <Grid maxWidth="lg">
       <h2>Header</h2>
     </Grid>
   );

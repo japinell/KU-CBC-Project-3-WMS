@@ -128,28 +128,17 @@ const Picking = ({ defaultValues }) => {
         </Grid>
         <Grid item>
           <FormControl className={classes.formControl}>
-            <InputLabel id="itemNumberLabel">Item Number</InputLabel>
+            <InputLabel>Item Number</InputLabel>
             <Select
               id="itemNumber"
               name="itemNumber"
               label="Item Number"
-              defaultValue={
-                defaultValues.taskDetails
-                  ? defaultValues?.taskDetails[0].sku
-                  : "none"
-              }
-              value={
-                formValues?.taskDetails?.length > 0
-                  ? formValues.taskDetails[0].item.sku
-                  : "none"
-              }
+              defaultValue={defaultValues.taskDetails[0].sku}
+              value={formValues.taskDetails[0].item.sku}
               onChange={handleInputChange}
             >
-              {/* <MenuItem key="none" value="none">
-                "None"
-              </MenuItem> */}
               {console.log("Inside the Select => ", defaultValues.taskDetails)}
-              {defaultValues?.taskDetails?.map(({ item, uom, quantity }) => {
+              {defaultValues.taskDetails.map(({ item, uom, quantity }) => {
                 return (
                   <div
                     key={item.sku}

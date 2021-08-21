@@ -142,10 +142,7 @@
     font-size: smaller;
   }
 }
-.player-wrapper {
-  position: relative;
-  padding-top: 56.25%;
-}
+
 .react-player {
   position: absolute;
   top: 0;
