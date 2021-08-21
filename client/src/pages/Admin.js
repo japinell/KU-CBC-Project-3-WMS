@@ -13,7 +13,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import { useMutation, useQuery } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
+import { GET_USER } from "../utils/queries";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -52,10 +52,12 @@ const useStyles = makeStyles((theme) => ({
 
 // const { userData } = require("../models/User.js");
 
+let defaultValues = {},
+
 const [formValues, setFormValues] = useState(defaultValues);
 
 const handleInputChange = (e) => {
-  const { name, value } = e.target;
+  const { GET_USER, value } = e.target;
   setFormValues({
     ...formValues,
     [name]: value,
@@ -63,25 +65,25 @@ const handleInputChange = (e) => {
 };
 // const handleSliderChange = (name) => (e, value) => {
 //   setFormValues({
-//     ...formValues,
-//     [name]: value,
-//   });
-// };
-const handleSubmit = (event) => {
-  event.preventDefault();
-  console.log(formValues);
-};
-
-const cards = [];
-
-const renderCards = () => {
-  for (const [i, userData] of userData.entries()) {
-    cards.push(<li>{userData}</li>);
-
-    return <div>{cards}</div>;
-  }
-};
-
+  //     ...formValues,
+  //     [name]: value,
+  //   });
+  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValues);
+  };
+  
+  const cards = [];
+  
+  const renderCards = () => {
+    for (const [i, userData] of userData.entries()) {
+      cards.push(<li>{userData}</li>);
+  
+      return <div>{cards}</div>;
+    }
+  };
+  
 renderCards();
 
 const Admin = () => {
@@ -117,14 +119,14 @@ const Admin = () => {
                         className={classes.CardContent}
                         placeholder="Apply A User"
                         inputProps={{ "aria-label": "description" }}
-                        value={formValues.username}
+                        value={formValues.firstName}
                         onChange={handleInputChange}
                       />
                       <Input
                         className={classes.CardContent}
                         defaultValue="Select Action"
                         inputProps={{ "aria-label": "description" }}
-                        value={formValues.department}
+                        value={formValues.operation}
                         onChange={handleInputChange}
                       />
                     </form>

@@ -163,20 +163,14 @@ export const GET_TASKS = gql`
   }
 `;
 
-export const GET_ME = gql`
-  query me {
-    me {
+export const GET_USER = gql`
+  query user {
+    firstName
+    lastName
+    email
+    user {
       _id
-      username
       email
-      savedBooks {
-        bookId
-        authors
-        title
-        description
-        image
-        link
-      }
     }
   }
 `;
