@@ -1,12 +1,13 @@
 //
 //  Populate database with default data
 //
-const { Item, Task } = require("../models");
+const { AddressBook, Item, Task } = require("../models");
 
 const taskData = [
   {
     orderType: "SO",
     orderNumber: 123459,
+    customer: 10001,
     user: "user1",
     operation: 10000,
     priority: 1,
@@ -36,6 +37,7 @@ const taskData = [
   {
     orderType: "SO",
     orderNumber: 123460,
+    customer: 10001,
     user: "user1",
     operation: 10000,
     priority: 2,
@@ -68,7 +70,8 @@ const seedTask = async () => {
   await Task.deleteMany({});
 
   for (let i = 0, l = taskData.length; i < l; i++) {
-    const { items, ...task } = taskData[i];
+    const { customer, items, ...task } = taskData[i];
+    const custId = await AddressBook.findOne({ code: customer });
 
     const itemIds = await Promise.all(
       items.map(({ sku }) => Item.findOne({ sku }))
@@ -76,6 +79,7 @@ const seedTask = async () => {
 
     await Task.create({
       ...task,
+      customer: custId._id,
       items: items.map(({ ...i }, idx) => ({
         ...i,
         item: itemIds[idx]._id,

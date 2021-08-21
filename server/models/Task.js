@@ -12,6 +12,11 @@ const taskSchema = new Schema({
   orderNumber: {
     type: Number,
   },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: "AddressBook",
+    required: true,
+  },
   user: {
     type: String,
     required: true,

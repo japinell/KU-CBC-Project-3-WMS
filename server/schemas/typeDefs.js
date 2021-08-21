@@ -128,6 +128,7 @@ const typeDefs = gql`
     id: String!
     orderType: String!
     orderNumber: String!
+    customer: AddressBook!
     user: String!
     operation: Int!
     priority: Int!
@@ -155,15 +156,27 @@ const typeDefs = gql`
   }
 
   type Query {
-    items: [Item]
+    getItemBySku(sku: String!): [Item]
   }
 
   type Query {
-    orders: [Order]
+    getItems: [Item]
   }
 
   type Query {
-    tasks: [Task]
+    getOrderByNumber(orderType: String!, orderNumber: Int!): [Order]
+  }
+
+  type Query {
+    getOrders: [Order]
+  }
+
+  type Query {
+    getTaskByNumber(orderType: String!, orderNumber: Int!): [Task]
+  }
+
+  type Query {
+    getTasks: [Task]
   }
 
   type Query {

@@ -8,33 +8,59 @@ const { AuthenticationError } = require("apollo-server-express");
 //
 const resolvers = {
   Query: {
-    // Returns all items
-    items: async (parent, args, context) => {
+    // Returns an item by sku
+    getItemBySku: async (parent, { sku }, context) => {
       // if (context.user) {
-      const item = await Item.find({});
-      return item;
+      return await Item.find({ sku: sku });
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns all items
+    getItems: async (parent, args, context) => {
+      // if (context.user) {
+      return await Item.find({});
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns an order by number
+    getOrderByNumber: async (parent, { orderType, orderNumber }, context) => {
+      // if (context.user) {
+      return await Order.find({ orderType, orderNumber })
+        .populate("customer")
+        .populate("items.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
       // );
     },
     // Returns all the orders
-    orders: async (parent, args, context) => {
+    getOrders: async (parent, args, context) => {
       // if (context.user) {
-      const order = await Order.find({})
+      return await Order.find({}).populate("customer").populate("items.item");
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns a task by number
+    getTaskByNumber: async (parent, { orderType, orderNumber }, context) => {
+      // if (context.user) {
+      return await Task.find({ orderType, orderNumber })
         .populate("customer")
         .populate("items.item");
-      return order;
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
       // );
     },
     // Returns all the tasks
-    tasks: async (parent, args, context) => {
+    getTasks: async (parent, args, context) => {
       // if (context.user) {
-      const task = await Task.find({}).populate("items.item");
-      return task;
+      return await Task.find({}).populate("customer").populate("items.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
