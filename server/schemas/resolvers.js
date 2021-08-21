@@ -1,12 +1,71 @@
 //
 //  Resolvers - Define the functions to populate the data from the schemas
 //
-const { User, Task } = require("../models");
+const { Item, Task, User } = require("../models");
+const Order = require("../models/Order");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 //
 const resolvers = {
   Query: {
+    // Returns an item by sku
+    getItemBySku: async (parent, { sku }, context) => {
+      // if (context.user) {
+      return await Item.find({ sku: sku });
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns all items
+    getItems: async (parent, args, context) => {
+      // if (context.user) {
+      return await Item.find({});
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns an order by number
+    getOrderByNumber: async (parent, { orderType, orderNumber }, context) => {
+      // if (context.user) {
+      return await Order.find({ orderType, orderNumber })
+        .populate("customer")
+        .populate("items.item");
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns all the orders
+    getOrders: async (parent, args, context) => {
+      // if (context.user) {
+      return await Order.find({}).populate("customer").populate("items.item");
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns a task by number
+    getTaskByNumber: async (parent, { orderType, orderNumber }, context) => {
+      // if (context.user) {
+      return await Task.find({ orderType, orderNumber })
+        .populate("customer")
+        .populate("items.item");
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
+    // Returns all the tasks
+    getTasks: async (parent, args, context) => {
+      // if (context.user) {
+      return await Task.find({}).populate("customer").populate("items.item");
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
     // Return the currently logged in user including their saved books
     user: async (parent, args, context) => {
       if (context.user) {
@@ -16,16 +75,6 @@ const resolvers = {
       throw new AuthenticationError(
         "You need to log in to perform this query!"
       );
-    },
-    // Returns all the tasks
-    tasks: async (parent, args, context) => {
-      // if (context.user) {
-      const task = await Task.find({});
-      return task;
-      // }
-      // throw new AuthenticationError(
-      //   "You need to log in to perform this query!"
-      // );
     },
   },
 

@@ -27,13 +27,11 @@ const itemSchema = new Schema({
     type: String,
     default: "EA",
   },
-  UPC: {
-    type: String,
-  },
   restorePoint: {
     type: Number,
     min: 0,
     default: 0,
+    required: false, // Not required due to no data
   },
   user: String,
   datetime: {

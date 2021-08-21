@@ -1,49 +1,46 @@
 //
-//  Task definition
+//  Order definition
 //
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 //
-const taskSchema = new Schema({
+const orderSchema = new Schema({
   orderType: {
     type: String,
+    required: true,
   },
   orderNumber: {
     type: Number,
+    required: true,
   },
   customer: {
     type: Schema.Types.ObjectId,
     ref: "AddressBook",
     required: true,
   },
-  user: {
+  description: {
     type: String,
-    required: true,
   },
-  operation: {
-    type: Number,
-    required: true,
-  },
-  priority: {
-    type: Number,
+  status: {
+    type: String,
     required: true,
   },
   items: [
     {
       item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
-      quantity: { type: Number },
+      quantity: { type: Number, min: 0.0 },
       uom: { type: String },
-      status: {
-        type: String,
-      },
+      status: { type: String, default: "U" },
     },
   ],
-  notes: {
-    type: String,
+  user: String,
+  datetime: {
+    type: Date,
+    default: Date.now(),
   },
 });
 
-const Task = mongoose.model("Task", taskSchema);
+const Order = mongoose.model("Order", orderSchema);
 
-module.exports = Task;
+module.exports = Order;
