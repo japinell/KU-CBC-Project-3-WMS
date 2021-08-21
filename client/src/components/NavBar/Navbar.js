@@ -17,11 +17,12 @@ import {
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
 import { GiBookAura } from "react-icons/gi";
 import { MdHome } from "react-icons/md";
-import { FaWarehouse } from "react-icons/fa";
-import { RiProductHuntLine } from "react-icons/ri";
+import { BiSpreadsheet } from "react-icons/bi";
+import { GiCardboardBox } from "react-icons/gi";
 import { FiTruck } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
-import { ImHappy } from "react-icons/im";
+import { BiBody } from "react-icons/bi";
+import { BiTask } from "react-icons/bi";
 
 import Auth from "../../utils/auth";
 
@@ -104,16 +105,23 @@ const Navbar = () => {
             />
             <Tab
               component={Link}
+              to="/tasks"
+              disableRipple
+              icon={<BiTask className={classes.icons} />}
+              label="Tasks"
+            />
+            <Tab
+              component={Link}
               to="/picking"
               disableRipple
-              icon={<FaWarehouse className={classes.icons} />}
+              icon={<BiSpreadsheet className={classes.icons} />}
               label="Picking"
             />
             <Tab
               component={Link}
               to="/receiving"
               disableRipple
-              icon={<RiProductHuntLine className={classes.icons} />}
+              icon={<GiCardboardBox className={classes.icons} />}
               label="Receiving"
             />
 
@@ -121,7 +129,7 @@ const Navbar = () => {
               component={Link}
               to="/putaway"
               disableRipple
-              icon={<ImHappy className={classes.icons} />}
+              icon={<BiBody className={classes.icons} />}
               label="PutAway"
             />
 
@@ -134,21 +142,8 @@ const Navbar = () => {
             />
           </Tabs>
           <Button
-            component={Link}
-            to="/profile"
-            aria-controls="menu"
-            onMouseOver={handleOpenMenu}
-            className={classes.acount}
-            disableElevation
-            disableRipple
-            variant="contained"
-            color="secondary"
-          >
-            Profile
-          </Button>
-          <Button
             onClick={Auth.logout}
-            className={classes.acount}
+            className={classes.account}
             disableElevation
             disableRipple
             variant="contained"
@@ -178,19 +173,6 @@ const Navbar = () => {
           <DrawerComponent />
         </Toolbar>
       </AppBar>
-      <Menu
-        style={{ marginTop: "50px" }}
-        id="menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleCloseMenu}
-      >
-        <MenuItem onClick={handleCloseMenu}>My Account</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Examination Results</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Promotions</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Pending Fees</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Final Project</MenuItem>
-      </Menu>
     </>
   );
 };

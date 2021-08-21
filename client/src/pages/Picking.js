@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     textAlign: theme.left,
-    // margin: theme.spacing(1),
     minWidth: 120,
   },
   selectEmpty: {
@@ -106,49 +105,113 @@ const Picking = () => {
       <h1>Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid>
-          <TextField
-            id="orderType"
-            name="orderType"
-            label="Order Type"
-            type="text"
-            value={formValues.orderType}
-            onChange={handleInputChange}
-          />
-          <TextField
-            id="orderNumber"
-            name="orderNumber"
-            label="Order Number"
-            type="text"
-            value={formValues.orderNumber}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid>
-          <TextField
-            id="customerNumber"
-            name="customerNumber"
-            label="Customer Number"
-            type="text"
-            value={formValues.customerNumber}
-            onChange={handleInputChange}
-          />
-          <TextField
-            id="customerName"
-            name="customerName"
-            label="Customer Name"
-            type="text"
-            value={formValues.customerName}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="demo-simple-select-label">Item Number</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              defaultValue={defaultValues.item[0].id}
-              value={formValues.itemNumber}
+          <Grid>
+            <TextField
+              id="orderType"
+              name="orderType"
+              label="Order Type"
+              type="text"
+              value={formValues.orderType}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="orderNumber"
+              name="orderNumber"
+              label="Order Number"
+              type="text"
+              value={formValues.orderNumber}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid>
+            <TextField
+              id="customerNumber"
+              name="customerNumber"
+              label="Customer Number"
+              type="text"
+              value={formValues.customerNumber}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="customerName"
+              name="customerName"
+              label="Customer Name"
+              type="text"
+              value={formValues.customerName}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">Item Number</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                defaultValue={defaultValues.item[0].id}
+                value={formValues.itemNumber}
+                onChange={handleInputChange}
+              >
+                {defaultValues.item.map((item) => {
+                  return (
+                    <MenuItem key={item.id} value={item.id}>
+                      {item.description}
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid>
+            <TextField
+              id="fromLocation"
+              name="fromLocation"
+              label="From Location"
+              type="text"
+              value={formValues.fromLocation}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="toLocation"
+              name="toLocation"
+              label="To Location"
+              type="text"
+              value={formValues.toLocation}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid>
+            <TextField
+              id="lotNumber"
+              name="lotNumber"
+              label="Lot"
+              type="text"
+              value={formValues.lotNumber}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="expirationDate"
+              name="expirationDate"
+              label="Expiration Date"
+              type="text"
+              value={formValues.expirationDate}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid>
+            <TextField
+              id="UoM"
+              name="UoM"
+              label="UoM"
+              type="text"
+              value={formValues.UoM}
+              onChange={handleInputChange}
+            />
+            <TextField
+              id="quantity"
+              name="quantity"
+              label="Quantity"
+              type="number"
+              value={formValues.quantity}
               onChange={handleInputChange}
             >
               {defaultValues.item.map((item) => {
@@ -158,8 +221,8 @@ const Picking = () => {
                   </MenuItem>
                 );
               })}
-            </Select>
-          </FormControl>
+            </TextField>
+          </Grid>
         </Grid>
         <Grid>
           <TextField
