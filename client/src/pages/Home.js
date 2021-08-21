@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Player, ControlBar } from "video-react";
 import video from "../images/wms.mp4";
 import "../styles/footer.css";
-import ReactPlayer from "react-player";
 
 import Auth from "../utils/auth";
 
