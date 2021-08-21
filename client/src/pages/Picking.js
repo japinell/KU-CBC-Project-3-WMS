@@ -14,45 +14,11 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
-import { GET_TASK_BY_NUMBER } from "../utils/queries";
+import { GET_TASK } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
 import { useMutation, useQuery } from "@apollo/client";
-
-const defaultValues = {
-  orderType: "SO",
-  orderNumber: 123459,
-  customerNumber: 10001,
-  customerName: "Customer X",
-  user: "user1",
-  operation: 10000,
-  priority: 1,
-  item: [
-    {
-      id: "600190",
-      description: "Item X",
-      quantity: 100,
-      uom: "BX",
-      status: "U",
-    },
-    {
-      id: "600230",
-      description: "Item Y",
-      quantity: 100,
-      uom: "BX",
-      status: "U",
-    },
-    {
-      id: "610990",
-      description: "Item Z",
-      quantity: 100,
-      uom: "BAG",
-      status: "U",
-    },
-  ],
-  note: "Hurry up! Premium customer.",
-};
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -71,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
 const Picking = () => {
   const classes = useStyles();
 
-  //const [formValues, setFormValues] = useState(defaultValues);
-  const [formValues, setFormValues] = useState({});
-  const { loading, data } = useQuery(GET_TASK_BY_NUMBER, {
+  const [formValues, setFormValues] = useState(defaultValues);
+  // const [formValues, setFormValues] = useState({});
+  const { loading, data } = useQuery(GET_TASK, {
     variables: {
       orderType: "SO",
       orderNumber: 123459,
@@ -86,31 +52,6 @@ const Picking = () => {
     return <h2>LOADING TASKS...</h2>;
   }
 
-  console.log(taskData);
-  const { orderType, orderNumber, user, operation, priority, customer, items } =
-    taskData;
-
-  const newValues = {
-    orderType,
-    orderNumber,
-    customerNumber: customer.code,
-    customerName: customer.name,
-    user,
-    operation,
-    priority,
-    item: [
-      {
-        id: "600190",
-        description: "Item X",
-        quantity: 100,
-        uom: "BX",
-        status: "U",
-      },
-    ],
-    notes: "Hurry up! Premium customer.",
-  };
-  // setFormValues(newValues);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({
@@ -118,6 +59,7 @@ const Picking = () => {
       [name]: value,
     });
   };
+
   const handleSliderChange = (name) => (e, value) => {
     setFormValues({
       ...formValues,
@@ -129,6 +71,35 @@ const Picking = () => {
     event.preventDefault();
     console.log(formValues);
   };
+
+  // console.log(taskData);
+  const { orderType, orderNumber, user, operation, priority, customer, items } =
+    taskData;
+
+  const defaultValues = {
+    orderType,
+    orderNumber,
+    customerNumber: customer.code,
+    customerName: customer.name,
+    user,
+    operation,
+    priority,
+    items: { ...items },
+    notes: "Hurry up! Premium customer.",
+  };
+  console.log(defaultValues);
+  setFormValues(defaultValues);
+  // setFormValues({
+  //   orderType,
+  //   orderNumber,
+  //   customerNumber: customer.code,
+  //   customerName: customer.name,
+  //   user,
+  //   operation,
+  //   priority,
+  //   items: { ...items },
+  //   notes: "Hurry up! Premium customer.",
+  // });
 
   return (
     <Container className={classes.container} maxWidth="lg">

@@ -91,7 +91,7 @@ export const GET_ORDERS = gql`
   }
 `;
 
-export const GET_TASK_BY_NUMBER = gql`
+export const GET_TASK = gql`
   query getTaskByNumber($orderType: String!, $orderNumber: Int!) {
     getTaskByNumber(orderType: $orderType, orderNumber: $orderNumber) {
       id
