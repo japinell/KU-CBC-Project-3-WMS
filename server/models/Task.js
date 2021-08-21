@@ -24,9 +24,9 @@ const taskSchema = new Schema({
     type: Number,
     required: true,
   },
-  item: [
+  items: [
     {
-      sku: { type: Schema.Types.ObjectId, ref: "Item", required: true },
+      item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number },
       uom: { type: String },
       status: {

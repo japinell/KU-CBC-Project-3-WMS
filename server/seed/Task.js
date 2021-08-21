@@ -1,7 +1,7 @@
 //
 //  Populate database with default data
 //
-const { Task } = require("../models");
+const { Item, Task } = require("../models");
 
 const taskData = [
   {
@@ -10,7 +10,7 @@ const taskData = [
     user: "user1",
     operation: 10000,
     priority: 1,
-    item: [
+    items: [
       {
         sku: "600190",
         quantity: 100,
@@ -30,7 +30,7 @@ const taskData = [
         status: "U",
       },
     ],
-    note: "Hurry up! Premium customer.",
+    notes: "Hurry up! Premium customer.",
     user: "admin",
   },
   {
@@ -39,7 +39,7 @@ const taskData = [
     user: "user1",
     operation: 10000,
     priority: 2,
-    item: [
+    items: [
       {
         sku: "703250",
         quantity: 100,
@@ -59,14 +59,29 @@ const taskData = [
         status: "U",
       },
     ],
-    note: "Take your time...",
+    notes: "Take your time...",
     user: "admin",
   },
 ];
 
 const seedTask = async () => {
   await Task.deleteMany({});
-  await Task.insertMany(taskData);
+
+  for (let i = 0, l = taskData.length; i < l; i++) {
+    const { items, ...task } = taskData[i];
+
+    const itemIds = await Promise.all(
+      items.map(({ sku }) => Item.findOne({ sku }))
+    );
+
+    await Task.create({
+      ...task,
+      items: items.map(({ ...i }, idx) => ({
+        ...i,
+        item: itemIds[idx]._id,
+      })),
+    });
+  }
 };
 
 module.exports = seedTask;

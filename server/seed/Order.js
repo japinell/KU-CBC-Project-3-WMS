@@ -1,12 +1,17 @@
 //
 //  Populate database with default data
 //
-const { Item, OrderDetail } = require("../models");
+const AddressBook = require("../models/AddressBook");
+const Item = require("../models/Item");
+const Order = require("../models/Order");
 
-const orderDetailData = [
+const orderData = [
   {
     orderType: "PO",
     orderNumber: 123456,
+    customer: 10000,
+    description: "Some goodies to receive",
+    status: "U",
     items: [
       {
         sku: "703250",
@@ -40,10 +45,14 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "PO",
     orderNumber: 123457,
+    customer: 10000,
+    description: "Some more goodies to receive",
+    status: "U",
     items: [
       {
         sku: "703250",
@@ -65,10 +74,14 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "ST",
     orderNumber: 123458,
+    customer: 10000,
+    description: "Some goodies to transfer",
+    status: "U",
     items: [
       {
         sku: "600190",
@@ -90,10 +103,14 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "SO",
     orderNumber: 123459,
+    customer: 10001,
+    description: "Some goodies to sell",
+    status: "U",
     items: [
       {
         sku: "600190",
@@ -115,10 +132,14 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "SO",
     orderNumber: 123460,
+    customer: 10001,
+    description: "Some more goodies to sell",
+    status: "U",
     items: [
       {
         sku: "703250",
@@ -140,24 +161,26 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
 ];
 
-const data = [];
+const seedOrder = async () => {
+  await Order.deleteMany({});
 
-const seedOrderDetail = async () => {
-  await OrderDetail.deleteMany({});
+  for (let i = 0, l = orderData.length; i < l; i++) {
+    const { customer, items, ...order } = orderData[i];
 
-  for (let i = 0, l = orderDetailData.length; i < l; i++) {
-    const { items, ...order } = orderDetailData[i];
+    const custId = await AddressBook.findOne({ code: customer });
 
     const itemIds = await Promise.all(
       items.map(({ sku }) => Item.findOne({ sku }))
     );
 
-    await OrderDetail.create({
+    await Order.create({
       ...order,
-      items: items.map(({ sku, ...i }, idx) => ({
+      customer: custId._id,
+      items: items.map(({ ...i }, idx) => ({
         ...i,
         item: itemIds[idx]._id,
       })),
@@ -165,4 +188,4 @@ const seedOrderDetail = async () => {
   }
 };
 
-module.exports = seedOrderDetail;
+module.exports = seedOrder;

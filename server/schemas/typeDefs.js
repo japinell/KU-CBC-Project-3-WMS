@@ -5,11 +5,12 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type AddressBook {
-    id: ID!
+    _id: ID!
+    code: Int!
     name: String!
     type: String!
     address: PostalAddress
-    phone: [String]
+    phone: String
   }
 
   type PostalAddress {
@@ -44,10 +45,12 @@ const typeDefs = gql`
 
   type Item {
     _id: ID!
-    item: String!
+    sku: String!
     description: String!
     upc: String!
+    category: String!
     primaryUom: String
+    restorePoint: Int
   }
 
   type Kardex {
@@ -80,6 +83,16 @@ const typeDefs = gql`
     description: String!
   }
 
+  type Order {
+    id: String!
+    orderType: String!
+    orderNumber: Int!
+    customer: AddressBook!
+    description: String!
+    status: String!
+    items: [OrderItem]
+  }
+
   type OrderHeader {
     id: ID!
     orderType: String!
@@ -91,7 +104,8 @@ const typeDefs = gql`
   }
 
   type OrderItem {
-    item: String!
+    item: Item!
+    sku: String!
     quantity: Int!
     uom: String!
     status: String!
@@ -118,7 +132,7 @@ const typeDefs = gql`
     operation: Int!
     priority: Int!
     items: [OrderItem]
-    note: String
+    notes: String
   }
 
   type UoM {
@@ -141,11 +155,19 @@ const typeDefs = gql`
   }
 
   type Query {
-    user: User
+    items: [Item]
+  }
+
+  type Query {
+    orders: [Order]
   }
 
   type Query {
     tasks: [Task]
+  }
+
+  type Query {
+    user: User
   }
 
   type Mutation {
