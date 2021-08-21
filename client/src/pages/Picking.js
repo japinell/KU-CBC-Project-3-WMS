@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,6 +14,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
+import { GET_TASK_BY_NUMBER } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
@@ -70,7 +71,45 @@ const useStyles = makeStyles((theme) => ({
 const Picking = () => {
   const classes = useStyles();
 
-  const [formValues, setFormValues] = useState(defaultValues);
+  //const [formValues, setFormValues] = useState(defaultValues);
+  const [formValues, setFormValues] = useState({});
+  const { loading, data } = useQuery(GET_TASK_BY_NUMBER, {
+    variables: {
+      orderType: "SO",
+      orderNumber: 123459,
+    },
+  });
+  const taskData = data?.getTaskByNumber[0] ?? [];
+
+  // If data isn't here yet, wait for it
+  if (loading) {
+    return <h2>LOADING TASKS...</h2>;
+  }
+
+  console.log(taskData);
+  const { orderType, orderNumber, user, operation, priority, customer, items } =
+    taskData;
+
+  const newValues = {
+    orderType,
+    orderNumber,
+    customerNumber: customer.code,
+    customerName: customer.name,
+    user,
+    operation,
+    priority,
+    item: [
+      {
+        id: "600190",
+        description: "Item X",
+        quantity: 100,
+        uom: "BX",
+        status: "U",
+      },
+    ],
+    notes: "Hurry up! Premium customer.",
+  };
+  // setFormValues(newValues);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
