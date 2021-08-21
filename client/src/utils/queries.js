@@ -129,7 +129,7 @@ export const GET_TASK = gql`
 
 export const GET_TASKS = gql`
   query getTasks {
-    tasks {
+    getTasks {
       id
       orderType
       orderNumber
