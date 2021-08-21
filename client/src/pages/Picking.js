@@ -34,43 +34,33 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Picking = ({ defaultValues }) => {
-  console.log("Default values =>", defaultValues);
+  console.log(defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
 
   const handleInputChange = (e) => {
-    const { name, value, dataItem } = e.target;
-    console.log(e.target);
+    const { name, value } = e.target;
+    console.log("Target => ", e.target);
+    console.log("Value => ", value);
+
     if (name === "itemNumber") {
-      // setFormValues({
-      //   ...formValues,
-      //   quantity:  formValues.taskDetails.filter((item) => {
-      //     item.
-      //   }),
-      //   uom: value,
-      // });
-      let i = 0;
+      const selItem = defaultValues.taskItemDetails.filter((elem) => {
+        return elem.item.sku === value;
+      });
+      console.log(selItem);
+
+      setFormValues({
+        ...formValues,
+        itemNumber: value,
+        uom: selItem[0].uom,
+        quantity: selItem[0].quantity,
+      });
     } else {
       setFormValues({
         ...formValues,
         [name]: value,
       });
     }
-  };
-
-  const handleItemChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
-  const handleSliderChange = (name) => (e, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
   };
 
   const handleSubmit = (event) => {
@@ -83,8 +73,10 @@ const Picking = ({ defaultValues }) => {
   //   console.log("formValues => ");
   //   console.log(formValues);
   //   console.log("formValues.items => ");
-  //   console.log(formValues.taskDetails);
+  //   console.log(formValues.taskItemDetails);
   // }, []);
+
+  console.log("Form values => ", formValues);
 
   return (
     <Container className={classes.container} maxWidth="lg">
@@ -133,20 +125,15 @@ const Picking = ({ defaultValues }) => {
               id="itemNumber"
               name="itemNumber"
               label="Item Number"
-              defaultValue={defaultValues.taskDetails[0].sku}
-              value={formValues.taskDetails[0].item.sku}
+              // defaultValue={defaultValues.taskItemDetails[0].item.sku}
+              value={formValues.itemNumber}
               onChange={handleInputChange}
             >
-              {console.log("Inside the Select => ", defaultValues.taskDetails)}
-              {defaultValues.taskDetails.map(({ item, uom, quantity }) => {
+              {defaultValues.taskItemDetails.map(({ item }) => {
                 return (
-                  <div
-                    key={item.sku}
-                    value={item.sku}
-                    dataItem={(uom, quantity)}
-                  >
-                    <MenuItem>{item.description}</MenuItem>
-                  </div>
+                  <MenuItem key={item.sku} value={item.sku}>
+                    {item.description}
+                  </MenuItem>
                 );
               })}
             </Select>
@@ -190,11 +177,11 @@ const Picking = ({ defaultValues }) => {
         </Grid>
         <Grid>
           <TextField
-            id="UoM"
-            name="UoM"
+            id="uou"
+            name="uom"
             label="UoM"
             type="text"
-            value={formValues.UoM}
+            value={formValues.uom}
             onChange={handleInputChange}
           />
           <TextField

@@ -16,9 +16,6 @@ const PickingData = () => {
     return <h1>Loading Task Data...</h1>;
   }
 
-  console.log("Data loaded!");
-  console.log(data);
-
   const taskData = data?.getTaskByNumber[0] ?? [];
 
   const {
@@ -40,10 +37,12 @@ const PickingData = () => {
     user,
     operation,
     priority,
-    taskDetails: items,
+    taskItemDetails: items,
     notes,
+    itemNumber: "",
+    quantity: "",
+    uom: "",
   };
-  // console.log(pickingData);
 
   return <Picking defaultValues={pickingData} />;
 };
