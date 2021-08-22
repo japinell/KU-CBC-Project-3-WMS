@@ -33,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  textCentered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 }));
 
 const Picking = ({ defaultValues }) => {
@@ -117,7 +122,7 @@ const Picking = ({ defaultValues }) => {
 
   return (
     <Container className={classes.container} maxWidth="lg">
-      <h1>Picking</h1>
+      <h1 className={classes.textCentered}>Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid>
           <TextField
@@ -127,6 +132,7 @@ const Picking = ({ defaultValues }) => {
             type="text"
             value={formValues.orderType}
             onChange={handleInputChange}
+            disabled
           />
           <TextField
             id="orderNumber"
@@ -135,6 +141,7 @@ const Picking = ({ defaultValues }) => {
             type="text"
             value={formValues.orderNumber}
             onChange={handleInputChange}
+            disabled
           />
         </Grid>
         <Grid>
@@ -145,6 +152,7 @@ const Picking = ({ defaultValues }) => {
             type="text"
             value={formValues.customerNumber}
             onChange={handleInputChange}
+            disabled
           />
           <TextField
             id="customerName"
@@ -153,6 +161,7 @@ const Picking = ({ defaultValues }) => {
             type="text"
             value={formValues.customerName}
             onChange={handleInputChange}
+            disabled
           />
         </Grid>
         <Grid item>
@@ -210,6 +219,7 @@ const Picking = ({ defaultValues }) => {
             type="text"
             value={formValues.expirationDate}
             onChange={handleInputChange}
+            disabled
           />
         </Grid>
         <Grid>
@@ -230,9 +240,15 @@ const Picking = ({ defaultValues }) => {
             onChange={handleInputChange}
           />
         </Grid>
-        <Button variant="contained" color="primary" type="submit">
-          Submit
-        </Button>
+        <br />
+        <Grid className={classes.textCentered}>
+          <Button variant="contained" color="primary" type="submit">
+            Submit
+          </Button>
+          <Button variant="contained" color="primary" href="/home">
+            Cancel
+          </Button>
+        </Grid>
       </form>
     </Container>
   );
