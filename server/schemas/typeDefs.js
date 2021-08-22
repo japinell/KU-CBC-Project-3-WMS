@@ -35,7 +35,7 @@ const typeDefs = gql`
 
   type Inventory {
     id: ID!
-    item: String!
+    sku: String!
     description: String!
     location: String!
     lot: String
@@ -55,13 +55,15 @@ const typeDefs = gql`
 
   type Kardex {
     id: ID!
-    item: Item!
-    location: Location!
+    sku: String!
+    location: String!
     lot: String!
     quantity: Int!
-    uom: UoM!
-    operation: Operation!
+    uom: String!
+    operation: String!
     description: String
+    user: String
+    datetime: String
   }
 
   type Location {
@@ -160,6 +162,10 @@ const typeDefs = gql`
   }
 
   type Query {
+    getInventoryBySku(sku: String!, location: String, lot: String): [Inventory]
+  }
+
+  type Query {
     getItems: [Item]
   }
 
@@ -185,23 +191,35 @@ const typeDefs = gql`
 
   type Mutation {
     updateInventory(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
-      primary: Boolean
       quantity: Int!
+      user: String
     ): Inventory
   }
 
   type Mutation {
+    updateOrder(
+      orderType: String!
+      orderNumber: Int!
+      status: String!
+      sku: String!
+      quantity: Int!
+      user: String
+    ): Order
+  }
+
+  type Mutation {
     addKardex(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
       quantity: Int!
       uom: String!
       operation: String!
       description: String!
+      user: String
     ): Kardex
   }
 

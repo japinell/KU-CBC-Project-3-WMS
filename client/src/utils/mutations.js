@@ -5,41 +5,106 @@ import { gql } from "@apollo/client";
 
 export const UPDATE_INVENTORY = gql`
   mutation updateInventory(
-    $item: String!
+    $sku: String!
     $location: String!
     $lot: String!
-    $primary: Boolean
     $quantity: Int!
+    $user: String
   ) {
     updateInventory(
-      item: $item
+      sku: $sku
       location: $location
       lot: $lot
-      primary: $primary
       quantity: $quantity
-    )
+      user: $user
+    ) {
+      sku
+      location
+      lot
+      quantity
+    }
   }
 `;
 
 export const ADD_KARDEX = gql`
   mutation addKardex(
-    $item: String!
+    $sku: String!
     $location: String!
     $lot: String!
     $quantity: Int!
     $uom: String!
     $operation: String!
     $description: String!
+    $user: String
   ) {
     addKardex(
-      item: $item
+      sku: $sku
       location: $location
       lot: $lot
       quantity: $quantity
       uom: $uom
       operation: $operation
       description: $description
-    )
+      user: $user
+    ) {
+      sku
+      location
+      lot
+      quantity
+      uom
+      operation
+      description
+      user
+      datetime
+    }
+  }
+`;
+
+export const UPDATE_ORDER = gql`
+  mutation updateOrder(
+    $orderType: String!
+    $orderNumber: Int!
+    $status: String!
+    $sku: String!
+    $quantity: Int!
+    $user: String
+  ) {
+    updateOrder(
+      orderType: $orderType
+      orderNumber: $orderNumber
+      status: $status
+      sku: $sku
+      quantity: $quantity
+      user: $user
+    ) {
+      id
+      orderType
+      orderNumber
+      customer {
+        _id
+        code
+        name
+        address {
+          street
+          city
+          state
+          postalCode
+        }
+        phone
+      }
+      description
+      status
+      items {
+        item {
+          _id
+          sku
+          description
+        }
+        quantity
+        uom
+        status
+      }
+    }
   }
 `;
 
