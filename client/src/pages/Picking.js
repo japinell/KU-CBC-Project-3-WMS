@@ -111,6 +111,18 @@ const Picking = ({ defaultValues }) => {
     }
   };
 
+  function CenterGrid(props) {
+    return (
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        {...props}
+      />
+    );
+  }
+
   // useEffect(() => {
   //   setFormValues(defaultValues);
   //   console.log("formValues => ");
@@ -132,7 +144,7 @@ const Picking = ({ defaultValues }) => {
           Picking
         </Typography>
         <form onSubmit={handleSubmit}>
-          <Grid>
+          <CenterGrid>
             <TextField
               id="orderType"
               name="orderType"
@@ -151,8 +163,8 @@ const Picking = ({ defaultValues }) => {
               onChange={handleInputChange}
               disabled
             />
-          </Grid>
-          <Grid>
+          </CenterGrid>
+          <CenterGrid>
             <TextField
               id="customerNumber"
               name="customerNumber"
@@ -171,8 +183,8 @@ const Picking = ({ defaultValues }) => {
               onChange={handleInputChange}
               disabled
             />
-          </Grid>
-          <Grid item>
+          </CenterGrid>
+          <CenterGrid>
             <FormControl className={classes.formControl}>
               <InputLabel>Item Number</InputLabel>
               <Select
@@ -192,8 +204,8 @@ const Picking = ({ defaultValues }) => {
                 })}
               </Select>
             </FormControl>
-          </Grid>
-          <Grid>
+          </CenterGrid>
+          <CenterGrid>
             <TextField
               id="fromLocation"
               name="fromLocation"
@@ -210,8 +222,8 @@ const Picking = ({ defaultValues }) => {
               value={formValues.toLocation}
               onChange={handleInputChange}
             />
-          </Grid>
-          <Grid>
+          </CenterGrid>
+          <CenterGrid>
             <TextField
               id="lotNumber"
               name="lotNumber"
@@ -229,8 +241,8 @@ const Picking = ({ defaultValues }) => {
               onChange={handleInputChange}
               disabled
             />
-          </Grid>
-          <Grid>
+          </CenterGrid>
+          <CenterGrid>
             <TextField
               id="uom"
               name="uom"
@@ -247,15 +259,35 @@ const Picking = ({ defaultValues }) => {
               value={formValues.quantity}
               onChange={handleInputChange}
             />
-          </Grid>
+          </CenterGrid>
           <br />
-          <Grid className={classes.textCentered}>
-            <Button variant="contained" color="primary" type="submit">
-              Submit
-            </Button>
-            <Button variant="contained" color="primary" href="/home">
-              Cancel
-            </Button>
+          <Grid className={classes.textCentered} spacing={2}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Button variant="contained" color="primary" type="submit">
+                Submit
+              </Button>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Button variant="contained" color="primary" href="/home">
+                Cancel
+              </Button>
+            </Grid>
           </Grid>
         </form>
       </Container>
