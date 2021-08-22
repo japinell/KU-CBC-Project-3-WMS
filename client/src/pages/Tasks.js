@@ -44,20 +44,20 @@ export default function Tasks({ defaultValues }) {
   const [formValues, setFormValues] = useState(defaultValues);
   const rows = [
     createTaskData(
-      defaultValues.orderType,
-      defaultValues.orderNumber,
-      defaultValues.customerName,
-      defaultValues.customerNumber,
-      defaultValues.notes,
-      defaultValues.user
+      defaultValues[0].orderType,
+      defaultValues[0].orderNumber,
+      defaultValues[0].customer.name,
+      defaultValues[0].customer.code,
+      defaultValues[0].notes,
+      defaultValues[0].user
     ),
     createTaskData(
-      defaultValues.orderType,
-      defaultValues.orderNumber,
-      defaultValues.customerName,
-      defaultValues.customerNumber,
-      defaultValues.notes,
-      defaultValues.user
+      defaultValues[1].orderType,
+      defaultValues[1].orderNumber,
+      defaultValues[1].customer.name,
+      defaultValues[1].customer.code,
+      defaultValues[1].notes,
+      defaultValues[1].user
     ),
     createTaskData(
       defaultValues.orderType,

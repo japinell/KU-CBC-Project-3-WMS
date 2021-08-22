@@ -14,8 +14,8 @@ const TaskData = () => {
   console.log("Data loaded!");
   console.log(data);
 
-  const queryTaskData = data?.getTasks[0] ?? [];
-
+  const queryTaskData = data?.getTasks ?? [];
+  console.log(queryTaskData);
   const {
     orderType,
     orderNumber,
@@ -27,20 +27,7 @@ const TaskData = () => {
     items,
   } = queryTaskData;
 
-  const pickingData = {
-    orderType,
-    orderNumber,
-    customerNumber: customer.code,
-    customerName: customer.name,
-    user,
-    operation,
-    priority,
-    taskDetails: items,
-    notes,
-  };
-  console.log(pickingData);
-
-  return <Tasks defaultValues={pickingData} />;
+  return <Tasks defaultValues={queryTaskData} />;
 };
 
 export default TaskData;
