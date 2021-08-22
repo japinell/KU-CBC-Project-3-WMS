@@ -191,20 +191,17 @@ const typeDefs = gql`
 
   type Mutation {
     updateInventory(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
       quantity: Int!
-      uom: String!
-      operation: String!
-      description: String!
       user: String
     ): Inventory
   }
 
   type Mutation {
     addKardex(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
       quantity: Int!

@@ -12,9 +12,9 @@ const resolvers = {
     // Returns the inventory availability for an item
     getInventoryBySku: async (parent, { sku, location, lot }, context) => {
       // if (context.user) {
-      console.log("Sku => ", sku);
-      console.log("Location => ", location);
-      console.log("Lot => ", lot);
+      // console.log("Sku => ", sku);
+      // console.log("Location => ", location);
+      // console.log("Lot => ", lot);
 
       if (sku && location && lot) {
         return await Inventory.find({
@@ -110,23 +110,30 @@ const resolvers = {
 
   Mutation: {
     //  Update an inventory item - Return the inventory object updated
-    updateInventory: async (
-      parent,
-      { item, location, lot, quantity, uom, operation, description }
-    ) => {
+    updateInventory: async (parent, { sku, location, lot, quantity }) => {
       // if (context.user) {
       try {
         console.log("Updating inventory record...");
-        const inventory = await Inventory.findOneAndUpdate(
-          { item, location, lot },
-          { quantity },
+        const currInventory = await Inventory.findOne({
+          sku,
+          location,
+          lot,
+        });
+        const newQuantity = currInventory.quantity - quantity;
+
+        if (newQuantity < 0) {
+          throw new AuthenticationError(
+            "Error: Inventory quantity cannot become less than zero."
+          );
+        }
+
+        const newInventory = await Inventory.findOneAndUpdate(
+          { sku, location, lot },
+          { quantity: newQuantity },
           { new: true }
         );
 
-        if (inventory) {
-          await addKardex(item, location, lot, uom, operation, description);
-        }
-        return inventory;
+        return newInventory;
       } catch (error) {
         console.log(error);
       }
@@ -140,13 +147,13 @@ const resolvers = {
     //  Add a kardex record - Return the kardex object inserted
     addKardex: async (
       parent,
-      { item, location, lot, quantity, uom, operation, description, user }
+      { sku, location, lot, quantity, uom, operation, description, user }
     ) => {
       // if (context.user) {
       try {
         console.log("Creating kardex record...");
         const kardex = await Kardex.create({
-          item,
+          sku,
           location,
           lot,
           quantity,

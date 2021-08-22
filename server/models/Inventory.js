@@ -24,7 +24,7 @@ const inventorySchema = new Schema({
   },
   quantity: {
     type: Number,
-    min: 0.0,
+    min: 0,
     default: 0,
   },
   user: String,
