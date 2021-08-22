@@ -230,9 +230,14 @@ const Picking = ({ defaultValues }) => {
             onChange={handleInputChange}
           />
         </Grid>
-        <Button variant="contained" color="primary" type="submit">
-          Submit
-        </Button>
+        <Grid>
+          <Button variant="contained" color="primary" type="submit">
+            Submit
+          </Button>
+          <Button variant="contained" color="primary" href="/home">
+            Cancel
+          </Button>
+        </Grid>
       </form>
     </Container>
   );
