@@ -14,7 +14,6 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
-import { GET_TASK } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
@@ -26,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     textAlign: theme.left,
+    // margin: theme.spacing(1),
     minWidth: 120,
   },
   selectEmpty: {
@@ -33,37 +33,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Picking = () => {
+const Picking = ({ defaultValues }) => {
+  console.log(defaultValues);
   const classes = useStyles();
-
   const [formValues, setFormValues] = useState(defaultValues);
-  // const [formValues, setFormValues] = useState({});
-  const { loading, data } = useQuery(GET_TASK, {
-    variables: {
-      orderType: "SO",
-      orderNumber: 123459,
-    },
-  });
-  const taskData = data?.getTaskByNumber[0] ?? [];
-
-  // If data isn't here yet, wait for it
-  if (loading) {
-    return <h2>LOADING TASKS...</h2>;
-  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+    console.log("Target => ", e.target);
+    console.log("Value => ", value);
 
-  const handleSliderChange = (name) => (e, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
+    if (name === "itemNumber") {
+      const selItem = defaultValues.taskItemDetails.filter((elem) => {
+        return elem.item.sku === value;
+      });
+      console.log(selItem);
+
+      setFormValues({
+        ...formValues,
+        itemNumber: value,
+        uom: selItem[0].uom,
+        quantity: selItem[0].quantity,
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (event) => {
@@ -71,158 +68,76 @@ const Picking = () => {
     console.log(formValues);
   };
 
-  // console.log(taskData);
-  const { orderType, orderNumber, user, operation, priority, customer, items } =
-    taskData;
+  // useEffect(() => {
+  //   setFormValues(defaultValues);
+  //   console.log("formValues => ");
+  //   console.log(formValues);
+  //   console.log("formValues.items => ");
+  //   console.log(formValues.taskItemDetails);
+  // }, []);
 
-  const defaultValues = {
-    orderType,
-    orderNumber,
-    customerNumber: customer.code,
-    customerName: customer.name,
-    user,
-    operation,
-    priority,
-    items: { ...items },
-    notes: "Hurry up! Premium customer.",
-  };
-  console.log(defaultValues);
-  setFormValues(defaultValues);
-  // setFormValues({
-  //   orderType,
-  //   orderNumber,
-  //   customerNumber: customer.code,
-  //   customerName: customer.name,
-  //   user,
-  //   operation,
-  //   priority,
-  //   items: { ...items },
-  //   notes: "Hurry up! Premium customer.",
-  // });
+  console.log("Form values => ", formValues);
 
   return (
     <Container className={classes.container} maxWidth="lg">
       <h1>Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid>
-          <Grid>
-            <TextField
-              id="orderType"
-              name="orderType"
-              label="Order Type"
-              type="text"
-              value={formValues.orderType}
-              onChange={handleInputChange}
-            />
-            <TextField
-              id="orderNumber"
-              name="orderNumber"
-              label="Order Number"
-              type="text"
-              value={formValues.orderNumber}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid>
-            <TextField
-              id="customerNumber"
-              name="customerNumber"
-              label="Customer Number"
-              type="text"
-              value={formValues.customerNumber}
-              onChange={handleInputChange}
-            />
-            <TextField
-              id="customerName"
-              name="customerName"
-              label="Customer Name"
-              type="text"
-              value={formValues.customerName}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">Item Number</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                defaultValue={defaultValues.item[0].id}
-                value={formValues.itemNumber}
-                onChange={handleInputChange}
-              >
-                {defaultValues.item.map((item) => {
-                  return (
-                    <MenuItem key={item.id} value={item.id}>
-                      {item.description}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid>
-            <TextField
-              id="fromLocation"
-              name="fromLocation"
-              label="From Location"
-              type="text"
-              value={formValues.fromLocation}
-              onChange={handleInputChange}
-            />
-            <TextField
-              id="toLocation"
-              name="toLocation"
-              label="To Location"
-              type="text"
-              value={formValues.toLocation}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid>
-            <TextField
-              id="lotNumber"
-              name="lotNumber"
-              label="Lot"
-              type="text"
-              value={formValues.lotNumber}
-              onChange={handleInputChange}
-            />
-            <TextField
-              id="expirationDate"
-              name="expirationDate"
-              label="Expiration Date"
-              type="text"
-              value={formValues.expirationDate}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid>
-            <TextField
-              id="UoM"
-              name="UoM"
-              label="UoM"
-              type="text"
-              value={formValues.UoM}
-              onChange={handleInputChange}
-            />
-            <TextField
-              id="quantity"
-              name="quantity"
-              label="Quantity"
-              type="number"
-              value={formValues.quantity}
+          <TextField
+            id="orderType"
+            name="orderType"
+            label="Order Type"
+            type="text"
+            value={formValues.orderType}
+            onChange={handleInputChange}
+          />
+          <TextField
+            id="orderNumber"
+            name="orderNumber"
+            label="Order Number"
+            type="text"
+            value={formValues.orderNumber}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Grid>
+          <TextField
+            id="customerNumber"
+            name="customerNumber"
+            label="Customer Number"
+            type="text"
+            value={formValues.customerNumber}
+            onChange={handleInputChange}
+          />
+          <TextField
+            id="customerName"
+            name="customerName"
+            label="Customer Name"
+            type="text"
+            value={formValues.customerName}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Grid item>
+          <FormControl className={classes.formControl}>
+            <InputLabel>Item Number</InputLabel>
+            <Select
+              id="itemNumber"
+              name="itemNumber"
+              label="Item Number"
+              // defaultValue={defaultValues.taskItemDetails[0].item.sku}
+              value={formValues.itemNumber}
               onChange={handleInputChange}
             >
-              {defaultValues.item.map((item) => {
+              {defaultValues.taskItemDetails.map(({ item }) => {
                 return (
-                  <MenuItem key={item.id} value={item.id}>
+                  <MenuItem key={item.sku} value={item.sku}>
                     {item.description}
                   </MenuItem>
                 );
               })}
-            </TextField>
-          </Grid>
+            </Select>
+          </FormControl>
         </Grid>
         <Grid>
           <TextField
@@ -262,11 +177,11 @@ const Picking = () => {
         </Grid>
         <Grid>
           <TextField
-            id="UoM"
-            name="UoM"
+            id="uom"
+            name="uom"
             label="UoM"
             type="text"
-            value={formValues.UoM}
+            value={formValues.uom}
             onChange={handleInputChange}
           />
           <TextField

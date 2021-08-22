@@ -74,20 +74,8 @@ const handleInputChange = (e) => {
     console.log(formValues);
   };
   
-  const cards = [];
-  
-  const renderCards = () => {
-    for (const [i, userData] of userData.entries()) {
-      cards.push(<li>{userData}</li>);
-  
-      return <div>{cards}</div>;
-    }
-  };
-  
-renderCards();
 
 const Admin = () => {
-  const classes = useStyles();
   return (
     <Grid className={classes.container} maxWidth="lg">
       <CssBaseline />
