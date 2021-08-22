@@ -123,7 +123,7 @@ const resolvers = {
 
         if (newQuantity < 0) {
           throw new AuthenticationError(
-            "Error: Inventory quantity cannot become less than zero."
+            "Error: Inventory quantity cannot be less than zero."
           );
         }
 
@@ -163,6 +163,67 @@ const resolvers = {
           user,
         });
         return kardex;
+      } catch (error) {
+        console.log(error);
+      }
+      // }
+
+      // throw new AuthenticationError(
+      //   "You need to sign in to perform this operation."
+      // );
+    },
+
+    //  Update an order - Return the order object updated
+    updateOrder: async (
+      parent,
+      { orderType, orderNumber, status, sku, quantity, user }
+    ) => {
+      // if (context.user) {
+      try {
+        console.log("Updating order record...");
+        const { items } = await Order.findOne({
+          orderType,
+          orderNumber,
+        })
+          .populate("customer")
+          .populate("items.item");
+
+        const currItem = items.filter((item) => {
+          return item.item.sku === sku;
+        });
+
+        console.log("currItem => ", currItem);
+
+        const newItemQty = currItem[0].quantity - quantity;
+
+        console.log("newItemQty => ", newItemQty);
+
+        if (newItemQty < 0) {
+          throw new AuthenticationError(
+            "Error: Order quantity cannot be less than zero."
+          );
+        }
+
+        const newOrder = await Order.findOneAndUpdate(
+          { "items.item.sku": sku },
+          {
+            $set: {
+              "items.$.quantity": newItemQty,
+            },
+          }
+        );
+        // const newOrder = await Order.findOneAndUpdate(
+        //   { orderType, orderNumber, items: { $elemMatch: { sku: sku } } },
+        //   {
+        //     $set: {
+        //       "items.$.quantity": newItemQty,
+        //     },
+        //   }
+        // );
+
+        console.log("newOrder => ", newOrder);
+
+        return newOrder;
       } catch (error) {
         console.log(error);
       }

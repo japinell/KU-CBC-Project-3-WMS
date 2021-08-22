@@ -60,6 +60,54 @@ export const ADD_KARDEX = gql`
   }
 `;
 
+export const UPDATE_ORDER = gql`
+  mutation updateOrder(
+    $orderType: String!
+    $orderNumber: Int!
+    $status: String!
+    $sku: String!
+    $quantity: Int!
+    $user: String
+  ) {
+    updateOrder(
+      orderType: $orderType
+      orderNumber: $orderNumber
+      status: $status
+      sku: $sku
+      quantity: $quantity
+      user: $user
+    ) {
+      id
+      orderType
+      orderNumber
+      customer {
+        _id
+        code
+        name
+        address {
+          street
+          city
+          state
+          postalCode
+        }
+        phone
+      }
+      description
+      status
+      items {
+        item {
+          _id
+          sku
+          description
+        }
+        quantity
+        uom
+        status
+      }
+    }
+  }
+`;
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

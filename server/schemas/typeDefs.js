@@ -200,6 +200,17 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    updateOrder(
+      orderType: String!
+      orderNumber: Int!
+      status: String!
+      sku: String!
+      quantity: Int!
+      user: String
+    ): Order
+  }
+
+  type Mutation {
     addKardex(
       sku: String!
       location: String!
