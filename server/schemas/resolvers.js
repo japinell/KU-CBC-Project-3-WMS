@@ -110,7 +110,7 @@ const resolvers = {
 
   Mutation: {
     //  Update an inventory item - Return the inventory object updated
-    updateInventory: async (parent, { sku, location, lot, quantity }) => {
+    updateInventory: async (parent, { sku, location, lot, quantity, user }) => {
       // if (context.user) {
       try {
         console.log("Updating inventory record...");
@@ -128,7 +128,7 @@ const resolvers = {
         }
 
         const newInventory = await Inventory.findOneAndUpdate(
-          { sku, location, lot },
+          { sku, location, lot, user },
           { quantity: newQuantity },
           { new: true }
         );

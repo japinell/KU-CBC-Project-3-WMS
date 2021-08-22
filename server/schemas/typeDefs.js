@@ -55,7 +55,7 @@ const typeDefs = gql`
 
   type Kardex {
     id: ID!
-    item: String!
+    sku: String!
     location: String!
     lot: String!
     quantity: Int!

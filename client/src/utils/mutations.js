@@ -9,9 +9,6 @@ export const UPDATE_INVENTORY = gql`
     $location: String!
     $lot: String!
     $quantity: Int!
-    $uom: String!
-    $operation: String!
-    $description: String!
     $user: String
   ) {
     updateInventory(
@@ -19,11 +16,13 @@ export const UPDATE_INVENTORY = gql`
       location: $location
       lot: $lot
       quantity: $quantity
-      uom: $uom
-      operation: $operation
-      description: $description
       user: $user
-    )
+    ) {
+      sku
+      location
+      lot
+      quantity
+    }
   }
 `;
 
@@ -47,7 +46,17 @@ export const ADD_KARDEX = gql`
       operation: $operation
       description: $description
       user: $user
-    )
+    ) {
+      sku
+      location
+      lot
+      quantity
+      uom
+      operation
+      description
+      user
+      datetime
+    }
   }
 `;
 
