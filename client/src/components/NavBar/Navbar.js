@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
-import { GiBookAura } from "react-icons/gi";
+// import { GiBookAura } from "react-icons/gi";
 import { MdHome } from "react-icons/md";
 import { BiSpreadsheet } from "react-icons/bi";
 import { GiCardboardBox } from "react-icons/gi";
@@ -25,29 +25,24 @@ import { BiBody } from "react-icons/bi";
 import { BiTask } from "react-icons/bi";
 
 import Auth from "../../utils/auth";
-
 import LoginForm from "../SignInForm";
 
 const useStyles = makeStyles((theme) => ({
-  logo: {
-    fontSize: "1.9rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.1rem",
-    },
-  },
+  // logo: {
+  //   fontSize: "1.9rem",
+  // },
   account: {
     marginLeft: "auto",
     "&:hover": {
       background: "purple",
     },
   },
-  tabsContainer: {
-    marginLeft: "auto",
-  },
-  iconLogo: {
-    color: "yellow",
-    fontSize: "3rem",
-  },
+  // tabsContainer: {
+  //   marginLeft: "auto",
+  // },
+  // iconLogo: {
+  //   width: "50px",
+  // },
   icons: {
     fontSize: "1.4rem",
   },
@@ -64,7 +59,8 @@ const Navbar = () => {
 
   const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
 
-  const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
+  // Media query for anything under 920 px to render the hamburger
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   //Functions
   const handleClickTab = (e, newValue) => {
@@ -83,74 +79,80 @@ const Navbar = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Tabs
-            onChange={handleClickTab}
-            className={classes.tabsContainer}
-            indicatorColor="secondary"
-            value={value}
-          >
-            <Tab
-              component={Link}
-              to="/"
-              disableRipple
-              icon={<MdHome className={classes.icons} />}
-              label="Home"
-            />
-            <Tab
-              component={Link}
-              to="/admin"
-              disableRipple
-              icon={<VscAccount className={classes.icons} />}
-              label="Profile"
-            />
-            <Tab
-              component={Link}
-              to="/tasks"
-              disableRipple
-              icon={<BiTask className={classes.icons} />}
-              label="Tasks"
-            />
-            <Tab
-              component={Link}
-              to="/picking"
-              disableRipple
-              icon={<BiSpreadsheet className={classes.icons} />}
-              label="Picking"
-            />
-            <Tab
-              component={Link}
-              to="/receiving"
-              disableRipple
-              icon={<GiCardboardBox className={classes.icons} />}
-              label="Receiving"
-            />
+          {matches ? (
+            <DrawerComponent />
+          ) : (
+            <>
+              <Tabs
+                onChange={handleClickTab}
+                className={classes.tabsContainer}
+                indicatorColor="secondary"
+                value={value}
+              >
+                <Tab
+                  component={Link}
+                  to="/"
+                  disableRipple
+                  icon={<img src={require("../../images/homeIcon.png")} />}
+                  label="Home"
+                />
+                <Tab
+                  component={Link}
+                  to="/admin"
+                  disableRipple
+                  icon={<VscAccount className={classes.icons} />}
+                  label="Profile"
+                />
+                <Tab
+                  component={Link}
+                  to="/tasks"
+                  disableRipple
+                  icon={<BiTask className={classes.icons} />}
+                  label="Tasks"
+                />
+                <Tab
+                  component={Link}
+                  to="/picking"
+                  disableRipple
+                  icon={<BiSpreadsheet className={classes.icons} />}
+                  label="Picking"
+                />
+                {/* <Tab
+                  component={Link}
+                  to="/receiving"
+                  disableRipple
+                  icon={<GiCardboardBox className={classes.icons} />}
+                  label="Receiving"
+                />
 
-            <Tab
-              component={Link}
-              to="/putaway"
-              disableRipple
-              icon={<BiBody className={classes.icons} />}
-              label="PutAway"
-            />
+                <Tab
+                  component={Link}
+                  to="/putaway"
+                  disableRipple
+                  icon={<BiBody className={classes.icons} />}
+                  label="PutAway"
+                />
 
-            <Tab
-              component={Link}
-              to="/dispatch"
-              disableRipple
-              icon={<FiTruck className={classes.icons} />}
-              label="Dispatch"
-            />
-          </Tabs>
-          <Button
-            onClick={Auth.logout}
-            className={classes.account}
-            disableElevation
-            disableRipple
-            variant="contained"
-            color="secondary"
-          >
-            Logout
-          </Button>
+                <Tab
+                  component={Link}
+                  to="/dispatch"
+                  disableRipple
+                  icon={<FiTruck className={classes.icons} />}
+                  label="Dispatch"
+                /> */}
+              </Tabs>
+              <Button
+                onClick={Auth.logout}
+                className={classes.account}
+                disableElevation
+                disableRipple
+                variant="contained"
+                color="secondary"
+              >
+                Logout
+              </Button>
+            </>
+          )}
         </>
       );
     } else {
@@ -167,10 +169,15 @@ const Navbar = () => {
       <AppBar elevation={0} color="primary">
         <Toolbar>
           <Typography>
-            <GiBookAura className={classes.iconLogo} />
+            {matches ? (
+              <a href="/">
+                <img src={require("../../images/homeIcon.png")} />
+              </a>
+            ) : (
+              ""
+            )}
           </Typography>
           {renderLogin()}
-          <DrawerComponent />
         </Toolbar>
       </AppBar>
     </>

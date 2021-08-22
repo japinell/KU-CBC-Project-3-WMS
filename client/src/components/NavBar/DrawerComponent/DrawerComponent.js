@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   List,
   ListItem,
@@ -7,8 +9,13 @@ import {
   ListItemText,
   makeStyles,
   Drawer,
+  Button,
+  Tab,
 } from "@material-ui/core";
+
 import MenuIcon from "@material-ui/icons/Menu";
+
+import Auth from "../../../utils/auth";
 
 const DrawerComponent = () => {
   const useStyles = makeStyles((theme) => ({
@@ -23,6 +30,11 @@ const DrawerComponent = () => {
     },
   }));
 
+  // for a list item link
+  function ListItemLink(props) {
+    return <ListItem button component="a" {...props} />;
+  }
+
   const [openDrawer, setOpenDrawer] = useState(false);
 
   //Css
@@ -36,35 +48,30 @@ const DrawerComponent = () => {
         open={openDrawer}
         onOpen={() => setOpenDrawer(true)}
       >
-        <List>
-          <ListItem divider button onClick={() => setOpenDrawer(false)}>
-            <ListItemIcon>
-              <ListItemText> Courses</ListItemText>
-            </ListItemIcon>
-          </ListItem>
+        <List component="nav">
+          <List component="nav" aria-label="secondary mailbox folders">
+            <ListItemLink href="/admin">
+              <ListItemText primary="Profile" />
+            </ListItemLink>
+            <ListItemLink href="/tasks">
+              <ListItemText primary="Tasks" />
+            </ListItemLink>
+            <ListItemLink href="/picking">
+              <ListItemText primary="Picking" />
+            </ListItemLink>
+          </List>
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
-            <ListItemIcon>
-              <ListItemText> Fees</ListItemText>
-            </ListItemIcon>
-          </ListItem>
-
-          <ListItem divider button onClick={() => setOpenDrawer(false)}>
-            <ListItemIcon>
-              <ListItemText> Parents Account</ListItemText>
-            </ListItemIcon>
-          </ListItem>
-
-          <ListItem divider button onClick={() => setOpenDrawer(false)}>
-            <ListItemIcon>
-              <ListItemText> Holidays</ListItemText>
-            </ListItemIcon>
-          </ListItem>
-
-          <ListItem divider button onClick={() => setOpenDrawer(false)}>
-            <ListItemIcon>
-              <ListItemText> Teachers Account</ListItemText>
-            </ListItemIcon>
+            <Button
+              onClick={Auth.logout}
+              className={classes.account}
+              disableElevation
+              disableRipple
+              variant="contained"
+              color="secondary"
+            >
+              Logout
+            </Button>
           </ListItem>
         </List>
       </Drawer>
