@@ -126,7 +126,6 @@ const Picking = ({ defaultValues }) => {
       <Container className={classes.container} maxWidth="lg">
         <Typography
           variant="h2"
-          className={classes.title}
           color="primary"
           className={classes.textCentered}
         >

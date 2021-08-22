@@ -13,6 +13,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
 // import { GiBookAura } from "react-icons/gi";
@@ -166,20 +167,22 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar elevation={0} color="primary">
-        <Toolbar>
-          <Typography>
-            {matches ? (
-              <a href="/">
-                <img src={require("../../images/homeIcon.png")} />
-              </a>
-            ) : (
-              ""
-            )}
-          </Typography>
-          {renderLogin()}
-        </Toolbar>
-      </AppBar>
+      <Container>
+        <AppBar elevation={0} color="primary">
+          <Toolbar>
+            <Typography>
+              {matches ? (
+                <a href="/">
+                  <img src={require("../../images/homeIcon.png")} />
+                </a>
+              ) : (
+                ""
+              )}
+            </Typography>
+            {renderLogin()}
+          </Toolbar>
+        </AppBar>
+      </Container>
     </>
   );
 };
