@@ -28,24 +28,21 @@ import Auth from "../../utils/auth";
 import LoginForm from "../SignInForm";
 
 const useStyles = makeStyles((theme) => ({
-  logo: {
-    fontSize: "1.9rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.1rem",
-    },
-  },
+  // logo: {
+  //   fontSize: "1.9rem",
+  // },
   account: {
     marginLeft: "auto",
     "&:hover": {
       background: "purple",
     },
   },
-  tabsContainer: {
-    marginLeft: "auto",
-  },
-  iconLogo: {
-    width: "50px",
-  },
+  // tabsContainer: {
+  //   marginLeft: "auto",
+  // },
+  // iconLogo: {
+  //   width: "50px",
+  // },
   icons: {
     fontSize: "1.4rem",
   },
@@ -62,6 +59,7 @@ const Navbar = () => {
 
   const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
 
+  // Media query for anything under 920 px to render the hamburger
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   //Functions
@@ -91,13 +89,13 @@ const Navbar = () => {
                 indicatorColor="secondary"
                 value={value}
               >
-                {/* <Tab
-              component={Link}
-              to="/"
-              disableRipple
-              icon={<img src={require("../../images/homeIcon.png")} />}
-              label="Home"
-            /> */}
+                <Tab
+                  component={Link}
+                  to="/"
+                  disableRipple
+                  icon={<img src={require("../../images/homeIcon.png")} />}
+                  label="Home"
+                />
                 <Tab
                   component={Link}
                   to="/admin"
@@ -119,7 +117,7 @@ const Navbar = () => {
                   icon={<BiSpreadsheet className={classes.icons} />}
                   label="Picking"
                 />
-                <Tab
+                {/* <Tab
                   component={Link}
                   to="/receiving"
                   disableRipple
@@ -141,7 +139,7 @@ const Navbar = () => {
                   disableRipple
                   icon={<FiTruck className={classes.icons} />}
                   label="Dispatch"
-                />
+                /> */}
               </Tabs>
               <Button
                 onClick={Auth.logout}
@@ -171,9 +169,13 @@ const Navbar = () => {
       <AppBar elevation={0} color="primary">
         <Toolbar>
           <Typography>
-            <a href="/">
-              <img src={require("../../images/logo.png")} />
-            </a>
+            {matches ? (
+              <a href="/">
+                <img src={require("../../images/homeIcon.png")} />
+              </a>
+            ) : (
+              ""
+            )}
           </Typography>
           {renderLogin()}
         </Toolbar>

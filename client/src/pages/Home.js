@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <h2>Warehouse Management System</h2>
-      <Grid>
+      {/* <Grid>
         <Player
           fluid={false}
           className="player-wrapper"
@@ -30,7 +30,7 @@ const Home = () => {
           playsInline
           aspectRatio="auto"
         ></Player>
-      </Grid>
+      </Grid> */}
     </>
   );
 };
