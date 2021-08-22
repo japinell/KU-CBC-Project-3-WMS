@@ -39,12 +39,12 @@ const PickingData = () => {
     priority,
     taskItemDetails: items,
     notes,
-    itemNumber: "",
-    quantity: "",
-    uom: "",
-    fromLocation: "",
-    toLocation: "",
-    lotNumber: "",
+    itemNumber: "600190",
+    quantity: 50,
+    uom: "BX",
+    fromLocation: "BX.EA.160",
+    toLocation: "D",
+    lotNumber: "10700100047",
   };
 
   return <Picking defaultValues={pickingData} />;

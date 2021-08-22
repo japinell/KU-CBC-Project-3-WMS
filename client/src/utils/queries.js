@@ -13,6 +13,18 @@ export const GET_ITEM_BY_SKU = gql`
   }
 `;
 
+export const GET_INVENTORY_BY_SKU = gql`
+  query getInventoryBySku($sku: String!, $location: String, $lot: String) {
+    getInventoryBySku(sku: $sku, location: $location, lot: $lot) {
+      sku
+      location
+      lot
+      primary
+      quantity
+    }
+  }
+`;
+
 export const GET_ITEMS = gql`
   query getItems {
     getItems {

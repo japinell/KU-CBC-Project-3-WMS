@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,6 +14,8 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
+import { UPDATE_INVENTORY } from "../utils/mutations";
+import { ADD_KARDEX } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -37,6 +39,9 @@ const Picking = ({ defaultValues }) => {
   console.log(defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
+  const [updateInventory, { errUpdateInventory }] =
+    useMutation(UPDATE_INVENTORY);
+  const [addKardex, { errAddKardex }] = useMutation(ADD_KARDEX);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -66,6 +71,38 @@ const Picking = ({ defaultValues }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
+
+    //  Update the inventory by calling the updateInventory mutation
+    try {
+      updateInventory({
+        variables: {
+          sku: formValues.itemNumber,
+          location: formValues.fromLocation,
+          lot: formValues.lotNumber,
+          quantity: formValues.quantity,
+          user: formValues.user,
+        },
+      });
+
+      // Upon success, log the transaction to the kardex
+      addKardex({
+        variables: {
+          sku: formValues.itemNumber,
+          location: formValues.fromLocation,
+          lot: formValues.lotNumber,
+          quantity: formValues.quantity,
+          uom: formValues.uom,
+          operation: "Picking",
+          //description: `Picked item from ${formValues.fromLocation} to ${formValues.toLocation}`,
+          description: formValues.notes
+            ? formValues.notes
+            : `Picked item from ${formValues.fromLocation} to ${formValues.toLocation}`,
+          user: formValues.user,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // useEffect(() => {
