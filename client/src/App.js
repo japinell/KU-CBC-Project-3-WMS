@@ -89,10 +89,10 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/admin" component={Admin} />
               <Route exact path="/tasks" component={TaskData} />
-              <Route exact path="/receiving" component={Receiving} />
-              <Route exact path="/putaway" component={PutAway} />
               <Route exact path="/picking" component={PickingData} />
-              <Route exact path="/dispatch" component={Dispatch} />
+              {/* <Route exact path="/receiving" component={Receiving} />
+              <Route exact path="/putaway" component={PutAway} />
+              <Route exact path="/dispatch" component={Dispatch} /> */}
               <Route
                 render={() => <h1 className="display-2">Wrong page!</h1>}
               />
