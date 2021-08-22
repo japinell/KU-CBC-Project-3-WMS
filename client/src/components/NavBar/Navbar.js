@@ -62,7 +62,7 @@ const Navbar = () => {
 
   const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
 
-  const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   //Functions
   const handleClickTab = (e, newValue) => {
@@ -81,74 +81,80 @@ const Navbar = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Tabs
-            onChange={handleClickTab}
-            className={classes.tabsContainer}
-            indicatorColor="secondary"
-            value={value}
-          >
-            <Tab
+          {matches ? (
+            <DrawerComponent />
+          ) : (
+            <>
+              <Tabs
+                onChange={handleClickTab}
+                className={classes.tabsContainer}
+                indicatorColor="secondary"
+                value={value}
+              >
+                {/* <Tab
               component={Link}
               to="/"
               disableRipple
-              icon={<MdHome className={classes.icons} />}
+              icon={<img src={require("../../images/homeIcon.png")} />}
               label="Home"
-            />
-            <Tab
-              component={Link}
-              to="/admin"
-              disableRipple
-              icon={<VscAccount className={classes.icons} />}
-              label="Profile"
-            />
-            <Tab
-              component={Link}
-              to="/tasks"
-              disableRipple
-              icon={<BiTask className={classes.icons} />}
-              label="Tasks"
-            />
-            <Tab
-              component={Link}
-              to="/picking"
-              disableRipple
-              icon={<BiSpreadsheet className={classes.icons} />}
-              label="Picking"
-            />
-            <Tab
-              component={Link}
-              to="/receiving"
-              disableRipple
-              icon={<GiCardboardBox className={classes.icons} />}
-              label="Receiving"
-            />
+            /> */}
+                <Tab
+                  component={Link}
+                  to="/admin"
+                  disableRipple
+                  icon={<VscAccount className={classes.icons} />}
+                  label="Profile"
+                />
+                <Tab
+                  component={Link}
+                  to="/tasks"
+                  disableRipple
+                  icon={<BiTask className={classes.icons} />}
+                  label="Tasks"
+                />
+                <Tab
+                  component={Link}
+                  to="/picking"
+                  disableRipple
+                  icon={<BiSpreadsheet className={classes.icons} />}
+                  label="Picking"
+                />
+                <Tab
+                  component={Link}
+                  to="/receiving"
+                  disableRipple
+                  icon={<GiCardboardBox className={classes.icons} />}
+                  label="Receiving"
+                />
 
-            <Tab
-              component={Link}
-              to="/putaway"
-              disableRipple
-              icon={<BiBody className={classes.icons} />}
-              label="PutAway"
-            />
+                <Tab
+                  component={Link}
+                  to="/putaway"
+                  disableRipple
+                  icon={<BiBody className={classes.icons} />}
+                  label="PutAway"
+                />
 
-            <Tab
-              component={Link}
-              to="/dispatch"
-              disableRipple
-              icon={<FiTruck className={classes.icons} />}
-              label="Dispatch"
-            />
-          </Tabs>
-          <Button
-            onClick={Auth.logout}
-            className={classes.account}
-            disableElevation
-            disableRipple
-            variant="contained"
-            color="secondary"
-          >
-            Logout
-          </Button>
+                <Tab
+                  component={Link}
+                  to="/dispatch"
+                  disableRipple
+                  icon={<FiTruck className={classes.icons} />}
+                  label="Dispatch"
+                />
+              </Tabs>
+              <Button
+                onClick={Auth.logout}
+                className={classes.account}
+                disableElevation
+                disableRipple
+                variant="contained"
+                color="secondary"
+              >
+                Logout
+              </Button>
+            </>
+          )}
         </>
       );
     } else {
@@ -164,11 +170,12 @@ const Navbar = () => {
     <>
       <AppBar elevation={0} color="primary">
         <Toolbar>
-          <Typography className={classes.iconLogo}>
-            <img src={require("../../images/logo.png")} />
+          <Typography>
+            <a href="/">
+              <img src={require("../../images/logo.png")} />
+            </a>
           </Typography>
           {renderLogin()}
-          <DrawerComponent />
         </Toolbar>
       </AppBar>
     </>
