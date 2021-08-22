@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 function createTaskData(
   orderType,
-  orderName,
+  orderNumber,
   customerName,
   customerNumber,
   customerNotes,
@@ -30,7 +31,7 @@ function createTaskData(
 ) {
   return {
     orderType,
-    orderName,
+    orderNumber,
     customerName,
     customerNumber,
     customerNotes,
@@ -104,7 +105,9 @@ export default function Tasks({ defaultValues }) {
               <TableCell component="th" scope="row">
                 {row.orderType}
               </TableCell>
-              <TableCell>{row.orderName}</TableCell>
+              <Link href="/picking">
+                <TableCell>{row.orderNumber}</TableCell>
+              </Link>
               <TableCell>{row.customerName}</TableCell>
               <TableCell>{row.customerNumber}</TableCell>
               <TableCell>{row.customerNotes}</TableCell>
