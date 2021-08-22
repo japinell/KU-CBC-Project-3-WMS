@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   //   width: "50px",
   // },
   icons: {
-    fontSize: "1.4rem",
+    fontSize: "2rem",
   },
 }));
 
