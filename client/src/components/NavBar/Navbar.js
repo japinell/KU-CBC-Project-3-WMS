@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
-import { GiBookAura } from "react-icons/gi";
+// import { GiBookAura } from "react-icons/gi";
 import { MdHome } from "react-icons/md";
 import { BiSpreadsheet } from "react-icons/bi";
 import { GiCardboardBox } from "react-icons/gi";
@@ -25,7 +25,6 @@ import { BiBody } from "react-icons/bi";
 import { BiTask } from "react-icons/bi";
 
 import Auth from "../../utils/auth";
-
 import LoginForm from "../SignInForm";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,8 +44,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
   },
   iconLogo: {
-    color: "yellow",
-    fontSize: "3rem",
+    width: "50px",
   },
   icons: {
     fontSize: "1.4rem",
@@ -166,8 +164,8 @@ const Navbar = () => {
     <>
       <AppBar elevation={0} color="primary">
         <Toolbar>
-          <Typography>
-            <GiBookAura className={classes.iconLogo} />
+          <Typography className={classes.iconLogo}>
+            <img src={require("../../images/logo.png")} />
           </Typography>
           {renderLogin()}
           <DrawerComponent />
