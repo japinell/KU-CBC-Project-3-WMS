@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 //
 const inventorySchema = new Schema({
-  item: {
+  sku: {
     type: String,
     required: true,
   },
