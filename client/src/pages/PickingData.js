@@ -42,6 +42,9 @@ const PickingData = () => {
     itemNumber: "",
     quantity: "",
     uom: "",
+    fromLocation: "",
+    toLocation: "",
+    lotNumber: "",
   };
 
   return <Picking defaultValues={pickingData} />;

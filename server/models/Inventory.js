@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 //
 const inventorySchema = new Schema({
-  sku: {
+  item: {
     type: String,
     required: true,
   },
@@ -16,6 +16,7 @@ const inventorySchema = new Schema({
   },
   lot: {
     type: String,
+    required: true,
   },
   primary: {
     type: Boolean,
