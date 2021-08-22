@@ -240,7 +240,8 @@ const Picking = ({ defaultValues }) => {
             onChange={handleInputChange}
           />
         </Grid>
-        <Grid>
+        <br />
+        <Grid className={classes.textCentered}>
           <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
