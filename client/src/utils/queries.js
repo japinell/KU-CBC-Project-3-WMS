@@ -59,7 +59,7 @@ export const GET_ORDER_BY_NUMBER = gql`
 
 export const GET_ORDERS = gql`
   query getOrders {
-    orders {
+    getOrders {
       id
       orderType
       orderNumber

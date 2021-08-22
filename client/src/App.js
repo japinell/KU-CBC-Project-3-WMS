@@ -22,6 +22,7 @@ import Dispatch from "./pages/Dispatch";
 import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer";
 import Tasks from "./pages/Tasks";
+import TaskData from "./pages/TaskData";
 
 import {
   createTheme,
@@ -87,7 +88,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/admin" component={Admin} />
-              <Route exact path="/tasks" component={Tasks} />
+              <Route exact path="/tasks" component={TaskData} />
               <Route exact path="/receiving" component={Receiving} />
               <Route exact path="/putaway" component={PutAway} />
               <Route exact path="/picking" component={PickingData} />
