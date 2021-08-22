@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
 
 // const { userData } = require("../models/User.js");
 
-let defaultValues = {},
 
 const [formValues, setFormValues] = useState(defaultValues);
 
