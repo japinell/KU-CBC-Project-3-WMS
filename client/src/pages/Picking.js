@@ -177,7 +177,7 @@ const Picking = ({ defaultValues }) => {
         </Grid>
         <Grid>
           <TextField
-            id="uou"
+            id="uom"
             name="uom"
             label="UoM"
             type="text"

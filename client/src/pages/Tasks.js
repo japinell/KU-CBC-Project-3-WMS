@@ -105,9 +105,11 @@ export default function Tasks({ defaultValues }) {
               <TableCell component="th" scope="row">
                 {row.orderType}
               </TableCell>
+
               <Link href="/picking">
                 <TableCell>{row.orderNumber}</TableCell>
               </Link>
+
               <TableCell>{row.customerName}</TableCell>
               <TableCell>{row.customerNumber}</TableCell>
               <TableCell>{row.customerNotes}</TableCell>

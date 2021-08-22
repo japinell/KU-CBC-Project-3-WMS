@@ -1,7 +1,7 @@
 //
 //  Resolvers - Define the functions to populate the data from the schemas
 //
-const { Item, Task, User } = require("../models");
+const { Item, Inventory, Kardex, Task, User } = require("../models");
 const Order = require("../models/Order");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
@@ -79,6 +79,20 @@ const resolvers = {
   },
 
   Mutation: {
+    //  Update an inventory item - Return the inventory object updated
+    updateInventory: async (
+      parent,
+      { item, location, lot, primary, quantity }
+    ) => {
+      console.log("Updating inventory record...");
+      const inventory = await Inventory.findOneAndUpdate(
+        { item, location, lot },
+        { quantity },
+        { new: true }
+      );
+      return inventory;
+    },
+
     // Return an authentication token after validating the user credentials
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
