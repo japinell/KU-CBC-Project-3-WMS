@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginForm() {
+export default function SignInForm() {
   const classes = useStyles();
   const handleOpen = () => {
     setOpen(true);
