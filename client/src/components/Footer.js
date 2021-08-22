@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icons: {
-    fontSize: "1.4rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -41,31 +41,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
-  function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {"Copyright © "}
-        <Link
-          color="inherit"
-          href="https://github.com/japinell/KU-CBC-Project-3-WMS"
-        >
-          Mini-WMS
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    );
-  }
 
   function HomeIcon(props) {
     return (
       <Link href="/home">
-        <MdHome
-          {...props}
-          className={classes.icons}
-          color="primary"
-          to="/home"
-        ></MdHome>
+        <a href="/">
+          <img src={require("../images/pinkIcon.png")} />
+        </a>
       </Link>
     );
   }
@@ -111,46 +93,68 @@ export default function Footer() {
       </Link>
     );
   }
-  function ReceivingIcon(props) {
-    return (
-      <Link href="/receiving">
-        <GiCardboardBox
-          {...props}
-          className={classes.icons}
-          color="primary"
-          to="/receiving"
-        >
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </GiCardboardBox>
-      </Link>
-    );
+
+  // function ReceivingIcon(props) {
+  //   return (
+  //     <Link href="/receiving">
+  //       <GiCardboardBox
+  //         {...props}
+  //         className={classes.icons}
+  //         color="primary"
+  //         to="/receiving"
+  //       >
+  //         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  //       </GiCardboardBox>
+  //     </Link>
+  //   );
+  // }
+  // function PutawayIcon(props) {
+  //   return (
+  //     <Link href="/putaway">
+  //       <BiBody
+  //         {...props}
+  //         className={classes.icons}
+  //         color="primary"
+  //         to="/putaway"
+  //       >
+  //         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  //       </BiBody>
+  //     </Link>
+  //   );
+  // }
+  // function DispatchIcon(props) {
+  //   return (
+  //     <Link href="/dispatch">
+  //       <FiTruck
+  //         {...props}
+  //         className={classes.icons}
+  //         color="primary"
+  //         to="/dispatch"
+  //       >
+  //         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  //       </FiTruck>
+  //     </Link>
+  //   );
+  // }
+
+  function ListItemLink(props) {
+    return <ListItem button component="a" {...props} />;
   }
-  function PutawayIcon(props) {
+
+  function Copyright() {
     return (
-      <Link href="/putaway">
-        <BiBody
-          {...props}
-          className={classes.icons}
-          color="primary"
-          to="/putaway"
+      <Typography variant="body2" color="textSecondary" align="center">
+        {"Copyright © "}
+        <Link
+          target="_blank"
+          color="inherit"
+          href="https://github.com/japinell/KU-CBC-Project-3-WMS"
         >
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </BiBody>
-      </Link>
-    );
-  }
-  function DispatchIcon(props) {
-    return (
-      <Link href="/dispatch">
-        <FiTruck
-          {...props}
-          className={classes.icons}
-          color="primary"
-          to="/dispatch"
-        >
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </FiTruck>
-      </Link>
+          Mini-WMS
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
     );
   }
 
@@ -159,7 +163,7 @@ export default function Footer() {
       <Container maxWidth="md">
         <Box mt={2}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={8} md={6}>
               <Grid
                 container
                 direction="row"
@@ -170,25 +174,36 @@ export default function Footer() {
                 <ProfileIcon />
                 <TasksIcon />
                 <PickingIcon />
-                <ReceivingIcon />
+                {/* <ReceivingIcon />
                 <PutawayIcon />
-                <DispatchIcon />
+                <DispatchIcon /> */}
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={4}
+              container
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="flex-end"
+            >
               <Typography
                 variant="h6"
                 className={classes.title}
                 color="primary"
               >
                 About
+                <ListItemLink
+                  direction="column"
+                  justifyContent="flex-start"
+                  alignItems="flex-end"
+                  target="_blank"
+                  color="inherit"
+                  href="https://github.com/japinell/KU-CBC-Project-3-WMS"
+                >
+                  <ListItemText primary="GitHub" />
+                </ListItemLink>
               </Typography>
-              <ListItem color="primary">
-                <ListItemText primary="GitHub" />
-                <ListItemText primary="Purchase" />
-                <ListItemText primary="Developers" />
-                <ListItemText />
-              </ListItem>
             </Grid>
           </Grid>
         </Box>
