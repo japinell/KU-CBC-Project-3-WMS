@@ -21,14 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function createTaskData(
-  orderType,
-  orderNumber,
-  customerName,
-  customerNumber,
-  customerNotes,
-  user
-) {
+function createTaskData(orderType, orderNumber, customerName, customerNumber, customerNotes, user) {
   return {
     orderType,
     orderNumber,
@@ -106,9 +99,9 @@ export default function Tasks({ defaultValues }) {
                 {row.orderType}
               </TableCell>
 
-              <Link href="/picking">
-                <TableCell>{row.orderNumber}</TableCell>
-              </Link>
+              <TableCell>
+                <Link href="/picking">{row.orderNumber}</Link>
+              </TableCell>
 
               <TableCell>{row.customerName}</TableCell>
               <TableCell>{row.customerNumber}</TableCell>

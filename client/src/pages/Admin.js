@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
+import { Link } from "@material-ui/core/Link";
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "../utils/queries";
 
@@ -52,18 +52,19 @@ const useStyles = makeStyles((theme) => ({
 
 // const { userData } = require("../models/User.js");
 
+const Admin = () => {
+  const [formValues, setFormValues] = useState({});
+  const classes = useStyles();
 
-const [formValues, setFormValues] = useState(defaultValues);
-
-const handleInputChange = (e) => {
-  const { GET_USER, value } = e.target;
-  setFormValues({
-    ...formValues,
-    [name]: value,
-  });
-};
-// const handleSliderChange = (name) => (e, value) => {
-//   setFormValues({
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+  // const handleSliderChange = (name) => (e, value) => {
+  //   setFormValues({
   //     ...formValues,
   //     [name]: value,
   //   });
@@ -72,62 +73,57 @@ const handleInputChange = (e) => {
     event.preventDefault();
     console.log(formValues);
   };
-  
-
-const Admin = () => {
   return (
-    <Grid className={classes.container} maxWidth="lg">
+    <Grid className={classes.container}>
       <CssBaseline />
       <main>
         <div>
-          <Container className={classes.container} maxWidth="lg">
+          <Container className={classes.container}>
             <Card className={classes.root} variant="outlined">
               <CardContent>
                 <Grid container spacing={6} justifyContent="center">
                   <Typography className={classes.title} color="textPrimary" gutterBottom>
                     Admin Portal
                   </Typography>
-                  <FormControl>
-                    <form
-                      className={classes.root}
-                      noValidate
-                      autoComplete="off"
-                      onSubmit={handleSubmit}
+                  <form
+                    className={classes.root}
+                    noValidate
+                    autoComplete="off"
+                    onSubmit={handleSubmit}
+                  >
+                    <Typography
+                      className={classes.pos}
+                      color="textSecondary"
+                      variant="body2"
+                      component="p"
                     >
-                      <Typography
-                        className={classes.pos}
-                        color="textSecondary"
-                        variant="body2"
-                        component="p"
-                      >
-                        Assign New Task
-                      </Typography>
-                      <Input
-                        className={classes.CardContent}
-                        placeholder="Apply A User"
-                        inputProps={{ "aria-label": "description" }}
-                        value={formValues.firstName}
-                        onChange={handleInputChange}
-                      />
-                      <Input
-                        className={classes.CardContent}
-                        defaultValue="Select Action"
-                        inputProps={{ "aria-label": "description" }}
-                        value={formValues.operation}
-                        onChange={handleInputChange}
-                      />
-                    </form>
-                    <CardActions>
-                      <Button
-                        className={classes.heroButtons}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                      >
-                        Submit
-                      </Button>
-                    </CardActions>
-                  </FormControl>
+                      Assign New Task
+                    </Typography>
+                    <Input
+                      className={classes.CardContent}
+                      placeholder="Apply A User"
+                      inputProps={{ "aria-label": "description" }}
+                      value={formValues.firstName}
+                      onChange={handleInputChange}
+                    />
+                    <Input
+                      className={classes.CardContent}
+                      defaultValue="Select Action"
+                      inputProps={{ "aria-label": "description" }}
+                      value={formValues.operation}
+                      onChange={handleInputChange}
+                    />
+                  </form>
+                  <CardActions>
+                    <Button
+                      className={classes.heroButtons}
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                    >
+                      Submit
+                    </Button>
+                  </CardActions>
                 </Grid>
               </CardContent>
             </Card>

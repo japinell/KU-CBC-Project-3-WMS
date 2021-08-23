@@ -14,6 +14,7 @@ const seedOrderDetail = require("./OrderDetail");
 const seedRole = require("./Role");
 const seedTask = require("./Task");
 const seedUoM = require("./UoM");
+const seedUser = require("./User");
 const sequelize = require("../config/connection");
 
 const seedAll = async () => {
@@ -58,6 +59,9 @@ const seedAll = async () => {
 
   await seedUoM();
   console.log("\n----- UoM Seeded -----\n");
+
+  await seedUser();
+  console.log("\n----- Users Seeded -----\n");
 
   process.exit(0);
 };

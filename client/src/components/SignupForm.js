@@ -21,10 +21,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link
-        color="inherit"
-        href="https://github.com/japinell/KU-CBC-Project-3-WMS"
-      >
+      <Link color="inherit" href="https://github.com/japinell/KU-CBC-Project-3-WMS">
         Mini-WMS
       </Link>{" "}
       {new Date().getFullYear()}
@@ -90,7 +87,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

@@ -79,7 +79,7 @@ const Picking = ({ defaultValues }) => {
   console.log("Form values => ", formValues);
 
   return (
-    <Container className={classes.container} maxWidth="lg">
+    <Container className={classes.container}>
       <h1>Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid>
