@@ -17,21 +17,6 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-<<<<<<< HEAD
-    <>
-      <h2>Warehouse Management System</h2>
-      {/* <Grid>
-        <Player
-          fluid={false}
-          className="player-wrapper"
-          autoPlay
-          src={video}
-          playsInline
-          aspectRatio="auto"
-        ></Player>
-      </Grid> */}
-    </>
-=======
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -45,6 +30,5 @@ export default function Home() {
         />
       </CardActionArea>
     </Card>
->>>>>>> f4966e7be9bd433af7b659fb162b85557229c7e4
   );
 }
