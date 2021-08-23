@@ -11,7 +11,7 @@ const taskData = [
     user: "user1",
     operation: 10000,
     priority: 1,
-    items: [
+    taskDetails: [
       {
         sku: "600190",
         quantity: 100,
@@ -41,7 +41,7 @@ const taskData = [
     user: "user1",
     operation: 10000,
     priority: 2,
-    items: [
+    taskDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -70,17 +70,17 @@ const seedTask = async () => {
   await Task.deleteMany({});
 
   for (let i = 0, l = taskData.length; i < l; i++) {
-    const { customer, items, ...task } = taskData[i];
+    const { customer, taskDetails, ...task } = taskData[i];
     const custId = await AddressBook.findOne({ code: customer });
 
     const itemIds = await Promise.all(
-      items.map(({ sku }) => Item.findOne({ sku }))
+      taskDetails.map(({ sku }) => Item.findOne({ sku }))
     );
 
     await Task.create({
       ...task,
       customer: custId._id,
-      items: items.map(({ ...i }, idx) => ({
+      taskDetails: taskDetails.map(({ ...i }, idx) => ({
         ...i,
         item: itemIds[idx]._id,
       })),

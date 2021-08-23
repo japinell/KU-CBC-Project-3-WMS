@@ -12,7 +12,7 @@ const orderData = [
     customer: 10000,
     description: "Some goodies to receive",
     status: "U",
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -53,7 +53,7 @@ const orderData = [
     customer: 10000,
     description: "Some more goodies to receive",
     status: "U",
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -82,7 +82,7 @@ const orderData = [
     customer: 10000,
     description: "Some goodies to transfer",
     status: "U",
-    items: [
+    orderDetails: [
       {
         sku: "600190",
         quantity: 100,
@@ -111,7 +111,7 @@ const orderData = [
     customer: 10001,
     description: "Some goodies to sell",
     status: "U",
-    items: [
+    orderDetails: [
       {
         sku: "600190",
         quantity: 100,
@@ -140,7 +140,7 @@ const orderData = [
     customer: 10001,
     description: "Some more goodies to sell",
     status: "U",
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -169,18 +169,18 @@ const seedOrder = async () => {
   await Order.deleteMany({});
 
   for (let i = 0, l = orderData.length; i < l; i++) {
-    const { customer, items, ...order } = orderData[i];
+    const { customer, orderDetails, ...order } = orderData[i];
 
     const custId = await AddressBook.findOne({ code: customer });
 
     const itemIds = await Promise.all(
-      items.map(({ sku }) => Item.findOne({ sku }))
+      orderDetails.map(({ sku }) => Item.findOne({ sku }))
     );
 
     await Order.create({
       ...order,
       customer: custId._id,
-      items: items.map(({ ...i }, idx) => ({
+      orderDetails: orderDetails.map(({ ...i }, idx) => ({
         ...i,
         item: itemIds[idx]._id,
       })),

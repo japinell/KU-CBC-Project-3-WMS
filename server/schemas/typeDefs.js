@@ -92,7 +92,7 @@ const typeDefs = gql`
     customer: AddressBook!
     description: String!
     status: String!
-    items: [OrderItem]
+    orderDetails: [OrderItem]
   }
 
   type OrderHeader {
@@ -100,7 +100,6 @@ const typeDefs = gql`
     orderType: String!
     orderNumber: Int!
     customer: AddressBook!
-    vendor: AddressBook!
     description: String!
     status: String!
   }
@@ -115,9 +114,8 @@ const typeDefs = gql`
 
   type OrderDetail {
     id: ID!
-    orderType: String!
-    orderNumber: Int!
-    item: [OrderItem]
+    orderNumber: OrderHeader!
+    orderDetails: [OrderItem]
   }
 
   type Role {
@@ -134,7 +132,7 @@ const typeDefs = gql`
     user: String!
     operation: Int!
     priority: Int!
-    items: [OrderItem]
+    taskDetails: [OrderItem]
     notes: String
   }
 

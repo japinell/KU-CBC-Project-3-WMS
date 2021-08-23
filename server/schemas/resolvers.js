@@ -4,6 +4,7 @@
 const { Item, Kardex, Task, User } = require("../models");
 const Inventory = require("../models/Inventory");
 const Order = require("../models/Order");
+const OrderHeader = require("../models/OrderHeader");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 //
@@ -61,7 +62,7 @@ const resolvers = {
       // if (context.user) {
       return await Order.find({ orderType, orderNumber })
         .populate("customer")
-        .populate("items.item");
+        .populate("orderDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -81,7 +82,7 @@ const resolvers = {
       // if (context.user) {
       return await Task.find({ orderType, orderNumber })
         .populate("customer")
-        .populate("items.item");
+        .populate("taskDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -90,7 +91,9 @@ const resolvers = {
     // Returns all the tasks
     getTasks: async (parent, args, context) => {
       // if (context.user) {
-      return await Task.find({}).populate("customer").populate("items.item");
+      return await Task.find({})
+        .populate("customer")
+        .populate("taskDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"

@@ -44,11 +44,11 @@ const seedAll = async () => {
   await seedOrder();
   console.log("\n----- Order Seeded -----\n");
 
-  await seedOrderHeader();
-  console.log("\n----- Order Header Seeded -----\n");
+  // await seedOrderHeader();
+  // console.log("\n----- Order Header Seeded -----\n");
 
-  await seedOrderDetail();
-  console.log("\n----- Order Detail Seeded -----\n");
+  // await seedOrderDetail();
+  // console.log("\n----- Order Detail Seeded -----\n");
 
   await seedRole();
   console.log("\n----- Role Seeded -----\n");
