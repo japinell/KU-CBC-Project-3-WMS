@@ -61,7 +61,7 @@ const DrawerComponent = () => {
             </ListItemLink>
           </List>
 
-          <ListItem divider button onClick={() => setOpenDrawer(false)}>
+          <ListItem button onClick={() => setOpenDrawer(false)}>
             <Button
               onClick={Auth.logout}
               className={classes.account}

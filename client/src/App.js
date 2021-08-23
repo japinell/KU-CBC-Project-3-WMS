@@ -32,6 +32,22 @@ import {
 } from "@material-ui/core";
 
 const theme = createTheme({
+  props: {
+    MuiTypography: {
+      variantMapping: {
+        h1: "h2",
+        h2: "h2",
+        h3: "h2",
+        h4: "h2",
+        h5: "h2",
+        h6: "h2",
+        subtitle1: "h2",
+        subtitle2: "h2",
+        body1: "span",
+        body2: "span",
+      },
+    },
+  },
   palette: {
     primary: {
       light: "#ed4b82",
@@ -89,10 +105,10 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/admin" component={Admin} />
               <Route exact path="/tasks" component={TaskData} />
-              <Route exact path="/receiving" component={Receiving} />
-              <Route exact path="/putaway" component={PutAway} />
               <Route exact path="/picking" component={PickingData} />
-              <Route exact path="/dispatch" component={Dispatch} />
+              {/* <Route exact path="/receiving" component={Receiving} />
+              <Route exact path="/putaway" component={PutAway} />
+              <Route exact path="/dispatch" component={Dispatch} /> */}
               <Route
                 render={() => <h1 className="display-2">Wrong page!</h1>}
               />
