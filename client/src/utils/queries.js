@@ -125,7 +125,7 @@ export const GET_TASK = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku
@@ -161,7 +161,7 @@ export const GET_TASKS = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku

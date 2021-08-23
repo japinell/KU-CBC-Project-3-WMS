@@ -1,6 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import HomeIcon from "@material-ui/icons/Home";
+import GoBackIcon from "@material-ui/icons/ArrowBackTwoTone";
+import AddToCartIcon from "@material-ui/icons/ShoppingCartTwoTone";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -38,10 +45,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 
 const Picking = ({ defaultValues }) => {
-  console.log(defaultValues);
+  console.log("DefaultValues => ", defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
   const [updateInventory, { errUpdateInventory }] =
@@ -54,7 +64,7 @@ const Picking = ({ defaultValues }) => {
     console.log("Value => ", value);
 
     if (name === "itemNumber") {
-      const selItem = defaultValues.taskItemDetails.filter((elem) => {
+      const selItem = defaultValues.taskDetails.filter((elem) => {
         return elem.item.sku === value;
       });
       console.log(selItem);
@@ -76,6 +86,9 @@ const Picking = ({ defaultValues }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
+
+    // console.log(event.target.name);
+    return;
 
     //  Update the inventory by calling the updateInventory mutation
     try {
@@ -110,14 +123,6 @@ const Picking = ({ defaultValues }) => {
     }
   };
 
-  // useEffect(() => {
-  //   setFormValues(defaultValues);
-  //   console.log("formValues => ");
-  //   console.log(formValues);
-  //   console.log("formValues.items => ");
-  //   console.log(formValues.taskItemDetails);
-  // }, []);
-
   console.log("Form values => ", formValues);
 
   return (
@@ -130,18 +135,22 @@ const Picking = ({ defaultValues }) => {
             name="orderType"
             label="Order Type"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.orderType}
             onChange={handleInputChange}
-            disabled
           />
           <TextField
             id="orderNumber"
             name="orderNumber"
             label="Order Number"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.orderNumber}
             onChange={handleInputChange}
-            disabled
           />
         </Grid>
         <Grid>
@@ -150,20 +159,42 @@ const Picking = ({ defaultValues }) => {
             name="customerNumber"
             label="Customer Number"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.customerNumber}
             onChange={handleInputChange}
-            disabled
           />
           <TextField
             id="customerName"
             name="customerName"
             label="Customer Name"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.customerName}
             onChange={handleInputChange}
-            disabled
           />
         </Grid>
+        {/* <Grid>
+          <Autocomplete
+            options={formValues.taskDetails}
+            getOptionLabel={(option) => option.item.description}
+            // style={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                id="itemNumber"
+                name="itemNumber"
+                label="Item Number"
+                value={formValues.itemNumber}
+              />
+            )}
+            onChange={handleInputChange}
+            //
+          />
+        </Grid> */}
         <Grid item>
           <FormControl className={classes.formControl}>
             <InputLabel>Item Number</InputLabel>
@@ -171,11 +202,11 @@ const Picking = ({ defaultValues }) => {
               id="itemNumber"
               name="itemNumber"
               label="Item Number"
-              // defaultValue={defaultValues.taskItemDetails[0].item.sku}
+              //defaultValue={defaultValues.taskDetails[0].item.sku}
               value={formValues.itemNumber}
               onChange={handleInputChange}
             >
-              {defaultValues.taskItemDetails.map(({ item }) => {
+              {defaultValues.taskDetails.map((item) => {
                 return (
                   <MenuItem key={item.sku} value={item.sku}>
                     {item.description}
@@ -184,6 +215,24 @@ const Picking = ({ defaultValues }) => {
               })}
             </Select>
           </FormControl>
+        </Grid>
+        <Grid>
+          <TextField
+            id="quantity"
+            name="quantity"
+            label="Quantity"
+            type="number"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  {formValues.uom}
+                </InputAdornment>
+              ),
+              readOnly: true,
+            }}
+            value={formValues.quantity}
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid>
           <TextField
@@ -209,45 +258,63 @@ const Picking = ({ defaultValues }) => {
             name="lotNumber"
             label="Lot"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.lotNumber}
             onChange={handleInputChange}
           />
-          <TextField
+          {/* <TextField
             id="expirationDate"
             name="expirationDate"
             label="Expiration Date"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.expirationDate}
             onChange={handleInputChange}
-            disabled
-          />
-        </Grid>
-        <Grid>
-          <TextField
-            id="uom"
-            name="uom"
-            label="UoM"
-            type="text"
-            value={formValues.uom}
-            onChange={handleInputChange}
-          />
-          <TextField
-            id="quantity"
-            name="quantity"
-            label="Quantity"
-            type="number"
-            value={formValues.quantity}
-            onChange={handleInputChange}
-          />
+          /> */}
         </Grid>
         <br />
         <Grid className={classes.textCentered}>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            type="submit"
+          >
+            <AddToCartIcon />
             Submit
           </Button>
-          <Button variant="contained" color="primary" href="/home">
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            href="/home"
+          >
+            <GoBackIcon />
             Cancel
           </Button>
+          {/* <Fab
+            onSubmit={handleSubmit}
+            className={classes.button}
+            size="medium"
+            color="primary"
+            aria-label="add"
+          >
+            <AddIcon />
+          </Fab>
+          <Fab
+            onSubmit={handleSubmit}
+            className={classes.button}
+            size="medium"
+            color="primary"
+            aria-label="back"
+            // href="/home"
+          >
+            <Home />
+          </Fab> */}
         </Grid>
       </form>
     </Container>

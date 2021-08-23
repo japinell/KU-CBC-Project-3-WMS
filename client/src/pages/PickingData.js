@@ -26,10 +26,10 @@ const PickingData = () => {
     priority,
     notes,
     customer,
-    items,
+    taskDetails,
   } = taskData;
 
-  const pickingData = {
+  const orderData = {
     orderType,
     orderNumber,
     customerNumber: customer.code,
@@ -37,7 +37,6 @@ const PickingData = () => {
     user,
     operation,
     priority,
-    taskItemDetails: items,
     notes,
     itemNumber: "600190",
     quantity: 50,
@@ -46,6 +45,20 @@ const PickingData = () => {
     toLocation: "D",
     lotNumber: "10700100047",
   };
+
+  const itemsData = {
+    orderType,
+    orderNumber,
+    taskDetails: taskDetails.map((task) => ({
+      sku: task.item.sku,
+      description: task.item.description,
+      quantity: task.quantity,
+      uom: task.uom,
+      status: task.status,
+    })),
+  };
+
+  const pickingData = { ...orderData, ...itemsData };
 
   return <Picking defaultValues={pickingData} />;
 };
