@@ -1,28 +1,31 @@
-//
-//  Function to retrieve to remove previously saved books from the user account
-//
-import React from "react";
-import {
-  Jumbotron,
-  Container,
-  CardColumns,
-  Card,
-  Button,
-} from "@material-ui/core";
+// NOT USED
 
-import Auth from "../utils/auth";
+// //
+// //  Function to retrieve to remove previously saved books from the user account
+// //
+// import React from "react";
+// import {
+//   Jumbotron,
+//   Container,
+//   CardColumns,
+//   Card,
+//   Button,
+// } from "@material-ui/core";
 
-import { useMutation, useQuery } from "@apollo/client";
-import { GET_ME } from "../utils/queries";
+// import Auth from "../utils/auth";
 
-const Dispatch = () => {
-  return (
-    <>
-      <Container>
-        <h1>Viewing Dispatching Tasks</h1>
-      </Container>
-    </>
-  );
-};
+// import { useMutation, useQuery } from "@apollo/client";
+// import { GET_ME } from "../utils/queries";
+// import { REMOVE_BOOK } from "../utils/mutations";
 
-export default Dispatch;
+// const Dispatch = () => {
+//   return (
+//     <>
+//       <Container>
+//         <h1>Viewing Dispatching Tasks</h1>
+//       </Container>
+//     </>
+//   );
+// };
+
+// export default Dispatch;

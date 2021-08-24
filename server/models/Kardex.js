@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 //
 const kardexSchema = new Schema({
-  item: {
+  sku: {
     type: String,
     required: true,
   },

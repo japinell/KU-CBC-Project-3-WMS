@@ -29,7 +29,7 @@ const taskSchema = new Schema({
     type: Number,
     required: true,
   },
-  items: [
+  taskDetails: [
     {
       item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number },

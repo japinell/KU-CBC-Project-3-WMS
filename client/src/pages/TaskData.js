@@ -3,9 +3,13 @@ import Auth from "../utils/auth";
 import Tasks from "./Tasks";
 import { GET_TASKS } from "../utils/queries";
 import { useMutation, useQuery } from "@apollo/client";
+import { useParams, Link } from "react-router-dom";
 
 const TaskData = () => {
-  const { loading, data } = useQuery(GET_TASKS, {});
+  const { task } = useParams();
+  const { loading, data } = useQuery(GET_TASKS, {
+    variables: { task: task },
+  });
 
   if (loading) {
     return <h1>Loading Task Data...</h1>;

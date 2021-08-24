@@ -13,12 +13,36 @@ export const GET_ITEM_BY_SKU = gql`
   }
 `;
 
+export const GET_INVENTORY_BY_SKU = gql`
+  query getInventoryBySku($sku: String!, $location: String, $lot: String) {
+    getInventoryBySku(sku: $sku, location: $location, lot: $lot) {
+      sku
+      location
+      lot
+      primary
+      quantity
+    }
+  }
+`;
+
 export const GET_ITEMS = gql`
   query getItems {
     getItems {
       _id
       sku
       description
+    }
+  }
+`;
+
+export const GET_LOCATION_BY_SKU = gql`
+  query getLocationBySku($sku: String!, $location: String, $lot: String) {
+    getLocationBySku(sku: $sku, location: $location, lot: $lot) {
+      sku
+      location
+      lot
+      primary
+      quantity
     }
   }
 `;
@@ -113,7 +137,7 @@ export const GET_TASK = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku
@@ -149,7 +173,7 @@ export const GET_TASKS = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku

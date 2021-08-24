@@ -7,7 +7,9 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+import Container from "@material-ui/core/Container";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -17,10 +19,14 @@ const useStyles = makeStyles((theme) => ({
     spacing: theme.spacing(1),
   },
   container: {
-    padding: theme.spacing(9),
+    padding: theme.spacing(12),
+  },
+  textCentered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
-
 function createTaskData(
   orderType,
   orderNumber,
@@ -38,7 +44,6 @@ function createTaskData(
     user,
   };
 }
-
 export default function Tasks({ defaultValues }) {
   console.log("Default Values for Tasks:", defaultValues);
   const classes = useStyles();
@@ -85,40 +90,59 @@ export default function Tasks({ defaultValues }) {
       defaultValues.user
     ),
   ];
-
   return (
-    <TableContainer component={Paper} className={classes.container}>
-      <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead className={classes.tableSpacing}>
-          <TableRow className={classes.tableSpacing}>
-            <TableCell>Order Type</TableCell>
-            <TableCell>Order Number</TableCell>
-            <TableCell>Customer Name</TableCell>
-            <TableCell>Customer #</TableCell>
-            <TableCell>Customer Notes</TableCell>
-            <TableCell>User</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow className={classes.tableSpacing} key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.orderType}
-              </TableCell>
+    <>
+      <Container className={classes.container} maxWidth="lg">
+        <Typography
+          mt={20}
+          variant="h2"
+          color="primary"
+          className={classes.textCentered}
+        >
+          Tasks
+        </Typography>
+        <TableContainer component={Paper} className={classes.container}>
+          <Table
+            className={classes.table}
+            size="small"
+            aria-label="a dense table"
+          >
+            <TableHead className={classes.tableSpacing}>
+              <TableRow className={classes.tableSpacing}>
+                <TableCell>Order Type</TableCell>
+                <TableCell>Order Number</TableCell>
+                <TableCell>Customer Name</TableCell>
+                <TableCell>Customer #</TableCell>
+                <TableCell>Customer Notes</TableCell>
+                <TableCell>User</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow className={classes.tableSpacing} key={row.name}>
+                  <TableCell component="th" scope="row">
+                    {row.orderType}
+                  </TableCell>
 
-              <Link href="/picking">
-                <TableCell>{row.orderNumber}</TableCell>
-              </Link>
+                  <Link
+                    to={{
+                      pathname: `/picking/${row.orderType}/${row.orderNumber}`,
+                    }}
+                  >
+                    <TableCell>{row.orderNumber}</TableCell>
+                  </Link>
 
-              <TableCell>{row.customerName}</TableCell>
-              <TableCell>{row.customerNumber}</TableCell>
-              <TableCell>{row.customerNotes}</TableCell>
-              <TableCell>{row.user}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+                  <TableCell>{row.customerName}</TableCell>
+                  <TableCell>{row.customerNumber}</TableCell>
+                  <TableCell>{row.customerNotes}</TableCell>
+                  <TableCell>{row.user}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Container>
+    </>
   );
 }
 // orderType orderNumber UserAssigned Operation Priority ArrayofItems(SKU/Quantity/UoM/Status)

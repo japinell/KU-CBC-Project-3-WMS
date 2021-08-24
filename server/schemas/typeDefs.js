@@ -35,7 +35,7 @@ const typeDefs = gql`
 
   type Inventory {
     id: ID!
-    item: String!
+    sku: String!
     description: String!
     location: String!
     lot: String
@@ -55,13 +55,15 @@ const typeDefs = gql`
 
   type Kardex {
     id: ID!
-    item: Item!
-    location: Location!
+    sku: String!
+    location: String!
     lot: String!
     quantity: Int!
-    uom: UoM!
-    operation: Operation!
+    uom: String!
+    operation: String!
     description: String
+    user: String
+    datetime: String
   }
 
   type Location {
@@ -90,7 +92,7 @@ const typeDefs = gql`
     customer: AddressBook!
     description: String!
     status: String!
-    items: [OrderItem]
+    orderDetails: [OrderItem]
   }
 
   type OrderHeader {
@@ -98,7 +100,6 @@ const typeDefs = gql`
     orderType: String!
     orderNumber: Int!
     customer: AddressBook!
-    vendor: AddressBook!
     description: String!
     status: String!
   }
@@ -113,9 +114,8 @@ const typeDefs = gql`
 
   type OrderDetail {
     id: ID!
-    orderType: String!
-    orderNumber: Int!
-    item: [OrderItem]
+    orderNumber: OrderHeader!
+    orderDetails: [OrderItem]
   }
 
   type Role {
@@ -132,7 +132,7 @@ const typeDefs = gql`
     user: String!
     operation: Int!
     priority: Int!
-    items: [OrderItem]
+    taskDetails: [OrderItem]
     notes: String
   }
 
@@ -160,7 +160,15 @@ const typeDefs = gql`
   }
 
   type Query {
+    getInventoryBySku(sku: String!, location: String, lot: String): [Inventory]
+  }
+
+  type Query {
     getItems: [Item]
+  }
+
+  type Query {
+    getLocationBySku(sku: String!): [Inventory]
   }
 
   type Query {
@@ -185,23 +193,35 @@ const typeDefs = gql`
 
   type Mutation {
     updateInventory(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
-      primary: Boolean
       quantity: Int!
+      user: String
     ): Inventory
   }
 
   type Mutation {
+    updateOrder(
+      orderType: String!
+      orderNumber: Int!
+      status: String!
+      sku: String!
+      quantity: Int!
+      user: String
+    ): Order
+  }
+
+  type Mutation {
     addKardex(
-      item: String!
+      sku: String!
       location: String!
       lot: String!
       quantity: Int!
       uom: String!
       operation: String!
       description: String!
+      user: String
     ): Kardex
   }
 
