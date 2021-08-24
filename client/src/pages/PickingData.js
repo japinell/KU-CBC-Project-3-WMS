@@ -4,13 +4,14 @@ import Auth from "../utils/auth";
 import Picking from "./Picking";
 import { GET_TASK } from "../utils/queries";
 import { useMutation, useQuery } from "@apollo/client";
+import { useParams, Link } from "react-router-dom";
 
 const PickingData = () => {
-  const { orderType, orderNumber } = useParams();
+  const { parOrderType, parOrderNumber } = useParams();
   const { loading, data } = useQuery(GET_TASK, {
     variables: {
-      orderType,
-      orderNumber,
+      parOrderType,
+      parOrderNumber,
     },
   });
 

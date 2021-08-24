@@ -24,11 +24,8 @@ import { LOGIN_USER } from "../utils/mutations";
 import { UPDATE_INVENTORY } from "../utils/mutations";
 import { ADD_KARDEX } from "../utils/mutations";
 import { UPDATE_ORDER } from "../utils/mutations";
-
 import Auth from "../utils/auth";
-
 import { useMutation, useQuery } from "@apollo/client";
-
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(6),
@@ -50,22 +47,18 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
-
 const Picking = ({ defaultValues }) => {
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
   const [updateInventory] = useMutation(UPDATE_INVENTORY);
   const [addKardex] = useMutation(ADD_KARDEX);
   const [updateOrder] = useMutation(UPDATE_ORDER);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
     if (name === "itemNumber") {
       const selItem = defaultValues.taskDetails.filter((item) => {
         return item.sku === value;
       });
-
       setFormValues({
         ...formValues,
         itemNumber: value,
@@ -79,11 +72,9 @@ const Picking = ({ defaultValues }) => {
       });
     }
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
-
     //  Update the inventory by calling the updateInventory mutation
     try {
       updateInventory({
@@ -95,7 +86,6 @@ const Picking = ({ defaultValues }) => {
           user: formValues.user,
         },
       });
-
       // Upon success, log the transaction to the kardex
       addKardex({
         variables: {
@@ -112,7 +102,6 @@ const Picking = ({ defaultValues }) => {
           user: formValues.user,
         },
       });
-
       // Upon success, log the transaction to the kardex
       // updateOrder({
       //   variables: {
@@ -128,9 +117,7 @@ const Picking = ({ defaultValues }) => {
       console.log(error);
     }
   };
-
   console.log("Form values => ", formValues);
-
   return (
     <Container className={classes.container} maxWidth="lg">
       <h1 className={classes.textCentered}>Picking</h1>
@@ -326,5 +313,4 @@ const Picking = ({ defaultValues }) => {
     </Container>
   );
 };
-
 export default Picking;

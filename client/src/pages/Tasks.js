@@ -7,9 +7,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { Typography } from "@material-ui/core";
+
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 650,
@@ -122,12 +123,15 @@ export default function Tasks({ defaultValues }) {
                   <TableCell component="th" scope="row">
                     {row.orderType}
                   </TableCell>
+
                   <Link
-                    //href={`picking?orderType=${row.orderType}&orderNumber=${row.orderNumber}`}
-                    to={`picking?orderType=${row.orderType}&orderNumber=${row.orderNumber}`}
+                    to={{
+                      pathname: `/picking/${row.orderType}/${row.orderNumber}`,
+                    }}
                   >
                     <TableCell>{row.orderNumber}</TableCell>
                   </Link>
+
                   <TableCell>{row.customerName}</TableCell>
                   <TableCell>{row.customerNumber}</TableCell>
                   <TableCell>{row.customerNotes}</TableCell>
