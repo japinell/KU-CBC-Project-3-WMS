@@ -10,15 +10,16 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
-import { Link } from "@material-ui/core/Link";
+import Link from "@material-ui/core/Link";
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "../utils/queries";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 500,
-    minHeight: 300,
+    minWidth: 300,
+    minHeight: 100,
     marginTop: 9,
+    marginRight: 9,
   },
   container: {
     backgroundSize: "xl",
@@ -37,20 +38,22 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(9),
     paddingBottom: theme.spacing(9),
+    paddingRight: theme.spacing(9),
   },
   card: {
     minHeight: 300,
     maxWidth: 300,
-    margin: "auto",
-    display: "flex",
+    margin: "center",
+    display: "wrap",
     flexDirection: "column",
   },
   cardContent: {
-    margin: "auto",
+    margin: 1,
     flexGrow: 1,
     justifyContent: "center",
   },
   title: {
+    margin: 12,
     fontSize: 14,
   },
   pos: {
@@ -135,7 +138,7 @@ const Admin = () => {
                     >
                       Submit
                       <Link to={{
-                      pathname: `/tasks/${row.user}/${row.operation}`,
+                      pathname: `/tasks`,
                     }}
                       />
                     </Button>

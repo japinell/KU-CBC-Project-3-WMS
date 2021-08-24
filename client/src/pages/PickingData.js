@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
 import Auth from "../utils/auth";
 import Picking from "./Picking";
 import { GET_TASK } from "../utils/queries";
@@ -15,8 +15,8 @@ const PickingData = () => {
     },
   });
 
-  console.log("orderType =>", orderType);
-  console.log("orderNumber =>", orderNumber);
+  // console.log("orderType =>", orderType);
+  // console.log("orderNumber =>", orderNumber);
 
   if (loading) {
     return <h1>Loading Task Data...</h1>;
@@ -36,8 +36,8 @@ const PickingData = () => {
   } = taskData;
 
   const orderData = {
-    orderType,
-    orderNumber,
+    // orderType,
+    // orderNumber,
     customerNumber: customer.code,
     customerName: customer.name,
     user,
@@ -53,8 +53,8 @@ const PickingData = () => {
   };
 
   const itemsData = {
-    orderType,
-    orderNumber,
+    // orderType,
+    // orderNumber,
     taskDetails: taskDetails.map((task) => ({
       sku: task.item.sku,
       description: task.item.description,
