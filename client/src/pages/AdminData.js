@@ -8,14 +8,10 @@ import { GET_USER } from "../utils/queries";
 const AdminData = () => {
   const { loading, data } = useQuery(GET_USER, {
     variables: {
-      firstname: "User2",
-      department: "Picking",
-    },
-  });
-  
-  if (loading) {
-    return <h1>Loading Task Data...</h1>;
-  }
+      user: "User2",
+      operation: "Picking",
+    },  
+  });  
 
   const userData = data?.getUserByNumber[0] ?? [];
 
@@ -26,11 +22,15 @@ const AdminData = () => {
     
   } = userData;
 
-  const Cards = {
+  const User = {
     firstname,
     lastname,
     email,
   };
+  
+  if (loading) {
+    return <h1>Loading Task Data...</h1>;
+  }
 
   return <Admin defaultValues={userData} />;
 };

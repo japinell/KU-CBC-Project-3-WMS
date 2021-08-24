@@ -115,7 +115,7 @@ const Admin = () => {
                       className={classes.CardContent}
                       placeholder="Apply A User"
                       inputProps={{ "aria-label": "description" }}
-                      value={formValues.firstName}
+                      value={formValues.user}
                       onChange={handleInputChange}
                     />
                     <Input
@@ -134,6 +134,10 @@ const Admin = () => {
                       type="submit"
                     >
                       Submit
+                      <Link to={{
+                      pathname: `/tasks/${row.user}/${row.operation}`,
+                    }}
+                      />
                     </Button>
                   </CardActions>
                 </Grid>
