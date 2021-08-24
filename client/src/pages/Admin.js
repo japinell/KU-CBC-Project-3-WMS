@@ -15,7 +15,13 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "../utils/queries";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    minWidth: 500,
+    minHeight: 300,
+    marginTop: 9,
+  },
   container: {
+    backgroundSize: "xl",
     padding: theme.spacing(9),
   },
   icon: {
@@ -29,21 +35,26 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(9),
+    paddingBottom: theme.spacing(9),
   },
   card: {
-    height: "100%",
-    width: 300,
-    margin: 'auto',
+    minHeight: 300,
+    maxWidth: 300,
+    margin: "auto",
     display: "flex",
     flexDirection: "column",
   },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
   cardContent: {
+    margin: "auto",
     flexGrow: 1,
+    justifyContent: "center",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -80,10 +91,10 @@ const Admin = () => {
       <main>
         <div>
           <Container className={classes.container}>
-            <Card className={classes.root} variant="outlined" >
+            <Card className={classes.root} variant="outlined">
               <CardContent>
                 <Grid container spacing={6} justifyContent="center">
-                  <Typography className={classes.title} color="textPrimary" gutterBottom>
+                  <Typography className={classes.title} color="textPrimary">
                     Admin Portal
                   </Typography>
                   <form
@@ -102,14 +113,14 @@ const Admin = () => {
                     </Typography>
                     <Input
                       className={classes.CardContent}
-                      defaultValue="Apply A User"
+                      placeholder="Apply A User"
                       inputProps={{ "aria-label": "description" }}
                       value={formValues.firstName}
                       onChange={handleInputChange}
                     />
                     <Input
                       className={classes.CardContent}
-                      defaultValue="Select Action"
+                      placeholder="Select Action"
                       inputProps={{ "aria-label": "description" }}
                       value={formValues.operation}
                       onChange={handleInputChange}
