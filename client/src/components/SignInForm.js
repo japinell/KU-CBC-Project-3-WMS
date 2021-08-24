@@ -18,7 +18,7 @@ import SignUpForm from "./SignUpForm";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { LOGIN_USER } from "../utils/mutations";
-import logo from "../images/miniWMS.png";
+import logo from "../images/logo.png";
 
 function Copyright() {
   return (
@@ -115,12 +115,12 @@ export default function SignInForm() {
       <CssBaseline />
       <div className={classes.paper}>
         <img src={logo} alt="logo" />
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
         <form className={classes.form} noValidate>
           <TextField
             variant="filled"

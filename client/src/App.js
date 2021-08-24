@@ -8,6 +8,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import { AppBar } from "@material-ui/core";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -23,6 +24,9 @@ import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer";
 import Tasks from "./pages/Tasks";
 import TaskData from "./pages/TaskData";
+
+import Auth from "./utils/auth";
+import LoginForm from "../src/components/SignInForm";
 
 import {
   createTheme,
@@ -94,28 +98,38 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const renderLogin = () => {
+  if (Auth.loggedIn()) {
+    return (
+      <>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/tasks" component={TaskData} />
+          <Route exact path="/picking" component={PickingData} />
+          {/* <Route exact path="/receiving" component={Receiving} />
+      <Route exact path="/putaway" component={PutAway} />
+      <Route exact path="/dispatch" component={Dispatch} /> */}
+          <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+        </Switch>
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <AppBar>
+        <LoginForm />
+      </AppBar>
+    );
+  }
+};
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <ThemeProvider theme={theme}>
-          <>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/admin" component={Admin} />
-              <Route exact path="/tasks" component={TaskData} />
-              <Route exact path="/picking" component={PickingData} />
-              {/* <Route exact path="/receiving" component={Receiving} />
-              <Route exact path="/putaway" component={PutAway} />
-              <Route exact path="/dispatch" component={Dispatch} /> */}
-              <Route
-                render={() => <h1 className="display-2">Wrong page!</h1>}
-              />
-            </Switch>
-          </>
-          <Footer />
-        </ThemeProvider>
+        <ThemeProvider theme={theme}>{renderLogin()}</ThemeProvider>
       </Router>
     </ApolloProvider>
   );
