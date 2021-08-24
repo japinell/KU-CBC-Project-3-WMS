@@ -57,6 +57,35 @@ const resolvers = {
       //   "You need to log in to perform this query!"
       // );
     },
+    // Returns the inventory availability by location for an item
+    getLocationBySku: async (parent, { sku }, context) => {
+      // if (context.user) {
+      // console.log("Sku => ", sku);
+      // console.log("Location => ", location);
+      // console.log("Lot => ", lot);
+
+      if (sku && location && lot) {
+        return await Inventory.find({
+          sku,
+          location,
+          lot,
+        });
+      } else if (sku && location) {
+        return await Inventory.find({
+          sku,
+          location,
+        });
+      } else {
+        return await Inventory.find({
+          sku,
+        });
+      }
+
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
     // Returns an order by number
     getOrderByNumber: async (parent, { orderType, orderNumber }, context) => {
       // if (context.user) {
@@ -117,17 +146,25 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Updating inventory record...");
+        console.log("sku =>", sku);
+        console.log("location =>", location);
+        console.log("lot =>", lot);
         const currInventory = await Inventory.findOne({
           sku,
           location,
           lot,
         });
+
+        if (!currInventory) {
+          throw new Error(
+            `No inventory found for item ${sku} in location ${location} and lot ${lot}.`
+          );
+        }
+
         const newQuantity = currInventory.quantity - quantity;
 
         if (newQuantity < 0) {
-          throw new AuthenticationError(
-            "Error: Inventory quantity cannot be less than zero."
-          );
+          throw new Error("Inventory quantity cannot be less than zero.");
         }
 
         const newInventory = await Inventory.findOneAndUpdate(
@@ -155,6 +192,9 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Creating kardex record...");
+        console.log("sku =>", sku);
+        console.log("location =>", location);
+        console.log("lot =>", lot);
         const kardex = await Kardex.create({
           sku,
           location,

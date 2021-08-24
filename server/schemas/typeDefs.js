@@ -168,6 +168,10 @@ const typeDefs = gql`
   }
 
   type Query {
+    getLocationBySku(sku: String!): [Inventory]
+  }
+
+  type Query {
     getOrderByNumber(orderType: String!, orderNumber: Int!): [Order]
   }
 

@@ -120,13 +120,13 @@ const orderData = [
       },
       {
         sku: "600230",
-        quantity: 100,
+        quantity: 50,
         uom: "BX",
         status: "U",
       },
       {
         sku: "610990",
-        quantity: 100,
+        quantity: 25,
         uom: "BAG",
         status: "U",
       },
@@ -149,13 +149,13 @@ const orderData = [
       },
       {
         sku: "617950",
-        quantity: 100,
+        quantity: 50,
         uom: "JR",
         status: "U",
       },
       {
         sku: "614910",
-        quantity: 100,
+        quantity: 25,
         uom: "EA",
         status: "U",
       },
