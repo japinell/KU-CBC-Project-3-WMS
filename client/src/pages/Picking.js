@@ -23,6 +23,7 @@ import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
 import { UPDATE_INVENTORY } from "../utils/mutations";
 import { ADD_KARDEX } from "../utils/mutations";
+import { UPDATE_ORDER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -51,23 +52,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Picking = ({ defaultValues }) => {
-  console.log("DefaultValues => ", defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
-  const [updateInventory, { errUpdateInventory }] =
-    useMutation(UPDATE_INVENTORY);
-  const [addKardex, { errAddKardex }] = useMutation(ADD_KARDEX);
+  const [updateInventory] = useMutation(UPDATE_INVENTORY);
+  const [addKardex] = useMutation(ADD_KARDEX);
+  const [updateOrder] = useMutation(UPDATE_ORDER);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log("Target => ", e.target);
-    console.log("Value => ", value);
 
     if (name === "itemNumber") {
-      const selItem = defaultValues.taskDetails.filter((elem) => {
-        return elem.item.sku === value;
+      const selItem = defaultValues.taskDetails.filter((item) => {
+        return item.sku === value;
       });
-      console.log(selItem);
 
       setFormValues({
         ...formValues,
@@ -86,9 +83,6 @@ const Picking = ({ defaultValues }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
-
-    // console.log(event.target.name);
-    return;
 
     //  Update the inventory by calling the updateInventory mutation
     try {
@@ -118,8 +112,20 @@ const Picking = ({ defaultValues }) => {
           user: formValues.user,
         },
       });
-    } catch (err) {
-      console.log(err);
+
+      // Upon success, log the transaction to the kardex
+      // updateOrder({
+      //   variables: {
+      //     orderType: formValues.orderType,
+      //     orderNumber: formValues.orderNumber,
+      //     status: "P",
+      //     sku: formValues.itemNumber,
+      //     quantity: formValues.quantity,
+      //     user: formValues.user,
+      //   },
+      // });
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -258,9 +264,9 @@ const Picking = ({ defaultValues }) => {
             name="lotNumber"
             label="Lot"
             type="text"
-            InputProps={{
-              readOnly: true,
-            }}
+            // InputProps={{
+            //   readOnly: true,
+            // }}
             value={formValues.lotNumber}
             onChange={handleInputChange}
           />

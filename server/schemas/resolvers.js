@@ -100,7 +100,9 @@ const resolvers = {
     // Returns all the orders
     getOrders: async (parent, args, context) => {
       // if (context.user) {
-      return await Order.find({}).populate("customer").populate("items.item");
+      return await Order.find({})
+        .populate("customer")
+        .populate("orderDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -224,15 +226,13 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Updating order record...");
-        const { items } = await Order.findOne({
+        const { orderDetails } = await Order.findOne({
           orderType,
           orderNumber,
-        })
-          .populate("customer")
-          .populate("items.item");
+        }).populate("orderDetails.item");
 
-        const currItem = items.filter((item) => {
-          return item.item.sku === sku;
+        const currItem = orderDetails.filter((item) => {
+          return orderDetails.item.sku === sku;
         });
 
         console.log("currItem => ", currItem);
@@ -242,16 +242,14 @@ const resolvers = {
         console.log("newItemQty => ", newItemQty);
 
         if (newItemQty < 0) {
-          throw new AuthenticationError(
-            "Error: Order quantity cannot be less than zero."
-          );
+          throw new Error("Order quantity cannot be less than zero.");
         }
 
         const newOrder = await Order.findOneAndUpdate(
-          { "items.item.sku": sku },
+          { "orderDetails.item.sku": sku },
           {
             $set: {
-              "items.$.quantity": newItemQty,
+              "orderDetails.quantity": newItemQty,
             },
           }
         );

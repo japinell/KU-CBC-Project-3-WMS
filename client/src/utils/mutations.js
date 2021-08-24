@@ -94,7 +94,7 @@ export const UPDATE_ORDER = gql`
       }
       description
       status
-      items {
+      orderDetails {
         item {
           _id
           sku
