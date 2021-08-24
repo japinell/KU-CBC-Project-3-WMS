@@ -4,6 +4,7 @@
 const AddressBook = require('./AddressBook');
 const Category = require('./Category');
 const Conversion = require('./Conversion');
+const Inventory = require('./Inventory')
 const Item = require('./Item');
 const Kardex = require('./Kardex');
 const Location = require('./Location');
@@ -15,4 +16,4 @@ const Task = require('./Task');
 const UoM = require('./UoM');
 const User = require('./User');
 
-module.exports = { AddressBook, Category, Conversion, Item, Kardex, Location, Operation, OrderDetail, OrderHeader, Role, Task, UoM, User};
+module.exports = { AddressBook, Category, Conversion, Inventory, Item, Kardex, Location, Operation, OrderDetail, OrderHeader, Role, Task, UoM, User};

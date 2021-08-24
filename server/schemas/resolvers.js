@@ -72,13 +72,18 @@ const resolvers = {
         const user = await User.findById(context.user._id).populate("email");
         return user;
       }
-      throw new AuthenticationError("You need to log in to perform this query!");
+      throw new AuthenticationError(
+        "You need to log in to perform this query!"
+      );
     },
   },
 
   Mutation: {
     //  Update an inventory item - Return the inventory object updated
-    updateInventory: async (parent, { item, location, lot, primary, quantity }) => {
+    updateInventory: async (
+      parent,
+      { item, location, lot, primary, quantity }
+    ) => {
       console.log("Updating inventory record...");
       const inventory = await Inventory.findOneAndUpdate(
         { item, location, lot },
@@ -91,9 +96,6 @@ const resolvers = {
     // Return an authentication token after validating the user credentials
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      const users = await User.find({});
-
-      // console.log({ user, email, password, users });
 
       if (!user) {
         throw new AuthenticationError("Invalid email address");

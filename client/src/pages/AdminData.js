@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { useParams } from "@reach/router"
 import { Admin } from "Admin"
 import { useMutation, useQuery } from "@apollo/client";
 import { User } from "../../server/models/User.js"
@@ -16,7 +17,7 @@ const AdminData = () => {
     return <h1>Loading Task Data...</h1>;
   }
 
-  const Cards = data?.getUserByNumber[0] ?? [];
+  const userData = data?.getUserByNumber[0] ?? [];
 
   const {
     firstname,
@@ -25,7 +26,7 @@ const AdminData = () => {
     
   } = userData;
 
-  const AdminData = {
+  const Cards = {
     firstname,
     lastname,
     email,

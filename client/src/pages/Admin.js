@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -35,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     height: "100%",
+    width: 300,
+    margin: 'auto',
     display: "flex",
     flexDirection: "column",
   },
@@ -79,7 +80,7 @@ const Admin = () => {
       <main>
         <div>
           <Container className={classes.container}>
-            <Card className={classes.root} variant="outlined">
+            <Card className={classes.root} variant="outlined" >
               <CardContent>
                 <Grid container spacing={6} justifyContent="center">
                   <Typography className={classes.title} color="textPrimary" gutterBottom>
@@ -101,7 +102,7 @@ const Admin = () => {
                     </Typography>
                     <Input
                       className={classes.CardContent}
-                      placeholder="Apply A User"
+                      defaultValue="Apply A User"
                       inputProps={{ "aria-label": "description" }}
                       value={formValues.firstName}
                       onChange={handleInputChange}
