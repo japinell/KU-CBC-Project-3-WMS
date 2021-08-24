@@ -1,6 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import HomeIcon from "@material-ui/icons/Home";
+import GoBackIcon from "@material-ui/icons/ArrowBackTwoTone";
+import AddToCartIcon from "@material-ui/icons/ShoppingCartTwoTone";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -14,6 +21,9 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { LOGIN_USER } from "../utils/mutations";
+import { UPDATE_INVENTORY } from "../utils/mutations";
+import { ADD_KARDEX } from "../utils/mutations";
+import { UPDATE_ORDER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -31,25 +41,37 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  textCentered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 
 const Picking = ({ defaultValues }) => {
-  console.log("Default values =>", defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
+  const [updateInventory] = useMutation(UPDATE_INVENTORY);
+  const [addKardex] = useMutation(ADD_KARDEX);
+  const [updateOrder] = useMutation(UPDATE_ORDER);
 
   const handleInputChange = (e) => {
-    const { name, value, dataItem } = e.target;
-    console.log(e.target);
+    const { name, value } = e.target;
+
     if (name === "itemNumber") {
-      // setFormValues({
-      //   ...formValues,
-      //   quantity:  formValues.taskDetails.filter((item) => {
-      //     item.
-      //   }),
-      //   uom: value,
-      // });
-      let i = 0;
+      const selItem = defaultValues.taskDetails.filter((item) => {
+        return item.sku === value;
+      });
+
+      setFormValues({
+        ...formValues,
+        itemNumber: value,
+        uom: selItem[0].uom,
+        quantity: selItem[0].quantity,
+      });
     } else {
       setFormValues({
         ...formValues,
@@ -58,37 +80,60 @@ const Picking = ({ defaultValues }) => {
     }
   };
 
-  const handleItemChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
-  const handleSliderChange = (name) => (e, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
+
+    //  Update the inventory by calling the updateInventory mutation
+    try {
+      updateInventory({
+        variables: {
+          sku: formValues.itemNumber,
+          location: formValues.fromLocation,
+          lot: formValues.lotNumber,
+          quantity: formValues.quantity,
+          user: formValues.user,
+        },
+      });
+
+      // Upon success, log the transaction to the kardex
+      addKardex({
+        variables: {
+          sku: formValues.itemNumber,
+          location: formValues.fromLocation,
+          lot: formValues.lotNumber,
+          quantity: formValues.quantity,
+          uom: formValues.uom,
+          operation: "Picking",
+          //description: `Picked item from ${formValues.fromLocation} to ${formValues.toLocation}`,
+          description: formValues.notes
+            ? formValues.notes
+            : `Picked item from ${formValues.fromLocation} to ${formValues.toLocation}`,
+          user: formValues.user,
+        },
+      });
+
+      // Upon success, log the transaction to the kardex
+      // updateOrder({
+      //   variables: {
+      //     orderType: formValues.orderType,
+      //     orderNumber: formValues.orderNumber,
+      //     status: "P",
+      //     sku: formValues.itemNumber,
+      //     quantity: formValues.quantity,
+      //     user: formValues.user,
+      //   },
+      // });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // useEffect(() => {
-  //   setFormValues(defaultValues);
-  //   console.log("formValues => ");
-  //   console.log(formValues);
-  //   console.log("formValues.items => ");
-  //   console.log(formValues.taskDetails);
-  // }, []);
+  console.log("Form values => ", formValues);
 
   return (
     <Container className={classes.container} maxWidth="lg">
-      <h1>Picking</h1>
+      <h1 className={classes.textCentered}>Picking</h1>
       <form onSubmit={handleSubmit}>
         <Grid>
           <TextField
@@ -96,6 +141,9 @@ const Picking = ({ defaultValues }) => {
             name="orderType"
             label="Order Type"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.orderType}
             onChange={handleInputChange}
           />
@@ -104,6 +152,9 @@ const Picking = ({ defaultValues }) => {
             name="orderNumber"
             label="Order Number"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.orderNumber}
             onChange={handleInputChange}
           />
@@ -114,6 +165,9 @@ const Picking = ({ defaultValues }) => {
             name="customerNumber"
             label="Customer Number"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.customerNumber}
             onChange={handleInputChange}
           />
@@ -122,10 +176,31 @@ const Picking = ({ defaultValues }) => {
             name="customerName"
             label="Customer Name"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.customerName}
             onChange={handleInputChange}
           />
         </Grid>
+        {/* <Grid>
+          <Autocomplete
+            options={formValues.taskDetails}
+            getOptionLabel={(option) => option.item.description}
+            // style={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                id="itemNumber"
+                name="itemNumber"
+                label="Item Number"
+                value={formValues.itemNumber}
+              />
+            )}
+            onChange={handleInputChange}
+            //
+          />
+        </Grid> */}
         <Grid item>
           <FormControl className={classes.formControl}>
             <InputLabel>Item Number</InputLabel>
@@ -133,24 +208,37 @@ const Picking = ({ defaultValues }) => {
               id="itemNumber"
               name="itemNumber"
               label="Item Number"
-              defaultValue={defaultValues.taskDetails[0].sku}
-              value={formValues.taskDetails[0].item.sku}
+              //defaultValue={defaultValues.taskDetails[0].item.sku}
+              value={formValues.itemNumber}
               onChange={handleInputChange}
             >
-              {console.log("Inside the Select => ", defaultValues.taskDetails)}
-              {defaultValues.taskDetails.map(({ item, uom, quantity }) => {
+              {defaultValues.taskDetails.map((item) => {
                 return (
-                  <div
-                    key={item.sku}
-                    value={item.sku}
-                    dataItem={(uom, quantity)}
-                  >
-                    <MenuItem>{item.description}</MenuItem>
-                  </div>
+                  <MenuItem key={item.sku} value={item.sku}>
+                    {item.description}
+                  </MenuItem>
                 );
               })}
             </Select>
           </FormControl>
+        </Grid>
+        <Grid>
+          <TextField
+            id="quantity"
+            name="quantity"
+            label="Quantity"
+            type="number"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  {formValues.uom}
+                </InputAdornment>
+              ),
+              readOnly: true,
+            }}
+            value={formValues.quantity}
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid>
           <TextField
@@ -176,39 +264,64 @@ const Picking = ({ defaultValues }) => {
             name="lotNumber"
             label="Lot"
             type="text"
+            // InputProps={{
+            //   readOnly: true,
+            // }}
             value={formValues.lotNumber}
             onChange={handleInputChange}
           />
-          <TextField
+          {/* <TextField
             id="expirationDate"
             name="expirationDate"
             label="Expiration Date"
             type="text"
+            InputProps={{
+              readOnly: true,
+            }}
             value={formValues.expirationDate}
             onChange={handleInputChange}
-          />
+          /> */}
         </Grid>
-        <Grid>
-          <TextField
-            id="UoM"
-            name="UoM"
-            label="UoM"
-            type="text"
-            value={formValues.UoM}
-            onChange={handleInputChange}
-          />
-          <TextField
-            id="quantity"
-            name="quantity"
-            label="Quantity"
-            type="number"
-            value={formValues.quantity}
-            onChange={handleInputChange}
-          />
+        <br />
+        <Grid className={classes.textCentered}>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            type="submit"
+          >
+            <AddToCartIcon />
+            Submit
+          </Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            href="/home"
+          >
+            <GoBackIcon />
+            Cancel
+          </Button>
+          {/* <Fab
+            onSubmit={handleSubmit}
+            className={classes.button}
+            size="medium"
+            color="primary"
+            aria-label="add"
+          >
+            <AddIcon />
+          </Fab>
+          <Fab
+            onSubmit={handleSubmit}
+            className={classes.button}
+            size="medium"
+            color="primary"
+            aria-label="back"
+            // href="/home"
+          >
+            <Home />
+          </Fab> */}
         </Grid>
-        <Button variant="contained" color="primary" type="submit">
-          Submit
-        </Button>
       </form>
     </Container>
   );

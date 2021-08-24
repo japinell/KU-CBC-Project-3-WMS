@@ -1,6 +1,7 @@
 //
 //  Populate database with default data
 //
+const AddressBook = require("../models/AddressBook");
 const OrderHeader = require("../models/OrderHeader");
 
 const orderHeaderData = [
@@ -8,7 +9,6 @@ const orderHeaderData = [
     orderType: "PO",
     orderNumber: 123456,
     customer: 10000,
-    vendor: 10002,
     description: "Some goodies to receive",
     status: "U",
     user: "admin",
@@ -18,7 +18,6 @@ const orderHeaderData = [
     orderType: "PO",
     orderNumber: 123457,
     customer: 10000,
-    vendor: 10003,
     description: "Some more goodies to receive",
     status: "U",
     user: "admin",
@@ -28,7 +27,6 @@ const orderHeaderData = [
     orderType: "ST",
     orderNumber: 123458,
     customer: 10000,
-    vendor: 10000,
     description: "Some goodies to transfer",
     status: "U",
     user: "admin",
@@ -38,7 +36,6 @@ const orderHeaderData = [
     orderType: "SO",
     orderNumber: 123459,
     customer: 10001,
-    vendor: 10000,
     description: "Some goodies to sell",
     status: "U",
     user: "admin",
@@ -48,7 +45,6 @@ const orderHeaderData = [
     orderType: "SO",
     orderNumber: 123460,
     customer: 10001,
-    vendor: 10000,
     description: "Some more goodies to sell",
     status: "U",
     user: "admin",
@@ -58,7 +54,18 @@ const orderHeaderData = [
 
 const seedOrderHeader = async () => {
   await OrderHeader.deleteMany({});
-  await OrderHeader.insertMany(orderHeaderData);
+  //await OrderHeader.insertMany(orderHeaderData);
+
+  for (let i = 0, l = orderHeaderData.length; i < l; i++) {
+    const { customer, ...order } = orderHeaderData[i];
+
+    const custId = await AddressBook.findOne({ code: customer });
+
+    await OrderHeader.create({
+      ...order,
+      customer: custId._id,
+    });
+  }
 };
 
 module.exports = seedOrderHeader;

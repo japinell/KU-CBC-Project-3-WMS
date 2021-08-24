@@ -26,7 +26,7 @@ const orderSchema = new Schema({
     type: String,
     required: true,
   },
-  items: [
+  orderDetails: [
     {
       item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number, min: 0.0 },

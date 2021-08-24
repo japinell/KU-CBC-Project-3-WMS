@@ -15,13 +15,8 @@ const orderHeaderSchema = new Schema({
     required: true,
   },
   customer: {
-    type: Number,
-    // ref: "AddressBook",
-    required: true,
-  },
-  vendor: {
-    type: Number,
-    // ref: "AddressBook",
+    type: Schema.Types.ObjectId,
+    ref: "AddressBook",
     required: true,
   },
   description: {
@@ -31,6 +26,11 @@ const orderHeaderSchema = new Schema({
     type: String,
     required: true,
   },
+  // orderDetails: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "OrderDetail",
+  //   required: true,
+  // },
   user: String,
   datetime: {
     type: Date,

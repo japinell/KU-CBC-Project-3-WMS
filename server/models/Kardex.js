@@ -7,13 +7,11 @@ const { Schema } = mongoose;
 //
 const kardexSchema = new Schema({
   sku: {
-    type: Schema.Types.ObjectId,
-    ref: "Item",
+    type: String,
     required: true,
   },
   location: {
-    type: Schema.Types.ObjectId,
-    ref: "Location",
+    type: String,
     required: true,
   },
   lot: {
@@ -25,13 +23,11 @@ const kardexSchema = new Schema({
     default: 0,
   },
   uom: {
-    type: Schema.Types.ObjectId,
-    ref: "UoM",
+    type: String,
     required: true,
   },
   operation: {
-    type: Schema.Types.ObjectId,
-    ref: "Operation",
+    type: String,
     required: true,
   },
   description: {
