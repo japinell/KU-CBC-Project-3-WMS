@@ -27,8 +27,8 @@ Although a sign up form has been provided for development purposes, in a product
 
 ```md
 AS A Warehouse Inventory Manager
-I WANT to be able to pick from and update my inventory.
-SO THAT I can keep track of my warehouse inventory
+I WANT to be able to pick inventory from locations in my warehouse for dispatch purposes
+SO THAT I can keep track of my inventory, fullfill my sales orders, and make better use of the available pickers and inventory lots in the warehouse
 ```
 
 ## Mock-Up
