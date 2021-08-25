@@ -33,7 +33,7 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 ## Mock-Up
 
-The following images portray the look and feel of the deployed application.
+The following images portray the look and feel of the deployed application in Heroku.
 
 ### Login Page
 
