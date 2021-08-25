@@ -11,6 +11,7 @@ This is a warehouse management system application that can assign tasks to users
 - [Deployment](#deployment)
 - [User Story](#user-story)
 - [Mock-Up](#mock-up)
+- [Tech-Used](#tech-used)
 - [License](#license)
 - [Contribute](#contribute)
 
@@ -31,6 +32,26 @@ SO THAT I can keep track of my warehouse inventory
 The following image shows a screenshot of the deployed application.
 
 ![Integration using Insomnia](./Assets/screenshot.png)
+
+## Tech-Used
+
+This project was completed using the following technologies:
+
+### Front End Development:
+
+- React
+- Material UI
+- PWA - Service Worker
+
+### Back End Development:
+
+- GraphQL
+- Apollo
+- JWT
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
 ## License
 
