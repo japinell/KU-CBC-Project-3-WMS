@@ -31,6 +31,31 @@ I WANT to be able to pick inventory from locations in my warehouse for dispatch 
 SO THAT I can keep track of my inventory, fullfill my sales orders, and make better use of the available pickers and inventory lots in the warehouse
 ```
 
+## Acceptance Criteria
+
+```md
+GIVEN a WMS system integrated to the company's ERP system
+WHEN I start my day shift as a supervisor
+THEN I login to the WMS system and review the sales orders to pick so that I can assign the orders based on priority
+WHEN I select an order to pick
+THEN I can assign the picking task to a picker
+WHEN I login to the WMS system as a picker
+THEN I can see the tasks assigned to me within the Tasks module
+WHEN I select a Picking task to fullfill
+THEN I am provided with the order and item details
+WHEN I select an item to pick in the Picking module
+THEN I am provided with information about the unit of measure and quantity to pick for that item
+WHEN I pick the item physically
+THEN I can submit the transaction to the WMS system so that the inventory for that location is updated to reflect a new balance
+AND I record to track the details of that opeartion are registered to the system ledger (cardex)
+WHEN I select another item to pick
+THEN I am provided with information about that item, I can pick the item physically, and I can update the system to its new state
+WHEN I press the cancel button
+THEN I go back to the main page of the system
+WHEN I press the logout button
+THEN I am disconnected from the system
+```
+
 ## Mock-Up
 
 The following images portray the look and feel of the deployed application in Heroku.
