@@ -1,3 +1,6 @@
+//
+//  Libraries needed
+//
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -10,7 +13,9 @@ import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
 import { Typography } from "@material-ui/core";
-
+//
+//  Uses styles to customize the component elements
+//
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 650,
@@ -27,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
+//
+//  Builds the Tasks table
+//
 function createTaskData(
   orderType,
   orderNumber,
@@ -44,8 +52,10 @@ function createTaskData(
     user,
   };
 }
+//
+//  Renders the Tasks component with data received from the TasksData component
+//
 export default function Tasks({ defaultValues }) {
-  console.log("Default Values for Tasks:", defaultValues);
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
   const rows = [
@@ -141,4 +151,3 @@ export default function Tasks({ defaultValues }) {
     </>
   );
 }
-// orderType orderNumber UserAssigned Operation Priority ArrayofItems(SKU/Quantity/UoM/Status)
