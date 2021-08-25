@@ -143,7 +143,7 @@ export default function Footer() {
 
   function Copyright() {
     return (
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Typography variant="body2" color="textSecondary" align="justify">
         {"Copyright © "}
         <Link
           target="_blank"
@@ -152,8 +152,8 @@ export default function Footer() {
         >
           Mini-WMS
         </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
+        {/* {new Date().getFullYear()}
+        {"."} */}
       </Typography>
     );
   }
@@ -208,7 +208,7 @@ export default function Footer() {
           </Grid>
         </Box>
 
-        <Box m={2}>
+        <Box m={2} display="flex" justifyContent="center">
           <Copyright />
         </Box>
       </Container>
