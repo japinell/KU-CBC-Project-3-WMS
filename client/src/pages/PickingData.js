@@ -1,10 +1,12 @@
+//
+//  Libraries needed
+//
 import React, { useEffect, useState } from "react";
-import Auth from "../utils/auth";
 import Picking from "./Picking";
 import { GET_TASK } from "../utils/queries";
-import { useMutation, useQuery } from "@apollo/client";
-import { useParams, Link } from "react-router-dom";
-
+// 
+//  PickingData (data concern) - Retrieves the tasks data by calling the GET TASK GraphQL query and passes the result to the Picking component
+//
 const PickingData = () => {
   const { loading, data } = useQuery(GET_TASK, {
     variables: {
@@ -13,12 +15,14 @@ const PickingData = () => {
     },
   });
 
+  // Wait for the query to load the data successfully
   if (loading) {
     return <h1>Loading Task Data...</h1>;
   }
 
   const taskData = data?.getTaskByNumber[0] ?? [];
 
+  // Retrieves the picking data
   const {
     orderType,
     orderNumber,
@@ -30,6 +34,7 @@ const PickingData = () => {
     taskDetails,
   } = taskData;
 
+  // Constructs the orderData object used to build the final pickingData to pass to the Picking component
   const orderData = {
     orderType,
     orderNumber,
@@ -47,6 +52,7 @@ const PickingData = () => {
     lotNumber: "",
   };
 
+  // Constructs the itemsData object used to build the final pickingData to pass to the Picking component
   const itemsData = {
     orderType,
     orderNumber,
@@ -59,6 +65,7 @@ const PickingData = () => {
     })),
   };
 
+  // PickingData contains all the data needed in the Picking component
   const pickingData = { ...orderData, ...itemsData };
 
   return <Picking defaultValues={pickingData} />;
