@@ -35,11 +35,11 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 The following image shows a screenshot of the deployed application.
 
-<img src="./Assets/main-page.png" alt="Main Page" width="200"/>
-![Tasks Page](./Assets/tasks.png)
-![Picking Page](./Assets/picking.png)
-![Administration Page](./Assets/admin1.png)
-![Administration Page](./Assets/admin2.png)
+<img src="./Assets/main-page.png" alt="Main Page" width="300"/>
+<img src="./Assets/tasks.png" alt="Tasks Page" width="300"/>
+<img src="./Assets/picking.png" alt="Picking Page" width="300"/>
+<img src="./Assets/admin1.png" alt="Administration Page" width="300"/>
+<img src="./Assets/admin2.png" alt="Administration Page" width="300"/>
 
 ## Tech-Used
 
