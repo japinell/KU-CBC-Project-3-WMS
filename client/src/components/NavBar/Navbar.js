@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
       background: "purple",
     },
   },
-  // tabsContainer: {
-  //   marginLeft: "auto",
-  // },
-  // iconLogo: {
-  //   width: "50px",
-  // },
+  tabsContainer: {
+    marginLeft: "auto",
+  },
+  iconLogo: {
+    width: "50px",
+  },
   icons: {
     fontSize: "2rem",
   },

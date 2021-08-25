@@ -11,55 +11,29 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 
-
 const useStyles = makeStyles((theme) => ({
-  root: {
-    minWidth: 300,
-    minHeight: 100,
-    marginTop: 9,
-    marginRight: 9,
-  },
   container: {
-    backgroundSize: "xl",
-    padding: theme.spacing(9),
-  },
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    paddingTop: theme.spacing(10),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
-  cardGrid: {
-    paddingTop: theme.spacing(9),
-    paddingBottom: theme.spacing(9),
-    paddingRight: theme.spacing(9),
+  root: {
+    margin: 25,
   },
-  card: {
-    minHeight: 300,
-    maxWidth: 300,
-    margin: "center",
-    display: "wrap",
-    flexDirection: "column",
-  },
+
   cardContent: {
     margin: 1,
-    flexGrow: 1,
     justifyContent: "center",
   },
-  title: {
-    margin: 12,
-    fontSize: 14,
-  },
+
   pos: {
     marginBottom: 12,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
+  textCentered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -87,67 +61,67 @@ const Admin = () => {
     console.log(formValues);
   };
   return (
-    <Grid className={classes.container}>
-      <CssBaseline />
-      <main>
-        <div>
-          <Container className={classes.container}>
-            <Card className={classes.root} variant="outlined">
-              <CardContent>
-                <Grid container spacing={6} justifyContent="center">
-                  <Typography className={classes.title} color="textPrimary">
-                    Admin Portal
-                  </Typography>
-                  <form
-                    className={classes.root}
-                    noValidate
-                    autoComplete="off"
-                    onSubmit={handleSubmit}
-                  >
-                    <Typography
-                      className={classes.pos}
-                      color="textSecondary"
-                      variant="body2"
-                      component="p"
-                    >
-                      Assign New Task
-                    </Typography>
-                    <Input
-                      className={classes.CardContent}
-                      placeholder="Apply A User"
-                      inputProps={{ "aria-label": "description" }}
-                      value={formValues.user}
-                      onChange={handleInputChange}
-                    />
-                    <Input
-                      className={classes.CardContent}
-                      placeholder="Select Action"
-                      inputProps={{ "aria-label": "description" }}
-                      value={formValues.operation}
-                      onChange={handleInputChange}
-                    />
-                  </form>
-                  <CardActions>
-                    <Button
-                      className={classes.heroButtons}
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                    >
-                      Submit
-                      <Link to={{
-                      pathname: `/tasks`,
-                    }}
-                      />
-                    </Button>
-                  </CardActions>
-                </Grid>
-              </CardContent>
-            </Card>
-          </Container>
-        </div>
-      </main>
-    </Grid>
+    <Container className={classes.container}>
+      <Typography
+        mt={20}
+        variant="h2"
+        color="primary"
+        className={classes.textCentered}
+      >
+        Admin Portal
+      </Typography>
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Grid container spacing={6} justifyContent="center">
+            <form
+              className={classes.root}
+              justifyContent="center"
+              noValidate
+              autoComplete="off"
+              onSubmit={handleSubmit}
+            >
+              <Typography
+                className={classes.pos}
+                color="textSecondary"
+                variant="body2"
+                component="p"
+              >
+                Assign New Task
+              </Typography>
+              <Input
+                className={classes.CardContent}
+                placeholder="Apply A User"
+                inputProps={{ "aria-label": "description" }}
+                value={formValues.user}
+                onChange={handleInputChange}
+              />
+              <Input
+                className={classes.CardContent}
+                placeholder="Select Action"
+                inputProps={{ "aria-label": "description" }}
+                value={formValues.operation}
+                onChange={handleInputChange}
+              />
+            </form>
+            <CardActions>
+              <Button
+                className={classes.heroButtons}
+                variant="contained"
+                color="primary"
+                type="submit"
+              >
+                Submit
+                <Link
+                  to={{
+                    pathname: `/tasks`,
+                  }}
+                />
+              </Button>
+            </CardActions>
+          </Grid>
+        </CardContent>
+      </Card>
+    </Container>
   );
 };
 export default Admin;

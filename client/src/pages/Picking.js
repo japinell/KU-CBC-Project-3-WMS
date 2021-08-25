@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import HomeIcon from "@material-ui/icons/Home";
@@ -27,7 +28,7 @@ import Auth from "../utils/auth";
 import { useMutation, useQuery } from "@apollo/client";
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: theme.spacing(6),
+    padding: theme.spacing(12),
   },
   formControl: {
     textAlign: theme.left,
@@ -116,12 +117,32 @@ const Picking = ({ defaultValues }) => {
       console.log(error);
     }
   };
+
+  function CenterGrid(props) {
+    return (
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        {...props}
+      />
+    );
+  }
+
   console.log("Form values => ", formValues);
   return (
     <Container className={classes.container} maxWidth="lg">
-      <h1 className={classes.textCentered}>Picking</h1>
+      <Typography
+        mt={20}
+        variant="h2"
+        color="primary"
+        className={classes.textCentered}
+      >
+        Picking
+      </Typography>{" "}
       <form onSubmit={handleSubmit}>
-        <Grid>
+        <CenterGrid>
           <TextField
             id="orderType"
             name="orderType"
@@ -144,8 +165,8 @@ const Picking = ({ defaultValues }) => {
             value={formValues.orderNumber}
             onChange={handleInputChange}
           />
-        </Grid>
-        <Grid>
+        </CenterGrid>
+        <CenterGrid>
           <TextField
             id="customerNumber"
             name="customerNumber"
@@ -168,8 +189,8 @@ const Picking = ({ defaultValues }) => {
             value={formValues.customerName}
             onChange={handleInputChange}
           />
-        </Grid>
-        {/* <Grid>
+        </CenterGrid>
+        {/* <CenterGrid>
           <Autocomplete
             options={formValues.taskDetails}
             getOptionLabel={(option) => option.item.description}
@@ -186,8 +207,8 @@ const Picking = ({ defaultValues }) => {
             onChange={handleInputChange}
             //
           />
-        </Grid> */}
-        <Grid item>
+        </CenterGrid> */}
+        <CenterGrid item>
           <FormControl className={classes.formControl}>
             <InputLabel>Item Number</InputLabel>
             <Select
@@ -207,8 +228,8 @@ const Picking = ({ defaultValues }) => {
               })}
             </Select>
           </FormControl>
-        </Grid>
-        <Grid>
+        </CenterGrid>
+        <CenterGrid>
           <TextField
             id="quantity"
             name="quantity"
@@ -225,8 +246,8 @@ const Picking = ({ defaultValues }) => {
             value={formValues.quantity}
             onChange={handleInputChange}
           />
-        </Grid>
-        <Grid>
+        </CenterGrid>
+        <CenterGrid>
           <TextField
             id="fromLocation"
             name="fromLocation"
@@ -243,8 +264,8 @@ const Picking = ({ defaultValues }) => {
             value={formValues.toLocation}
             onChange={handleInputChange}
           />
-        </Grid>
-        <Grid>
+        </CenterGrid>
+        <CenterGrid>
           <TextField
             id="lotNumber"
             name="lotNumber"
@@ -267,9 +288,9 @@ const Picking = ({ defaultValues }) => {
             value={formValues.expirationDate}
             onChange={handleInputChange}
           /> */}
-        </Grid>
+        </CenterGrid>
         <br />
-        <Grid className={classes.textCentered}>
+        <CenterGrid className={classes.textCentered}>
           <Button
             className={classes.button}
             variant="contained"
@@ -307,7 +328,7 @@ const Picking = ({ defaultValues }) => {
           >
             <Home />
           </Fab> */}
-        </Grid>
+        </CenterGrid>
       </form>
     </Container>
   );
