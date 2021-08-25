@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { Typography } from "@material-ui/core";
 
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
-
 function createTaskData(
   orderType,
   orderNumber,
@@ -45,7 +44,6 @@ function createTaskData(
     user,
   };
 }
-
 export default function Tasks({ defaultValues }) {
   console.log("Default Values for Tasks:", defaultValues);
   const classes = useStyles();
@@ -92,7 +90,6 @@ export default function Tasks({ defaultValues }) {
       defaultValues.user
     ),
   ];
-
   return (
     <>
       <Container className={classes.container} maxWidth="lg">
@@ -127,7 +124,11 @@ export default function Tasks({ defaultValues }) {
                     {row.orderType}
                   </TableCell>
 
-                  <Link href="/picking">
+                  <Link
+                    to={{
+                      pathname: `/picking/${row.orderType}/${row.orderNumber}`,
+                    }}
+                  >
                     <TableCell>{row.orderNumber}</TableCell>
                   </Link>
 

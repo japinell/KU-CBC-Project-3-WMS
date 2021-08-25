@@ -4,6 +4,7 @@
 const { Item, Kardex, Task, User } = require("../models");
 const Inventory = require("../models/Inventory");
 const Order = require("../models/Order");
+const OrderHeader = require("../models/OrderHeader");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 //
@@ -56,12 +57,41 @@ const resolvers = {
       //   "You need to log in to perform this query!"
       // );
     },
+    // Returns the inventory availability by location for an item
+    getLocationBySku: async (parent, { sku }, context) => {
+      // if (context.user) {
+      // console.log("Sku => ", sku);
+      // console.log("Location => ", location);
+      // console.log("Lot => ", lot);
+
+      if (sku && location && lot) {
+        return await Inventory.find({
+          sku,
+          location,
+          lot,
+        });
+      } else if (sku && location) {
+        return await Inventory.find({
+          sku,
+          location,
+        });
+      } else {
+        return await Inventory.find({
+          sku,
+        });
+      }
+
+      // }
+      // throw new AuthenticationError(
+      //   "You need to log in to perform this query!"
+      // );
+    },
     // Returns an order by number
     getOrderByNumber: async (parent, { orderType, orderNumber }, context) => {
       // if (context.user) {
       return await Order.find({ orderType, orderNumber })
         .populate("customer")
-        .populate("items.item");
+        .populate("orderDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -70,7 +100,9 @@ const resolvers = {
     // Returns all the orders
     getOrders: async (parent, args, context) => {
       // if (context.user) {
-      return await Order.find({}).populate("customer").populate("items.item");
+      return await Order.find({})
+        .populate("customer")
+        .populate("orderDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -81,7 +113,7 @@ const resolvers = {
       // if (context.user) {
       return await Task.find({ orderType, orderNumber })
         .populate("customer")
-        .populate("items.item");
+        .populate("taskDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -90,7 +122,9 @@ const resolvers = {
     // Returns all the tasks
     getTasks: async (parent, args, context) => {
       // if (context.user) {
-      return await Task.find({}).populate("customer").populate("items.item");
+      return await Task.find({})
+        .populate("customer")
+        .populate("taskDetails.item");
       // }
       // throw new AuthenticationError(
       //   "You need to log in to perform this query!"
@@ -114,17 +148,25 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Updating inventory record...");
+        console.log("sku =>", sku);
+        console.log("location =>", location);
+        console.log("lot =>", lot);
         const currInventory = await Inventory.findOne({
           sku,
           location,
           lot,
         });
+
+        if (!currInventory) {
+          throw new Error(
+            `No inventory found for item ${sku} in location ${location} and lot ${lot}.`
+          );
+        }
+
         const newQuantity = currInventory.quantity - quantity;
 
         if (newQuantity < 0) {
-          throw new AuthenticationError(
-            "Error: Inventory quantity cannot be less than zero."
-          );
+          throw new Error("Inventory quantity cannot be less than zero.");
         }
 
         const newInventory = await Inventory.findOneAndUpdate(
@@ -152,6 +194,9 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Creating kardex record...");
+        console.log("sku =>", sku);
+        console.log("location =>", location);
+        console.log("lot =>", lot);
         const kardex = await Kardex.create({
           sku,
           location,
@@ -181,15 +226,13 @@ const resolvers = {
       // if (context.user) {
       try {
         console.log("Updating order record...");
-        const { items } = await Order.findOne({
+        const { orderDetails } = await Order.findOne({
           orderType,
           orderNumber,
-        })
-          .populate("customer")
-          .populate("items.item");
+        }).populate("orderDetails.item");
 
-        const currItem = items.filter((item) => {
-          return item.item.sku === sku;
+        const currItem = orderDetails.filter((item) => {
+          return orderDetails.item.sku === sku;
         });
 
         console.log("currItem => ", currItem);
@@ -199,16 +242,14 @@ const resolvers = {
         console.log("newItemQty => ", newItemQty);
 
         if (newItemQty < 0) {
-          throw new AuthenticationError(
-            "Error: Order quantity cannot be less than zero."
-          );
+          throw new Error("Order quantity cannot be less than zero.");
         }
 
         const newOrder = await Order.findOneAndUpdate(
-          { "items.item.sku": sku },
+          { "orderDetails.item.sku": sku },
           {
             $set: {
-              "items.$.quantity": newItemQty,
+              "orderDetails.quantity": newItemQty,
             },
           }
         );

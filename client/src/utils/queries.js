@@ -35,6 +35,18 @@ export const GET_ITEMS = gql`
   }
 `;
 
+export const GET_LOCATION_BY_SKU = gql`
+  query getLocationBySku($sku: String!, $location: String, $lot: String) {
+    getLocationBySku(sku: $sku, location: $location, lot: $lot) {
+      sku
+      location
+      lot
+      primary
+      quantity
+    }
+  }
+`;
+
 export const GET_ORDER_BY_NUMBER = gql`
   query getOrderByNumber($orderType: String!, $orderNumber: Int!) {
     getOrderByNumber(orderType: $orderType, orderNumber: $orderNumber) {
@@ -125,7 +137,7 @@ export const GET_TASK = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku
@@ -161,7 +173,7 @@ export const GET_TASKS = gql`
       operation
       priority
       notes
-      items {
+      taskDetails {
         item {
           _id
           sku

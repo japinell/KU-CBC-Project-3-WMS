@@ -14,7 +14,7 @@ const orderDetailSchema = new Schema({
     type: Number,
     required: true,
   },
-  items: [
+  orderDetails: [
     {
       item: { type: Schema.Types.ObjectId, ref: "Item", required: true },
       quantity: { type: Number, min: 0.0 },
@@ -22,9 +22,6 @@ const orderDetailSchema = new Schema({
       status: { type: String, default: "U" },
     },
   ],
-  description: {
-    type: String,
-  },
   user: String,
   datetime: {
     type: Date,

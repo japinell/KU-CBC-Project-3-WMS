@@ -1,13 +1,13 @@
 //
 //  Populate database with default data
 //
-const { Item, OrderDetail } = require("../models");
+const { OrderHeader, OrderDetail, Item } = require("../models");
 
 const orderDetailData = [
   {
     orderType: "PO",
     orderNumber: 123456,
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -40,11 +40,12 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "PO",
     orderNumber: 123457,
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -65,11 +66,12 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "ST",
     orderNumber: 123458,
-    items: [
+    orderDetails: [
       {
         sku: "600190",
         quantity: 100,
@@ -90,11 +92,12 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "SO",
     orderNumber: 123459,
-    items: [
+    orderDetails: [
       {
         sku: "600190",
         quantity: 100,
@@ -115,11 +118,12 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
   {
     orderType: "SO",
     orderNumber: 123460,
-    items: [
+    orderDetails: [
       {
         sku: "703250",
         quantity: 100,
@@ -140,24 +144,26 @@ const orderDetailData = [
       },
     ],
     user: "admin",
+    datetime: new Date(new Date().setDate(new Date().getDate() - 9)),
   },
 ];
-
-const data = [];
 
 const seedOrderDetail = async () => {
   await OrderDetail.deleteMany({});
 
   for (let i = 0, l = orderDetailData.length; i < l; i++) {
-    const { items, ...order } = orderDetailData[i];
+    const { orderType, orderNumber, orderDetails, ...order } =
+      orderDetailData[i];
+
+    const orderId = await OrderHeader.findOne({ orderType, orderNumber });
 
     const itemIds = await Promise.all(
-      items.map(({ sku }) => Item.findOne({ sku }))
+      orderDetails.map(({ sku }) => Item.findOne({ sku }))
     );
 
     await OrderDetail.create({
-      ...order,
-      items: items.map(({ sku, ...i }, idx) => ({
+      orderNumber: orderId,
+      orderDetails: orderDetails.map(({ ...i }, idx) => ({
         ...i,
         item: itemIds[idx]._id,
       })),
