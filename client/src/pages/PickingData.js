@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Auth from "../utils/auth";
 import Picking from "./Picking";
 import { GET_TASK } from "../utils/queries";
@@ -7,16 +6,12 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useParams, Link } from "react-router-dom";
 
 const PickingData = () => {
-  const { parOrderType, parOrderNumber } = useParams();
   const { loading, data } = useQuery(GET_TASK, {
     variables: {
-      parOrderType,
-      parOrderNumber,
+      orderType: "SO",
+      orderNumber: 123459,
     },
   });
-
-  console.log("orderType =>", orderType);
-  console.log("orderNumber =>", orderNumber);
 
   if (loading) {
     return <h1>Loading Task Data...</h1>;
@@ -25,8 +20,8 @@ const PickingData = () => {
   const taskData = data?.getTaskByNumber[0] ?? [];
 
   const {
-    // orderType,
-    // orderNumber,
+    orderType,
+    orderNumber,
     user,
     operation,
     priority,
