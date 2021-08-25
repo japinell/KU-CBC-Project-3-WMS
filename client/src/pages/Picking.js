@@ -1,31 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
+//
+//  Libraries needed
+//
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Typography from "@material-ui/core/Typography";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
-import HomeIcon from "@material-ui/icons/Home";
 import GoBackIcon from "@material-ui/icons/ArrowBackTwoTone";
 import AddToCartIcon from "@material-ui/icons/ShoppingCartTwoTone";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { LOGIN_USER } from "../utils/mutations";
 import { UPDATE_INVENTORY } from "../utils/mutations";
 import { ADD_KARDEX } from "../utils/mutations";
 import { UPDATE_ORDER } from "../utils/mutations";
-import Auth from "../utils/auth";
 import { useMutation, useQuery } from "@apollo/client";
+//
+//  Use styles to format the component
+//
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(12),
@@ -47,12 +43,17 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+//
+//  Renders the Picking component with data from the PickingData component
+//
 const Picking = ({ defaultValues }) => {
   const classes = useStyles();
   const [formValues, setFormValues] = useState(defaultValues);
   const [updateInventory] = useMutation(UPDATE_INVENTORY);
   const [addKardex] = useMutation(ADD_KARDEX);
-  const [updateOrder] = useMutation(UPDATE_ORDER);
+  //
+  //  Handles form changes to controlled elements in the component
+  //
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "itemNumber") {
@@ -72,6 +73,9 @@ const Picking = ({ defaultValues }) => {
       });
     }
   };
+  //
+  //  Submits data to process the Picking by calling the updateInventory and updateKardex mutations in GraphQL
+  //
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValues);
@@ -102,7 +106,7 @@ const Picking = ({ defaultValues }) => {
           user: formValues.user,
         },
       });
-      // Upon success, log the transaction to the kardex
+      // Upon success, update the order details
       // updateOrder({
       //   variables: {
       //     orderType: formValues.orderType,
@@ -118,6 +122,9 @@ const Picking = ({ defaultValues }) => {
     }
   };
 
+  //
+  //  Centers the Grid component
+  //
   function CenterGrid(props) {
     return (
       <Grid
@@ -129,8 +136,9 @@ const Picking = ({ defaultValues }) => {
       />
     );
   }
-
-  console.log("Form values => ", formValues);
+  //
+  //  Renders the Picking form
+  //
   return (
     <Container className={classes.container} maxWidth="lg">
       <Typography
@@ -190,24 +198,6 @@ const Picking = ({ defaultValues }) => {
             onChange={handleInputChange}
           />
         </CenterGrid>
-        {/* <CenterGrid>
-          <Autocomplete
-            options={formValues.taskDetails}
-            getOptionLabel={(option) => option.item.description}
-            // style={{ width: 300 }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                id="itemNumber"
-                name="itemNumber"
-                label="Item Number"
-                value={formValues.itemNumber}
-              />
-            )}
-            onChange={handleInputChange}
-            //
-          />
-        </CenterGrid> */}
         <CenterGrid item>
           <FormControl className={classes.formControl}>
             <InputLabel>Item Number</InputLabel>
@@ -277,17 +267,6 @@ const Picking = ({ defaultValues }) => {
             value={formValues.lotNumber}
             onChange={handleInputChange}
           />
-          {/* <TextField
-            id="expirationDate"
-            name="expirationDate"
-            label="Expiration Date"
-            type="text"
-            InputProps={{
-              readOnly: true,
-            }}
-            value={formValues.expirationDate}
-            onChange={handleInputChange}
-          /> */}
         </CenterGrid>
         <br />
         <CenterGrid className={classes.textCentered}>
@@ -309,25 +288,6 @@ const Picking = ({ defaultValues }) => {
             <GoBackIcon />
             Cancel
           </Button>
-          {/* <Fab
-            onSubmit={handleSubmit}
-            className={classes.button}
-            size="medium"
-            color="primary"
-            aria-label="add"
-          >
-            <AddIcon />
-          </Fab>
-          <Fab
-            onSubmit={handleSubmit}
-            className={classes.button}
-            size="medium"
-            color="primary"
-            aria-label="back"
-            // href="/home"
-          >
-            <Home />
-          </Fab> */}
         </CenterGrid>
       </form>
     </Container>
