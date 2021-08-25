@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { Link } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 import Container from "@material-ui/core/Container";
 import { Typography } from "@material-ui/core";
 
@@ -124,11 +124,7 @@ export default function Tasks({ defaultValues }) {
                     {row.orderType}
                   </TableCell>
 
-                  <Link
-                    to={{
-                      pathname: `/picking/${row.orderType}/${row.orderNumber}`,
-                    }}
-                  >
+                  <Link href="/picking">
                     <TableCell>{row.orderNumber}</TableCell>
                   </Link>
 
