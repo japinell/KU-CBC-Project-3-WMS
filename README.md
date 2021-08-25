@@ -47,7 +47,7 @@ WHEN I select an item to pick in the Picking module
 THEN I am provided with information about the unit of measure and quantity to pick for that item
 WHEN I pick the item physically
 THEN I can submit the transaction to the WMS system so that the inventory for that location is updated to reflect a new balance
-AND I record to track the details of that opeartion are registered to the system ledger (cardex)
+AND a record tracking the details of that operation are recorded in the system ledger (cardex)
 WHEN I select another item to pick
 THEN I am provided with information about that item, I can pick the item physically, and I can update the system to its new state
 WHEN I press the cancel button
