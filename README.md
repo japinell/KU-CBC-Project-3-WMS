@@ -108,7 +108,7 @@ Project 3: Mini-WMS
 
 Travis Brown @ https://github.com/bergannation
 
-Rigo A Pinell @ https://github.com/japinell
+Rigo A. Pinell @ https://github.com/japinell
 
 Connor Gannaway @ https://github.com/gannacon
 
