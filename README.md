@@ -103,6 +103,8 @@ This project was completed using the following technologies:
 - Express.js
 - MongoDB
 - Mongoose
+- MongoDb Atlas
+- Heroku PaaS
 
 ## License
 
