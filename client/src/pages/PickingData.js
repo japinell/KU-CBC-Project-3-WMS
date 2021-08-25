@@ -3,6 +3,7 @@
 //
 import React, { useEffect, useState } from "react";
 import Picking from "./Picking";
+import { useQuery } from "@apollo/client";
 import { GET_TASK } from "../utils/queries";
 // 
 //  PickingData (data concern) - Retrieves the tasks data by calling the GET TASK GraphQL query and passes the result to the Picking component

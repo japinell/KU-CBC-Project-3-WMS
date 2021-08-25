@@ -15,10 +15,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useMutation } from "@apollo/client";
 import { UPDATE_INVENTORY } from "../utils/mutations";
 import { ADD_KARDEX } from "../utils/mutations";
 import { UPDATE_ORDER } from "../utils/mutations";
-import { useMutation, useQuery } from "@apollo/client";
 //
 //  Use styles to format the component
 //
