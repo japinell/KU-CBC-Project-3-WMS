@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     spacing: theme.spacing(1),
   },
   container: {
-    padding: theme.spacing(12),
+    paddingTop: theme.spacing(12),
   },
   textCentered: {
     display: "flex",
