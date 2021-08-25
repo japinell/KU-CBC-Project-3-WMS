@@ -8,18 +8,71 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import { AppBar } from "@material-ui/core";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import SearchBooks from "./pages/SearchBooks";
-import SavedBooks from "./pages/SavedBooks";
-import Navbar from "./components/Navbar";
-
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
+import Receiving from "./pages/Receiving";
+import PutAway from "./pages/PutAway";
+import Picking from "./pages/Picking";
+import PickingData from "./pages/PickingData";
+import Dispatch from "./pages/Dispatch";
+import Navbar from "./components/NavBar/Navbar";
+import Footer from "./components/Footer";
+import Tasks from "./pages/Tasks";
+import TaskData from "./pages/TaskData";
+import Auth from "./utils/auth";
+import LoginForm from "../src/components/SignInForm";
+import {
+  createTheme,
+  ThemeProvider,
+  Button,
+  CssBaseline,
+} from "@material-ui/core";
+const theme = createTheme({
+  props: {
+    MuiTypography: {
+      variantMapping: {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        h4: "h4",
+        h5: "h5",
+        h6: "h6",
+        subtitle1: "h1",
+        subtitle2: "h2",
+        body1: "span",
+        body2: "span",
+      },
+    },
+  },
+  palette: {
+    primary: {
+      light: "#ED4B82",
+      main: "#E91E63",
+      dark: "#A31545",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#33EAFF",
+      main: "#00E5FF",
+      dark: "#00A0B2",
+      contrastText: "#000",
+    },
+    trio: {
+      light: "#FCE4EC",
+      main: "#84FFFF",
+      dark: "#BDBDBD",
+      contrastText: "#000",
+    },
+  },
+});
 // Construct the main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
-
 // Construct the middleware that will be attached to the JWT token in every request as an authorization header
 const authLink = setContext((_, { headers }) => {
   // Get the authentication token from local storage if it exists
@@ -32,28 +85,44 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
 const client = new ApolloClient({
   // Set the client to execute the authLink middleware prior to making the request to the GraphQL API
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
+const renderLogin = () => {
+  if (Auth.loggedIn()) {
+    return (
+      <>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/tasks" component={TaskData} />
+          <Route exact path="/picking" component={PickingData} />
+          {/* <Route exact path="/receiving" component={Receiving} />
+      <Route exact path="/putaway" component={PutAway} />
+      <Route exact path="/dispatch" component={Dispatch} /> */}
+          <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+        </Switch>
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <AppBar>
+        <LoginForm />
+      </AppBar>
+    );
+  }
+};
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={SearchBooks} />
-            <Route exact path="/saved" component={SavedBooks} />
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-          </Switch>
-        </>
+        <ThemeProvider theme={theme}>{renderLogin()}</ThemeProvider>
       </Router>
     </ApolloProvider>
   );
 }
-
 export default App;
