@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Admin } from "Admin";
-import { useMutation, useQuery } from "@apollo/client";
-import { User } from "../../server/models/User.js";
+import { useQuery } from "@apollo/client";
+// import { User } from "../../server/models/User.js";
 import { GET_USER } from "../utils/queries";
 
 const AdminData = () => {
@@ -12,15 +12,9 @@ const AdminData = () => {
     },
   });
 
-  const userData = data?.getUserByNumber[0] ?? [];
+  const userData = data?.getUserByNumber[0] ?? [firstname, lastname, email];
 
   const { firstname, lastname, email } = userData;
-
-  const User = {
-    firstname,
-    lastname,
-    email,
-  };
 
   if (loading) {
     return <h1>Loading Task Data...</h1>;
