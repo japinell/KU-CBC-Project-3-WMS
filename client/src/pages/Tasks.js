@@ -66,28 +66,28 @@ export default function Tasks({ defaultValues }) {
       defaultValues[1].user
     ),
     createTaskData(
-      defaultValues.orderType,
-      defaultValues.orderNumber,
-      defaultValues.customerName,
-      defaultValues.customerNumber,
-      defaultValues.notes,
-      defaultValues.user
+      defaultValues[2].orderType,
+      defaultValues[2].orderNumber,
+      defaultValues[2].customer.name,
+      defaultValues[2].customer.code,
+      defaultValues[2].notes,
+      defaultValues[2].user
     ),
     createTaskData(
-      defaultValues.orderType,
-      defaultValues.orderNumber,
-      defaultValues.customerName,
-      defaultValues.customerNumber,
-      defaultValues.notes,
-      defaultValues.user
+      defaultValues[3].orderType,
+      defaultValues[3].orderNumber,
+      defaultValues[3].customer.name,
+      defaultValues[3].customer.code,
+      defaultValues[3].notes,
+      defaultValues[3].user
     ),
     createTaskData(
-      defaultValues.orderType,
-      defaultValues.orderNumber,
-      defaultValues.customerName,
-      defaultValues.customerNumber,
-      defaultValues.notes,
-      defaultValues.user
+      defaultValues[4].orderType,
+      defaultValues[4].orderNumber,
+      defaultValues[4].customer.name,
+      defaultValues[4].customer.code,
+      defaultValues[4].notes,
+      defaultValues[4].user
     ),
   ];
   return (

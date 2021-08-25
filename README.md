@@ -32,6 +32,8 @@ SO THAT I can keep track of my warehouse inventory
 The following image shows a screenshot of the deployed application.
 
 ![Integration using Insomnia](./Assets/screenshot.png)
+![Integration using Insomnia](./Assets/screenshot1.png)
+![Integration using Insomnia](./Assets/screenshot2.png)
 
 ## Tech-Used
 
@@ -79,11 +81,17 @@ Licensed under the [MIT](https://choosealicense.com/licenses/mit/)
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 
-## Contribute
+## Collaborators
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+Project 3: Mini-WMS
 
-Please give me credit! This is not an original idea but an original way to create this.
+Travis Brown @ https://github.com/bergannation
+
+Rigo Pinell @ https://github.com/japinell
+
+Connor Gannaway @ https://github.com/gannacon
+
+Joel Stockard @ https://github.com/jtstockard
 
 ## Questions
 
