@@ -35,9 +35,11 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 The following image shows a screenshot of the deployed application.
 
-![Integration using Insomnia](./Assets/screenshot.png)
-![Integration using Insomnia](./Assets/screenshot1.png)
-![Integration using Insomnia](./Assets/screenshot2.png)
+![Main Page](./Assets/main-page.png)
+![Tasks Page](./Assets/tasks.png)
+![Picking Page](./Assets/picking.png)
+![Administration Page](./Assets/admin1.png)
+![Administration Page](./Assets/admin2.png)
 
 ## Tech-Used
 
