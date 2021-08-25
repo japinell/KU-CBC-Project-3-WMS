@@ -35,7 +35,7 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 The following image shows a screenshot of the deployed application.
 
-![Main Page](./Assets/main-page.png)
+<img src="./Assets/main-page.png" alt="Main Page" width="200"/>
 ![Tasks Page](./Assets/tasks.png)
 ![Picking Page](./Assets/picking.png)
 ![Administration Page](./Assets/admin1.png)
