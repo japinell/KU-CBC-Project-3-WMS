@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MINI_WMS || "mongodb://localhost/wms", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ku-cbc-wms", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
