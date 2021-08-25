@@ -21,6 +21,8 @@ The live application can be found at this link:
 
 https://ku-cbc-wms.herokuapp.com/
 
+Although a sign up form has been provided for development purposes, in a production environment, users will be created through an admininistration page from which users will be assigned a profile, including the types of operations that they can perform in the WMS system.
+
 ## User Story
 
 ```md
