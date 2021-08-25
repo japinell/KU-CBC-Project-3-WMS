@@ -76,49 +76,48 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const renderLogin = () => {
-    if (Auth.loggedIn()) {
-      return (
-        <>
-          {matches ? (
-            <DrawerComponent />
-          ) : (
-            <>
-              <Tabs
-                onChange={handleClickTab}
-                className={classes.tabsContainer}
-                indicatorColor="secondary"
-                value={value}
-              >
-                <Tab
-                  component={Link}
-                  to="/"
-                  disableRipple
-                  icon={<img src={require("../../images/homeIcon.png")} />}
-                  label="Home"
-                />
-                <Tab
-                  component={Link}
-                  to="/admin"
-                  disableRipple
-                  icon={<VscAccount className={classes.icons} />}
-                  label="Profile"
-                />
-                <Tab
-                  component={Link}
-                  to="/tasks"
-                  disableRipple
-                  icon={<BiTask className={classes.icons} />}
-                  label="Tasks"
-                />
-                <Tab
-                  component={Link}
-                  to="/picking"
-                  disableRipple
-                  icon={<BiSpreadsheet className={classes.icons} />}
-                  label="Picking"
-                />
-                {/* <Tab
+  const renderNavbar = () => {
+    return (
+      <>
+        {matches ? (
+          <DrawerComponent />
+        ) : (
+          <>
+            <Tabs
+              onChange={handleClickTab}
+              className={classes.tabsContainer}
+              indicatorColor="secondary"
+              value={value}
+            >
+              <Tab
+                component={Link}
+                to="/"
+                disableRipple
+                icon={<img src={require("../../images/homeIcon.png")} />}
+                label="Home"
+              />
+              <Tab
+                component={Link}
+                to="/admin"
+                disableRipple
+                icon={<VscAccount className={classes.icons} />}
+                label="Profile"
+              />
+              <Tab
+                component={Link}
+                to="/tasks"
+                disableRipple
+                icon={<BiTask className={classes.icons} />}
+                label="Tasks"
+              />
+              <Tab
+                component={Link}
+                to="/picking"
+                disableRipple
+                icon={<BiSpreadsheet className={classes.icons} />}
+                label="Picking"
+              />
+              {/* <Tab
                   component={Link}
                   to="/receiving"
                   disableRipple
@@ -141,28 +140,21 @@ const Navbar = () => {
                   icon={<FiTruck className={classes.icons} />}
                   label="Dispatch"
                 /> */}
-              </Tabs>
-              <Button
-                onClick={Auth.logout}
-                className={classes.account}
-                disableElevation
-                disableRipple
-                variant="contained"
-                color="secondary"
-              >
-                Logout
-              </Button>
-            </>
-          )}
-        </>
-      );
-    } else {
-      return (
-        <AppBar>
-          <LoginForm />
-        </AppBar>
-      );
-    }
+            </Tabs>
+            <Button
+              onClick={Auth.logout}
+              className={classes.account}
+              disableElevation
+              disableRipple
+              variant="contained"
+              color="secondary"
+            >
+              Logout
+            </Button>
+          </>
+        )}
+      </>
+    );
   };
 
   return (
@@ -179,7 +171,7 @@ const Navbar = () => {
                 ""
               )}
             </Typography>
-            {renderLogin()}
+            {renderNavbar()}
           </Toolbar>
         </AppBar>
       </Container>
