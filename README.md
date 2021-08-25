@@ -13,6 +13,7 @@ This is a Warehouse Management System (WMS) application that can assign tasks to
 - [Acceptance Criteria](#acceptance-criteria)
 - [Mock-Up](#mock-up)
 - [Tech-Used](#tech-used)
+- [Installation](#installation)
 - [License](#license)
 - [Contribute](#contribute)
 
@@ -105,6 +106,26 @@ This project was completed using the following technologies:
 - Mongoose
 - MongoDb Atlas
 - Heroku PaaS
+
+## Installation
+
+A JSON file containing the dependencies for the development environment as outlined above is included with this project. To set up the development environment, simply run the following command from the root folder:
+
+```bash
+npm run install
+```
+
+Next, execute the following command to seed the database with sample data from the server folder:
+
+```bash
+npm run seed
+```
+
+Once the database is seeded, run the following command from the root folder to start the application:
+
+```bash
+npm run develop
+```
 
 ## License
 
