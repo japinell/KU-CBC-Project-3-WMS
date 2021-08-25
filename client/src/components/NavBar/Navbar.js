@@ -160,7 +160,7 @@ const Navbar = () => {
   return (
     <>
       <Container>
-        <AppBar elevation={0} color="primary">
+        <AppBar elevation={0} position="fixed" color="primary">
           <Toolbar>
             <Typography>
               {matches ? (
