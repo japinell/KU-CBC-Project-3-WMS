@@ -33,7 +33,7 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 ## Mock-Up
 
-The following image shows a screenshot of the deployed application.
+The following images portray the look and feel of the deployed application.
 
 <img src="./Assets/main-page.png" alt="Main Page" width="300"/>
 <img src="./Assets/tasks.png" alt="Tasks Page" width="300"/>
