@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { Input } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
+import { Admin } from "Admin";
 import { useMutation, useQuery } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
+import { User } from "../../server/models/User.js";
+import { GET_USER } from "../utils/queries";
 
-const Admin = () => {
-  return (
-    <Grid maxWidth="lg">
-      <h2>Header</h2>
-    </Grid>
-  );
+const AdminData = () => {
+  const { loading, data } = useQuery(GET_USER, {
+    variables: {
+      user: "User2",
+      operation: "Picking",
+    },
+  });
+
+  const userData = data?.getUserByNumber[0] ?? [];
+
+  const { firstname, lastname, email } = userData;
+
+  const User = {
+    firstname,
+    lastname,
+    email,
+  };
+
+  if (loading) {
+    return <h1>Loading Task Data...</h1>;
+  }
+
+  return <Admin defaultValues={userData} />;
 };
-export default Admin;
+export default AdminData;
