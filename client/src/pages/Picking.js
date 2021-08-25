@@ -7,7 +7,6 @@ import AddIcon from "@material-ui/icons/Add";
 import HomeIcon from "@material-ui/icons/Home";
 import GoBackIcon from "@material-ui/icons/ArrowBackTwoTone";
 import AddToCartIcon from "@material-ui/icons/ShoppingCartTwoTone";
-import Autocomplete from "@material-ui/lab/Autocomplete";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
