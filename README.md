@@ -10,6 +10,7 @@ This is a Warehouse Management System (WMS) application that can assign tasks to
 
 - [Deployed Application](#deployed-application)
 - [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
 - [Mock-Up](#mock-up)
 - [Tech-Used](#tech-used)
 - [License](#license)
@@ -30,6 +31,8 @@ AS A Warehouse Inventory Manager
 I WANT to be able to pick inventory from locations in my warehouse for dispatch purposes
 SO THAT I can keep track of my inventory, fullfill my sales orders, and make better use of the available pickers and inventory lots in the warehouse
 ```
+
+For additional features to be deployed in a future release, please check the [Project Kanban](https://github.com/japinell/KU-CBC-Project-3-WMS/projects/1).
 
 ## Acceptance Criteria
 
