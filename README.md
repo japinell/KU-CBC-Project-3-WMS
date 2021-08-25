@@ -8,16 +8,18 @@ This is a Warehouse Management System (WMS) application that can assign tasks to
 
 ## Table of Contents
 
-- [Deployment](#deployment)
+- [Deployed Application](#deployed-application)
 - [User Story](#user-story)
 - [Mock-Up](#mock-up)
 - [Tech-Used](#tech-used)
 - [License](#license)
 - [Contribute](#contribute)
 
-## Deployment
+## Deployed Application
 
-The app can be found at this link:
+The live application can be found at this link:
+
+https://ku-cbc-wms.herokuapp.com/
 
 ## User Story
 
