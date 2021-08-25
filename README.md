@@ -35,9 +35,20 @@ SO THAT I can keep track of my inventory, fullfill my sales orders, and make bet
 
 The following images portray the look and feel of the deployed application.
 
+### Main Page
+
 <img src="./Assets/main-page.png" alt="Main Page" width="300"/>
+
+### Tasks Page
+
 <img src="./Assets/tasks.png" alt="Tasks Page" width="300"/>
+
+### Picking Page
+
 <img src="./Assets/picking.png" alt="Picking Page" width="300"/>
+
+### Administration Page
+
 <img src="./Assets/admin1.png" alt="Administration Page" width="300"/>
 <img src="./Assets/admin2.png" alt="Administration Page" width="300"/>
 
