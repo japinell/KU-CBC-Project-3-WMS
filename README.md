@@ -4,9 +4,7 @@
 
 ## Description
 
-This is a Warehouse Management System (WMS) application that allows a Warehouse Manager to assign tasks for personnel to pick inventory from the warehouse for sales order fulfillment purposes.
-
-It is meant to run in tandem with an ERP system from which orders, items, customers, users, and other parameters are pulled. The application keeps track of inventory by item, location, and lot, and keeps a separate record of inventory transactions in a cardex, and it has data structures to support other core features like receiving and replenishment.
+This is a Warehouse Management System (WMS) application that allows a Warehouse Manager to assign tasks for personnel to execute as part of an order fulfillment workflow. The application is expected to run in tandem with an ERP system from which orders, items, customers, users, and other system parameters are pulled. The application keeps track of inventory by item, location, and lot, and keeps a separate record of inventory transactions in a cardex. It has been designed to support future development of core features of a WMS like receiving, replenishment, and barcode scanning.
 
 ## Table of Contents
 
